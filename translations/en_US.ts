@@ -4,8 +4,8 @@
 <context>
     <name>AboutWindow</name>
     <message>
-        <location filename="../aboutwindow.cpp" line="10"/>
-        <location filename="../aboutwindow.cpp" line="24"/>
+        <location filename="../aboutwindow.cpp" line="38"/>
+        <location filename="../aboutwindow.cpp" line="52"/>
         <source>Version %1</source>
         <translation>Version %1</translation>
     </message>
@@ -54,22 +54,22 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="61"/>
+        <location filename="../fileuploader.cpp" line="89"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="62"/>
+        <location filename="../fileuploader.cpp" line="90"/>
         <source>Some files could not be uploaded</source>
         <translation>Some files could not be uploaded</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="81"/>
-        <location filename="../fileuploader.cpp" line="95"/>
-        <location filename="../fileuploader.cpp" line="102"/>
-        <location filename="../fileuploader.cpp" line="111"/>
-        <location filename="../fileuploader.cpp" line="135"/>
-        <location filename="../fileuploader.cpp" line="157"/>
+        <location filename="../fileuploader.cpp" line="109"/>
+        <location filename="../fileuploader.cpp" line="122"/>
+        <location filename="../fileuploader.cpp" line="129"/>
+        <location filename="../fileuploader.cpp" line="138"/>
+        <location filename="../fileuploader.cpp" line="162"/>
+        <location filename="../fileuploader.cpp" line="184"/>
         <source>Could not upload image or video</source>
         <translation>Could not upload image or video</translation>
     </message>
@@ -77,8 +77,8 @@
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="51"/>
-        <location filename="../imageinfowidget.cpp" line="58"/>
+        <location filename="../imageinfowidget.cpp" line="79"/>
+        <location filename="../imageinfowidget.cpp" line="86"/>
         <location filename="../imageinfowidget.ui" line="44"/>
         <source>Thumbnail</source>
         <translation>Thumbnail</translation>
@@ -149,24 +149,24 @@ from thumbnail</translation>
 <context>
     <name>LoginWidget</name>
     <message>
-        <location filename="../loginwidget.cpp" line="56"/>
-        <location filename="../loginwidget.cpp" line="112"/>
+        <location filename="../loginwidget.cpp" line="84"/>
+        <location filename="../loginwidget.cpp" line="140"/>
         <source>You are logged in as %1</source>
         <translation>You are logged in as %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="120"/>
-        <location filename="../loginwidget.cpp" line="129"/>
+        <location filename="../loginwidget.cpp" line="148"/>
+        <location filename="../loginwidget.cpp" line="157"/>
         <source>Authentication failed</source>
         <translation>Authentication failed</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="121"/>
+        <location filename="../loginwidget.cpp" line="149"/>
         <source>Could not connect to ImageShack server.</source>
         <translation>Could not connect to ImageShack server.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="130"/>
+        <location filename="../loginwidget.cpp" line="158"/>
         <source>Wrong credentials.</source>
         <translation>Wrong credentials.</translation>
     </message>
@@ -209,24 +209,24 @@ from thumbnail</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="18"/>
-        <location filename="../optionsdialog.cpp" line="82"/>
+        <location filename="../mainwindow.cpp" line="47"/>
+        <location filename="../optionsdialog.cpp" line="110"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="19"/>
+        <location filename="../mainwindow.cpp" line="48"/>
         <source>ImageShack Uploader %1</source>
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="70"/>
+        <location filename="../mainwindow.cpp" line="99"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="71"/>
+        <location filename="../mainwindow.cpp" line="100"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Flash files can not be uploaded without logging in. Do you want to try anyway?</translation>
     </message>
@@ -279,7 +279,7 @@ from thumbnail</translation>
 <context>
     <name>Media</name>
     <message numerus="yes">
-        <location filename="../media.cpp" line="254"/>
+        <location filename="../media.cpp" line="282"/>
         <source>%n B</source>
         <translation>
             <numerusform>%n B</numerusform>
@@ -287,7 +287,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="255"/>
+        <location filename="../media.cpp" line="283"/>
         <source>%n KB</source>
         <translation>
             <numerusform>%n KB</numerusform>
@@ -295,7 +295,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="256"/>
+        <location filename="../media.cpp" line="284"/>
         <source>%n MB</source>
         <translation>
             <numerusform>%n MB</numerusform>
@@ -303,7 +303,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="257"/>
+        <location filename="../media.cpp" line="285"/>
         <source>%n GB</source>
         <translation>
             <numerusform>%n GB</numerusform>
@@ -314,17 +314,17 @@ from thumbnail</translation>
 <context>
     <name>MediaListWidget</name>
     <message>
-        <location filename="../medialistwidget.cpp" line="58"/>
+        <location filename="../medialistwidget.cpp" line="86"/>
         <source>Select one or more files to open</source>
         <translation>Select one or more files to open</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="60"/>
-        <source>Images (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp);;Videos (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov);;Flash (*.flv *.swf);;PDF (*.pdf)</source>
-        <translation>Images (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp);;Videos (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov);;Flash (*.flv *.swf);;PDF (*.pdf)</translation>
+        <location filename="../medialistwidget.cpp" line="88"/>
+        <source>Images (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp), Videos (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov), Flash (*.flv *.swf), PDF (*.pdf)</source>
+        <translation>Images (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp), Videos (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov), Flash (*.flv *.swf), PDF (*.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="97"/>
+        <location filename="../medialistwidget.cpp" line="125"/>
         <source>Failed to load %n file(s):</source>
         <translation>
             <numerusform>Failed to load %n file:</numerusform>
@@ -332,7 +332,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="103"/>
+        <location filename="../medialistwidget.cpp" line="131"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n file is too large for upload:</numerusform>
@@ -340,12 +340,12 @@ from thumbnail</translation>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="108"/>
+        <location filename="../medialistwidget.cpp" line="136"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="178"/>
+        <location filename="../medialistwidget.cpp" line="206"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n file</numerusform>
@@ -399,8 +399,8 @@ from thumbnail</translation>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="14"/>
-        <location filename="../optionsdialog.cpp" line="57"/>
+        <location filename="../optionsdialog.cpp" line="42"/>
+        <location filename="../optionsdialog.cpp" line="85"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</translation>
     </message>
@@ -419,18 +419,18 @@ from thumbnail</translation>
         <translation>Total: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="52"/>
+        <location filename="../progresswidget.cpp" line="80"/>
         <source>Waiting for links...</source>
         <translation>Waiting for links...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="56"/>
+        <location filename="../progresswidget.cpp" line="84"/>
         <location filename="../progresswidget.ui" line="131"/>
         <source>Current: %p%</source>
         <translation>Current: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="69"/>
+        <location filename="../progresswidget.cpp" line="97"/>
         <source>Loading files: %1 of %2</source>
         <translation>Loading files: %1 of %2</translation>
     </message>
@@ -443,94 +443,94 @@ from thumbnail</translation>
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="37"/>
+        <location filename="../resultswindow.cpp" line="65"/>
         <source>Direct links</source>
         <translation>Direct links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="38"/>
+        <location filename="../resultswindow.cpp" line="66"/>
         <source>Short links</source>
         <translation>Short links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="39"/>
+        <location filename="../resultswindow.cpp" line="67"/>
         <source>Hotlinks for web</source>
         <translation>Hotlinks for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="40"/>
+        <location filename="../resultswindow.cpp" line="68"/>
         <source>Thumbnails for web</source>
         <translation>Thumbnails for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="41"/>
+        <location filename="../resultswindow.cpp" line="69"/>
         <source>Thumbnails for forums 1</source>
         <translation>Thumbnails for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="42"/>
+        <location filename="../resultswindow.cpp" line="70"/>
         <source>Thumbnails for forums 2</source>
         <translation>Thumbnails for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="43"/>
+        <location filename="../resultswindow.cpp" line="71"/>
         <source>Hotlinks for forums 1</source>
         <translation>Hotlinks for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="44"/>
+        <location filename="../resultswindow.cpp" line="72"/>
         <source>Hotlinks for forums 2</source>
         <translation>Hotlinks for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="88"/>
-        <location filename="../resultswindow.cpp" line="111"/>
+        <location filename="../resultswindow.cpp" line="116"/>
+        <location filename="../resultswindow.cpp" line="139"/>
         <source>Direct link</source>
         <translation>Direct link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="89"/>
+        <location filename="../resultswindow.cpp" line="117"/>
         <source>Short link</source>
         <translation>Short link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="90"/>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="118"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for web</source>
         <translation>Hotlink for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="91"/>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="119"/>
+        <location filename="../resultswindow.cpp" line="142"/>
         <source>Thumbnail for web</source>
         <translation>Thumbnail for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="92"/>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="120"/>
+        <location filename="../resultswindow.cpp" line="143"/>
         <source>Thumbnail for forums 1</source>
         <translation>Thumbnail for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="93"/>
-        <location filename="../resultswindow.cpp" line="116"/>
+        <location filename="../resultswindow.cpp" line="121"/>
+        <location filename="../resultswindow.cpp" line="144"/>
         <source>Thumbnail for forums 2</source>
         <translation>Thumbnail for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="94"/>
-        <location filename="../resultswindow.cpp" line="117"/>
+        <location filename="../resultswindow.cpp" line="122"/>
+        <location filename="../resultswindow.cpp" line="145"/>
         <source>Hotlink for forums 1</source>
         <translation>Hotlink for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="95"/>
-        <location filename="../resultswindow.cpp" line="118"/>
+        <location filename="../resultswindow.cpp" line="123"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>Hotlink for forums 2</source>
         <translation>Hotlink for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="140"/>
         <source>Embedded video</source>
         <translation>Embedded video</translation>
     </message>
@@ -600,8 +600,8 @@ from thumbnail</translation>
         <translation>Batch tags:</translation>
     </message>
     <message>
-        <location filename="../tagwidget.cpp" line="12"/>
-        <location filename="../tagwidget.cpp" line="85"/>
+        <location filename="../tagwidget.cpp" line="40"/>
+        <location filename="../tagwidget.cpp" line="113"/>
         <source>Log in to use this features</source>
         <translation>Log in to use this features</translation>
     </message>
@@ -609,7 +609,7 @@ from thumbnail</translation>
 <context>
     <name>TalkingTreeView</name>
     <message>
-        <location filename="../talkingtreeview.cpp" line="23"/>
+        <location filename="../talkingtreeview.cpp" line="51"/>
         <source>Drag and drop one or more image\n or video files here</source>
         <translation>Drag and drop one or more image\n or video files here</translation>
     </message>
@@ -617,44 +617,44 @@ from thumbnail</translation>
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="39"/>
-        <location filename="../twitterclient.cpp" line="69"/>
-        <location filename="../twitterclient.cpp" line="82"/>
-        <location filename="../twitterclient.cpp" line="103"/>
-        <location filename="../twitterclient.cpp" line="110"/>
-        <location filename="../twitterclient.cpp" line="116"/>
-        <location filename="../twitterclient.cpp" line="123"/>
+        <location filename="../twitterclient.cpp" line="65"/>
+        <location filename="../twitterclient.cpp" line="94"/>
+        <location filename="../twitterclient.cpp" line="106"/>
+        <location filename="../twitterclient.cpp" line="127"/>
+        <location filename="../twitterclient.cpp" line="134"/>
+        <location filename="../twitterclient.cpp" line="140"/>
+        <location filename="../twitterclient.cpp" line="147"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="40"/>
+        <location filename="../twitterclient.cpp" line="66"/>
         <source>First set twitter username and password in options</source>
         <translation>First set Twitter username and password in options</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="70"/>
+        <location filename="../twitterclient.cpp" line="95"/>
         <source>Could not send url to Twitter</source>
         <translation>Could not send url to Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="83"/>
-        <location filename="../twitterclient.cpp" line="124"/>
+        <location filename="../twitterclient.cpp" line="107"/>
+        <location filename="../twitterclient.cpp" line="148"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Could not post to twitter. Wrong server response.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="104"/>
+        <location filename="../twitterclient.cpp" line="128"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Could not post to twitter. Wrong credentials.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="111"/>
+        <location filename="../twitterclient.cpp" line="135"/>
         <source>Failed to update twitter status.</source>
         <translation>Failed to update twitter status.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="117"/>
+        <location filename="../twitterclient.cpp" line="141"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Could not post to twitter. Internal error.</translation>
     </message>
@@ -662,17 +662,17 @@ from thumbnail</translation>
 <context>
     <name>TwitterWindow</name>
     <message>
-        <location filename="../twitterwindow.cpp" line="47"/>
+        <location filename="../twitterwindow.cpp" line="75"/>
         <source>Symbols left: %1</source>
         <translation>Symbols left: %1</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="73"/>
+        <location filename="../twitterwindow.cpp" line="101"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="73"/>
+        <location filename="../twitterwindow.cpp" line="101"/>
         <source>You have not entered username or password</source>
         <translation>You have not entered username or password</translation>
     </message>
@@ -715,66 +715,66 @@ from thumbnail</translation>
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="57"/>
-        <location filename="../updatechecker.cpp" line="71"/>
-        <location filename="../updatechecker.cpp" line="84"/>
+        <location filename="../updatechecker.cpp" line="85"/>
+        <location filename="../updatechecker.cpp" line="99"/>
+        <location filename="../updatechecker.cpp" line="112"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="27"/>
+        <location filename="../updatechecker.cpp" line="55"/>
         <source>Please wait...</source>
         <translation>Please wait...</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="28"/>
+        <location filename="../updatechecker.cpp" line="56"/>
         <source>Update checkup is currently in progress.</source>
         <translation>Update checkup is currently in progress.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="58"/>
+        <location filename="../updatechecker.cpp" line="86"/>
         <source>Could not check for updates. Please try again later</source>
         <translation>Could not check for updates. Please try again later</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="72"/>
+        <location filename="../updatechecker.cpp" line="100"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>Could not check for updates. Wrong server response.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="85"/>
+        <location filename="../updatechecker.cpp" line="113"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>Could not check for updates. No versions found.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="121"/>
+        <location filename="../updatechecker.cpp" line="150"/>
         <source>Yes</source>
         <translation>Yes</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="122"/>
+        <location filename="../updatechecker.cpp" line="151"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="124"/>
+        <location filename="../updatechecker.cpp" line="153"/>
         <source>Update available</source>
         <translation>Update available</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="123"/>
+        <location filename="../updatechecker.cpp" line="152"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Lastest version is %1. Do you want to update?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="111"/>
-        <location filename="../updatechecker.cpp" line="135"/>
+        <location filename="../updatechecker.cpp" line="140"/>
+        <location filename="../updatechecker.cpp" line="164"/>
         <source>No updates available</source>
         <translation>No updates available</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="112"/>
-        <location filename="../updatechecker.cpp" line="136"/>
+        <location filename="../updatechecker.cpp" line="141"/>
+        <location filename="../updatechecker.cpp" line="165"/>
         <source>You have lastest version of application.</source>
         <translation>You have lastest version of application.</translation>
     </message>
@@ -782,7 +782,7 @@ from thumbnail</translation>
 <context>
     <name>WindowsExplorerIntegrator</name>
     <message>
-        <location filename="../windowsexplorerintegrator.cpp" line="25"/>
+        <location filename="../windowsexplorerintegrator.cpp" line="53"/>
         <source>Open with ImageShack Uploader</source>
         <translation>Open with ImageShack Uploader</translation>
     </message>

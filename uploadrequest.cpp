@@ -51,8 +51,6 @@ UploadRequest::UploadRequest(QSharedPointer<Media> smedia, QHttp *)
     hostname = UPLOAD_HOSTNAME;
     filename = media->filepath();
 
-    data = media->getData();
-
     finished = false;
     failed = false;
     aborted = false;

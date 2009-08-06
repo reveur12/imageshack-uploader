@@ -10,6 +10,10 @@ LIBS += -L. \
     -lavutil
 INCLUDEPATH += qtsingleapplication
 
+UNIX_TRANSLATIONS_DIR = "/usr/share/imageshackuploader/translations"
+
+DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
+
 VERSION = 2.0
 DEFINES += VERSION="\\\"$$VERSION\\\""
 
@@ -101,8 +105,11 @@ target.path = $$[QT_INSTALL_BINS]
 win32:target.path = release
 trans.path = /usr/share/imageshack/translations
 win32:trans.path = release/translations
+macx:trans.path = Contents/Resources
 trans.files += translations/*qm
 INSTALLS += target trans
+
+QMAKE_BUNDLE_DATA += trans
 
 deb.target = deb
 deb.commands = rm -rf deb && \

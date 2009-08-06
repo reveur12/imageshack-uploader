@@ -49,7 +49,6 @@ Media::Media(QString filename)
     toolarge = false;
     valid = readfile.open(QFile::ReadOnly);
     if (!valid) return;
-    data = (readfile.readAll());
     readfile.close();
     file = filename;
     filesize = QFile(filename).size();
@@ -90,7 +89,7 @@ Media::Media(QString filename)
     if (mediaClass == "image")
     {
         QImage image;
-        valid = image.loadFromData(data);
+        valid = image.load(filename);
         if (!valid) return;
         image_width = image.width();
         image_height = image.height();
@@ -172,7 +171,7 @@ QImage Media::make_icon()
     if (thumb.isNull())
     {
         QImage image;
-        image.loadFromData(data);
+        image.load(filepath());
         thumb = make_thumbnail(image);
     }
     if (width()>height())
@@ -196,7 +195,7 @@ QImage Media::getPreview()
     if (getClass() == "image")
     {
         QImage image;
-        image.loadFromData(data);
+        image.load(filepath());
         if (width()<800 && height()<600)
             return image;
         return (width()>height())?image.scaledToWidth(800, Qt::SmoothTransformation):
@@ -242,7 +241,7 @@ void Media::setRemoveSize(bool toremovesize)
 
 QByteArray Media::getData()
 {
-    return data;
+    return data();
 }
 
 bool Media::getPrivate()
@@ -270,7 +269,11 @@ QString Media::formatedSize()
     return formatSize(size());
 }
 
-
+QByteArray Media::data()
+{
+    QFile file(filepath());
+    return file.readAll();
+}
 
 QString Media::formatSize(int bytes)
 {

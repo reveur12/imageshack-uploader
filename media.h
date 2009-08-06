@@ -66,12 +66,12 @@ public:
     bool operator=(const Media other);
     bool isValid();
     bool isTooLarge();
+    QByteArray data();
 
 private:
     int image_width;
     int image_height;
     int filesize;
-    QByteArray data;
     QString file;
     QImage ic, thumb;
     QString mediaType;

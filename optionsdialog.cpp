@@ -66,8 +66,15 @@ QDir OptionsDialog::translationsDir()
     QDir dir(QApplication::applicationDirPath());
     dir.cd("translations");
     return dir;
-#else
-    return QDir("/usr/share/imageshack/translations");
+#endif
+#ifdef Q_OS_MAC
+    QDir dir(QApplication::applicationDirPath());
+    dir.cdUp();
+    dir.cd("Resource");
+    return dir;
+#endif
+#ifdef Q_OS_UNIX
+    return QDir(UNIX_TRANSLATIONS_DIR);
 #endif
 }
 
