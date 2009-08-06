@@ -2,13 +2,16 @@ TEMPLATE = app
 include(qtsingleapplication/qtsingleapplication.pri)
 QT += network \
     xml
-TARGET = imageshack
+TARGET = ImageShackUploader
 LIBS += -L. \
     -lavformat \
     -lavcodec \
     -lswscale \
-    -lavutil# -static
+    -lavutil -static
 INCLUDEPATH += qtsingleapplication
+
+VERSION = 2.0
+DEFINES += VERSION="\\\"$$VERSION\\\""
 
 DEVKEY = $$(IMAGESHACK_DEVELOPER_KEY)
 isEmpty(DEVKEY): error(IMAGESHACK_DEVELOPER_KEY variable should be set for building)
@@ -88,8 +91,10 @@ FORMS += mainwindow.ui \
     copyabletextedit.ui \
     twitterwindow.ui
 RESOURCES += images_rc.qrc
+
 TRANSLATIONS += translations/ru_RU.ts \
                 translations/en_US.ts
+
 win32:RC_FILE = windowsicon.rc
 macx:ICON = macicon.icns
 target.path = $$[QT_INSTALL_BINS]
@@ -98,3 +103,34 @@ trans.path = /usr/share/imageshack/translations
 win32:trans.path = release/translations
 trans.files = translations/*qm
 INSTALLS += target trans
+
+deb.target = deb
+deb.commands = rm -rf deb && \
+               mkdir -p deb/usr/bin && \
+               mkdir -p deb/usr/share/imageshack/translations && \
+               cp $$TARGET deb/usr/bin/imageshack && \
+               cp translations/ru_RU.qm deb/usr/share/imageshack/translations/ru_RU.qm && \
+               cp translations/en_US.qm deb/usr/share/imageshack/translations/en_US.qm && \
+               mkdir deb/DEBIAN && \
+               echo \"Package: imageshack\" > deb/DEBIAN/control && \
+               echo \"Version: $$VERSION\" >> deb/DEBIAN/control && \
+               echo \"Section: web\" >> deb/DEBIAN/control && \
+               echo \"Priority: optional\" >> deb/DEBIAN/control && \
+               echo \"Architecture: all\" >> deb/DEBIAN/control && \
+               echo \"Essential: no\" >> deb/DEBIAN/control && \
+               echo \"Depends: ffmpeg, libqt4-gui, libqt4-core, libqt4-xml\" >> deb/DEBIAN/control && \
+               echo \"Installed-Size: 584183\" >> deb/DEBIAN/control && \
+               echo \"Maintainer: ImageShack Corp. <support@imageshack.us>\" >> deb/DEBIAN/control && \
+               echo "Description: A simple application for uploading one or more images to Imageshack. You may upload to your account or anonymously. Features included tags, previews, image resizing, drag and drop, link creation and more." >> deb/DEBIAN/control && \
+               dpkg -b deb imageshack-$$VERSION\.deb
+
+rpm.target = rpm
+rpm.commands = alien --to-rpm imageshack-$$VERSION\.deb && \
+               mv imageshack-$$VERSION-2.i686.rpm imageshack-2.0\.rpm
+rpm.depends = deb
+
+packages.target = packages
+packages.depends = deb\
+                   rpm
+
+QMAKE_EXTRA_TARGETS += deb rpm packages

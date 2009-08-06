@@ -30,8 +30,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define DEFINES_H
 
 
-#define VERSION "2.0"
-
 #define UPDATE_HOSTNAME "toolbar.imageshack.us"
 #define UPDATE_PATH "/windows-uploader/version.xml"
 
