@@ -7,7 +7,7 @@ LIBS += -L. \
     -lavformat \
     -lavcodec \
     -lswscale \
-    -lavutil -static
+    -lavutil
 INCLUDEPATH += qtsingleapplication
 
 VERSION = 2.0
