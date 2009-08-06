@@ -122,11 +122,12 @@ deb.commands = rm -rf deb && \
                echo \"Installed-Size: 584183\" >> deb/DEBIAN/control && \
                echo \"Maintainer: ImageShack Corp. <support@imageshack.us>\" >> deb/DEBIAN/control && \
                echo "Description: A simple application for uploading one or more images to Imageshack. You may upload to your account or anonymously. Features included tags, previews, image resizing, drag and drop, link creation and more." >> deb/DEBIAN/control && \
-               dpkg -b deb imageshack-$$VERSION\.deb
+               mkdir dist && \
+               dpkg -b deb dist/imageshack-$$VERSION\.deb
 
 rpm.target = rpm
-rpm.commands = alien --to-rpm imageshack-$$VERSION\.deb && \
-               mv imageshack-$$VERSION-2.i686.rpm imageshack-2.0\.rpm
+rpm.commands = sudo alien --to-rpm dist/imageshack-$$VERSION\.deb && \
+               mv imageshack-$$VERSION-2.i686.rpm dist/imageshack-2.0\.rpm
 rpm.depends = deb
 
 packages.target = packages
