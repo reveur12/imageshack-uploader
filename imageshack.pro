@@ -9,8 +9,11 @@ LIBS += -L. \
     -lswscale \
     -lavutil# -static
 INCLUDEPATH += qtsingleapplication
-DEFINES += DEVELOPER_KEY="\\\"$$(IMAGESHACK_DEV_KEY)\\\""
-warning($$DEFINES)
+
+DEVKEY = $$(IMAGESHACK_DEVELOPER_KEY)
+isEmpty(DEVKEY): error(IMAGESHACK_DEVELOPER_KEY variable should be set for building)
+DEFINES += DEVELOPER_KEY="\\\"$$DEVKEY\\\""
+
 SOURCES += main.cpp \
     mainwindow.cpp \
     uploadrequest.cpp \

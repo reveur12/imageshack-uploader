@@ -1,0 +1,11 @@
+syntax: glob
+
+*.svn
+*.o
+moc_*
+.svnignore
+*.tmp
+ui_*
+*qm
+qrc_*
+Makefile
