@@ -114,15 +114,16 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
             inProgress = false;
             return;
         }
-#ifdef Q_OS_MAC
-        QString platform = "MAC";
-#endif
+
+        QString platform;
+
 #ifdef Q_OS_WIN
-        QString platform = "WIN";
+        platform = "WIN";
 #endif
-#ifdef Q_OS_UNIX
-        QString platform = "UNIX";
+#ifdef Q_OS_MAC
+        platform = "MAC";
 #endif
+        if (platform.isEmpty()) platform = "UNIX";
         QStringList versions;
         for(unsigned int i=0; i<versionsx.length(); i++)
         {
