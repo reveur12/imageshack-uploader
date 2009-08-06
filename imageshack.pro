@@ -101,7 +101,7 @@ target.path = $$[QT_INSTALL_BINS]
 win32:target.path = release
 trans.path = /usr/share/imageshack/translations
 win32:trans.path = release/translations
-trans.files = translations/*qm
+trans.files += translations/*qm
 INSTALLS += target trans
 
 deb.target = deb
@@ -134,4 +134,10 @@ packages.target = packages
 packages.depends = deb\
                    rpm
 
-QMAKE_EXTRA_TARGETS += deb rpm packages
+clean.target = clean
+clean.commands = rm -f moc_*.cpp && rm -f qrc_*_rc.cpp && rm -f *~ core *.core && \
+                rm -f ui_*.h && rm -f *.o && rm -rf $$TARGET && rm -rf dist && rm -rf deb
+macx:clean.commands = rm -f moc_*.cpp && rm -f qrc_*_rc.cpp && rm -f *~ core *.core && \
+                rm -f ui_*.h && rm -f *.o && rm -rf $$TARGET\.app && rm -rf dist && rm -rf deb
+
+QMAKE_EXTRA_TARGETS += deb rpm packages clean
