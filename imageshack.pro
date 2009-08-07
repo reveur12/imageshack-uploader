@@ -5,10 +5,7 @@ QT += network \
 TARGET = ImageShackUploader
 
 macx {
-LIBS += $$system(pkg-config libavcodec --libs-only-l --static)
-LIBS += $$system(pkg-config libavformat --libs-only-l --static)
-LIBS += $$system(pkg-config libswscale --libs-only-l --static)
-LIBS += $$system(pkg-config libavutil --libs-only-l --static)
+LIBS += $$system(./mac_libs.py)
 }
 
 win32 {
