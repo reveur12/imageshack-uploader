@@ -2,14 +2,21 @@
 #
 # Build static list of ffmpeg libraries
 
-import sys,re,os
+import sys,re,os,platform
 from subprocess import Popen, PIPE
 
 LIBS=['libavcodec','libavformat','libswscale','libavutil']
 LIBPATHS = ['/usr/lib','/usr/local/lib']
 EXCLUDE_LIBS = ['dirac_decoder']
 
+
+
 def main():
+
+    if platform.system()!='Darwin':
+        print " ".join(["-l%s" % l[3:] for l in LIBS])
+        sys.exit(0);
+    
     lib_paths = LIBPATHS
     for l in LIBS:
         o = Popen(["pkg-config", l, "--static", "--libs"], stdout=PIPE)\

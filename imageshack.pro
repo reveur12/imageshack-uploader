@@ -4,8 +4,8 @@ QT += network \
     xml
 TARGET = ImageShackUploader
 
-macx {
-LIBS += $$system(./mac_libs.py)
+unix {
+LIBS += $$system(./unix_libs.py)
 }
 
 win32 {
@@ -15,15 +15,6 @@ LIBS += -L. \
     -lswscale \
     -lavutil
 }
-
-unix {
-LIBS += -L. \
-    -lavformat \
-    -lavcodec \
-    -lswscale \
-    -lavutil
-}
-
 
 INCLUDEPATH += qtsingleapplication
 UNIX_TRANSLATIONS_DIR = "/usr/share/imageshackuploader/translations"
