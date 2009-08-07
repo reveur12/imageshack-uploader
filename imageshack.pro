@@ -3,11 +3,31 @@ include(qtsingleapplication/qtsingleapplication.pri)
 QT += network \
     xml
 TARGET = ImageShackUploader
+
+macx {
+LIBS += $$system(pkg-config libavcodec --libs-only-l --static)
+LIBS += $$system(pkg-config libavformat --libs-only-l --static)
+LIBS += $$system(pkg-config libswscale --libs-only-l --static)
+LIBS += $$system(pkg-config libavutil --libs-only-l --static)
+}
+
+win32 {
 LIBS += -L. \
     -lavformat \
     -lavcodec \
     -lswscale \
     -lavutil
+}
+
+unix {
+LIBS += -L. \
+    -lavformat \
+    -lavcodec \
+    -lswscale \
+    -lavutil
+}
+
+
 INCLUDEPATH += qtsingleapplication
 UNIX_TRANSLATIONS_DIR = "/usr/share/imageshackuploader/translations"
 DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
