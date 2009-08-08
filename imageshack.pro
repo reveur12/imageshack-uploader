@@ -5,11 +5,9 @@ QT += network \
 TARGET = ImageShackUploader
 
 unix {
-LIBS +=  \
-    -lavformat \
-    -lavcodec \
-    -lswscale \
-    -lavutil
+LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
+isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
+LIBS += $$LIBRARIES
 }
 
 win32 {
