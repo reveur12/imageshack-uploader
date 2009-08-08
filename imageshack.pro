@@ -111,6 +111,7 @@ win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
 trans.files += translations/*qm
 #trans.commands = lrelease translations/*qm
+mactrans.target = mactrans
 mactrans.files += translations/en_US.ts translations/ru_RU.ts
 mactrans.commands = lrelease translations/*qm
 mactrans.path = Contents/Resources
