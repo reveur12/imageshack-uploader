@@ -110,13 +110,13 @@ trans.path = $$UNIX_TRANSLATIONS_DIR
 win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
 trans.files += translations/*qm
-#trans.commands = lrelease translations/*qm
+trans.commands = lrelease translations/*ts
 mactrans.target = mactrans
-mactrans.files += translations/en_US.ts translations/ru_RU.ts
-mactrans.commands = lrelease translations/*qm
+mactrans.files += translations/en_US.qm translations/ru_RU.qm
+mactrans.commands = lrelease translations/*ts
 mactrans.path = Contents/Resources
 INSTALLS += target \
-    trans
+            trans
 
 QMAKE_BUNDLE_DATA += mactrans
 
@@ -280,7 +280,7 @@ QMAKE_EXTRA_TARGETS += deb \
     rpm \
     dmg \
     packages \
-    clean trans
+    clean trans mactrans
 
 dmg.target = dmg
 dmg.depends = all
