@@ -114,7 +114,9 @@ mactrans.commands = lrelease translations/*qm
 mactrans.path = Contents/Resources
 INSTALLS += target \
     trans
+
 QMAKE_BUNDLE_DATA += mactrans
+
 deb.target = deb
 deb.commands = rm \
     -rf \
@@ -261,40 +263,23 @@ clean.commands = rm \
     rm \
     -rf \
     deb
-macx:clean.commands = rm \
-    -f \
-    moc_*.cpp \
-    && \
-    rm \
-    -f \
-    qrc_*_rc.cpp \
-    && \
-    rm \
-    -f \
-    *~ \
-    core \
-    *.core \
-    && \
-    rm \
-    -f \
-    ui_*.h \
-    && \
-    rm \
-    -f \
-    *.o \
-    && \
-    rm \
-    -rf \
-    $$TARGET\.app \
-    && \
-    rm \
-    -rf \
-    dist \
-    && \
-    rm \
-    -rf \
-    deb
+macx:clean.commands = rm -f  moc_*.cpp \
+    && rm -f qrc_*_rc.cpp \
+    && rm -f *~ core *.core \
+    && rm -f ui_*.h \
+    && rm -f *.o \
+    && rm -rf $$TARGET\.app \
+    && rm -rf ImageShackUploader-$$VERSION\.dmg \
+    && rm -rf dist \
+    && rm -rf deb
+
 QMAKE_EXTRA_TARGETS += deb \
     rpm \
+    dmg \
     packages \
     clean trans
+
+dmg.target = dmg
+dmg.depends = all
+dmg.commands = ./build_dmg.sh ImageShackUploader-$$VERSION\.dmg
+
