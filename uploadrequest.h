@@ -36,6 +36,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QHttpResponseHeader>
 #include <QSharedPointer>
 #include <QTimer>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 
 class UploadRequest : public QObject
 {
@@ -60,22 +62,6 @@ public:
 private:
     QString mediaClass;
     QString mediaType;
-  /*"video/mp4",
-    "wmv"       => "video/x-ms-wmv",
-    "3gp"       => "video/3gpp",
-    "avi"       => "video/avi",
-    "mov"       => "video/quicktime",
-    "mkv"       => "video/x-matroska"
-
-    "jpg"       => "image/jpeg",
-    "jpeg"      => "image/jpeg",
-    "png"       => "image/png",
-    "gif"       => "image/gif",
-    "bmp"       => "image/bmp",
-    "tiff"      => "image/tiff",
-    "tif"       => "image/tiff",
-    "swf"       => "application/x-shockwave-flash",
-    "pdf"       => "application/pdf", */
     QString filename;
     QString optimize;
     QStringList tags;
@@ -102,13 +88,23 @@ private:
 
     QTimer connectTimer, answerTimer;
 
+    QSharedPointer<Media> media;
+
+
+    QNetworkAccessManager qnam;
+    QNetworkReply* rep;
+
 public slots:
     void headerReceiver(QHttpResponseHeader);
     void requestFinished ( int id, bool error );
+    void updateProgress(qint64, qint64);
     void updateProgress(int, int);
     void checkConnect();
     void checkAnswer();
     void stateReceiver(int);
+
+    void uploadFailed(QNetworkReply::NetworkError);
+    void uploadFinished();
 
 signals:
     void progress(int);
