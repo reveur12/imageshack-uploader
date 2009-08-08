@@ -19,7 +19,6 @@ def main():
 
     # copy frameworks
     for f in FRAMEWORKS:
-        print "Copying %s" % f
         if call(["cp", "-r", "%s/%s.framework" % (QT_LIB_PATH,f), app_frameworks_path]) != 0:
             print "Error copying frameworks"
             sys.exit(1)
@@ -66,20 +65,24 @@ def main():
                "@executable_path/../Frameworks/%s" % (cpath), \
                "%s/Contents/Frameworks/%s" % (app_path,fp)\
                ]
-        print cmd
         if call(cmd) != 0:
             print "Error executing: %s" % cmd
             sys.exit(1)
+
+    # build DMG
+    if os.path.exists(dmg_path):
+        os.unlink(dmg_path)
+
+
+    cmd = ['hdiutil', 'create', '-fs', 'HFS+', '-srcfolder', app_path, '-volname', app_path[:-4], dmg_path]
+    if call(cmd) != 0:
+        print "Error executing: %s" % cmd
+        sys.exit(1)
 
 
 if __name__ == "__main__":
     main()
 
-
-#cp -R /path/to/Qt/lib/QtCore.framework
-#         plugandpaint.app/Contents/Frameworks
-#cp -R /path/to/Qt/lib/QtGui.framework
-#        plugandpaint.app/Contents/Frameworks
 
 # rm -f $DMG
 #hdiutil create -fs HFS+ -srcfolder ImageShackUploader.app  -volname ImageShackUploader $DMG
