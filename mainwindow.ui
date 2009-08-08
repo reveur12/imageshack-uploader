@@ -119,7 +119,6 @@
      <string>File</string>
     </property>
     <addaction name="actionOptions"/>
-    <addaction name="actionUpdate"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuOptione">
@@ -127,6 +126,7 @@
      <string>Help</string>
     </property>
     <addaction name="actionAbout"/>
+    <addaction name="actionUpdate"/>
     <addaction name="actionSupport"/>
    </widget>
    <addaction name="menuFile"/>
@@ -137,7 +137,7 @@
     <string>About</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::TextHeuristicRole</enum>
+    <enum>QAction::AboutRole</enum>
    </property>
   </action>
   <action name="actionSupport">
@@ -145,7 +145,7 @@
     <string>Support</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::AboutRole</enum>
+    <enum>QAction::TextHeuristicRole</enum>
    </property>
   </action>
   <action name="actionOptions">
@@ -161,7 +161,7 @@
     <string>Check for updates</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::AboutRole</enum>
+    <enum>QAction::TextHeuristicRole</enum>
    </property>
   </action>
   <action name="actionExit">
