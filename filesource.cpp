@@ -1,13 +1,13 @@
 #include "filesource.h"
 #include "defines.h"
-#include <QHttp>
-#include <QHttpRequestHeader>
 #include <QDebug>
 
-FileSource::FileSource(QByteArray image,
-                       QString filename,
+FileSource::FileSource(QSharedPointer<Media> media,
                        QVector<QPair<QString,QString> > fields)
 {
+    QString filename = media.data()->filepath();
+    QString mediaClass = media.data()->getClass();
+    QString mediaType = media.data()->getType();
     QString host;
     if ((mediaClass == "image") || (mediaClass == "application"))
         host = "load"+QString::number((qrand()%9)+1)+"." + UPLOAD_HOSTNAME;
@@ -15,13 +15,6 @@ FileSource::FileSource(QByteArray image,
         host = VIDEO_UPLOAD_HOSTNAME;
     QString boundary("UPLOADERBOUNDARY");
     QString nl = "\r\n";
-
-    QHttpRequestHeader header("POST", UPLOAD_PATH, 1, 1);
-    header.addValue("Content-type",
-                    "multipart/form-data, boundary=\"" + boundary+"\"");
-    header.addValue("Cache-Control", "no-cache");
-    header.addValue("Host", host);
-    header.addValue("Accept","*/*");
 
     header.append("--"); header.append(boundary); header.append(nl);
     header.append("Content-Disposition: ");
@@ -48,103 +41,71 @@ FileSource::FileSource(QByteArray image,
     footer.append(boundary);
     footer.append(nl);
 
-
-    data.open(filename, QIODevice::ReadOnly);
-    pos = 0;
+    data = new QFile(filename);
+    data->open(QIODevice::ReadOnly);
+    curPos = 0;
 }
 
-virtual bool FileSource::atEnd ()
+bool FileSource::atEnd () const
 {
     return curPos == size();
 }
 
-virtual bool FileSource::canReadLine ()
+qint64 FileSource::size () const
 {
-    return pos<size();
+    return (header.size() + data->size() + footer.size());
 }
-
-virtual void FileSource::close ()
+qint64 FileSource::readData(char* to, qint64 max)
 {
-    data.close();
-    return True;
-}
+    QByteArray buf;
 
-virtual bool FileSource::isSequential ()
-{
-    return False;
-}
-
-virtual bool FileSource::open ( OpenMode mode )
-{
-    return true;
-}
-
-virtual qint64 FileSource::pos ()
-{
-    return curPos;
-}
-
-virtual bool FileSource::reset ()
-{
-    curPos = 0;
-    return True;
-}
-
-virtual bool FileSource::seek ( qint64 pos )
-{
-    curPos = pos;
-    return true;
-}
-
-virtual qint64 FileSource::size ()
-{
-    return header.size() + data.size() + footer.size();
-}
-
-virtual bool FileSource::waitForBytesWritten ( int msecs )
-{
-    qDebug() << "waitForBytesWritten called";
-}
-
-virtual bool FileSource::waitForReadyRead ( int msecs )
-{
-    qDebug() << "waitForReadyRead called";
-}
-
-qint64 FileSource::read ( char * data, qint64 maxSize )
-{
-    qDebug() << "WRONG READ CALLED!!!";
-}
-
-QByteArray FileSource::read ( qint64 maxSize )
-{
-    QByteArray res;
-    while (maxSize)
+    while ((curPos < header.size()) && buf.size() < max)
     {
-        if (curPos < header.size())
-        {
-            res.append(header.at(curPos));
-            maxsize -= 1;
-            pos++;
-        }
-        else if (curPos < (header.size() + data.size()))
-        {
-            data.seek(pos - header.size());
-            QByteArray data = data.read(maxSize);
-            maxSize -= data.size();
-            curPos += data.size();
-        }
-        else if (curPos < size())
-        {
-            res.append(footer.at(curPos));
-            pos++;
-        }
-        else return res;
+        buf.append(header.at(curPos));
+        curPos++;
     }
-    return res;
+    while ((curPos < (header.size()+data->size())) && buf.size() < max)
+    {
+        // read data
+        int lpos = curPos - header.size();
+        data->seek(lpos);
+        if ( (data->size() - lpos) < max )
+        {
+            buf.append(data->read(data->size()-lpos));
+            curPos += data->size()-lpos;
+        }
+        else
+        {
+            int oldbufsize = buf.size();
+            buf.append(data->read(max - oldbufsize));
+            curPos += max - oldbufsize;
+        }
+    }
+    int fullsize = header.size() + data->size() + footer.size();
+    while ((curPos >= ( header.size()+data->size()) && (curPos < fullsize)) && buf.size() < max)
+    {
+        buf.append(footer.at(curPos-header.size()-data->size()));
+        curPos++;
+    }
+
+    memcpy(to, buf.data(), buf.size());
+
+    if (buf.size())
+        return buf.size();
+    else return -1;
 }
 
-QByteArray FileSource::readAll ()
+qint64 FileSource::writeData ( const char *, qint64)
 {
-    qDebug() << "READ ALL CALLED!!!!";
+    return -1;
+}
+
+qint64 FileSource::bytesAvailable() const
+{
+    return size() + QIODevice::bytesAvailable() - curPos;
+}
+
+bool FileSource::isSequential() const
+{
+    return false;
 }

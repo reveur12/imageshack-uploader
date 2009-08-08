@@ -4,32 +4,29 @@
 #include <QIODevice>
 #include <QFile>
 #include <QByteArray>
+#include <QPair>
+#include <QSharedPointer>
+#include <QVector>
+#include "media.h"
 
 class FileSource : public QIODevice
 {
+    Q_OBJECT
 public:
-    FileSource(QByteArray image,
-               QString filename,
+    FileSource(QSharedPointer<Media> media,
                QVector<QPair<QString,QString> > fields);
-//virtual ~QIODevice ()
-    virtual bool atEnd (); const
-    virtual bool canReadLine ();
-    virtual void close ();
-    virtual bool isSequential ();
-    virtual bool open ( OpenMode mode );
-    virtual qint64 pos ();
-    virtual bool reset ();
-    virtual bool seek ( qint64 pos );
-    virtual qint64 size ();
-    virtual bool waitForBytesWritten ( int msecs );
-    virtual bool waitForReadyRead ( int msecs );
-    qint64 read ( char * data, qint64 maxSize );
-    QByteArray read ( qint64 maxSize );
-    QByteArray readAll ();
+    bool atEnd () const;
+    qint64 size () const;
+    qint64 readData(char*, qint64);
+    qint64 writeData ( const char * data, qint64 maxSize );
+    qint64 bytesAvailable() const;
+    bool isSequential() const;
 
 private:
     QByteArray header, footer;
     int curPos;
-    QFile data;
+    QFile *data;
+
+};
 
 #endif // FILESOURCE_H
