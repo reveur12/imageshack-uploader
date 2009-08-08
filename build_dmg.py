@@ -51,13 +51,25 @@ def main():
                "@executable_path/../Frameworks/%s" % (fp), \
                "%s/Contents/MacOS/%s" % (app_path,app_path[:-4])
                ]
-        print cmd
         if call(cmd) != 0:
             print "Error executing: %s" % cmd
             sys.exit(1)
 
-
-
+    # adjust dependencies from QtCore
+    cpath=fpaths['QtCore']
+    for f in FRAMEWORKS:
+        if f=='QtCore':
+            continue
+        fp = fpaths[f]
+        cmd = ["install_name_tool", "-change", \
+               "%s/%s" % (QT_LIB_PATH,cpath), \
+               "@executable_path/../Frameworks/%s" % (cpath), \
+               "%s/Contents/Frameworks/%s" % (app_path,fp)\
+               ]
+        print cmd
+        if call(cmd) != 0:
+            print "Error executing: %s" % cmd
+            sys.exit(1)
 
 
 if __name__ == "__main__":
