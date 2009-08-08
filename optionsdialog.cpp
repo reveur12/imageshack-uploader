@@ -70,7 +70,7 @@ QDir OptionsDialog::translationsDir()
 #ifdef Q_OS_MAC
     QDir dir(QApplication::applicationDirPath());
     dir.cdUp();
-    dir.cd("Resource");
+    dir.cd("Resources");
     return dir;
 #endif
 #ifdef Q_OS_UNIX
