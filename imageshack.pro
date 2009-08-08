@@ -113,10 +113,13 @@ trans.files += translations/*qm
 trans.commands = lrelease translations/*ts
 mactrans.target = mactrans
 mactrans.files += translations/en_US.qm translations/ru_RU.qm
-mactrans.commands = lrelease translations/*ts
+mactrans.commands = lrelease-mac translations/*ts
 mactrans.path = Contents/Resources
 INSTALLS += target \
             trans
+
+PRE_TARGETDEPS = trans
+macx:PRE_TARGETDEPS = mactrans
 
 QMAKE_BUNDLE_DATA += mactrans
 
@@ -280,7 +283,9 @@ QMAKE_EXTRA_TARGETS += deb \
     rpm \
     dmg \
     packages \
-    clean trans mactrans
+    clean \
+    trans \
+    mactrans
 
 dmg.target = dmg
 dmg.depends = all
