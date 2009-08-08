@@ -147,12 +147,11 @@ QString UploadRequest::post()
     qDebug() << fields;
     fields << qMakePair(QString("key"), key);
 
-    uploadFile(data, filename, fields);
+    uploadFile(filename, fields);
     return QString();
 }
 
-void UploadRequest::uploadFile(QByteArray image,
-                               QString filename,
+void UploadRequest::uploadFile(QString filename,
                                QVector<QPair<QString,QString> > fields)
 {
     QString host;
@@ -200,8 +199,9 @@ void UploadRequest::uploadFile(QByteArray image,
     bytes.append(boundary);
     bytes.append(nl);*/
 
-    FileSource *data = new FileSource(media, fields);
-    data->open(QIODevice::ReadOnly);
+    //FileSource *data = new FileSource(media, fields);
+    data = QSharedPointer<FileSource>(new FileSource(media, fields));
+    data.data()->open(QIODevice::ReadOnly);
     /*QFile f("/home/a2k/test.txt");
     f.open(QIODevice::WriteOnly);
     f.write(data->readAll());
@@ -221,7 +221,7 @@ void UploadRequest::uploadFile(QByteArray image,
     //QByteArray res = data->readAll();
     //realdata->append(res);
     //return;
-    rep = qnam.post(req, data);//data);
+    rep = qnam.post(req, data.data());//data);
 
     connect(rep,
             SIGNAL(uploadProgress (qint64, qint64)),

@@ -38,6 +38,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QTimer>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include "filesource.h"
 
 class UploadRequest : public QObject
 {
@@ -73,10 +74,10 @@ private:
     QString key;
 
     void updateHeaders();
-    void uploadFile(QByteArray, QString, QVector<QPair<QString, QString> >);
+    void uploadFile(QString, QVector<QPair<QString, QString> >);
     QString hostname;
 
-    QByteArray data;
+    //QByteArray data;
 
 
     QHttp realhttp;
@@ -90,6 +91,7 @@ private:
 
     QSharedPointer<Media> media;
 
+    QSharedPointer<FileSource> data;
 
     QNetworkAccessManager qnam;
     QNetworkReply* rep;
