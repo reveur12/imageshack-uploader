@@ -281,5 +281,5 @@ QMAKE_EXTRA_TARGETS += deb \
 
 dmg.target = dmg
 dmg.depends = all
-dmg.commands = ./build_dmg.sh ImageShackUploader-$$VERSION\.dmg
+dmg.commands = ./build_dmg.py $$TARGET\.app ImageShackUploader-$$VERSION\.dmg
 
