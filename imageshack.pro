@@ -19,6 +19,8 @@ LIBS += -L. \
 }
 
 INCLUDEPATH += qtsingleapplication
+macx:INCLUDEPATH += $$system(pkg-config --libs libavcodec libavformat libswscale libavutil | sed s/-I//)
+
 UNIX_TRANSLATIONS_DIR = "/usr/share/imageshackuploader/translations"
 DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
 VERSION = 2.0
