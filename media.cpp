@@ -40,12 +40,12 @@ Media::Media(QString filename)
 {
     valid = true;
     QFile readfile(filename);
-    if (readfile.size() > 104857600)
+    /*if (readfile.size() > 104857600)
     {
         toolarge = true;
         valid = false;
         return;
-    }
+    }*/
     toolarge = false;
     valid = readfile.open(QFile::ReadOnly);
     if (!valid) return;

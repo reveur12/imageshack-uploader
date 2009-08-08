@@ -100,6 +100,7 @@ void FileUploader::progressReceiver(int value)
 
 void FileUploader::statusReceiver(int value)
 {
+    qDebug() << "got status" << value << "from uploader";
     if (value == 2)
     {
         qDebug() << "got status 2 from uploader";
