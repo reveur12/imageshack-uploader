@@ -32,15 +32,34 @@ def main():
         m = re.match(r'^\s*([^\s]+)\s', o.split('\n')[1])
         fpaths[f]=m.group(1)[len(QT_LIB_PATH)+1:]
 
+    # adjust frameforks IDs
     for f in FRAMEWORKS:
         fp = fpaths[f]
         cmd = ["install_name_tool", "-id", \
                "@executable_path/../Frameworks/%s" % (fp), \
-            "%s/Contents/Frameworks/%s" % (app_path,fp)]
+               "%s/Contents/Frameworks/%s" % (app_path,fp)\
+               ]
         if call(cmd) != 0:
             print "Error executing: %s" % cmd
             sys.exit(1)
-        
+
+    # adjust framework refs from executable
+    for f in FRAMEWORKS:
+        fp = fpaths[f]
+        cmd = ["install_name_tool", "-change", \
+               "%s/%s" % (QT_LIB_PATH,fp), \
+               "@executable_path/../Frameworks/%s" % (fp), \
+               "%s/Contents/MacOS/%s" % (app_path,app_path[:-4])
+               ]
+        print cmd
+        if call(cmd) != 0:
+            print "Error executing: %s" % cmd
+            sys.exit(1)
+
+
+
+
+
 if __name__ == "__main__":
     main()
 
