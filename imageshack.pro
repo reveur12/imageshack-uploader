@@ -53,7 +53,8 @@ SOURCES += main.cpp \
     twitterwindow.cpp \
     videoframereader.cpp \
     gallerycreator.cpp \
-    limitedplaintextedit.cpp
+    limitedplaintextedit.cpp \
+    filesource.cpp
 HEADERS += mainwindow.h \
     uploadrequest.h \
     media.h \
@@ -83,6 +84,7 @@ HEADERS += mainwindow.h \
     videoframereader.h \
     gallerycreator.h \
     limitedplaintextedit.h \
+    filesource.h \
     defines.h
 FORMS += mainwindow.ui \
     medialistwidget.ui \

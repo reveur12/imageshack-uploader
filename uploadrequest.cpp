@@ -35,21 +35,25 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QHttpRequestHeader>
 #include <QBuffer>
 #include "defines.h"
-
 #include <QDebug>
+#include "filesource.h"
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QDataStream>
 
 UploadRequest::UploadRequest(QSharedPointer<Media> smedia, QHttp *)
 {
+    media = smedia;
     http = &realhttp;//new QHttp();
-    Media *media = smedia.data();
-    mediaClass = media->getClass();
-    mediaType = media->getType();
-    optimize = media->getResize();
-    isPublic = !(media->getPrivate());
-    removeBar = media->getRemoveSize();
+    mediaClass = media.data()->getClass();
+    mediaType = media.data()->getType();
+    optimize = media.data()->getResize();
+    isPublic = !(media.data()->getPrivate());
+    removeBar = media.data()->getRemoveSize();
     key = DEVELOPER_KEY;
     hostname = UPLOAD_HOSTNAME;
-    filename = media->filepath();
+    filename = media.data()->filepath();
 
     finished = false;
     failed = false;
@@ -158,7 +162,7 @@ void UploadRequest::uploadFile(QByteArray image,
         host = VIDEO_UPLOAD_HOSTNAME;
     qDebug() << host;
     QString boundary("UPLOADERBOUNDARY");
-    QString nl = "\r\n";
+    //QString nl = "\r\n";
 
     QHttpRequestHeader header("POST", UPLOAD_PATH, 1, 1);
     header.addValue("Content-type",
@@ -166,7 +170,7 @@ void UploadRequest::uploadFile(QByteArray image,
     header.addValue("Cache-Control", "no-cache");
     header.addValue("Host", host);
     header.addValue("Accept","*/*");
-
+/*
     //creating post data
     QByteArray bytes;
 
@@ -194,19 +198,76 @@ void UploadRequest::uploadFile(QByteArray image,
 
     bytes.append("--");
     bytes.append(boundary);
-    bytes.append(nl);
-    header.setContentLength(bytes.length());
+    bytes.append(nl);*/
+
+    FileSource *data = new FileSource(media, fields);
+    data->open(QIODevice::ReadOnly);
+    /*QFile f("/home/a2k/test.txt");
+    f.open(QIODevice::WriteOnly);
+    f.write(data->readAll());
+    return;
+    qDebug() << data->size();*/
+
+    //qDebug() << QString(host)+UPLOAD_PATH;
+    QNetworkRequest req(QUrl("http://" + QString(host) + UPLOAD_PATH));
+    //req.setHeader(QNetworkRequest::ContentLengthHeader, QString::number(data->realSize()));
+    req.setHeader(QNetworkRequest::ContentTypeHeader, QString("multipart/form-data, boundary=" + boundary) );
+
+
+    //data->readAll();
+
+    //QByteArray *realdata = new QByteArray;
+    //realdata->append(data->readAll());
+    //QByteArray res = data->readAll();
+    //realdata->append(res);
+    //return;
+    rep = qnam.post(req, data);//data);
+
+    connect(rep,
+            SIGNAL(uploadProgress (qint64, qint64)),
+            this,
+            SLOT(updateProgress(qint64, qint64)));
+    connect(rep,
+            SIGNAL(error(QNetworkReply::NetworkError)),
+            this,
+            SLOT(uploadFailed(QNetworkReply::NetworkError)));
+    connect(rep,
+            SIGNAL(finished()),
+            this,
+            SLOT(uploadFinished()));
+
+    header.setContentLength(data->size());
 
 
     http->setHost(host);
     qDebug() << "starting upload";
-    qDebug() << "Http id:" << http->currentId();
-    qDebug() << http->state();
-    reqid = http->request(header, bytes);
+    //reqid = http->request(header, data);
     qDebug() << "Emiting status";
     emit status(0);
     emit progress(0);
     qDebug() << "Started request";
+}
+
+void UploadRequest::uploadFailed(QNetworkReply::NetworkError code)
+{
+    qDebug() << "upload failed with code " << code;
+    if (failed) return;
+    failed = true;
+    emit status(2);
+}
+
+void UploadRequest::uploadFinished()
+{
+    qDebug() << "upload finished";
+    if (aborted || failed) return;
+    QString res = rep->readAll();
+    if (res.isEmpty())
+    {
+        uploadFailed(QNetworkReply::ContentNotFoundError);
+        return;
+    }
+    emit status(1);
+    emit result(res);
 }
 
 void UploadRequest::headerReceiver(QHttpResponseHeader head)
@@ -236,9 +297,17 @@ void UploadRequest::requestFinished ( int id, bool error )
     }
 }
 
+void UploadRequest::updateProgress(qint64 done, qint64 total)
+{
+//    qDebug() << "Progress:" << done << total;
+    if (done == total) answerTimer.start(10000);
+    if (total)
+    emit progress(done*100/total);
+}
+
 void UploadRequest::updateProgress(int done, int total)
 {
-    qDebug() << "Progress:" << done << total;
+//    qDebug() << "Progress:" << done << total;
     if (done == total) answerTimer.start(10000);
     if (total)
     emit progress(done*100/total);
