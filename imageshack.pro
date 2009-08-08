@@ -275,7 +275,7 @@ macx:clean.commands = rm -f  moc_*.cpp \
     && rm -f ui_*.h \
     && rm -f *.o \
     && rm -rf $$TARGET\.app \
-    && rm -rf ImageShackUploader-$$VERSION\.dmg \
+    && rm -rf ImageShackUploader.dmg \
     && rm -rf dist \
     && rm -rf deb
 
@@ -289,5 +289,5 @@ QMAKE_EXTRA_TARGETS += deb \
 
 dmg.target = dmg
 dmg.depends = all
-dmg.commands = ./build_dmg.py $$TARGET\.app ImageShackUploader-$$VERSION\.dmg
+dmg.commands = macdeployqt-mac $$TARGET\.app -dmg
 
