@@ -32,14 +32,14 @@ def main():
         m = re.match(r'^\s*([^\s]+)\s', o.split('\n')[1])
         fpaths[f]=m.group(1)[len(QT_LIB_PATH)+1:]
 
-    print fpaths
-    #for f in FRAMEWORKS:
-    #    if call(["install_name_tool", "-id", "%s/%s.framework" % (QT_LIB_PATH,f), app_frameworks_path]) != 0:
-    #        print "Error copying frameworks"
-    #        sys.exit(1)
-    #    
-    #      @executable_path/../Frameworks/QtCore.framework/Versions/4.0/QtCore
-    #    plugandpaint.app/Contents/Frameworks/QtCore.framework/Versions/4.0/QtCore
+    for f in FRAMEWORKS:
+        fp = fpaths[f]
+        cmd = ["install_name_tool", "-id", \
+               "@executable_path/../Frameworks/%s" % (fp), \
+            "%s/Contents/Frameworks/%s" % (app_path,fp)]
+        if call(cmd) != 0:
+            print "Error executing: %s" % cmd
+            sys.exit(1)
         
 if __name__ == "__main__":
     main()
