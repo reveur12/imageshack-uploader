@@ -5,7 +5,11 @@ QT += network \
 TARGET = ImageShackUploader
 
 unix {
-LIBS += $$system(./unix_libs.py)
+LIBS +=  \
+    -lavformat \
+    -lavcodec \
+    -lswscale \
+    -lavutil
 }
 
 win32 {
