@@ -45,42 +45,17 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 UploadRequest::UploadRequest(QSharedPointer<Media> smedia, QHttp *)
 {
     media = smedia;
-    http = &realhttp;//new QHttp();
     mediaClass = media.data()->getClass();
     mediaType = media.data()->getType();
     optimize = media.data()->getResize();
     isPublic = !(media.data()->getPrivate());
     removeBar = media.data()->getRemoveSize();
     key = DEVELOPER_KEY;
-    hostname = UPLOAD_HOSTNAME;
     filename = media.data()->filepath();
 
     finished = false;
     failed = false;
     aborted = false;
-
-    connectTimer.setSingleShot(true);
-    answerTimer.setSingleShot(true);
-
-    connect(http,
-            SIGNAL( responseHeaderReceived(QHttpResponseHeader) ),
-            this,
-            SLOT(headerReceiver(QHttpResponseHeader)));
-    connect(http, SIGNAL(requestFinished(int, bool)),
-             this, SLOT(requestFinished(int, bool)));
-    connect(http, SIGNAL(dataSendProgress ( int, int )),
-            this, SLOT(updateProgress(int, int)));
-    connect(http, SIGNAL(stateChanged(int)),
-            this,
-            SLOT(stateReceiver(int)));
-    connect(&connectTimer,
-            SIGNAL(timeout()),
-            this,
-            SLOT(checkConnect()));
-    connect(&answerTimer,
-            SIGNAL(timeout()),
-            this,
-            SLOT(checkAnswer()));
 }
 
 void UploadRequest::setFileName(QString file)
@@ -159,69 +134,16 @@ void UploadRequest::uploadFile(QString filename,
         host = "load"+QString::number((qrand()%9)+1)+"." + UPLOAD_HOSTNAME;
     else
         host = VIDEO_UPLOAD_HOSTNAME;
-    qDebug() << host;
+
     QString boundary("UPLOADERBOUNDARY");
-    //QString nl = "\r\n";
 
-    QHttpRequestHeader header("POST", UPLOAD_PATH, 1, 1);
-    header.addValue("Content-type",
-                    "multipart/form-data, boundary=\"" + boundary+"\"");
-    header.addValue("Cache-Control", "no-cache");
-    header.addValue("Host", host);
-    header.addValue("Accept","*/*");
-/*
-    //creating post data
-    QByteArray bytes;
-
-    bytes.append("--"); bytes.append(boundary); bytes.append(nl);
-    bytes.append("Content-Disposition: ");
-    bytes.append(QString("form-data; name=\"%1\"; filename=\"%2\"")
-                 .arg(QString("fileupload"), QString(filename.toUtf8())));
-    bytes.append(nl);
-    bytes.append(QString("Content-Type: %1/%2").arg(mediaClass, mediaType));
-    bytes.append(nl);
-    bytes.append(nl);
-    bytes.append(image);
-    bytes.append(nl);
-
-    QPair<QString, QString> field;
-    foreach(field, fields)
-    {
-        bytes.append("--"); bytes.append(boundary); bytes.append(nl);
-        bytes.append("Content-Disposition: ");
-        bytes.append(QString("form-data; name=\"%1\"").arg(field.first));
-        bytes.append(nl);
-        bytes.append(nl);
-        bytes.append(field.second); bytes.append(nl);
-    }
-
-    bytes.append("--");
-    bytes.append(boundary);
-    bytes.append(nl);*/
-
-    //FileSource *data = new FileSource(media, fields);
     data = QSharedPointer<FileSource>(new FileSource(media, fields));
     data.data()->open(QIODevice::ReadOnly);
-    /*QFile f("/home/a2k/test.txt");
-    f.open(QIODevice::WriteOnly);
-    f.write(data->readAll());
-    return;
-    qDebug() << data->size();*/
 
-    //qDebug() << QString(host)+UPLOAD_PATH;
     QNetworkRequest req(QUrl("http://" + QString(host) + UPLOAD_PATH));
-    //req.setHeader(QNetworkRequest::ContentLengthHeader, QString::number(data->realSize()));
     req.setHeader(QNetworkRequest::ContentTypeHeader, QString("multipart/form-data, boundary=" + boundary) );
 
-
-    //data->readAll();
-
-    //QByteArray *realdata = new QByteArray;
-    //realdata->append(data->readAll());
-    //QByteArray res = data->readAll();
-    //realdata->append(res);
-    //return;
-    rep = qnam.post(req, data.data());//data);
+    rep = qnam.post(req, data.data());
 
     connect(rep,
             SIGNAL(uploadProgress (qint64, qint64)),
@@ -236,13 +158,6 @@ void UploadRequest::uploadFile(QString filename,
             this,
             SLOT(uploadFinished()));
 
-    header.setContentLength(data->size());
-
-
-    http->setHost(host);
-    qDebug() << "starting upload";
-    //reqid = http->request(header, data);
-    qDebug() << "Emiting status";
     emit status(0);
     emit progress(0);
     qDebug() << "Started request";
@@ -270,54 +185,16 @@ void UploadRequest::uploadFinished()
     emit result(res);
 }
 
-void UploadRequest::headerReceiver(QHttpResponseHeader head)
-{
-    if (aborted || failed) return;
-    if (!head.isValid() || (head.statusCode() != 200))
-    {
-        qDebug() << "got not 200 status code";
-        fail();
-    }
-}
-
-void UploadRequest::requestFinished ( int id, bool error )
-{
-    qDebug() << "got finish" << id << error<< reqid;
-    if (aborted) return;
-    if ((id == reqid) && (!failed) && (!aborted))
-    {
-        if (error) { fail(); return;}
-        else
-        {
-            QString res = http->readAll();
-            if (res.isEmpty()) { fail(); return; }
-            emit status(1);
-            emit result(res);
-        }
-    }
-}
-
 void UploadRequest::updateProgress(qint64 done, qint64 total)
 {
-//    qDebug() << "Progress:" << done << total;
-    if (done == total) answerTimer.start(10000);
-    if (total)
-    emit progress(done*100/total);
-}
-
-void UploadRequest::updateProgress(int done, int total)
-{
-//    qDebug() << "Progress:" << done << total;
-    if (done == total) answerTimer.start(10000);
-    if (total)
-    emit progress(done*100/total);
+    if (total) emit progress(done*100/total);
 }
 
 void UploadRequest::stop()
 {
     aborted = true;
     emit status(3);
-    http->abort();
+    rep->abort();
 }
 
 void UploadRequest::fail()
@@ -325,36 +202,5 @@ void UploadRequest::fail()
     if (failed) return;
     qDebug() << "UploadRequest failing";
     failed = true;
-    qDebug() << http->state();
-    if (http->state()!=0) http->abort();
     emit status(2);
-}
-
-void UploadRequest::checkConnect()
-{
-    qDebug() << "connection status check";
-    if ( (http->state() == QHttp::HostLookup) ||
-         (http->state() == QHttp::Connecting) )
-    {
-        fail();
-    }
-}
-
-void UploadRequest::checkAnswer()
-{
-    qDebug() << "answer status check";
-    if ( (http->state() != QHttp::Closing) &&
-         (http->state() != QHttp::Unconnected) )
-    {
-        fail();
-    }
-}
-
-void UploadRequest::stateReceiver(int state)
-{
-    qDebug() << state;
-    if (state == QHttp::Connecting)
-        connectTimer.start(5000);
-    if (state == QHttp::Reading)
-        answerTimer.start(5000);
 }

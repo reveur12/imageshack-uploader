@@ -73,37 +73,20 @@ private:
     bool removeBar;
     QString key;
 
-    void updateHeaders();
     void uploadFile(QString, QVector<QPair<QString, QString> >);
-    QString hostname;
 
-    //QByteArray data;
-
-
-    QHttp realhttp;
-    QHttp *http;
-    int reqid;
     bool failed;
     bool aborted;
     void fail();
 
-    QTimer connectTimer, answerTimer;
-
     QSharedPointer<Media> media;
-
     QSharedPointer<FileSource> data;
 
     QNetworkAccessManager qnam;
     QNetworkReply* rep;
 
 public slots:
-    void headerReceiver(QHttpResponseHeader);
-    void requestFinished ( int id, bool error );
     void updateProgress(qint64, qint64);
-    void updateProgress(int, int);
-    void checkConnect();
-    void checkAnswer();
-    void stateReceiver(int);
 
     void uploadFailed(QNetworkReply::NetworkError);
     void uploadFinished();
