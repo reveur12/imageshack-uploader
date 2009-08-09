@@ -54,24 +54,29 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="89"/>
+        <location filename="../fileuploader.cpp" line="91"/>
+        <source>Some files could not be uploaded.</source>
+        <translation>Some files could not be uploaded.</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../fileuploader.cpp" line="94"/>
+        <source>
+
+Got error messages from server:
+</source>
+        <translation>
+            <numerusform>
+
+Got error message from server:</numerusform>
+            <numerusform>
+
+Got error messages from server:</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../fileuploader.cpp" line="97"/>
         <source>Warning</source>
         <translation>Warning</translation>
-    </message>
-    <message>
-        <location filename="../fileuploader.cpp" line="90"/>
-        <source>Some files could not be uploaded</source>
-        <translation>Some files could not be uploaded</translation>
-    </message>
-    <message>
-        <location filename="../fileuploader.cpp" line="109"/>
-        <location filename="../fileuploader.cpp" line="122"/>
-        <location filename="../fileuploader.cpp" line="129"/>
-        <location filename="../fileuploader.cpp" line="138"/>
-        <location filename="../fileuploader.cpp" line="162"/>
-        <location filename="../fileuploader.cpp" line="184"/>
-        <source>Could not upload image or video</source>
-        <translation>Could not upload image or video</translation>
     </message>
 </context>
 <context>
@@ -210,7 +215,7 @@ from thumbnail</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="47"/>
-        <location filename="../optionsdialog.cpp" line="110"/>
+        <location filename="../optionsdialog.cpp" line="117"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
         <translation>English</translation>
@@ -246,7 +251,7 @@ from thumbnail</translation>
         <translation>File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="127"/>
+        <location filename="../mainwindow.ui" line="126"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
@@ -256,22 +261,22 @@ from thumbnail</translation>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="142"/>
+        <location filename="../mainwindow.ui" line="145"/>
         <source>Support</source>
         <translation>Support</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="147"/>
+        <location filename="../mainwindow.ui" line="153"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="152"/>
+        <location filename="../mainwindow.ui" line="161"/>
         <source>Check for updates</source>
         <translation>Check for updates</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="157"/>
+        <location filename="../mainwindow.ui" line="169"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
@@ -279,7 +284,7 @@ from thumbnail</translation>
 <context>
     <name>Media</name>
     <message numerus="yes">
-        <location filename="../media.cpp" line="282"/>
+        <location filename="../media.cpp" line="285"/>
         <source>%n B</source>
         <translation>
             <numerusform>%n B</numerusform>
@@ -287,7 +292,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="283"/>
+        <location filename="../media.cpp" line="286"/>
         <source>%n KB</source>
         <translation>
             <numerusform>%n KB</numerusform>
@@ -295,7 +300,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="284"/>
+        <location filename="../media.cpp" line="287"/>
         <source>%n MB</source>
         <translation>
             <numerusform>%n MB</numerusform>
@@ -303,7 +308,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="285"/>
+        <location filename="../media.cpp" line="288"/>
         <source>%n GB</source>
         <translation>
             <numerusform>%n GB</numerusform>
@@ -400,7 +405,7 @@ from thumbnail</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="42"/>
-        <location filename="../optionsdialog.cpp" line="85"/>
+        <location filename="../optionsdialog.cpp" line="92"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</translation>
     </message>

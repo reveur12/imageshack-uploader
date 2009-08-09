@@ -91,7 +91,7 @@ void FileUploader::process()
             QString text = tr("Some files could not be uploaded.");
             if (errors.size())
             {
-                text.append(tr("\n\nGot error messages from server:\n"));
+                text.append(tr("\n\nGot error messages from server:\n", 0, errors.size()));
                 text.append(errors.join("\n"));
             }
             QMessageBox::critical(progress, tr("Warning"), text);
