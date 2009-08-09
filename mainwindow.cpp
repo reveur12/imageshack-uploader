@@ -84,6 +84,9 @@ MainWindow::MainWindow(QWidget *parent)
     QSettings sets;
     if (sets.value("autoupdate", QVariant(true)).toBool())
         checkUpdatesSilently();
+
+    about = new AboutWindow(this);
+    options = new OptionsDialog(this);
 }
 
 
@@ -187,7 +190,7 @@ void MainWindow::uploadStatusReceiver(int state)
 
 void MainWindow::showAbout()
 {
-    about.show();
+    about->show();
 }
 
 void MainWindow::openSupport()
@@ -213,7 +216,7 @@ void MainWindow::mediasChanged()
 
 void MainWindow::showOptions()
 {
-    options.show();
+    options->show();
 }
 
 void MainWindow::changeEvent(QEvent *e)

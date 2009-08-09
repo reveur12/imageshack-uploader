@@ -46,7 +46,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define TWITTER_HOST "yfrog.com"
 #define TWITTER_PATH "/api/uploadAndPost"
 
-#define LOCALIZATION_URL "http://toolbar.imageshack.us/windows-uploader/localization.php"
+#define LOCALIZATION_URL "http://code.google.com/p/imageshack-uploader/wiki/TranslationInstructions"
+
+//old localization_url
+//"http://toolbar.imageshack.us/windows-uploader/localization.php"
 
 #define SUPPORT_URL "http://reg.imageshack.us/content.php?page=email&q=customer"
 

@@ -64,10 +64,10 @@ private:
     void disableControls();
     void enableControls();
     bool controlsDisabled;
-    AboutWindow about;
+    AboutWindow* about;
 
     UpdateChecker updateChecker;
-    OptionsDialog options;
+    OptionsDialog* options;
     void checkUpdatesSilently();
     MediaLoader *loader;
 
