@@ -48,16 +48,36 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     {
         m_ui->language->addItem(languageName(file));
     }
-    QString lang = sets.value("translation", QVariant("en_US.qm")).toString();
-
-    QDir appdir = translationsDir();
-    lang = appdir.absoluteFilePath(lang);
-    qDebug() << findQmFiles();
-    qDebug() << lang;
-    int idx = findQmFiles().indexOf(lang);
-    if (idx<0) idx = 0;
-    m_ui->language->setCurrentIndex(idx);
-    translateToLanguage(lang);
+    QString lang = sets.value("translation", QVariant("")).toString();
+    if (!lang.isEmpty())
+    {
+        QDir appdir = translationsDir();
+        lang = appdir.absoluteFilePath(lang);
+        qDebug() << findQmFiles();
+        qDebug() << lang;
+        int idx = findQmFiles().indexOf(lang);
+        if (idx<0) idx = 0;
+        m_ui->language->setCurrentIndex(idx);
+    }
+    else
+    {
+        QStringList files = findQmFiles();
+        if (files.size()>0)
+        {
+            int idx = 0;
+            foreach(QString file, files)
+            {
+                if (file.endsWith("en_US.qm"))
+                {
+                    idx = files.indexOf(file);
+                    break;
+                }
+            }
+            lang = files.at(idx);
+            m_ui->language->setCurrentIndex(idx);
+        }
+    }
+    if (!lang.isEmpty()) translateToLanguage(lang);
 }
 
 QDir OptionsDialog::translationsDir()
