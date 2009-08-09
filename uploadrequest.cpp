@@ -126,8 +126,7 @@ QString UploadRequest::post()
     return QString();
 }
 
-void UploadRequest::uploadFile(QString filename,
-                               QVector<QPair<QString,QString> > fields)
+void UploadRequest::uploadFile(QString, QVector<QPair<QString,QString> > fields)
 {
     QString host;
     if ((mediaClass == "image") || (mediaClass == "application"))
@@ -141,22 +140,17 @@ void UploadRequest::uploadFile(QString filename,
     data.data()->open(QIODevice::ReadOnly);
 
     QNetworkRequest req(QUrl("http://" + QString(host) + UPLOAD_PATH));
-    req.setHeader(QNetworkRequest::ContentTypeHeader, QString("multipart/form-data, boundary=" + boundary) );
+    req.setHeader(QNetworkRequest::ContentTypeHeader,
+                  QString("multipart/form-data, boundary=" + boundary) );
 
     rep = qnam.post(req, data.data());
 
-    connect(rep,
-            SIGNAL(uploadProgress (qint64, qint64)),
-            this,
-            SLOT(updateProgress(qint64, qint64)));
-    connect(rep,
-            SIGNAL(error(QNetworkReply::NetworkError)),
-            this,
-            SLOT(uploadFailed(QNetworkReply::NetworkError)));
-    connect(rep,
-            SIGNAL(finished()),
-            this,
-            SLOT(uploadFinished()));
+    connect(rep, SIGNAL(uploadProgress (qint64, qint64)),
+            this, SLOT(updateProgress(qint64, qint64)));
+    connect(rep, SIGNAL(error(QNetworkReply::NetworkError)),
+            this, SLOT(uploadFailed(QNetworkReply::NetworkError)));
+    connect(rep, SIGNAL(finished()),
+            this, SLOT(uploadFinished()));
 
     emit status(0);
     emit progress(0);
