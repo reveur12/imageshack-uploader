@@ -25,7 +25,7 @@ public:
 private:
     QByteArray header, footer;
     int curPos;
-    QFile *data;
+    QSharedPointer<QFile> data;
 
 };
 
