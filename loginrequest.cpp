@@ -70,7 +70,6 @@ void LoginRequest::requestFinished(int id, bool error)
         {
             QDomDocument xml;
             QString data = http.readAll();
-            qDebug() << data;
             xml.setContent(data);
 
             QDomElement doc = xml.documentElement();
