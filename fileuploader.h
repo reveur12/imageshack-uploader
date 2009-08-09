@@ -58,6 +58,7 @@ private:
     QVector<QSharedPointer<UploadRequest> > tmp ;
     QSharedPointer<QHttp> http;
     void fail(QString reason = NULL);
+    QStringList errors;
 
 private slots:
     void progressReceiver(int value);

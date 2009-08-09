@@ -86,8 +86,16 @@ void FileUploader::process()
     {
         progress->setCurrentIndex(0);
         emit status(1);
-        if (skip) QMessageBox::critical(progress, tr("Warning"),
-                                        tr("Some files could not be uploaded"));
+        if (skip)
+        {
+            QString text = tr("Some files could not be uploaded.");
+            if (errors.size())
+            {
+                text.append(tr("\n\nGot error messages from server:\n"));
+                text.append(errors.join("\n"));
+            }
+            QMessageBox::critical(progress, tr("Warning"), text);
+        }
         if (!(res.data()->isEmpty())) emit results(res);
     }
 }
@@ -107,7 +115,7 @@ void FileUploader::statusReceiver(int value)
         failcount++;
         if (failcount>3)
         {
-            fail(tr("Could not upload image or video"));
+            fail();
         }
         process();
     }
@@ -121,27 +129,27 @@ void FileUploader::resultReceiver(QString value)
     QDomElement doc = xml.documentElement();
     if (doc.isNull())
     {
-        fail(tr("Could not upload image or video"));
+        fail();
+        process();
+        return;
+    }
+    QDomElement error = doc.firstChildElement("error");
+    if (!error.isNull())
+    {
+        if (!error.text().isEmpty())
+            fail(error.text());
+        else fail();
         process();
         return;
     }
     QDomElement links = doc.firstChildElement("links");
     if (links.isNull())
     {
-        fail(tr("Could not upload image or video"));
+        fail();
         process();
         return;
     }
-    QDomElement error = links.firstChildElement("error");
-    if (!error.isNull())
-    {
-        //skip++;
-        //failcount=0;
-        fail(tr("Could not upload image or video"));
-        //process();
-        process();
-        return;
-    }
+
     QStringList all;
     if ((current->getClass() == "image") || (current->getClass() == "application"))
     {
@@ -161,7 +169,7 @@ void FileUploader::resultReceiver(QString value)
             thumb_html.isNull() || thumb_bb.isNull() || thumb_bb2.isNull() ||
             ad_link.isNull())
         {
-            fail(tr("Could not upload image or video"));
+            fail();
             process();
             return;
         }
@@ -183,7 +191,7 @@ void FileUploader::resultReceiver(QString value)
         if (image_link.isNull() || thumb_html.isNull() || thumb_bb.isNull() ||
             thumb_bb2.isNull() || video_embed.isNull() || ad_link.isNull())
         {
-            fail(tr("Could not upload image or video"));
+            fail();
             process();
             return;
         }
@@ -209,14 +217,11 @@ void FileUploader::cancel()
     progress->setCurrentIndex(0);
 }
 
-void FileUploader::fail(QString)
+void FileUploader::fail(QString message)
 {
     qDebug() << "FileUploader failing";
-    //failed = true;
+    if (message.size())
+        if (!errors.contains(message))
+            errors.append(message);
     skip++;
-    /*
-    emit status(2);
-    progress->setCurrentIndex(0);
-    if (!reason.isNull()) QMessageBox::critical(progress, tr("Error"), reason);
-    */
 }

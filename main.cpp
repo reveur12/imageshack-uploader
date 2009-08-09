@@ -42,6 +42,7 @@ int main(int argc, char **argv)
     QtSingleApplication a(argc, argv);
     a.setApplicationName("ImageShack Uploader");
     a.setOrganizationName("ImageShack");
+    a.setOrganizationDomain("imageshack.us");
     a.setApplicationVersion(VERSION);
 
     QStringList filelist;
