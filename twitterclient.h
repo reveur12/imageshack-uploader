@@ -32,6 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QObject>
 #include <QHttp>
 #include <QList>
+#include <QProgressBar>
 
 #include "gallerycreator.h"
 
@@ -46,6 +47,8 @@ private:
     QHttp http;
     GalleryCreator gallery;
     QList<int>  ids;
+
+    QProgressBar bar;
 
 public slots:
     void post(QString, QString, QString, QString);

@@ -263,7 +263,7 @@ from thumbnail</source>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="47"/>
-        <location filename="../optionsdialog.cpp" line="117"/>
+        <location filename="../optionsdialog.cpp" line="137"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
         <translation>Русский</translation>
@@ -274,12 +274,12 @@ from thumbnail</source>
         <translation>Загрузчик ImageShack %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="99"/>
+        <location filename="../mainwindow.cpp" line="102"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="100"/>
+        <location filename="../mainwindow.cpp" line="103"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Нельзя загружать Flash файлы, не совершив вход. Хотите попробовать все-равно?</translation>
     </message>
@@ -331,12 +331,12 @@ from thumbnail</source>
         <translation>Выберите один или более файлов</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="88"/>
-        <source>Images (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp), Videos (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov), Flash (*.flv *.swf), PDF (*.pdf)</source>
-        <translation>Изображения (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp), Видео (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov), Flash (*.flv *.swf), PDF (*.pdf)</translation>
+        <location filename="../medialistwidget.cpp" line="89"/>
+        <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</source>
+        <translation>Поддерживаемые форматы (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="125"/>
+        <location filename="../medialistwidget.cpp" line="126"/>
         <source>Failed to load %n file(s):</source>
         <translation>
             <numerusform>Не удалось загрузить %n файл:</numerusform>
@@ -345,7 +345,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="131"/>
+        <location filename="../medialistwidget.cpp" line="132"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n файл слишком большой для загрузки:</numerusform>
@@ -354,12 +354,12 @@ from thumbnail</source>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="136"/>
+        <location filename="../medialistwidget.cpp" line="137"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="206"/>
+        <location filename="../medialistwidget.cpp" line="207"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n файл</numerusform>
@@ -415,7 +415,7 @@ from thumbnail</source>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="42"/>
-        <location filename="../optionsdialog.cpp" line="92"/>
+        <location filename="../optionsdialog.cpp" line="112"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>Не видите своего языка в списке?&lt;br&gt;Вы можете помочь перевести программу на ваш язык.&lt;br&gt;Нажмите &lt;a href=&quot;%1&quot;&gt;СЮДА&lt;/a&gt; для получения информации.</translation>
     </message>
@@ -632,44 +632,49 @@ from thumbnail</source>
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="65"/>
-        <location filename="../twitterclient.cpp" line="94"/>
-        <location filename="../twitterclient.cpp" line="106"/>
-        <location filename="../twitterclient.cpp" line="127"/>
-        <location filename="../twitterclient.cpp" line="134"/>
-        <location filename="../twitterclient.cpp" line="140"/>
-        <location filename="../twitterclient.cpp" line="147"/>
+        <location filename="../twitterclient.cpp" line="50"/>
+        <source>Posting to twitter...</source>
+        <translation>Отправка на Twitter...</translation>
+    </message>
+    <message>
+        <location filename="../twitterclient.cpp" line="71"/>
+        <location filename="../twitterclient.cpp" line="103"/>
+        <location filename="../twitterclient.cpp" line="115"/>
+        <location filename="../twitterclient.cpp" line="136"/>
+        <location filename="../twitterclient.cpp" line="143"/>
+        <location filename="../twitterclient.cpp" line="149"/>
+        <location filename="../twitterclient.cpp" line="156"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="66"/>
+        <location filename="../twitterclient.cpp" line="72"/>
         <source>First set twitter username and password in options</source>
         <translation>Сначала задайте имя пользователя и пароль для Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="95"/>
+        <location filename="../twitterclient.cpp" line="104"/>
         <source>Could not send url to Twitter</source>
         <translation>Не удалось отправить ссылку на Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="107"/>
-        <location filename="../twitterclient.cpp" line="148"/>
+        <location filename="../twitterclient.cpp" line="116"/>
+        <location filename="../twitterclient.cpp" line="157"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Не удалось отправить на Twitter. Произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="128"/>
+        <location filename="../twitterclient.cpp" line="137"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Не удалось отправить на Twitter. Неправильные логин или пароль.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="135"/>
+        <location filename="../twitterclient.cpp" line="144"/>
         <source>Failed to update twitter status.</source>
         <translation>Не удалось обновить статус Twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="141"/>
+        <location filename="../twitterclient.cpp" line="150"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Не удалось отправить на Twitter. Внутреняя ошибка.</translation>
     </message>
