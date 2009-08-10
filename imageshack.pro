@@ -117,7 +117,7 @@ trans.files += translations/*qm
 trans.commands = lrelease translations/*ts
 mactrans.target = mactrans
 mactrans.files += translations/en_US.qm translations/ru_RU.qm
-mactrans.commands = lrelease-mac translations/*ts
+mactrans.commands = lrelease translations/*ts
 mactrans.path = Contents/Resources
 INSTALLS += target \
             trans
@@ -293,5 +293,5 @@ QMAKE_EXTRA_TARGETS += deb \
 
 dmg.target = dmg
 dmg.depends = all
-dmg.commands = macdeployqt-mac $$TARGET\.app -dmg
+dmg.commands = macdeployqt $$TARGET\.app -dmg
 
