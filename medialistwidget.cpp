@@ -85,7 +85,8 @@ void MediaListWidget::addFile()
     QStringList files =  QFileDialog::getOpenFileNames(this,
            tr("Select one or more files to open"),
            path,
-           tr("Images (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp), Videos (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov), Flash (*.flv *.swf), PDF (*.pdf)"));
+           //tr("Images (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp), Videos (*.avi *.mp4 *.wmv *.3gp *.mkv *.mov), Flash (*.flv *.swf), PDF (*.pdf)"));
+           tr("Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)"));
     if (files.isEmpty()) return;
     path = QFileInfo(files.at(0)).path();
     sets.setValue("imagedir", QVariant(path));
