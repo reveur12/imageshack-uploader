@@ -32,6 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QSettings>
 #include <QDomDocument>
 #include <QDesktopServices>
+#include <QPlastiqueStyle>
 #include "twitterclient.h"
 #include "defines.h"
 
@@ -46,6 +47,11 @@ TwitterClient::TwitterClient()
             SIGNAL(creationFinished(QString, QString, QString, QString)),
             this,
             SLOT(post(QString, QString, QString, QString)));
+    bar.setWindowTitle(tr("Posting to twitter..."));
+    bar.setStyle(new QPlastiqueStyle());
+    bar.setFixedSize(300, 15);
+    bar.setValue(0);
+    bar.setMaximum(0);
 }
 
 void TwitterClient::post(QString url, QString text, QString user, QString pass)
@@ -76,6 +82,8 @@ void TwitterClient::post(QString url, QString text, QString user, QString pass)
 
     int id = http.request(header, postdata);
     ids.append(id);
+
+    bar.show();
 }
 
 void TwitterClient::post(QStringList urls, QString text, QString user, QString pass, QString shortlink)
@@ -88,6 +96,7 @@ void TwitterClient::requestFinished(int id, bool failed)
     qDebug() << id << failed;
     if (ids.contains(id))
     {
+        bar.hide();
         ids.removeAll(id);
         if (failed)
         {
