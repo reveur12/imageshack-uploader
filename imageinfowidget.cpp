@@ -96,7 +96,9 @@ void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
     m_ui->resize->setCurrentIndex(items[media->getResize()]);
     m_ui->removeSize->setChecked(media->getRemoveSize());
     m_ui->thumbnail->setPixmap(QPixmap::fromImage(media->thumbnail()));
-
+    bool isImage = (media.data()->getClass() == "image");
+    m_ui->resize->setEnabled(isImage);
+    m_ui->removeSize->setEnabled(isImage);
 }
 
 void ImageInfoWidget::setResize(int idx)
