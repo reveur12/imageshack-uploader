@@ -109,10 +109,32 @@ void MediaListModel::addMedia(QSharedPointer<Media> media)
 
 void MediaListModel::addMedia(QVector<QSharedPointer<Media> > newmedias)
 {
+    int was = 0;
+    QVector<int> wasIndexes;
+    QSharedPointer<Media> m1, m2;
+    for (int i=0; i<newmedias.size(); i++)
+    {
+        for (int j=0; j<medias.size(); j++)
+        {
+            if (newmedias.at(i).data()->filepath() == medias.at(j).data()->filepath())
+            {
+                was ++;
+                wasIndexes.append(i);
+                break;
+            }
+        }
+    }
+    if (was == newmedias.size()) return;
+    int toAdd = newmedias.size() - 1 - was;
     beginInsertRows(QModelIndex(), medias.size(),
-                    medias.size()+newmedias.size()-1);
-    foreach(QSharedPointer<Media> media, newmedias)
-        medias.append(media);
+                    medias.size() + toAdd);
+    for(int i=0; i< newmedias.size(); i++)
+    {
+        if (!wasIndexes.contains(i))
+        {
+            medias.append(newmedias.at(i));
+        }
+    }
     endInsertRows();
     emit modelChanged();
 }
