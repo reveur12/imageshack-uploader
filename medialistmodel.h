@@ -52,7 +52,7 @@ public:
     void removeMediaNoDelete(int row = -1);
     void removeAllMedias();
     QVector<QSharedPointer<Media> > getAllMedias();
-    int totalSize();
+    qint64 totalSize();
     QString formattedTotalSize();
     void addMedia(QSharedPointer<Media>);
     void addMedia(QVector<QSharedPointer<Media> >);

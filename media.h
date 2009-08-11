@@ -41,7 +41,7 @@ public:
     Media(QString filename);
     int width();
     int height();
-    int size();
+    qint64 size();
     QImage thumbnail();
     QImage icon();
     QImage make_thumbnail(QImage);
@@ -49,7 +49,7 @@ public:
     QString filepath();
     QString filename();
     QString formatedSize();
-    QString formatSize(int);
+    QString formatSize(qint64);
     QString getType();
     QString getClass();
     QImage getPreview();
@@ -71,7 +71,7 @@ public:
 private:
     int image_width;
     int image_height;
-    int filesize;
+    qint64 filesize;
     QString file;
     QImage ic, thumb;
     QString mediaType;
