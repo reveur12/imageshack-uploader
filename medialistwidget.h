@@ -76,6 +76,7 @@ signals:
     void mediasChanged();
     void requireProgressbar(bool);
     void progress(int, int);
+    void addLoadFiles(QStringList);
 };
 
 #endif // MEDIALISTWIDGET_H

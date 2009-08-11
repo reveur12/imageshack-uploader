@@ -229,17 +229,24 @@ bool MediaListModel::dropMimeData(const QMimeData *data,
         /*QSharedPointer<Media> media = QSharedPointer<Media>(new Media(filename.toLocalFile()));
         if (media->isValid()) this->addMedia(media);*/
     }
-    loader = QSharedPointer<MediaLoader>(new MediaLoader(filelist));
-    connect(loader.data(),
-            SIGNAL(results(QVector<QSharedPointer<Media> >, QStringList, QStringList)),
-            parentw,
-            SLOT(mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList)));
-    connect(loader.data(),
-            SIGNAL(progress(int,int)),
-            parentw,
-            SLOT(progressReceiver(int, int)));
-    loader.data()->start();
-
+    if (!loader.isNull() && loader.data()->isRunning()) emit addLoadFiles(filelist);
+    else
+    {
+        loader = QSharedPointer<MediaLoader>(new MediaLoader(filelist));
+        connect(loader.data(),
+                SIGNAL(results(QVector<QSharedPointer<Media> >, QStringList, QStringList)),
+                parentw,
+                SLOT(mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList)));
+        connect(loader.data(),
+                SIGNAL(progress(int,int)),
+                parentw,
+                SLOT(progressReceiver(int, int)));
+        connect(this,
+                SIGNAL(addLoadFiles(QStringList)),
+                loader.data(),
+                SLOT(addFiles(QStringList)));
+        loader.data()->start();
+    }
     return true;
 }
 
