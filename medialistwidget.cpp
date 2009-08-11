@@ -202,14 +202,13 @@ void MediaListWidget::modelChanged()
         m_ui->remove->setEnabled(true);
         m_ui->clear->setEnabled(true);
     }
-
-    m_ui->mediaList->resizeColumnToContents(1);
 }
 
 void MediaListWidget::resizeEvent ( QResizeEvent * )
 {
     m_ui->mediaList->setColumnWidth(0, size().width()-80);
-    m_ui->mediaList->setColumnWidth(1, 10);
+    m_ui->mediaList->resizeColumnToContents(1);
+    //m_ui->mediaList->setColumnWidth(1, 10);
 }
 
 void MediaListWidget::updateStats()
