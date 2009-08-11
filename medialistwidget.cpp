@@ -217,6 +217,16 @@ void MediaListWidget::updateStats()
     int count = mediaList->rowCount(QModelIndex());
     m_ui->filecount->setText(tr("%n files", "", count));
     m_ui->size->setText(mediaList->formattedTotalSize());
+    if (count==0)
+    {
+        m_ui->remove->setEnabled(false);
+        m_ui->clear->setEnabled(false);
+    }
+    else
+    {
+        m_ui->remove->setEnabled(true);
+        m_ui->clear->setEnabled(true);
+    }
 }
 
 QVector<QSharedPointer<Media> > MediaListWidget::getAllMedias()
