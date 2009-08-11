@@ -116,8 +116,9 @@ void ImageInfoWidget::setRemoveSize(int state)
 
 void ImageInfoWidget::thumbnailClicked()
 {
-    if (!media || media.data()->getClass()!="image") return;
-    qDebug() << "called";
+    if (!media || (media.data()->getClass()!="image" &&
+                   media.data()->getClass()!="video") || media.data()->hasPreview() )
+        return;
     MediaWidget *mediaWidget = new MediaWidget();
     mediaWidget->setMedia(media);
     mediaWidget->show();

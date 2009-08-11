@@ -113,6 +113,7 @@ Media::Media(QString filename)
     {
         VideoFrameReader reader;
         QImage img = reader.getScreencap(filename);
+        videoPreview = img;
         if (img.isNull())
             img.load(":/images/images/video.png");
         image_width = img.width();
@@ -201,6 +202,10 @@ QImage Media::getPreview()
         return (width()>height())?image.scaledToWidth(800, Qt::SmoothTransformation):
                                   image.scaledToHeight(600, Qt::SmoothTransformation);
     }
+    else if (getClass() == "video")
+    {
+        return videoPreview;
+    }
     else return QImage();
 }
 
@@ -288,4 +293,11 @@ QString Media::formatSize(qint64 bytes)
     if (exp == 3) res = tr("%n MB", "", tmp);
     if (exp == 4) res = tr("%n GB", "", tmp);
     return res;
+}
+
+bool Media::hasPreview()
+{
+    if (getClass() == "video")
+    return this->videoPreview.isNull();
+    else return true;
 }
