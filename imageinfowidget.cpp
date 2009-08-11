@@ -69,8 +69,11 @@ void ImageInfoWidget::changeEvent(QEvent *e)
 void ImageInfoWidget::enable()
 {
     m_ui->thumbnail->setEnabled(true);
-    m_ui->removeSize->setEnabled(true);
-    m_ui->resize->setEnabled(true);
+    if (!(media!=NULL && media.data()->getClass() == "video"))
+    {
+        m_ui->removeSize->setEnabled(true);
+        m_ui->resize->setEnabled(true);
+    }
 }
 
 void ImageInfoWidget::disable()
