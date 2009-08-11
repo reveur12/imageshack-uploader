@@ -71,12 +71,9 @@
             <widget class="ImageInfoWidget" name="imageInfo" native="true"/>
            </item>
            <item>
-            <widget class="TagWidget" name="tagWidget">
+            <widget class="TagWidget" name="tagWidget" native="true">
              <property name="enabled">
               <bool>false</bool>
-             </property>
-             <property name="title">
-              <string>Privacy &amp;&amp; tags</string>
              </property>
             </widget>
            </item>
@@ -198,15 +195,15 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TagWidget</class>
-   <extends>QGroupBox</extends>
-   <header>tagwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ImageInfoWidget</class>
    <extends>QWidget</extends>
    <header>imageinfowidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TagWidget</class>
+   <extends>QWidget</extends>
+   <header>tagwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

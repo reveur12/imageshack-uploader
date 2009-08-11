@@ -287,7 +287,6 @@ QString Media::formatSize(qint64 bytes)
     qint64 exp = 0;
     while (tsize>0 && exp<4) { tmp=tsize; exp++; tsize/=1024; }
     QString res;
-    qDebug() << "exp is " << exp;
     if (exp == 1) res = tr("%n B", "", tmp);
     if (exp == 2) res = tr("%n KB", "", tmp);
     if (exp == 3) res = tr("%n MB", "", tmp);
