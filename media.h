@@ -67,6 +67,7 @@ public:
     bool isValid();
     bool isTooLarge();
     QByteArray data();
+    bool hasPreview();
 
 private:
     int image_width;
@@ -80,6 +81,7 @@ private:
     bool privacy;
     QString resize;
     bool removeSize;
+    QImage videoPreview;
 
     bool valid;
     bool toolarge;
