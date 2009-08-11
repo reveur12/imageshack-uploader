@@ -104,7 +104,7 @@ void MediaListWidget::addFile()
                 SLOT(progressReceiver(int, int)));
         connect(this,
                 SIGNAL(addLoadFiles(QStringList)),
-                this,
+                loader.data(),
                 SLOT(addFiles(QStringList)));
         loader.data()->start();
     }

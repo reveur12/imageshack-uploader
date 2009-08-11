@@ -298,6 +298,8 @@ QString Media::formatSize(qint64 bytes)
 bool Media::hasPreview()
 {
     if (getClass() == "video")
-    return this->videoPreview.isNull();
+    {
+        return !videoPreview.isNull();
+    }
     else return true;
 }
