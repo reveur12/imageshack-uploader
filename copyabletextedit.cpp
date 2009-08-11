@@ -57,6 +57,7 @@ void CopyableTextEdit::changeEvent(QEvent *e)
 
 void CopyableTextEdit::copy()
 {
+    qDebug() << "copy text " << m_ui->text->toPlainText();
     QApplication::clipboard()->setText(m_ui->text->toPlainText());
 }
 

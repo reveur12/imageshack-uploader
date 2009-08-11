@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>389</width>
-    <height>70</height>
+    <height>88</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -109,7 +109,24 @@
  <resources>
   <include location="images_rc.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>copy</sender>
+   <signal>clicked()</signal>
+   <receiver>CopyableTextEdit</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>375</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>194</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>copy()</slot>
  </slots>
