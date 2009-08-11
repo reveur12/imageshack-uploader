@@ -123,7 +123,8 @@ void MediaListWidget::mediasReceiver(QVector<QSharedPointer<Media> > newmedias,
     QStringList text;
     if (failed.size())
     {
-        text.append(tr("Failed to load %n file(s):", 0, failed.size()));
+        text.append(tr("Could not add %n file(s), as they seems to be in a format we do not currently support:",
+                       0, failed.size()));
         foreach(QString filename, failed)
             text.append(filename);
     }
