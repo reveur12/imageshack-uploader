@@ -44,6 +44,8 @@ private:
     QString password;
     QHttp http;
     int requestId;
+    bool aborted;
+
 private slots:
     void requestFinished (int, bool);
 
