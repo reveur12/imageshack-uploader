@@ -173,9 +173,9 @@ QSharedPointer<Media> MediaListModel::getMedia(int index)
     return medias.at(index);
 }
 
-int MediaListModel::totalSize()
+qint64 MediaListModel::totalSize()
 {
-    int total = 0;
+    qint64 total = 0;
     foreach(QSharedPointer<Media> media, medias) total += media.data()->size();
     return total;
 }

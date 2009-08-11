@@ -142,7 +142,7 @@ int Media::height()
     return image_height;
 }
 
-int Media::size()
+qint64 Media::size()
 {
     return filesize;
 }
@@ -275,13 +275,14 @@ QByteArray Media::data()
     return file.readAll();
 }
 
-QString Media::formatSize(int bytes)
+QString Media::formatSize(qint64 bytes)
 {
-    int tsize = bytes;
-    int tmp = tsize;
-    int exp = 0;
-    while (tsize>0 && exp<3) { tmp=tsize; exp++; tsize/=1024; }
+    qint64 tsize = bytes;
+    qint64 tmp = tsize;
+    qint64 exp = 0;
+    while (tsize>0 && exp<4) { tmp=tsize; exp++; tsize/=1024; }
     QString res;
+    qDebug() << "exp is " << exp;
     if (exp == 1) res = tr("%n B", "", tmp);
     if (exp == 2) res = tr("%n KB", "", tmp);
     if (exp == 3) res = tr("%n MB", "", tmp);
