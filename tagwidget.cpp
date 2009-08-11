@@ -32,12 +32,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QSharedPointer>
 
 TagWidget::TagWidget(QWidget *parent) :
-    QGroupBox(parent),
+    QWidget(parent),
     m_ui(new Ui::TagWidget)
 {
     m_ui->setupUi(this);
     medias = NULL;
     setToolTip(tr("Log in to use this features"));
+    setFont(QApplication::font());
 }
 
 TagWidget::~TagWidget()
@@ -47,7 +48,7 @@ TagWidget::~TagWidget()
 
 void TagWidget::changeEvent(QEvent *e)
 {
-    QGroupBox::changeEvent(e);
+    QWidget::changeEvent(e);
     switch (e->type()) {
     case QEvent::LanguageChange:
         m_ui->retranslateUi(this);
@@ -96,7 +97,8 @@ void TagWidget::batchTagsUpdated()
 
 void TagWidget::privacyUpdated()
 {
-    if (!media) return;
+    qDebug() << "setting media privacy to" << m_ui->privacyPrivate->isChecked();
+    if (media == NULL) return;
     media.data()->setPrivacy(m_ui->privacyPrivate->isChecked());
 }
 
@@ -125,6 +127,8 @@ void TagWidget::setMedia(QSharedPointer<Media> item)
 {
     media = item;
     m_ui->tags->setText(media.data()->getTags().join(", "));
+    m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
+    m_ui->privacyPublic->setChecked(!media.data()->getPrivate());
 }
 
 void TagWidget::unsetMedia()
@@ -135,4 +139,17 @@ void TagWidget::unsetMedia()
 void TagWidget::unsetMediaList()
 {
     medias = NULL;
+}
+
+void TagWidget::batchPrivacyUpdated()
+{
+    qDebug() << "updating all medias privacy to" << m_ui->bPrivacyPrivate->isChecked();
+    if (medias==NULL) return;
+    if (medias->rowCount()==0) return;
+    for (int i=0; i< medias->rowCount(); i++)
+    {
+        medias->getMedia(i).data()->setPrivacy(m_ui->bPrivacyPrivate->isChecked());
+    }
+    m_ui->privacyPrivate->setChecked(m_ui->bPrivacyPrivate->isChecked());
+    m_ui->privacyPublic->setChecked(!m_ui->bPrivacyPrivate->isChecked());
 }

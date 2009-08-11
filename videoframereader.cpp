@@ -191,8 +191,9 @@ QByteArray VideoFrameReader::getImage(const char* filename)
     int64_t seek_target = pFormatCtx->duration/2;
     seek_target= av_rescale_q(seek_target, AV_TIME_BASE_Q,
                               pFormatCtx->streams[videoStream]->time_base);
-    av_seek_frame(pFormatCtx, videoStream, seek_target, NULL);
+    //av_seek_frame(pFormatCtx, videoStream, seek_target, NULL);
 
+    for (int i=0; i<1000; i++)
     if (!getNextFrame(pFormatCtx, pCodecCtx, videoStream, pFrame))
     {
         return QByteArray();

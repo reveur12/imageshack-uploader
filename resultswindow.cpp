@@ -158,7 +158,7 @@ void ResultsWindow::setIndex(int index)
 
         m_ui->hotlink->setEnabled(false);
         m_ui->forumHotlink->setEnabled(false);
-        m_ui->forumHotlink2->setEnabled(false);        
+        m_ui->forumHotlink2->setEnabled(false);
     }
 }
 

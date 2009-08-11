@@ -39,7 +39,7 @@ namespace Ui {
     class TagWidget;
 }
 
-class TagWidget : public QGroupBox {
+class TagWidget : public QWidget {
     Q_OBJECT
     Q_DISABLE_COPY(TagWidget)
 public:
@@ -60,6 +60,7 @@ private slots:
     void tagsUpdated();
     void batchTagsUpdated();
     void privacyUpdated();
+    void batchPrivacyUpdated();
     void setMedia(QSharedPointer<Media>);
     void unsetMedia();
 
