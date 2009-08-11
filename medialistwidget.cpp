@@ -90,16 +90,24 @@ void MediaListWidget::addFile()
     if (files.isEmpty()) return;
     path = QFileInfo(files.at(0)).path();
     sets.setValue("imagedir", QVariant(path));
-    loader = QSharedPointer<MediaLoader>(new MediaLoader(files));
-    connect(loader.data(),
-            SIGNAL(results(QVector<QSharedPointer<Media> >, QStringList, QStringList)),
-            this,
-            SLOT(mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList)));
-    connect(loader.data(),
-            SIGNAL(progress(int,int)),
-            this,
-            SLOT(progressReceiver(int, int)));
-    loader.data()->start();
+    if (!loader.isNull() && loader.data()->isRunning()) emit addLoadFiles(files);
+    else
+    {
+        loader = QSharedPointer<MediaLoader>(new MediaLoader(files));
+        connect(loader.data(),
+                SIGNAL(results(QVector<QSharedPointer<Media> >, QStringList, QStringList)),
+                this,
+                SLOT(mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList)));
+        connect(loader.data(),
+                SIGNAL(progress(int,int)),
+                this,
+                SLOT(progressReceiver(int, int)));
+        connect(this,
+                SIGNAL(addLoadFiles(QStringList)),
+                this,
+                SLOT(addFiles(QStringList)));
+        loader.data()->start();
+    }
     updateStats();
 }
 

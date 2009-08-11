@@ -75,6 +75,7 @@ private:
 
 signals:
     void modelChanged();
+    void addLoadFiles(QStringList);
 };
 
 #endif // MEDIALISTMODEL_H

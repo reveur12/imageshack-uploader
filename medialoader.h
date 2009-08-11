@@ -40,6 +40,8 @@ class MediaLoader : public QThread
 public:
     MediaLoader(QStringList);
     void run();
+public slots:
+    void addFiles(QStringList);
 private:
     QStringList filelist;
 signals:

@@ -43,8 +43,9 @@ void MediaLoader::run()
     qDebug() << current << filelist.count();
     emit progress(current++, filelist.count());
     qDebug() << filelist << filelist.count();
-    foreach(QString filename, filelist)
+    for(int i = 0; i< filelist.size(); i++)
     {
+        QString filename = filelist.at(i);
         QSharedPointer<Media> media = QSharedPointer<Media>(new Media(filename));
         if (media->isValid())
             res.append(media);
@@ -57,4 +58,9 @@ void MediaLoader::run()
     }
     //if (failed.size() || toolarge.size()) emit loadingFailed(failed, toolarge);
     emit results(res, failed, toolarge);
+}
+
+void MediaLoader::addFiles(QStringList files)
+{
+    filelist.append(files);
 }
