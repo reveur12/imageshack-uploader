@@ -337,15 +337,15 @@ from thumbnail</source>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="126"/>
-        <source>Failed to load %n file(s):</source>
+        <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
-            <numerusform>Не удалось загрузить %n файл:</numerusform>
-            <numerusform>Не удалось загрузить %n файла:</numerusform>
-            <numerusform>Не удалось загрузить %n файлов:</numerusform>
+            <numerusform>Не удалось добавить %n файл, так как он сохранен в формате, который на данный момент не поддерживается:</numerusform>
+            <numerusform>Не удалось добавить %n файла, так как они сохранены в формате, который на данный момент не поддерживается:</numerusform>
+            <numerusform>Не удалось добавить %n файлов, так как они сохранены в формате, который на данный момент не поддерживается:</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="132"/>
+        <location filename="../medialistwidget.cpp" line="133"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n файл слишком большой для загрузки:</numerusform>
@@ -354,12 +354,12 @@ from thumbnail</source>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="137"/>
+        <location filename="../medialistwidget.cpp" line="138"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="207"/>
+        <location filename="../medialistwidget.cpp" line="208"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n файл</numerusform>

@@ -330,14 +330,14 @@ from thumbnail</translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="126"/>
-        <source>Failed to load %n file(s):</source>
+        <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
-            <numerusform>Failed to load %n file:</numerusform>
-            <numerusform>Failed to load %n files:</numerusform>
+            <numerusform>Could not add %n file, as it seems to be in a format we do not currently support:</numerusform>
+            <numerusform>Could not add %n files, as they seems to be in a format we do not currently support:</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="132"/>
+        <location filename="../medialistwidget.cpp" line="133"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n file is too large for upload:</numerusform>
@@ -345,12 +345,12 @@ from thumbnail</translation>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="137"/>
+        <location filename="../medialistwidget.cpp" line="138"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="207"/>
+        <location filename="../medialistwidget.cpp" line="208"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n file</numerusform>
