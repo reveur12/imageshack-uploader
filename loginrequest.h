@@ -39,6 +39,7 @@ public:
     LoginRequest();
     void login(QString, QString);
     void abort();
+
 private:
     QString username;
     QString password;

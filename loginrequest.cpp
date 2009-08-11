@@ -33,6 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QDebug>
 #include <QUrl>
 #include <QDomDocument>
+#include <QMessageBox>
 #include "defines.h"
 
 LoginRequest::LoginRequest()
@@ -64,6 +65,7 @@ void LoginRequest::login(QString login, QString pass)
 
 void LoginRequest::requestFinished(int id, bool error)
 {
+    qDebug() << http.errorString();
     if (requestId == id)
     {
         if (aborted) return;
@@ -85,6 +87,7 @@ void LoginRequest::requestFinished(int id, bool error)
         }
     }
 }
+
 
 void LoginRequest::abort()
 {
