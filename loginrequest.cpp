@@ -43,6 +43,7 @@ LoginRequest::LoginRequest()
 
 void LoginRequest::login(QString login, QString pass)
 {
+    aborted = false;
     username = login;
     password = pass;
     QHttpRequestHeader header("POST", LOGIN_PATH, 1, 1);
@@ -65,7 +66,8 @@ void LoginRequest::requestFinished(int id, bool error)
 {
     if (requestId == id)
     {
-        if (error) emit failed();
+        if (aborted) return;
+        if (error) { emit failed(); return; }
         else
         {
             QDomDocument xml;
@@ -86,5 +88,6 @@ void LoginRequest::requestFinished(int id, bool error)
 
 void LoginRequest::abort()
 {
+    aborted = true;
     http.abort();
 }
