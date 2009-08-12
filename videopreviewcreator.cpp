@@ -69,14 +69,20 @@ QString VideoPreviewCreator::getPreview(QString filename)
         signal(SIGABRT, SIG_IGN);
         video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
         if (video_error != FAS_SUCCESS)
+        {
             qDebug() << "failed to open";
+            abort();
+        }
 
         int counter = 0;
     //while (fas_frame_available (context))
 //    {
   //      qDebug() << counter;
         if (FAS_SUCCESS != fas_get_frame (context, &image_buffer))
+        {
             qDebug() << "failed on rgb image";
+            abort();
+        }
       //char filename[50];
 
       //fprintf(stderr, "Writing %s (counter=%d frame_index=%d)\n", filename, counter, fas_get_frame_index(context));
