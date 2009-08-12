@@ -1,5 +1,6 @@
 #include <QFile>
 #include <QDebug>
+#include <QTemporaryFile>
 #include "videopreviewcreator.h"
 
 VideoPreviewCreator::VideoPreviewCreator()
@@ -40,7 +41,7 @@ static void ppm_save(fas_raw_image_type *image, char *filename)
 }
 
 
-QByteArray VideoPreviewCreator::getPreview(QString filename)
+QString VideoPreviewCreator::getPreview(QString filename)
 {
   fas_error_type video_error;
   fas_context_ref_type context;
@@ -53,10 +54,20 @@ QByteArray VideoPreviewCreator::getPreview(QString filename)
     qDebug() << "failed to open";
 
   int counter = 0;
-  while (fas_frame_available (context))
-    {
 
-      qDebug() << counter;
+  QTemporaryFile tf;
+  tf.setAutoRemove(false);
+  tf.open();
+  QString resfilename = tf.fileName();
+  qDebug() << resfilename;
+  int pid = fork();
+  if (pid!=-1)
+  {
+
+  //while (fas_frame_available (context))
+//    {
+
+  //    qDebug() << counter;
       if (FAS_SUCCESS != fas_get_frame (context, &image_buffer))
         qDebug() << "failed on rgb image";
 
@@ -67,7 +78,10 @@ QByteArray VideoPreviewCreator::getPreview(QString filename)
       //char filename[50];
       //sprintf(filename, "/home/a2k/tmp/ff/%04d.ppm", counter);
       //ppm_save(&image_buffer, filename);
+      qDebug() << "got frame;";
       QByteArray res = getImageData(&image_buffer);
+      qDebug() << "got image data;";
+      tf.write(res);
       /*
       QFile f("/home/a2k/tmp/ff/"+QString::number(counter)+".ppm");
       f.open(QFile::WriteOnly);
@@ -78,8 +92,19 @@ QByteArray VideoPreviewCreator::getPreview(QString filename)
 
       video_error = fas_step_forward (context);
       counter++;
-      return res;
-    }
+      //tf.wr
+      //QFile f(resfilename);
+      //f.open(QFile::WriteOnly);
+      //f.write(res);
+      //f.close();
 
+      qDebug() << "child thread should write this";
+      return resfilename;
+    }
+  qDebug() << "parent thread should write this";
+    wait();
+  //wait(pid);
+  return resfilename;
+    //return QByteArray();
 }
 
