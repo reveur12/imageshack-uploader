@@ -185,6 +185,7 @@ void MediaListWidget::mediaSelected(QItemSelection selected, QItemSelection)
 
 void MediaListWidget::modelReseted()
 {
+    updateStats();
     emit modelReset();
 }
 
