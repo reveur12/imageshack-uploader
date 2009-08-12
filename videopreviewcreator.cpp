@@ -50,20 +50,22 @@ QString VideoPreviewCreator::getPreview(QString filename)
 
   fas_initialize (FAS_FALSE, FAS_RGB24);
 
-  video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
-  if (video_error != FAS_SUCCESS)
-    qDebug() << "failed to open";
-
-  int counter = 0;
-
   QTemporaryFile tf;
   tf.setAutoRemove(false);
   tf.open();
   QString resfilename = tf.fileName();
   qDebug() << resfilename;
   int pid = fork();
-  if (pid!=-1)
+  if (pid==0)
   {
+
+      video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
+      if (video_error != FAS_SUCCESS)
+        qDebug() << "failed to open";
+
+      int counter = 0;
+
+
 
   //while (fas_frame_available (context))
 //    {
@@ -100,11 +102,17 @@ QString VideoPreviewCreator::getPreview(QString filename)
       //f.close();
 
       qDebug() << "child thread should write this";
-      return resfilename;
+      exit(0);
+      //return resfilename;
     }
   qDebug() << "parent thread should write this";
-    wait(&pid);
+    //wait(&pid);
   //wait(pid);
+  //sleep(3);
+  int stat;
+  //waitpid(pid, &stat, 0);
+  sleep(2);
+  qDebug() << "parent returning";
   return resfilename;
     //return QByteArray();
 }
