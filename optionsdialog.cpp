@@ -51,6 +51,13 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     QString lang = sets.value("translation", QVariant("")).toString();
     if (!lang.isEmpty())
     {
+        if (!findQmFiles().contains(lang))
+        {
+            if (findQmFiles().size())
+            {
+                lang = findQmFiles().first();
+            }
+        }
         QDir appdir = translationsDir();
         lang = appdir.absoluteFilePath(lang);
         qDebug() << findQmFiles();
