@@ -160,7 +160,7 @@ void UploadRequest::uploadFile(QString, QVector<QPair<QString,QString> > fields)
 void UploadRequest::uploadFailed(QNetworkReply::NetworkError code)
 {
     qDebug() << "upload failed with code " << code;
-    if (failed) return;
+    if (failed || aborted) return;
     failed = true;
     emit status(2);
 }
@@ -186,7 +186,7 @@ void UploadRequest::updateProgress(qint64 done, qint64 total)
 
 void UploadRequest::stop()
 {
-    qDebug() << "stop request";
+    qDebug() << "!!!!!!!!!! stop request";
     aborted = true;
     emit status(3);
     rep->abort();
