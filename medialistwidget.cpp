@@ -125,7 +125,8 @@ void MediaListWidget::mediasReceiver(QVector<QSharedPointer<Media> > newmedias,
         {
             QModelIndex index = mediaList->index(0,0,QModelIndex());
             QItemSelectionModel *model = m_ui->mediaList->selectionModel();
-            model->select(index, QItemSelectionModel::Select | QItemSelectionModel::Rows);
+            model->select(index, QItemSelectionModel::ToggleCurrent | QItemSelectionModel::Rows);
+            m_ui->mediaList->setFocus(Qt::MouseFocusReason);
         }
     }
     QStringList text;
