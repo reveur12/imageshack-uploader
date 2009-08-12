@@ -106,7 +106,8 @@ void TagWidget::loginStatusReceiver(int state)
 {
     if (state == 0)
     {
-        setEnabled(true);
+        if (media!=NULL)
+            setEnabled(true);
         this->setToolTip(QString());
     }
     else
@@ -126,6 +127,7 @@ void TagWidget::setMediaList(MediaListModel* model)
 void TagWidget::setMedia(QSharedPointer<Media> item)
 {
     media = item;
+    setEnabled(true);
     m_ui->tags->setText(media.data()->getTags().join(", "));
     m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
     m_ui->privacyPublic->setChecked(!media.data()->getPrivate());

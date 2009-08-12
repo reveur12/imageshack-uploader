@@ -49,7 +49,6 @@ public:
     QSharedPointer<Media> getMedia(QModelIndex);
     QSharedPointer<Media> getMedia(int);
     void removeMedia(int row = -1);
-    void removeMediaNoDelete(int row = -1);
     void removeAllMedias();
     QVector<QSharedPointer<Media> > getAllMedias();
     qint64 totalSize();
