@@ -45,7 +45,6 @@ static void ppm_save(fas_raw_image_type *image, char *filename)
 
 void sigsegv_handler(int s)
 {
-    qDebug() <<  s;
     abort();
 }
 
@@ -66,7 +65,7 @@ QString VideoPreviewCreator::getPreview(QString filename)
     int pid = fork();
     if (pid==0)
     {
-        signal(SIGSEGV, SIG_IGN);//sigsegv_handler);
+        signal(SIGSEGV, sigsegv_handler);
         video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
         if (video_error != FAS_SUCCESS)
             qDebug() << "failed to open";
