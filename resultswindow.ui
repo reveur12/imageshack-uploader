@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>497</width>
-    <height>482</height>
+    <height>533</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -321,17 +321,13 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="5" column="1">
-        <widget class="CopyableTextEdit" name="all6" native="true">
-         <zorder>all8</zorder>
-        </widget>
+        <widget class="CopyableTextEdit" name="all6" native="true"/>
        </item>
        <item row="3" column="1">
         <widget class="CopyableTextEdit" name="all4" native="true"/>
        </item>
        <item row="1" column="1">
-        <widget class="CopyableTextEdit" name="all2" native="true">
-         <zorder>horizontalLayoutWidget</zorder>
-        </widget>
+        <widget class="CopyableTextEdit" name="all2" native="true"/>
        </item>
        <item row="7" column="1">
         <widget class="CopyableTextEdit" name="all8" native="true"/>
@@ -346,10 +342,7 @@
         <widget class="CopyableTextEdit" name="all3" native="true"/>
        </item>
        <item row="1" column="0">
-        <widget class="CopyableTextEdit" name="all1" native="true">
-         <zorder>all3</zorder>
-         <zorder>all3</zorder>
-        </widget>
+        <widget class="CopyableTextEdit" name="all1" native="true"/>
        </item>
        <item row="0" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -511,11 +504,11 @@
    <slot>prev()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>190</x>
-     <y>211</y>
+     <x>246</x>
+     <y>245</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-1</x>
+     <x>0</x>
      <y>238</y>
     </hint>
    </hints>
@@ -527,8 +520,8 @@
    <slot>next()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>232</x>
-     <y>212</y>
+     <x>278</x>
+     <y>246</y>
     </hint>
     <hint type="destinationlabel">
      <x>420</x>
@@ -543,12 +536,12 @@
    <slot>done()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>210</x>
-     <y>701</y>
+     <x>266</x>
+     <y>527</y>
     </hint>
     <hint type="destinationlabel">
      <x>81</x>
-     <y>692</y>
+     <y>532</y>
     </hint>
    </hints>
   </connection>
@@ -575,8 +568,8 @@
    <slot>galleryCreate()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>17</x>
-     <y>464</y>
+     <x>368</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>248</x>

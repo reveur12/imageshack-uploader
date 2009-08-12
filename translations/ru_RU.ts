@@ -85,8 +85,8 @@ Got error messages from server:
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="79"/>
-        <location filename="../imageinfowidget.cpp" line="86"/>
+        <location filename="../imageinfowidget.cpp" line="82"/>
+        <location filename="../imageinfowidget.cpp" line="89"/>
         <location filename="../imageinfowidget.ui" line="44"/>
         <source>Thumbnail</source>
         <translation>Миниатюра</translation>
@@ -222,42 +222,37 @@ from thumbnail</source>
         <translation>Загрузка изображений и видео</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="79"/>
-        <source>Privacy &amp;&amp; tags</source>
-        <translation>Доступ и теги</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="119"/>
+        <location filename="../mainwindow.ui" line="116"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="126"/>
+        <location filename="../mainwindow.ui" line="123"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="137"/>
+        <location filename="../mainwindow.ui" line="134"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="145"/>
+        <location filename="../mainwindow.ui" line="142"/>
         <source>Support</source>
         <translation>Поддержка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="153"/>
+        <location filename="../mainwindow.ui" line="150"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="161"/>
+        <location filename="../mainwindow.ui" line="158"/>
         <source>Check for updates</source>
         <translation>Проверить обновления</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="169"/>
+        <location filename="../mainwindow.ui" line="166"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -274,12 +269,12 @@ from thumbnail</source>
         <translation>Загрузчик ImageShack %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="102"/>
+        <location filename="../mainwindow.cpp" line="103"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="103"/>
+        <location filename="../mainwindow.cpp" line="104"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Нельзя загружать Flash файлы, не совершив вход. Хотите попробовать все-равно?</translation>
     </message>
@@ -287,7 +282,7 @@ from thumbnail</source>
 <context>
     <name>Media</name>
     <message numerus="yes">
-        <location filename="../media.cpp" line="285"/>
+        <location filename="../media.cpp" line="290"/>
         <source>%n B</source>
         <translation>
             <numerusform>%n Б</numerusform>
@@ -296,7 +291,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="286"/>
+        <location filename="../media.cpp" line="291"/>
         <source>%n KB</source>
         <translation>
             <numerusform>%n КБ</numerusform>
@@ -305,7 +300,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="287"/>
+        <location filename="../media.cpp" line="292"/>
         <source>%n MB</source>
         <translation>
             <numerusform>%n МБ</numerusform>
@@ -314,7 +309,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="288"/>
+        <location filename="../media.cpp" line="293"/>
         <source>%n GB</source>
         <translation>
             <numerusform>%n ГБ</numerusform>
@@ -336,7 +331,7 @@ from thumbnail</source>
         <translation>Поддерживаемые форматы (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="126"/>
+        <location filename="../medialistwidget.cpp" line="135"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
             <numerusform>Не удалось добавить %n файл, так как он сохранен в формате, который на данный момент не поддерживается:</numerusform>
@@ -345,7 +340,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="133"/>
+        <location filename="../medialistwidget.cpp" line="142"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n файл слишком большой для загрузки:</numerusform>
@@ -354,12 +349,12 @@ from thumbnail</source>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="138"/>
+        <location filename="../medialistwidget.cpp" line="147"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="208"/>
+        <location filename="../medialistwidget.cpp" line="219"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n файл</numerusform>
@@ -458,94 +453,94 @@ from thumbnail</source>
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="65"/>
+        <location filename="../resultswindow.cpp" line="67"/>
         <source>Direct links</source>
         <translation>Прямые ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="66"/>
+        <location filename="../resultswindow.cpp" line="68"/>
         <source>Short links</source>
         <translation>Короткие ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="67"/>
+        <location filename="../resultswindow.cpp" line="69"/>
         <source>Hotlinks for web</source>
         <translation>Горячие ссылки для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="68"/>
+        <location filename="../resultswindow.cpp" line="70"/>
         <source>Thumbnails for web</source>
         <translation>Миниатюры для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="69"/>
+        <location filename="../resultswindow.cpp" line="71"/>
         <source>Thumbnails for forums 1</source>
         <translation>Миниатюры для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="70"/>
+        <location filename="../resultswindow.cpp" line="72"/>
         <source>Thumbnails for forums 2</source>
         <translation>Миниатюры для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="71"/>
+        <location filename="../resultswindow.cpp" line="73"/>
         <source>Hotlinks for forums 1</source>
         <translation>Горячие ссылки для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="72"/>
+        <location filename="../resultswindow.cpp" line="74"/>
         <source>Hotlinks for forums 2</source>
         <translation>Горячие ссылки для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="116"/>
-        <location filename="../resultswindow.cpp" line="139"/>
+        <location filename="../resultswindow.cpp" line="118"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Direct link</source>
         <translation>Прямая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="117"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Short link</source>
         <translation>Короткая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="118"/>
-        <location filename="../resultswindow.cpp" line="141"/>
+        <location filename="../resultswindow.cpp" line="120"/>
+        <location filename="../resultswindow.cpp" line="143"/>
         <source>Hotlink for web</source>
         <translation>Горячая ссылка для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="119"/>
-        <location filename="../resultswindow.cpp" line="142"/>
+        <location filename="../resultswindow.cpp" line="121"/>
+        <location filename="../resultswindow.cpp" line="144"/>
         <source>Thumbnail for web</source>
         <translation>Миниатюра для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="120"/>
-        <location filename="../resultswindow.cpp" line="143"/>
+        <location filename="../resultswindow.cpp" line="122"/>
+        <location filename="../resultswindow.cpp" line="145"/>
         <source>Thumbnail for forums 1</source>
         <translation>Миниатюра для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="121"/>
-        <location filename="../resultswindow.cpp" line="144"/>
+        <location filename="../resultswindow.cpp" line="123"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>Thumbnail for forums 2</source>
         <translation>Миниатюра для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="122"/>
-        <location filename="../resultswindow.cpp" line="145"/>
+        <location filename="../resultswindow.cpp" line="124"/>
+        <location filename="../resultswindow.cpp" line="147"/>
         <source>Hotlink for forums 1</source>
         <translation>Горячая ссылка для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="123"/>
-        <location filename="../resultswindow.cpp" line="146"/>
+        <location filename="../resultswindow.cpp" line="125"/>
+        <location filename="../resultswindow.cpp" line="148"/>
         <source>Hotlink for forums 2</source>
         <translation>Горячая ссылка для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="140"/>
+        <location filename="../resultswindow.cpp" line="142"/>
         <source>Embedded video</source>
         <translation>Встроенное видео</translation>
     </message>
@@ -567,7 +562,7 @@ from thumbnail</source>
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
-        <location filename="../resultswindow.ui" line="384"/>
+        <location filename="../resultswindow.ui" line="377"/>
         <source>Tweet this</source>
         <translation>Отправить на Twitter</translation>
     </message>
@@ -577,12 +572,12 @@ from thumbnail</source>
         <translation>Все изображения и видео</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="381"/>
+        <location filename="../resultswindow.ui" line="374"/>
         <source>Create gallery and post to twitter</source>
         <translation>Создать галерею и отправить на Twitter</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="441"/>
+        <location filename="../resultswindow.ui" line="434"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -590,33 +585,42 @@ from thumbnail</source>
 <context>
     <name>TagWidget</name>
     <message>
-        <location filename="../tagwidget.ui" line="48"/>
-        <source>Set privacy:</source>
-        <translation>Доступ:</translation>
+        <location filename="../tagwidget.ui" line="20"/>
+        <source>Custom privacy &amp;&amp; tags</source>
+        <translation>Доступ &amp;&amp; теги</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="60"/>
+        <location filename="../tagwidget.ui" line="32"/>
+        <location filename="../tagwidget.ui" line="113"/>
+        <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Доступ:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../tagwidget.ui" line="47"/>
+        <location filename="../tagwidget.ui" line="128"/>
         <source>Public</source>
         <translation>Общий</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="75"/>
+        <location filename="../tagwidget.ui" line="63"/>
+        <location filename="../tagwidget.ui" line="144"/>
         <source>Private</source>
         <translation>Только владельцу</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="119"/>
-        <source>Tags:</source>
-        <translation>Теги:</translation>
+        <location filename="../tagwidget.ui" line="88"/>
+        <location filename="../tagwidget.ui" line="169"/>
+        <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Теги:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="148"/>
-        <source>Batch tags:</source>
-        <translation>Общие теги:</translation>
+        <location filename="../tagwidget.ui" line="101"/>
+        <source>Batch privacy &amp;&amp; tags</source>
+        <translation>Общие доступ &amp;&amp; теги</translation>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
-        <location filename="../tagwidget.cpp" line="113"/>
+        <location filename="../tagwidget.cpp" line="115"/>
         <source>Log in to use this features</source>
         <translation>Войдите чтобы использовать эти возможности</translation>
     </message>
@@ -632,49 +636,49 @@ from thumbnail</source>
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="50"/>
+        <location filename="../twitterclient.cpp" line="55"/>
         <source>Posting to twitter...</source>
         <translation>Отправка на Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="71"/>
-        <location filename="../twitterclient.cpp" line="103"/>
-        <location filename="../twitterclient.cpp" line="115"/>
-        <location filename="../twitterclient.cpp" line="136"/>
+        <location filename="../twitterclient.cpp" line="78"/>
+        <location filename="../twitterclient.cpp" line="110"/>
+        <location filename="../twitterclient.cpp" line="122"/>
         <location filename="../twitterclient.cpp" line="143"/>
-        <location filename="../twitterclient.cpp" line="149"/>
+        <location filename="../twitterclient.cpp" line="150"/>
         <location filename="../twitterclient.cpp" line="156"/>
+        <location filename="../twitterclient.cpp" line="163"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="72"/>
+        <location filename="../twitterclient.cpp" line="79"/>
         <source>First set twitter username and password in options</source>
         <translation>Сначала задайте имя пользователя и пароль для Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="104"/>
+        <location filename="../twitterclient.cpp" line="111"/>
         <source>Could not send url to Twitter</source>
         <translation>Не удалось отправить ссылку на Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="116"/>
-        <location filename="../twitterclient.cpp" line="157"/>
+        <location filename="../twitterclient.cpp" line="123"/>
+        <location filename="../twitterclient.cpp" line="164"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Не удалось отправить на Twitter. Произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="137"/>
+        <location filename="../twitterclient.cpp" line="144"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Не удалось отправить на Twitter. Неправильные логин или пароль.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="144"/>
+        <location filename="../twitterclient.cpp" line="151"/>
         <source>Failed to update twitter status.</source>
         <translation>Не удалось обновить статус Twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="150"/>
+        <location filename="../twitterclient.cpp" line="157"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Не удалось отправить на Twitter. Внутреняя ошибка.</translation>
     </message>
