@@ -56,6 +56,8 @@ public:
     QSharedPointer<FileUploader> uploader;
     void changeEvent(QEvent*);
 
+    void closeEvent(QCloseEvent*);
+
 private:
     Ui::MainWindow *ui;
     void connectSignals();

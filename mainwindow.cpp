@@ -246,3 +246,8 @@ void MainWindow::commandLineAddFile(const QString& filenames)
     loader->start();
     this->activateWindow();
 }
+
+void MainWindow::closeEvent(QCloseEvent*)
+{
+    QApplication::quit();
+}
