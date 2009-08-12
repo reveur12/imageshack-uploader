@@ -31,6 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QStringListModel>
 #include <QMimeData>
 #include <QUrl>
+#include <QSet>
 #include <QSharedPointer>
 #include <QMessageBox>
 
@@ -111,16 +112,31 @@ void MediaListModel::addMedia(QVector<QSharedPointer<Media> > newmedias)
 {
     int was = 0;
     QVector<int> wasIndexes;
+    QStringList uniq;
     QSharedPointer<Media> m1, m2;
     for (int i=0; i<newmedias.size(); i++)
     {
+        bool curWas = false;
         for (int j=0; j<medias.size(); j++)
         {
             if (newmedias.at(i).data()->filepath() == medias.at(j).data()->filepath())
             {
                 was ++;
                 wasIndexes.append(i);
+                curWas = true;
                 break;
+            }
+        }
+        if (!curWas)
+        {
+            if (uniq.contains(newmedias.at(i).data()->filepath()))
+            {
+                was ++;
+                wasIndexes.append(i);
+            }
+            else
+            {
+                uniq.append(newmedias.at(i).data()->filepath());
             }
         }
     }
@@ -217,20 +233,17 @@ QStringList MediaListModel::mimeTypes() const
     return types;
 }
 
-bool MediaListModel::dropMimeData(const QMimeData *data,
-                                     Qt::DropAction action, int,
-                                     int, const QModelIndex &)
+bool MediaListModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
+                                  int, int, const QModelIndex &)
 {
     if (action == Qt::IgnoreAction)
         return true;
     if (!data->hasFormat("text/uri-list"))
         return false;
     QStringList filelist;
-    foreach (QUrl filename, data->urls())//newItems)
+    foreach (QUrl filename, data->urls())
     {
         filelist.append(filename.toLocalFile());
-        /*QSharedPointer<Media> media = QSharedPointer<Media>(new Media(filename.toLocalFile()));
-        if (media->isValid()) this->addMedia(media);*/
     }
     if (!loader.isNull() && loader.data()->isRunning()) emit addLoadFiles(filelist);
     else
@@ -240,14 +253,10 @@ bool MediaListModel::dropMimeData(const QMimeData *data,
                 SIGNAL(results(QVector<QSharedPointer<Media> >, QStringList, QStringList)),
                 parentw,
                 SLOT(mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList)));
-        connect(loader.data(),
-                SIGNAL(progress(int,int)),
-                parentw,
-                SLOT(progressReceiver(int, int)));
-        connect(this,
-                SIGNAL(addLoadFiles(QStringList)),
-                loader.data(),
-                SLOT(addFiles(QStringList)));
+        connect(loader.data(), SIGNAL(progress(int,int)),
+                parentw, SLOT(progressReceiver(int, int)));
+        connect(this, SIGNAL(addLoadFiles(QStringList)),
+                loader.data(), SLOT(addFiles(QStringList)));
         loader.data()->start();
     }
     return true;
