@@ -68,7 +68,8 @@ void ImageInfoWidget::changeEvent(QEvent *e)
 
 void ImageInfoWidget::enable()
 {
-    m_ui->thumbnail->setEnabled(true);
+    if (m_ui->thumbnail->text().size() == 0)
+        m_ui->thumbnail->setEnabled(true);
     if (!(media!=NULL && media.data()->getClass() == "video"))
     {
         m_ui->removeSize->setEnabled(true);
@@ -87,7 +88,7 @@ void ImageInfoWidget::disable()
 void ImageInfoWidget::reset()
 {
     m_ui->thumbnail->setText(tr("Thumbnail"));
-    m_ui->thumbnail->setEnabled(true);
+    m_ui->thumbnail->setEnabled(false);
     m_ui->removeSize->setEnabled(true);
     m_ui->resize->setEnabled(true);
 }
@@ -122,6 +123,7 @@ void ImageInfoWidget::thumbnailClicked()
     if (!media || (media.data()->getClass()!="image" &&
                    media.data()->getClass()!="video"))
         return;
+    if (m_ui->thumbnail->text().size()!=0) return;
     if (!media.data()->hasPreview()) return;
     MediaWidget *mediaWidget = new MediaWidget();
     mediaWidget->setMedia(media);

@@ -32,6 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QSettings>
 #include <QDesktopServices>
 #include <QMessageBox>
+#include <QDebug>
 
 MediaListWidget::MediaListWidget(QWidget *parent) :
     QWidget(parent),
@@ -159,8 +160,18 @@ void MediaListWidget::progressReceiver(int current, int total)
 void MediaListWidget::removeFile()
 {
     QModelIndexList indexes = m_ui->mediaList->selectionModel()->selectedIndexes();
-    foreach(QModelIndex index, indexes)
-        if (index.column() == 0) mediaList->removeMedia(index.row());
+    if (indexes.size())
+    {
+        foreach(QModelIndex index, indexes)
+            if (index.column() == 0) mediaList->removeMedia(index.row());
+    }
+    else
+    {
+        if (mediaList->rowCount())
+        {
+            mediaList->removeMedia(mediaList->rowCount()-1);
+        }
+    }
     updateStats();
 }
 
@@ -238,4 +249,14 @@ QVector<QSharedPointer<Media> > MediaListWidget::getAllMedias()
 MediaListModel* MediaListWidget::getModel()
 {
     return mediaList;
+}
+
+void MediaListWidget::setEnabled(bool state)
+{
+    QWidget::setEnabled(state);
+    if (!state)
+    {
+        m_ui->mediaList->clearSelection();
+        QItemSelectionModel *model = m_ui->mediaList->selectionModel();
+    }
 }

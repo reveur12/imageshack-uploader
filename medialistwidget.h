@@ -49,6 +49,7 @@ public:
     QSharedPointer<Media> getSelectedMedia();
     QVector<QSharedPointer<Media> > getAllMedias();
     MediaListModel* getModel();
+    void setEnabled(bool);
 
 protected:
     virtual void changeEvent(QEvent *e);

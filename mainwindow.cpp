@@ -213,6 +213,18 @@ void MainWindow::checkUpdatesSilently()
 void MainWindow::mediasChanged()
 {
     ui->progressWidget->setUploadEnabled(ui->mediaList->getModel()->rowCount());
+    if (!ui->mediaList->getModel()->rowCount())
+    {
+        ui->imageInfo->disable();
+        ui->tagWidget->setEnabled(false);
+    }
+    else
+    {
+        if (!ui->imageInfo->isEnabled())
+            ui->imageInfo->enable();
+        if (!ui->tagWidget->isEnabled())
+            ui->tagWidget->setEnabled(true);
+    }
 }
 
 void MainWindow::showOptions()
