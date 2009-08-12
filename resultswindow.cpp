@@ -35,6 +35,7 @@ ResultsWindow::ResultsWindow(QWidget *parent) :
     QDialog(parent),
     m_ui(new Ui::ResultsWindow)
 {
+    setParent(parent);
     m_ui->setupUi(this);
     current = 0;
     setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint);
@@ -51,6 +52,8 @@ void ResultsWindow::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         m_ui->retranslateUi(this);
+        translate1stTab();
+        translate2ndTab();
         break;
     default:
         break;
@@ -63,14 +66,7 @@ void ResultsWindow::setResults(QSharedPointer<QVector<QPair<QSharedPointer<Media
     current = 0;
     setIndex(0);
 
-    m_ui->all1->setTitle(tr("Direct links"));
-    m_ui->all2->setTitle(tr("Short links"));
-    m_ui->all3->setTitle(tr("Hotlinks for web"));
-    m_ui->all4->setTitle(tr("Thumbnails for web"));
-    m_ui->all5->setTitle(tr("Thumbnails for forums 1"));
-    m_ui->all6->setTitle(tr("Thumbnails for forums 2"));
-    m_ui->all7->setTitle(tr("Hotlinks for forums 1"));
-    m_ui->all8->setTitle(tr("Hotlinks for forums 2"));
+    translate2ndTab();
 
     QStringList box1, box2, box3, box4, box5, box6, box7, box8;
     QPair<QSharedPointer<Media>,QStringList> element;
@@ -107,10 +103,22 @@ void ResultsWindow::setResults(QSharedPointer<QVector<QPair<QSharedPointer<Media
 
 }
 
-void ResultsWindow::setIndex(int index)
+void ResultsWindow::translate2ndTab()
 {
-    m_ui->thumbnail->setPixmap(QPixmap::fromImage(results.data()->at(index).first.data()->thumbnail()));
-    m_ui->directLink->setText(results.data()->at(index).second.at(0));
+    m_ui->all1->setTitle(tr("Direct links"));
+    m_ui->all2->setTitle(tr("Short links"));
+    m_ui->all3->setTitle(tr("Hotlinks for web"));
+    m_ui->all4->setTitle(tr("Thumbnails for web"));
+    m_ui->all5->setTitle(tr("Thumbnails for forums 1"));
+    m_ui->all6->setTitle(tr("Thumbnails for forums 2"));
+    m_ui->all7->setTitle(tr("Hotlinks for forums 1"));
+    m_ui->all8->setTitle(tr("Hotlinks for forums 2"));
+}
+
+void ResultsWindow::translate1stTab()
+{
+    if ((results.isNull()) || (results.data()->size() < current)) return;
+    int index = current;
     if ( (results.data()->at(index).first.data()->getClass() == "image")
         || (results.data()->at(index).first.data()->getClass() == "application") )
     {
@@ -122,6 +130,36 @@ void ResultsWindow::setIndex(int index)
         m_ui->forumThumbnail2->setTitle(tr("Thumbnail for forums 2"));
         m_ui->forumHotlink->setTitle(tr("Hotlink for forums 1"));
         m_ui->forumHotlink2->setTitle(tr("Hotlink for forums 2"));
+    }
+    else if (results.data()->at(index).first.data()->getClass() == "video")
+    {
+        m_ui->directLink->setTitle(tr("Direct link"));
+        m_ui->shortLink->setTitle(tr("Embedded video"));
+        m_ui->hotlink->setTitle(tr("Hotlink for web"));
+        m_ui->thumbnailLink->setTitle(tr("Thumbnail for web"));
+        m_ui->forumThumbnail->setTitle(tr("Thumbnail for forums 1"));
+        m_ui->forumThumbnail2->setTitle(tr("Thumbnail for forums 2"));
+        m_ui->forumHotlink->setTitle(tr("Hotlink for forums 1"));
+        m_ui->forumHotlink2->setTitle(tr("Hotlink for forums 2"));
+    }
+}
+
+void ResultsWindow::setIndex(int index)
+{
+    m_ui->thumbnail->setPixmap(QPixmap::fromImage(results.data()->at(index).first.data()->thumbnail()));
+    m_ui->directLink->setText(results.data()->at(index).second.at(0));
+    translate1stTab();
+    if ( (results.data()->at(index).first.data()->getClass() == "image")
+        || (results.data()->at(index).first.data()->getClass() == "application") )
+    {
+        /*m_ui->directLink->setTitle(tr("Direct link"));
+        m_ui->shortLink->setTitle(tr("Short link"));
+        m_ui->hotlink->setTitle(tr("Hotlink for web"));
+        m_ui->thumbnailLink->setTitle(tr("Thumbnail for web"));
+        m_ui->forumThumbnail->setTitle(tr("Thumbnail for forums 1"));
+        m_ui->forumThumbnail2->setTitle(tr("Thumbnail for forums 2"));
+        m_ui->forumHotlink->setTitle(tr("Hotlink for forums 1"));
+        m_ui->forumHotlink2->setTitle(tr("Hotlink for forums 2"));*/
         m_ui->directLink->setText(results.data()->at(index).second.at(0));
         m_ui->shortLink->setText(results.data()->at(index).second.at(4));
         m_ui->hotlink->setText(results.data()->at(index).second.at(1));
@@ -137,14 +175,14 @@ void ResultsWindow::setIndex(int index)
     }
     else if (results.data()->at(index).first.data()->getClass() == "video")
     {
-        m_ui->directLink->setTitle(tr("Direct link"));
+        /*m_ui->directLink->setTitle(tr("Direct link"));
         m_ui->shortLink->setTitle(tr("Embedded video"));
         m_ui->hotlink->setTitle(tr("Hotlink for web"));
         m_ui->thumbnailLink->setTitle(tr("Thumbnail for web"));
         m_ui->forumThumbnail->setTitle(tr("Thumbnail for forums 1"));
         m_ui->forumThumbnail2->setTitle(tr("Thumbnail for forums 2"));
         m_ui->forumHotlink->setTitle(tr("Hotlink for forums 1"));
-        m_ui->forumHotlink2->setTitle(tr("Hotlink for forums 2"));
+        m_ui->forumHotlink2->setTitle(tr("Hotlink for forums 2"));*/
 
 
         m_ui->directLink->setText(results.data()->at(index).second.at(0));
