@@ -1,6 +1,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QTemporaryFile>
+#include <QApplication>
 #include "videopreviewcreator.h"
 #include "sys/wait.h"
 
@@ -44,36 +45,32 @@ static void ppm_save(fas_raw_image_type *image, char *filename)
 
 QString VideoPreviewCreator::getPreview(QString filename)
 {
-  fas_error_type video_error;
-  fas_context_ref_type context;
-  fas_raw_image_type image_buffer;
+    fas_error_type video_error;
+    fas_context_ref_type context;
+    fas_raw_image_type image_buffer;
 
-  fas_initialize (FAS_FALSE, FAS_RGB24);
+    fas_initialize (FAS_FALSE, FAS_RGB24);
 
-  QTemporaryFile tf;
-  tf.setAutoRemove(false);
-  tf.open();
-  QString resfilename = tf.fileName();
-  qDebug() << resfilename;
-  int pid = fork();
-  if (pid==0)
-  {
+    QTemporaryFile tf;
+    tf.setAutoRemove(false);
+    tf.open();
+    QString resfilename = tf.fileName();
+    qDebug() << resfilename;
+    int stat;
+    int pid = fork();
+    if (pid==0)
+    {
 
-      video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
-      if (video_error != FAS_SUCCESS)
-        qDebug() << "failed to open";
+        video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
+        if (video_error != FAS_SUCCESS)
+            qDebug() << "failed to open";
 
-      int counter = 0;
-
-
-
-  //while (fas_frame_available (context))
+        int counter = 0;
+    //while (fas_frame_available (context))
 //    {
-
-  //    qDebug() << counter;
-      if (FAS_SUCCESS != fas_get_frame (context, &image_buffer))
-        qDebug() << "failed on rgb image";
-
+  //      qDebug() << counter;
+        if (FAS_SUCCESS != fas_get_frame (context, &image_buffer))
+            qDebug() << "failed on rgb image";
       //char filename[50];
 
       //fprintf(stderr, "Writing %s (counter=%d frame_index=%d)\n", filename, counter, fas_get_frame_index(context));
@@ -95,25 +92,19 @@ QString VideoPreviewCreator::getPreview(QString filename)
 
       video_error = fas_step_forward (context);
       counter++;
-      //tf.wr
-      //QFile f(resfilename);
-      //f.open(QFile::WriteOnly);
-      //f.write(res);
-      //f.close();
 
       qDebug() << "child thread should write this";
+      abort();
       exit(0);
-      //return resfilename;
+      qDebug() << "child could not exit";
     }
-  qDebug() << "parent thread should write this";
-    //wait(&pid);
-  //wait(pid);
-  //sleep(3);
-  int stat;
-  //waitpid(pid, &stat, 0);
-  sleep(2);
-  qDebug() << "parent returning";
-  return resfilename;
-    //return QByteArray();
+    else
+    {
+        waitpid(pid, &stat, 0);
+    }
+    qDebug() << "parent thread should write this";
+    qDebug() << "child pid is" << pid;
+    qDebug() << "parent returning";
+    return resfilename;
 }
 
