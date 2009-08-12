@@ -13,7 +13,7 @@ class VideoPreviewCreator : public QObject
 public:
     VideoPreviewCreator();
     QByteArray getImageData(fas_raw_image_type *);
-    QByteArray getPreview(QString);
+    QString getPreview(QString);
 };
 
 #endif // VIDEOPREVIEWCREATOR_H

@@ -114,8 +114,8 @@ Media::Media(QString filename)
     {
         //VideoFrameReader reader;
         VideoPreviewCreator prev;
-        QImage img;
-        img.loadFromData(prev.getPreview(filename));
+        QImage img(prev.getPreview(filename));
+        //img.loadFromData(prev.getPreview(filename));
         videoPreview = img;
         if (img.isNull())
             img.load(":/images/images/video.png");
