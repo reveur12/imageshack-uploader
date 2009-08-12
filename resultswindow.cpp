@@ -37,6 +37,7 @@ ResultsWindow::ResultsWindow(QWidget *parent) :
 {
     m_ui->setupUi(this);
     current = 0;
+    this->setWindowFlags(this->windowFlags() & Qt::WindowMaximizeButtonHint);
 }
 
 ResultsWindow::~ResultsWindow()
