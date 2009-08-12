@@ -39,11 +39,11 @@ public:
     LoginRequest();
     void login(QString, QString);
     void abort();
+    QHttp http;
 
 private:
     QString username;
     QString password;
-    QHttp http;
     int requestId;
     bool aborted;
 

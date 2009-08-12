@@ -186,7 +186,6 @@ void UploadRequest::updateProgress(qint64 done, qint64 total)
 
 void UploadRequest::stop()
 {
-    qDebug() << "!!!!!!!!!! stop request";
     aborted = true;
     emit status(3);
     rep->abort();
