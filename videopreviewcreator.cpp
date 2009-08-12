@@ -2,6 +2,7 @@
 #include <QDebug>
 #include <QTemporaryFile>
 #include "videopreviewcreator.h"
+#include "wait.h"
 
 VideoPreviewCreator::VideoPreviewCreator()
 {
@@ -102,7 +103,7 @@ QString VideoPreviewCreator::getPreview(QString filename)
       return resfilename;
     }
   qDebug() << "parent thread should write this";
-    wait();
+    wait(&pid);
   //wait(pid);
   return resfilename;
     //return QByteArray();
