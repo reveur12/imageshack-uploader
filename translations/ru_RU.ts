@@ -282,7 +282,7 @@ from thumbnail</source>
 <context>
     <name>Media</name>
     <message numerus="yes">
-        <location filename="../media.cpp" line="290"/>
+        <location filename="../media.cpp" line="293"/>
         <source>%n B</source>
         <translation>
             <numerusform>%n Б</numerusform>
@@ -291,7 +291,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="291"/>
+        <location filename="../media.cpp" line="294"/>
         <source>%n KB</source>
         <translation>
             <numerusform>%n КБ</numerusform>
@@ -300,7 +300,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="292"/>
+        <location filename="../media.cpp" line="295"/>
         <source>%n MB</source>
         <translation>
             <numerusform>%n МБ</numerusform>
@@ -309,7 +309,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="293"/>
+        <location filename="../media.cpp" line="296"/>
         <source>%n GB</source>
         <translation>
             <numerusform>%n ГБ</numerusform>
@@ -781,6 +781,11 @@ from thumbnail</source>
         <translation>Доступны обновления</translation>
     </message>
     <message>
+        <location filename="../updatechecker.cpp" line="166"/>
+        <source>You have the latest version of this application.</source>
+        <translation>У вас самая последняя версия программы.</translation>
+    </message>
+    <message>
         <location filename="../updatechecker.cpp" line="153"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Последняя версия - %1. Произвести обновление?</translation>
@@ -803,7 +808,6 @@ from thumbnail</source>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="142"/>
-        <location filename="../updatechecker.cpp" line="166"/>
         <source>You have lastest version of application.</source>
         <translation>У вас последняя версия приложения.</translation>
     </message>
