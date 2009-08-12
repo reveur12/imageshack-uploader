@@ -57,14 +57,15 @@ private:
     MediaListModel* medias;
 
 private slots:
-    void tagsUpdated();
     void batchTagsUpdated();
-    void privacyUpdated();
     void batchPrivacyUpdated();
     void setMedia(QSharedPointer<Media>);
     void unsetMedia();
 
     void loginStatusReceiver(int);
+
+signals:
+    void batchPrivacy(bool);
 };
 
 #endif // TAGWIDGET_H

@@ -65,21 +65,6 @@ QString cleanup(QString str)
     return str;
 }
 
-void TagWidget::tagsUpdated()
-{
-    if (!media) return;
-    QString text = m_ui->tags->text();
-    QStringList taglist = text.split(',');
-    QStringList result;
-    foreach(QString tag, taglist)
-    {
-        QString newtag = cleanup(tag);
-        if (!newtag.isEmpty())
-            result.append(newtag);
-    }
-    media.data()->setTags(result);
-}
-
 void TagWidget::batchTagsUpdated()
 {
     if (!medias) return;
@@ -93,13 +78,6 @@ void TagWidget::batchTagsUpdated()
             result.append(newtag);
     }
     medias->setTags(result);
-}
-
-void TagWidget::privacyUpdated()
-{
-    qDebug() << "setting media privacy to" << m_ui->privacyPrivate->isChecked();
-    if (media == NULL) return;
-    media.data()->setPrivacy(m_ui->privacyPrivate->isChecked());
 }
 
 void TagWidget::loginStatusReceiver(int state)
@@ -118,7 +96,6 @@ void TagWidget::loginStatusReceiver(int state)
 
 }
 
-
 void TagWidget::setMediaList(MediaListModel* model)
 {
     medias = model;
@@ -128,9 +105,8 @@ void TagWidget::setMedia(QSharedPointer<Media> item)
 {
     media = item;
     setEnabled(true);
-    m_ui->tags->setText(media.data()->getTags().join(", "));
-    m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
-    m_ui->privacyPublic->setChecked(!media.data()->getPrivate());
+    //m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
+    //m_ui->privacyPublic->setChecked(!media.data()->getPrivate());
 }
 
 void TagWidget::unsetMedia()
@@ -152,6 +128,5 @@ void TagWidget::batchPrivacyUpdated()
     {
         medias->getMedia(i).data()->setPrivacy(m_ui->bPrivacyPrivate->isChecked());
     }
-    m_ui->privacyPrivate->setChecked(m_ui->bPrivacyPrivate->isChecked());
-    m_ui->privacyPublic->setChecked(!m_ui->bPrivacyPrivate->isChecked());
+    emit batchPrivacy(m_ui->bPrivacyPrivate->isChecked());
 }

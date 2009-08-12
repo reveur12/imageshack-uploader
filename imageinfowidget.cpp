@@ -37,6 +37,7 @@ ImageInfoWidget::ImageInfoWidget(QWidget *parent) :
     m_ui(new Ui::ImageInfoWidget)
 {
     m_ui->setupUi(this);
+    setFont(QApplication::font());
     items[""] = 0;
     items["100x100"] = 1;
     items["150x150"] = 2;
@@ -47,6 +48,7 @@ ImageInfoWidget::ImageInfoWidget(QWidget *parent) :
     items["1280x1280"] = 7;
     items["1600x1600"] = 8;
     items["resample"] = 9;
+    loggedIn = false;
 }
 
 ImageInfoWidget::~ImageInfoWidget()
@@ -75,6 +77,12 @@ void ImageInfoWidget::enable()
         m_ui->removeSize->setEnabled(true);
         m_ui->resize->setEnabled(true);
     }
+    if (!media.isNull() && loggedIn)
+    {
+        m_ui->privacyPrivate->setEnabled(true);
+        m_ui->privacyPublic->setEnabled(true);
+        m_ui->tags->setEnabled(true);
+    }
 }
 
 void ImageInfoWidget::disable()
@@ -83,6 +91,10 @@ void ImageInfoWidget::disable()
     m_ui->thumbnail->setText(tr("Thumbnail"));
     m_ui->removeSize->setEnabled(false);
     m_ui->resize->setEnabled(false);
+    m_ui->privacyPrivate->setEnabled(false);
+    m_ui->privacyPublic->setEnabled(false);
+    m_ui->tags->setEnabled(false);
+    m_ui->tags->clear();
 }
 
 void ImageInfoWidget::reset()
@@ -91,6 +103,10 @@ void ImageInfoWidget::reset()
     m_ui->thumbnail->setEnabled(false);
     m_ui->removeSize->setEnabled(false);
     m_ui->resize->setEnabled(false);
+    m_ui->privacyPrivate->setEnabled(false);
+    m_ui->privacyPublic->setEnabled(false);
+    m_ui->tags->setEnabled(false);
+    m_ui->tags->clear();
 }
 
 void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
@@ -103,6 +119,16 @@ void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
     bool isImage = (media.data()->getClass() == "image");
     m_ui->resize->setEnabled(isImage);
     m_ui->removeSize->setEnabled(isImage);
+    m_ui->tags->setText(media.data()->getTags().join(", "));
+    m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
+    m_ui->privacyPublic->setChecked(!media.data()->getPrivate());
+    if (loggedIn)
+    {
+        m_ui->privacyPrivate->setEnabled(true);
+        m_ui->privacyPublic->setEnabled(true);
+        m_ui->tags->setText(media.data()->getTags().join(", "));
+        m_ui->tags->setEnabled(true);
+    }
 }
 
 void ImageInfoWidget::setResize(int idx)
@@ -128,4 +154,72 @@ void ImageInfoWidget::thumbnailClicked()
     MediaWidget *mediaWidget = new MediaWidget();
     mediaWidget->setMedia(media);
     mediaWidget->show();
+}
+
+
+QString ImageInfoWidget::cleanup(QString str)
+{
+    while ((!str.isNull()) && (str.left(1) == " ")) str.remove(0, 1);
+    while ((!str.isNull()) && (str.right(1) == " ")) str.remove(str.length()-1, 1);
+    return str;
+}
+
+void ImageInfoWidget::tagsUpdated()
+{
+    if (!media) return;
+    QString text = m_ui->tags->text();
+    QStringList taglist = text.split(',');
+    QStringList result;
+    foreach(QString tag, taglist)
+    {
+        QString newtag = cleanup(tag);
+        if (!newtag.isEmpty())
+            result.append(newtag);
+    }
+    media.data()->setTags(result);
+}
+
+void ImageInfoWidget::privacyUpdated()
+{
+    qDebug() << "setting media privacy to" << m_ui->privacyPrivate->isChecked();
+    if (media == NULL) return;
+    media.data()->setPrivacy(m_ui->privacyPrivate->isChecked());
+}
+
+void ImageInfoWidget::batchPrivacy(bool st)
+{
+    if (st)
+    {
+        m_ui->privacyPrivate->setChecked(true);
+        m_ui->privacyPublic->setChecked(false);
+    }
+    else
+    {
+        m_ui->privacyPrivate->setChecked(false);
+        m_ui->privacyPublic->setChecked(true);
+    }
+}
+
+void ImageInfoWidget::loginStatusReceiver(int state)
+{
+    if (state == 0)
+    {
+        if (media!=NULL)
+        {
+            m_ui->privacyPrivate->setEnabled(true);
+            m_ui->privacyPublic->setEnabled(true);
+            m_ui->tags->setEnabled(true);
+        }
+        loggedIn = true;
+        this->setToolTip(QString());
+    }
+    else
+    {
+        m_ui->privacyPrivate->setEnabled(false);
+        m_ui->privacyPublic->setEnabled(false);
+        m_ui->tags->setEnabled(false);
+        loggedIn = false;
+        setToolTip(tr("Log in to use this features"));
+    }
+
 }
