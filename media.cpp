@@ -27,7 +27,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 #include "media.h"
-#include "videoframereader.h"
+//#include "videoframereader.h"
+#include "videopreviewcreator.h"
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
@@ -111,8 +112,10 @@ Media::Media(QString filename)
     }
     else if (mediaClass == "video")
     {
-        VideoFrameReader reader;
-        QImage img = reader.getScreencap(filename);
+        //VideoFrameReader reader;
+        VideoPreviewCreator prev;
+        QImage img;
+        img.loadFromData(prev.getPreview(filename));
         videoPreview = img;
         if (img.isNull())
             img.load(":/images/images/video.png");
