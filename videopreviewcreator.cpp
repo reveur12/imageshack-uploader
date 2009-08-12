@@ -2,7 +2,7 @@
 #include <QDebug>
 #include <QTemporaryFile>
 #include "videopreviewcreator.h"
-#include "wait.h"
+#include "sys/wait.h"
 
 VideoPreviewCreator::VideoPreviewCreator()
 {
