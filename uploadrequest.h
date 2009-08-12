@@ -83,6 +83,7 @@ private:
     QSharedPointer<FileSource> data;
 
     QNetworkAccessManager qnam;
+    QNetworkRequest* req;
     QNetworkReply* rep;
 
 public slots:
