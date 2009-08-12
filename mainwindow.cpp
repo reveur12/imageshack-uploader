@@ -222,7 +222,7 @@ void MainWindow::mediasChanged()
     {
         if (!ui->imageInfo->isEnabled())
             ui->imageInfo->enable();
-        if (!ui->tagWidget->isEnabled())
+        if (!ui->tagWidget->isEnabled() && ui->loginWidget->isLoggedIn())
             ui->tagWidget->setEnabled(true);
     }
 }

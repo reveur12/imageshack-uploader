@@ -152,24 +152,6 @@ void MediaListModel::removeMedia(int row)
     if (!rowCount()) reset();
 }
 
-void MediaListModel::removeMediaNoDelete(int row)
-{
-    qDebug() << "call";
-    if ((row<rowCount()) && (row>=0))
-    {
-        beginRemoveRows(QModelIndex(), row, row);
-        medias.remove(row, 1);
-        endRemoveRows();
-    }
-    else
-    {
-        medias.clear();
-        reset();
-    }
-    emit modelChanged();
-}
-
-
 void MediaListModel::removeAllMedias()
 {
     foreach (QSharedPointer<Media> m, medias)
