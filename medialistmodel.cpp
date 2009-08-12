@@ -148,9 +148,8 @@ void MediaListModel::removeMedia(int row)
         medias.remove(row, 1);
         endRemoveRows();
     }
-    if (rowCount())
-        emit modelChanged();
-    else reset();
+    emit modelChanged();
+    if (!rowCount()) reset();
 }
 
 void MediaListModel::removeMediaNoDelete(int row)

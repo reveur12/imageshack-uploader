@@ -89,8 +89,8 @@ void ImageInfoWidget::reset()
 {
     m_ui->thumbnail->setText(tr("Thumbnail"));
     m_ui->thumbnail->setEnabled(false);
-    m_ui->removeSize->setEnabled(true);
-    m_ui->resize->setEnabled(true);
+    m_ui->removeSize->setEnabled(false);
+    m_ui->resize->setEnabled(false);
 }
 
 void ImageInfoWidget::setMedia(QSharedPointer<Media> item)

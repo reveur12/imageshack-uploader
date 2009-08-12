@@ -95,6 +95,9 @@
      </item>
      <item>
       <widget class="QComboBox" name="resize">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>9</pointsize>
@@ -154,6 +157,9 @@
      </item>
      <item>
       <widget class="QCheckBox" name="removeSize">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
          <horstretch>0</horstretch>
