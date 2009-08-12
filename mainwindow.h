@@ -62,7 +62,7 @@ private:
     Ui::MainWindow *ui;
     void connectSignals();
     MediaListModel mediaList;
-    ResultsWindow reswindow;
+    ResultsWindow* reswindow;
     void disableControls();
     void enableControls();
     bool controlsDisabled;

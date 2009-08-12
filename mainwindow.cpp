@@ -87,6 +87,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     about = new AboutWindow(this);
     options = new OptionsDialog(this);
+    reswindow = new ResultsWindow(this);
 }
 
 
@@ -167,8 +168,8 @@ void MainWindow::mediasReseted()
 
 void MainWindow::uploadResultReceiver(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > > results)
 {
-    reswindow.setResults(results);
-    reswindow.show();
+    reswindow->setResults(results);
+    reswindow->show();
 }
 
 void MainWindow::mediaListProgressbarReceiver(bool value)

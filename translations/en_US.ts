@@ -82,8 +82,8 @@ Got error messages from server:</numerusform>
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="79"/>
-        <location filename="../imageinfowidget.cpp" line="86"/>
+        <location filename="../imageinfowidget.cpp" line="82"/>
+        <location filename="../imageinfowidget.cpp" line="89"/>
         <location filename="../imageinfowidget.ui" line="44"/>
         <source>Thumbnail</source>
         <translation>Thumbnail</translation>
@@ -226,12 +226,12 @@ from thumbnail</translation>
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="102"/>
+        <location filename="../mainwindow.cpp" line="103"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="103"/>
+        <location filename="../mainwindow.cpp" line="104"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Flash files can not be uploaded without logging in. Do you want to try anyway?</translation>
     </message>
@@ -241,42 +241,37 @@ from thumbnail</translation>
         <translation>Image and video uploading</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="79"/>
-        <source>Privacy &amp;&amp; tags</source>
-        <translation>Privacy &amp;&amp; tags</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="119"/>
+        <location filename="../mainwindow.ui" line="116"/>
         <source>File</source>
         <translation>File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="126"/>
+        <location filename="../mainwindow.ui" line="123"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="137"/>
+        <location filename="../mainwindow.ui" line="134"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="145"/>
+        <location filename="../mainwindow.ui" line="142"/>
         <source>Support</source>
         <translation>Support</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="153"/>
+        <location filename="../mainwindow.ui" line="150"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="161"/>
+        <location filename="../mainwindow.ui" line="158"/>
         <source>Check for updates</source>
         <translation>Check for updates</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="169"/>
+        <location filename="../mainwindow.ui" line="166"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
@@ -284,7 +279,7 @@ from thumbnail</translation>
 <context>
     <name>Media</name>
     <message numerus="yes">
-        <location filename="../media.cpp" line="285"/>
+        <location filename="../media.cpp" line="290"/>
         <source>%n B</source>
         <translation>
             <numerusform>%n B</numerusform>
@@ -292,7 +287,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="286"/>
+        <location filename="../media.cpp" line="291"/>
         <source>%n KB</source>
         <translation>
             <numerusform>%n KB</numerusform>
@@ -300,7 +295,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="287"/>
+        <location filename="../media.cpp" line="292"/>
         <source>%n MB</source>
         <translation>
             <numerusform>%n MB</numerusform>
@@ -308,7 +303,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="288"/>
+        <location filename="../media.cpp" line="293"/>
         <source>%n GB</source>
         <translation>
             <numerusform>%n GB</numerusform>
@@ -329,7 +324,7 @@ from thumbnail</translation>
         <translation>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="126"/>
+        <location filename="../medialistwidget.cpp" line="135"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
             <numerusform>Could not add %n file, as it seems to be in a format we do not currently support:</numerusform>
@@ -337,7 +332,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="133"/>
+        <location filename="../medialistwidget.cpp" line="142"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n file is too large for upload:</numerusform>
@@ -345,12 +340,12 @@ from thumbnail</translation>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="138"/>
+        <location filename="../medialistwidget.cpp" line="147"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="208"/>
+        <location filename="../medialistwidget.cpp" line="219"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n file</numerusform>
@@ -448,94 +443,94 @@ from thumbnail</translation>
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="65"/>
+        <location filename="../resultswindow.cpp" line="67"/>
         <source>Direct links</source>
         <translation>Direct links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="66"/>
+        <location filename="../resultswindow.cpp" line="68"/>
         <source>Short links</source>
         <translation>Short links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="67"/>
+        <location filename="../resultswindow.cpp" line="69"/>
         <source>Hotlinks for web</source>
         <translation>Hotlinks for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="68"/>
+        <location filename="../resultswindow.cpp" line="70"/>
         <source>Thumbnails for web</source>
         <translation>Thumbnails for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="69"/>
+        <location filename="../resultswindow.cpp" line="71"/>
         <source>Thumbnails for forums 1</source>
         <translation>Thumbnails for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="70"/>
+        <location filename="../resultswindow.cpp" line="72"/>
         <source>Thumbnails for forums 2</source>
         <translation>Thumbnails for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="71"/>
+        <location filename="../resultswindow.cpp" line="73"/>
         <source>Hotlinks for forums 1</source>
         <translation>Hotlinks for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="72"/>
+        <location filename="../resultswindow.cpp" line="74"/>
         <source>Hotlinks for forums 2</source>
         <translation>Hotlinks for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="116"/>
-        <location filename="../resultswindow.cpp" line="139"/>
+        <location filename="../resultswindow.cpp" line="118"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Direct link</source>
         <translation>Direct link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="117"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Short link</source>
         <translation>Short link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="118"/>
-        <location filename="../resultswindow.cpp" line="141"/>
+        <location filename="../resultswindow.cpp" line="120"/>
+        <location filename="../resultswindow.cpp" line="143"/>
         <source>Hotlink for web</source>
         <translation>Hotlink for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="119"/>
-        <location filename="../resultswindow.cpp" line="142"/>
+        <location filename="../resultswindow.cpp" line="121"/>
+        <location filename="../resultswindow.cpp" line="144"/>
         <source>Thumbnail for web</source>
         <translation>Thumbnail for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="120"/>
-        <location filename="../resultswindow.cpp" line="143"/>
+        <location filename="../resultswindow.cpp" line="122"/>
+        <location filename="../resultswindow.cpp" line="145"/>
         <source>Thumbnail for forums 1</source>
         <translation>Thumbnail for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="121"/>
-        <location filename="../resultswindow.cpp" line="144"/>
+        <location filename="../resultswindow.cpp" line="123"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>Thumbnail for forums 2</source>
         <translation>Thumbnail for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="122"/>
-        <location filename="../resultswindow.cpp" line="145"/>
+        <location filename="../resultswindow.cpp" line="124"/>
+        <location filename="../resultswindow.cpp" line="147"/>
         <source>Hotlink for forums 1</source>
         <translation>Hotlink for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="123"/>
-        <location filename="../resultswindow.cpp" line="146"/>
+        <location filename="../resultswindow.cpp" line="125"/>
+        <location filename="../resultswindow.cpp" line="148"/>
         <source>Hotlink for forums 2</source>
         <translation>Hotlink for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="140"/>
+        <location filename="../resultswindow.cpp" line="142"/>
         <source>Embedded video</source>
         <translation>Embedded video</translation>
     </message>
@@ -557,7 +552,7 @@ from thumbnail</translation>
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
-        <location filename="../resultswindow.ui" line="384"/>
+        <location filename="../resultswindow.ui" line="377"/>
         <source>Tweet this</source>
         <translation>Tweet this</translation>
     </message>
@@ -567,12 +562,12 @@ from thumbnail</translation>
         <translation>All images and video files</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="381"/>
+        <location filename="../resultswindow.ui" line="374"/>
         <source>Create gallery and post to twitter</source>
         <translation>Create gallery and post to twitter</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="441"/>
+        <location filename="../resultswindow.ui" line="434"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -580,33 +575,42 @@ from thumbnail</translation>
 <context>
     <name>TagWidget</name>
     <message>
-        <location filename="../tagwidget.ui" line="48"/>
-        <source>Set privacy:</source>
-        <translation>Set privacy:</translation>
+        <location filename="../tagwidget.ui" line="20"/>
+        <source>Custom privacy &amp;&amp; tags</source>
+        <translation>Custom privacy &amp;&amp; tags</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="60"/>
+        <location filename="../tagwidget.ui" line="32"/>
+        <location filename="../tagwidget.ui" line="113"/>
+        <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Privacy:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../tagwidget.ui" line="47"/>
+        <location filename="../tagwidget.ui" line="128"/>
         <source>Public</source>
         <translation>Public</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="75"/>
+        <location filename="../tagwidget.ui" line="63"/>
+        <location filename="../tagwidget.ui" line="144"/>
         <source>Private</source>
         <translation>Private</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="119"/>
-        <source>Tags:</source>
-        <translation>Tags:</translation>
+        <location filename="../tagwidget.ui" line="88"/>
+        <location filename="../tagwidget.ui" line="169"/>
+        <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Tags:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="148"/>
-        <source>Batch tags:</source>
-        <translation>Batch tags:</translation>
+        <location filename="../tagwidget.ui" line="101"/>
+        <source>Batch privacy &amp;&amp; tags</source>
+        <translation>Batch privacy &amp;&amp; tags</translation>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
-        <location filename="../tagwidget.cpp" line="113"/>
+        <location filename="../tagwidget.cpp" line="115"/>
         <source>Log in to use this features</source>
         <translation>Log in to use this features</translation>
     </message>
@@ -622,49 +626,49 @@ from thumbnail</translation>
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="50"/>
+        <location filename="../twitterclient.cpp" line="55"/>
         <source>Posting to twitter...</source>
         <translation>Posting to Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="71"/>
-        <location filename="../twitterclient.cpp" line="103"/>
-        <location filename="../twitterclient.cpp" line="115"/>
-        <location filename="../twitterclient.cpp" line="136"/>
+        <location filename="../twitterclient.cpp" line="78"/>
+        <location filename="../twitterclient.cpp" line="110"/>
+        <location filename="../twitterclient.cpp" line="122"/>
         <location filename="../twitterclient.cpp" line="143"/>
-        <location filename="../twitterclient.cpp" line="149"/>
+        <location filename="../twitterclient.cpp" line="150"/>
         <location filename="../twitterclient.cpp" line="156"/>
+        <location filename="../twitterclient.cpp" line="163"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="72"/>
+        <location filename="../twitterclient.cpp" line="79"/>
         <source>First set twitter username and password in options</source>
         <translation>First set Twitter username and password in options</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="104"/>
+        <location filename="../twitterclient.cpp" line="111"/>
         <source>Could not send url to Twitter</source>
         <translation>Could not send url to Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="116"/>
-        <location filename="../twitterclient.cpp" line="157"/>
+        <location filename="../twitterclient.cpp" line="123"/>
+        <location filename="../twitterclient.cpp" line="164"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Could not post to twitter. Wrong server response.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="137"/>
+        <location filename="../twitterclient.cpp" line="144"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Could not post to twitter. Wrong credentials.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="144"/>
+        <location filename="../twitterclient.cpp" line="151"/>
         <source>Failed to update twitter status.</source>
         <translation>Failed to update twitter status.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="150"/>
+        <location filename="../twitterclient.cpp" line="157"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Could not post to twitter. Internal error.</translation>
     </message>
