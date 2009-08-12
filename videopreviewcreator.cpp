@@ -66,6 +66,7 @@ QString VideoPreviewCreator::getPreview(QString filename)
     if (pid==0)
     {
         signal(SIGSEGV, sigsegv_handler);
+        signal(SIGABRT, SIG_IGN);
         video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
         if (video_error != FAS_SUCCESS)
             qDebug() << "failed to open";
