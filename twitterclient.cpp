@@ -33,6 +33,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QDomDocument>
 #include <QDesktopServices>
 #include <QPlastiqueStyle>
+#include <QApplication>
+#include <QDesktopWidget>
 #include "twitterclient.h"
 #include "defines.h"
 
@@ -47,11 +49,16 @@ TwitterClient::TwitterClient()
             SIGNAL(creationFinished(QString, QString, QString, QString)),
             this,
             SLOT(post(QString, QString, QString, QString)));
+    int w = QApplication::desktop()->geometry().width();
+    int h = QApplication::desktop()->geometry().height();
+    bar.move(w/2-150, h/2-10);
     bar.setWindowTitle(tr("Posting to twitter..."));
+    bar.setWindowFlags(Qt::Tool);
     bar.setStyle(new QPlastiqueStyle());
     bar.setFixedSize(300, 15);
     bar.setValue(0);
     bar.setMaximum(0);
+    bar.setAlignment(Qt::AlignCenter);
 }
 
 void TwitterClient::post(QString url, QString text, QString user, QString pass)
