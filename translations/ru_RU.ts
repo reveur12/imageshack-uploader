@@ -85,8 +85,8 @@ Got error messages from server:
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="82"/>
-        <location filename="../imageinfowidget.cpp" line="89"/>
+        <location filename="../imageinfowidget.cpp" line="83"/>
+        <location filename="../imageinfowidget.cpp" line="90"/>
         <location filename="../imageinfowidget.ui" line="44"/>
         <source>Thumbnail</source>
         <translation>Миниатюра</translation>
@@ -97,57 +97,57 @@ Got error messages from server:
         <translation>Размер:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="105"/>
+        <location filename="../imageinfowidget.ui" line="108"/>
         <source>Do not resize</source>
         <translation>Не изменять размер</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="110"/>
+        <location filename="../imageinfowidget.ui" line="113"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (аватар)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="115"/>
+        <location filename="../imageinfowidget.ui" line="118"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (миниатюра)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="120"/>
+        <location filename="../imageinfowidget.ui" line="123"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (для веб и почты)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="125"/>
+        <location filename="../imageinfowidget.ui" line="128"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (для форумов)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="130"/>
+        <location filename="../imageinfowidget.ui" line="133"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (12-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="135"/>
+        <location filename="../imageinfowidget.ui" line="138"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (15-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="140"/>
+        <location filename="../imageinfowidget.ui" line="143"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (19-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="145"/>
+        <location filename="../imageinfowidget.ui" line="148"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (21-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="150"/>
+        <location filename="../imageinfowidget.ui" line="153"/>
         <source>Optimize only</source>
         <translation>Оптимизация без изменения размера</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="169"/>
+        <location filename="../imageinfowidget.ui" line="175"/>
         <source>Remove size / resolution bar
 from thumbnail</source>
         <translation>Убрать полоску с
@@ -321,17 +321,17 @@ from thumbnail</source>
 <context>
     <name>MediaListWidget</name>
     <message>
-        <location filename="../medialistwidget.cpp" line="86"/>
+        <location filename="../medialistwidget.cpp" line="87"/>
         <source>Select one or more files to open</source>
         <translation>Выберите один или более файлов</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="89"/>
+        <location filename="../medialistwidget.cpp" line="90"/>
         <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</source>
         <translation>Поддерживаемые форматы (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="135"/>
+        <location filename="../medialistwidget.cpp" line="136"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
             <numerusform>Не удалось добавить %n файл, так как он сохранен в формате, который на данный момент не поддерживается:</numerusform>
@@ -340,7 +340,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="142"/>
+        <location filename="../medialistwidget.cpp" line="143"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n файл слишком большой для загрузки:</numerusform>
@@ -349,12 +349,12 @@ from thumbnail</source>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="147"/>
+        <location filename="../medialistwidget.cpp" line="148"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="219"/>
+        <location filename="../medialistwidget.cpp" line="230"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n файл</numerusform>
@@ -453,94 +453,94 @@ from thumbnail</source>
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="67"/>
+        <location filename="../resultswindow.cpp" line="108"/>
         <source>Direct links</source>
         <translation>Прямые ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="68"/>
+        <location filename="../resultswindow.cpp" line="109"/>
         <source>Short links</source>
         <translation>Короткие ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="69"/>
+        <location filename="../resultswindow.cpp" line="110"/>
         <source>Hotlinks for web</source>
         <translation>Горячие ссылки для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="70"/>
+        <location filename="../resultswindow.cpp" line="111"/>
         <source>Thumbnails for web</source>
         <translation>Миниатюры для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="71"/>
+        <location filename="../resultswindow.cpp" line="112"/>
         <source>Thumbnails for forums 1</source>
         <translation>Миниатюры для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="72"/>
+        <location filename="../resultswindow.cpp" line="113"/>
         <source>Thumbnails for forums 2</source>
         <translation>Миниатюры для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="73"/>
+        <location filename="../resultswindow.cpp" line="114"/>
         <source>Hotlinks for forums 1</source>
         <translation>Горячие ссылки для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="74"/>
+        <location filename="../resultswindow.cpp" line="115"/>
         <source>Hotlinks for forums 2</source>
         <translation>Горячие ссылки для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="118"/>
-        <location filename="../resultswindow.cpp" line="141"/>
+        <location filename="../resultswindow.cpp" line="125"/>
+        <location filename="../resultswindow.cpp" line="136"/>
         <source>Direct link</source>
         <translation>Прямая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="119"/>
+        <location filename="../resultswindow.cpp" line="126"/>
         <source>Short link</source>
         <translation>Короткая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="120"/>
-        <location filename="../resultswindow.cpp" line="143"/>
+        <location filename="../resultswindow.cpp" line="127"/>
+        <location filename="../resultswindow.cpp" line="138"/>
         <source>Hotlink for web</source>
         <translation>Горячая ссылка для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="121"/>
-        <location filename="../resultswindow.cpp" line="144"/>
+        <location filename="../resultswindow.cpp" line="128"/>
+        <location filename="../resultswindow.cpp" line="139"/>
         <source>Thumbnail for web</source>
         <translation>Миниатюра для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="122"/>
-        <location filename="../resultswindow.cpp" line="145"/>
+        <location filename="../resultswindow.cpp" line="129"/>
+        <location filename="../resultswindow.cpp" line="140"/>
         <source>Thumbnail for forums 1</source>
         <translation>Миниатюра для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="123"/>
-        <location filename="../resultswindow.cpp" line="146"/>
+        <location filename="../resultswindow.cpp" line="130"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Thumbnail for forums 2</source>
         <translation>Миниатюра для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="124"/>
-        <location filename="../resultswindow.cpp" line="147"/>
+        <location filename="../resultswindow.cpp" line="131"/>
+        <location filename="../resultswindow.cpp" line="142"/>
         <source>Hotlink for forums 1</source>
         <translation>Горячая ссылка для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="125"/>
-        <location filename="../resultswindow.cpp" line="148"/>
+        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="143"/>
         <source>Hotlink for forums 2</source>
         <translation>Горячая ссылка для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="142"/>
+        <location filename="../resultswindow.cpp" line="137"/>
         <source>Embedded video</source>
         <translation>Встроенное видео</translation>
     </message>
@@ -620,7 +620,7 @@ from thumbnail</source>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
-        <location filename="../tagwidget.cpp" line="115"/>
+        <location filename="../tagwidget.cpp" line="116"/>
         <source>Log in to use this features</source>
         <translation>Войдите чтобы использовать эти возможности</translation>
     </message>
@@ -740,8 +740,8 @@ from thumbnail</source>
     <name>UpdateChecker</name>
     <message>
         <location filename="../updatechecker.cpp" line="85"/>
-        <location filename="../updatechecker.cpp" line="99"/>
-        <location filename="../updatechecker.cpp" line="112"/>
+        <location filename="../updatechecker.cpp" line="100"/>
+        <location filename="../updatechecker.cpp" line="113"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -756,49 +756,54 @@ from thumbnail</source>
         <translation>Уже происходит проверка обновлений.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="86"/>
-        <source>Could not check for updates. Please try again later</source>
-        <translation>Не удалось проверить обновления. Попробуйте позже</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="100"/>
+        <location filename="../updatechecker.cpp" line="101"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>Не удалось проверить обновления. Произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="113"/>
+        <location filename="../updatechecker.cpp" line="114"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>Не удалось проверить обновления. Не найдено версий.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="150"/>
+        <location filename="../updatechecker.cpp" line="151"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="151"/>
+        <location filename="../updatechecker.cpp" line="152"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="153"/>
+        <location filename="../updatechecker.cpp" line="154"/>
         <source>Update available</source>
         <translation>Доступны обновления</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="152"/>
+        <location filename="../updatechecker.cpp" line="153"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Последняя версия - %1. Произвести обновление?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="140"/>
-        <location filename="../updatechecker.cpp" line="164"/>
-        <source>No updates available</source>
-        <translation>Нету доступных обновлений</translation>
+        <location filename="../updatechecker.cpp" line="86"/>
+        <source>Could not check for updates. Please try again later.</source>
+        <translation>Не удалось проверить обновления. Попробуйте позже.</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="87"/>
+        <source>Error message is:</source>
+        <translation>Ошибка:</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="141"/>
         <location filename="../updatechecker.cpp" line="165"/>
+        <source>No updates available</source>
+        <translation>Нету доступных обновлений</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="142"/>
+        <location filename="../updatechecker.cpp" line="166"/>
         <source>You have lastest version of application.</source>
         <translation>У вас последняя версия приложения.</translation>
     </message>

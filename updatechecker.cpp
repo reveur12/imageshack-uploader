@@ -83,7 +83,8 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
         if (error)
         {
             QMessageBox::critical(NULL, tr("Error"),
-                  tr("Could not check for updates. Please try again later"));
+                  tr("Could not check for updates. Please try again later.") +
+                  "\n" + tr("Error message is:") + req.errorString());
             inProgress = false;
             return;
         }
