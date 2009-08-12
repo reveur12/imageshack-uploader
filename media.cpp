@@ -124,6 +124,7 @@ Media::Media(QString filename)
         thumb = make_thumbnail(img);
         ic = thumb.scaledToWidth(25, Qt::SmoothTransformation);
     }
+    privacy = false;
 }
 
 QString Media::getClass()

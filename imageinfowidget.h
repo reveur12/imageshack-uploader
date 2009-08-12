@@ -56,10 +56,17 @@ private:
     Ui::ImageInfoWidget *m_ui;
     QSharedPointer<Media> media;
     QMap<QString, int> items;
+    QString cleanup(QString);
+    bool loggedIn;
+
 private slots:
     void setResize(int);
     void setRemoveSize(int);
     void thumbnailClicked();
+    void tagsUpdated();
+    void privacyUpdated();
+    void batchPrivacy(bool);
+    void loginStatusReceiver(int);
 };
 
 #endif // IMAGEINFOWIDGET_H
