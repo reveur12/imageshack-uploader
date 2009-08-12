@@ -279,7 +279,7 @@ from thumbnail</translation>
 <context>
     <name>Media</name>
     <message numerus="yes">
-        <location filename="../media.cpp" line="290"/>
+        <location filename="../media.cpp" line="293"/>
         <source>%n B</source>
         <translation>
             <numerusform>%n B</numerusform>
@@ -287,7 +287,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="291"/>
+        <location filename="../media.cpp" line="294"/>
         <source>%n KB</source>
         <translation>
             <numerusform>%n KB</numerusform>
@@ -295,7 +295,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="292"/>
+        <location filename="../media.cpp" line="295"/>
         <source>%n MB</source>
         <translation>
             <numerusform>%n MB</numerusform>
@@ -303,7 +303,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="293"/>
+        <location filename="../media.cpp" line="296"/>
         <source>%n GB</source>
         <translation>
             <numerusform>%n GB</numerusform>
@@ -771,6 +771,11 @@ from thumbnail</translation>
         <translation>Update available</translation>
     </message>
     <message>
+        <location filename="../updatechecker.cpp" line="166"/>
+        <source>You have the latest version of this application.</source>
+        <translation>You have the latest version of this application.</translation>
+    </message>
+    <message>
         <location filename="../updatechecker.cpp" line="153"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Lastest version is %1. Do you want to update?</translation>
@@ -793,7 +798,6 @@ from thumbnail</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="142"/>
-        <location filename="../updatechecker.cpp" line="166"/>
         <source>You have lastest version of application.</source>
         <translation>You have lastest version of application.</translation>
     </message>
