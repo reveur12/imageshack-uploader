@@ -220,6 +220,8 @@ void FileUploader::cancel()
 void FileUploader::fail(QString message)
 {
     qDebug() << "FileUploader failing";
+    if (!errors.contains(message))
+            errors.append(request.data()->rep->errorString());
     if (message.size())
         if (!errors.contains(message))
             errors.append(message);

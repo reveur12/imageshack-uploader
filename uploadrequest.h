@@ -60,6 +60,8 @@ public:
     QString post();
     void stop();
 
+    QNetworkReply* rep;
+
 private:
     QString mediaClass;
     QString mediaType;
@@ -83,7 +85,6 @@ private:
     QSharedPointer<FileSource> data;
 
     QNetworkAccessManager qnam;
-    QNetworkReply* rep;
 
 public slots:
     void updateProgress(qint64, qint64);
