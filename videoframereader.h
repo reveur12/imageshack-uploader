@@ -49,4 +49,6 @@ private:
     QByteArray getImage(const char* filename);
 };
 
+
+
 #endif // VIDEOFRAMEREADER_H

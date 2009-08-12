@@ -35,7 +35,9 @@ extern "C"
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 #include <libswscale/swscale.h>
+#include "ffmpeg_fas.h"
 }
+
 
 
 bool VideoFrameReader::getNextFrame(AVFormatContext *pFormatCtx, AVCodecContext *pCodecCtx,
@@ -200,6 +202,8 @@ QByteArray VideoFrameReader::getImage(const char* filename)
     seek_target= av_rescale_q(seek_target, AV_TIME_BASE_Q,
                               pFormatCtx->streams[videoStream]->time_base);
     av_seek_frame(pFormatCtx, videoStream, seek_target, NULL);
+
+    //fas_seek_to_nearest_key(pFormatCtx);
 
     for (int i=0; i<1000; i++)
     {

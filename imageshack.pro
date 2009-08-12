@@ -3,24 +3,18 @@ include(qtsingleapplication/qtsingleapplication.pri)
 QT += network \
     xml
 TARGET = ImageShackUploader
-
-unix {
-LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
-isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
-LIBS += $$LIBRARIES
+unix { 
+    LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
+    isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
+    LIBS += $$LIBRARIES
 }
-
-win32 {
-LIBS += -L. \
+win32:LIBS += -L. \
     -lavformat \
     -lavcodec \
     -lswscale \
     -lavutil
-}
-
 INCLUDEPATH += qtsingleapplication
 macx:INCLUDEPATH += $$system(pkg-config --cflags-only-I libavcodec libavformat libswscale libavutil | sed s/-I//g)
-
 UNIX_TRANSLATIONS_DIR = "/usr/share/imageshackuploader/translations"
 DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
 VERSION = 2.0
@@ -58,7 +52,10 @@ SOURCES += main.cpp \
     videoframereader.cpp \
     gallerycreator.cpp \
     limitedplaintextedit.cpp \
-    filesource.cpp
+    videopreviewcreator.cpp \
+    filesource.cpp \
+    ffmpeg_fas.c \
+    seek_indices.c
 HEADERS += mainwindow.h \
     uploadrequest.h \
     media.h \
@@ -89,6 +86,9 @@ HEADERS += mainwindow.h \
     gallerycreator.h \
     limitedplaintextedit.h \
     filesource.h \
+    videopreviewcreator.h \
+    ffmpeg_fas.h \
+    seek_indices.h \
     defines.h
 FORMS += mainwindow.ui \
     medialistwidget.ui \
@@ -103,9 +103,12 @@ FORMS += mainwindow.ui \
     optionsdialog.ui \
     copyabletextedit.ui \
     twitterwindow.ui
+
 RESOURCES += images_rc.qrc
+
 TRANSLATIONS += translations/ru_RU.ts \
     translations/en_US.ts
+
 win32:RC_FILE = windowsicon.rc
 macx:ICON = macicon.icns
 target.path = $$[QT_INSTALL_BINS]
@@ -114,19 +117,44 @@ trans.path = $$UNIX_TRANSLATIONS_DIR
 win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
 trans.files += translations/*qm
-trans.commands = lrelease translations/*ts
+trans.commands = lrelease \
+    translations/*ts
 mactrans.target = mactrans
-mactrans.files += translations/en_US.qm translations/ru_RU.qm
-mactrans.commands = lrelease translations/*ts
+mactrans.files += translations/en_US.qm \
+    translations/ru_RU.qm
+mactrans.commands = lrelease \
+    translations/*ts
 mactrans.path = Contents/Resources
 INSTALLS += target \
-            trans
+    trans
 
-PRE_TARGETDEPS = trans
+fas.target = fas
+fas.files = ffmpeg_fas.so
+fas.commands = gcc ffmpeg_fas.c \
+               -lavcodec -lavutil -lavformat \
+               -shared -o ffmpeg_fas.o
+
+seek.target = fas
+seek.files = seek_indices.o
+seek.commands = gcc -c ffmpeg_fas.c seek_indices.c
+
+libfas.target = libfas
+libfas.files = ffmpeg_fas.o seek_indices.o
+libfas.commands = ar rc libffmpeg_fas.a ffmpeg_fas.o seek_indices.o
+libfas.depends = fas seek
+
+video.target = video
+video.files = videopreviewcreator.o
+video.commands = gcc videopreviewcreator.cpp -lm -lz -lbz2 \
+                 -I. -lavcodec -lavutil -lavformat -lswscale \
+                 $$system(pkg-config --cflags-only-I QtCore) -lQtCore \
+                 -lffmpeg_fas -shared\
+                 -o videopreviewcreator.o
+video.depends = libfas
+
+PRE_TARGETDEPS = trans# video
 macx:PRE_TARGETDEPS = mactrans
-
 QMAKE_BUNDLE_DATA += mactrans
-
 deb.target = deb
 deb.commands = rm \
     -rf \
@@ -273,25 +301,56 @@ clean.commands = rm \
     rm \
     -rf \
     deb
-macx:clean.commands = rm -f  moc_*.cpp \
-    && rm -f qrc_*_rc.cpp \
-    && rm -f *~ core *.core \
-    && rm -f ui_*.h \
-    && rm -f *.o \
-    && rm -rf $$TARGET\.app \
-    && rm -rf ImageShackUploader.dmg \
-    && rm -rf dist \
-    && rm -rf deb
-
+macx:clean.commands = rm \
+    -f \
+    moc_*.cpp \
+    && \
+    rm \
+    -f \
+    qrc_*_rc.cpp \
+    && \
+    rm \
+    -f \
+    *~ \
+    core \
+    *.core \
+    && \
+    rm \
+    -f \
+    ui_*.h \
+    && \
+    rm \
+    -f \
+    *.o \
+    && \
+    rm \
+    -rf \
+    $$TARGET\.app \
+    && \
+    rm \
+    -rf \
+    ImageShackUploader.dmg \
+    && \
+    rm \
+    -rf \
+    dist \
+    && \
+    rm \
+    -rf \
+    deb
 QMAKE_EXTRA_TARGETS += deb \
     rpm \
     dmg \
     packages \
     clean \
     trans \
-    mactrans
-
+    mactrans \
+    fas \
+    seek \
+    libfas \
+    video
 dmg.target = dmg
 dmg.depends = all
-dmg.commands = macdeployqt $$TARGET\.app -dmg
-
+dmg.commands = macdeployqt \
+    $$TARGET\.app \
+    -dmg
