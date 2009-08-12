@@ -58,6 +58,8 @@ private:
     int current;
     TwitterWindow twitter;
     GalleryCreator gallery;
+    void translate2ndTab();
+    void translate1stTab();
 
 private slots:
     void prev();

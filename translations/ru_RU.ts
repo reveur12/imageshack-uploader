@@ -587,7 +587,7 @@ from thumbnail</source>
     <message>
         <location filename="../tagwidget.ui" line="20"/>
         <source>Custom privacy &amp;&amp; tags</source>
-        <translation>Доступ &amp;&amp; теги</translation>
+        <translation>Доступ и теги</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="32"/>
@@ -616,7 +616,7 @@ from thumbnail</source>
     <message>
         <location filename="../tagwidget.ui" line="101"/>
         <source>Batch privacy &amp;&amp; tags</source>
-        <translation>Общие доступ &amp;&amp; теги</translation>
+        <translation>Общие доступ и теги</translation>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
