@@ -58,6 +58,7 @@ void MediaLoader::run()
     }
     //if (failed.size() || toolarge.size()) emit loadingFailed(failed, toolarge);
     emit results(res, failed, toolarge);
+    return;
 }
 
 void MediaLoader::addFiles(QStringList files)

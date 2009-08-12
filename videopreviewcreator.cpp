@@ -4,6 +4,7 @@
 #include <QApplication>
 #include "videopreviewcreator.h"
 #include "sys/wait.h"
+#include "signal.h"
 
 VideoPreviewCreator::VideoPreviewCreator()
 {
@@ -42,6 +43,11 @@ static void ppm_save(fas_raw_image_type *image, char *filename)
     fclose(f);
 }
 
+void sigsegv_handler(int s)
+{
+    qDebug() <<  s;
+    abort();
+}
 
 QString VideoPreviewCreator::getPreview(QString filename)
 {
@@ -60,7 +66,7 @@ QString VideoPreviewCreator::getPreview(QString filename)
     int pid = fork();
     if (pid==0)
     {
-
+        signal(SIGSEGV, SIG_IGN);//sigsegv_handler);
         video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
         if (video_error != FAS_SUCCESS)
             qDebug() << "failed to open";
@@ -95,7 +101,8 @@ QString VideoPreviewCreator::getPreview(QString filename)
 
       qDebug() << "child thread should write this";
       abort();
-      exit(0);
+      //abort();
+      //exit(0);
       qDebug() << "child could not exit";
     }
     else
