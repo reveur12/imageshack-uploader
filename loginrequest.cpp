@@ -65,7 +65,6 @@ void LoginRequest::login(QString login, QString pass)
 
 void LoginRequest::requestFinished(int id, bool error)
 {
-    qDebug() << http.errorString();
     if (requestId == id)
     {
         if (aborted) return;

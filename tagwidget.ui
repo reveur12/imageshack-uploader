@@ -220,6 +220,38 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>tags</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>TagWidget</receiver>
+   <slot>tagsUpdated()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>298</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>batchTags</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>TagWidget</receiver>
+   <slot>batchTagsUpdated()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>298</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>tagsUpdated()</slot>
