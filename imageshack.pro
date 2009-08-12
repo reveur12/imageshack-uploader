@@ -128,31 +128,7 @@ mactrans.path = Contents/Resources
 INSTALLS += target \
     trans
 
-fas.target = fas
-fas.files = ffmpeg_fas.so
-fas.commands = gcc ffmpeg_fas.c \
-               -lavcodec -lavutil -lavformat \
-               -shared -o ffmpeg_fas.o
-
-seek.target = fas
-seek.files = seek_indices.o
-seek.commands = gcc -c ffmpeg_fas.c seek_indices.c
-
-libfas.target = libfas
-libfas.files = ffmpeg_fas.o seek_indices.o
-libfas.commands = ar rc libffmpeg_fas.a ffmpeg_fas.o seek_indices.o
-libfas.depends = fas seek
-
-video.target = video
-video.files = videopreviewcreator.o
-video.commands = gcc videopreviewcreator.cpp -lm -lz -lbz2 \
-                 -I. -lavcodec -lavutil -lavformat -lswscale \
-                 $$system(pkg-config --cflags-only-I QtCore) -lQtCore \
-                 -lffmpeg_fas -shared\
-                 -o videopreviewcreator.o
-video.depends = libfas
-
-PRE_TARGETDEPS = trans# video
+PRE_TARGETDEPS = trans
 macx:PRE_TARGETDEPS = mactrans
 QMAKE_BUNDLE_DATA += mactrans
 deb.target = deb
@@ -344,11 +320,7 @@ QMAKE_EXTRA_TARGETS += deb \
     packages \
     clean \
     trans \
-    mactrans \
-    fas \
-    seek \
-    libfas \
-    video
+    mactrans
 dmg.target = dmg
 dmg.depends = all
 dmg.commands = macdeployqt \
