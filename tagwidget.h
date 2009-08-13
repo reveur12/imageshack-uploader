@@ -48,6 +48,8 @@ public:
     void setMediaList(MediaListModel*);
     void unsetMediaList();
     void setEnabled(bool);
+    void enable();
+    void disable();
 
 protected:
     virtual void changeEvent(QEvent *e);
@@ -57,6 +59,7 @@ private:
     QSharedPointer<Media> media;
     MediaListModel* medias;
     bool loggedIn;
+    bool enabled;
 
 private slots:
     void batchTagsUpdated();

@@ -54,6 +54,10 @@ void ResultsWindow::changeEvent(QEvent *e)
         m_ui->retranslateUi(this);
         translate1stTab();
         translate2ndTab();
+        if (!results.isNull() && results.data()->size() && (current < results.data()->size()))
+        {
+            setIndex(current);
+        }
         break;
     default:
         break;

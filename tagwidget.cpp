@@ -85,7 +85,7 @@ void TagWidget::loginStatusReceiver(int state)
     if (state == 0)
     {
         loggedIn = true;
-        if (media!=NULL)
+        if (media!=NULL && enabled)
             setEnabled(true);
         this->setToolTip(QString());
     }
@@ -137,4 +137,16 @@ void TagWidget::setEnabled(bool st)
 {
     QWidget::setEnabled(st);
     if (!st) m_ui->batchTags->clear();
+}
+
+void TagWidget::enable()
+{
+    if (loggedIn && medias && medias->rowCount()) setEnabled(true);
+    enabled = true;
+}
+
+void TagWidget::disable()
+{
+    setEnabled(false);
+    enabled = false;
 }
