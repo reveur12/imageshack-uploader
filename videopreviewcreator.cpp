@@ -60,9 +60,9 @@ QVector<int> VideoPreviewCreator::getHistogram(QImage img)
     return hist;
 }
 
-QVector<int> VideoPreviewCreator::getMedian(QVector<QPair<QVector<int>, int> > hists)
+QVector<qint64> VideoPreviewCreator::getMedian(QVector<QPair<QVector<int>, int> > hists)
 {
-    QVector<int> median;
+    QVector<qint64> median;
     median.fill(0, 768);
     for (int i=0; i<hists.size(); i++)
         for (int j=0; j<768; j++)
@@ -72,7 +72,7 @@ QVector<int> VideoPreviewCreator::getMedian(QVector<QPair<QVector<int>, int> > h
     return median;
 }
 
-QPair<QVector<int>, int> VideoPreviewCreator::getClosest(QVector<QPair<QVector<int>, int> > hists, QVector<int> median)
+QPair<QVector<int>, int> VideoPreviewCreator::getClosest(QVector<QPair<QVector<int>, int> > hists, QVector<qint64> median)
 {
     QVector<qint64> diffs;
     diffs.fill(0, hists.size());
@@ -94,8 +94,6 @@ QPair<QVector<int>, int> VideoPreviewCreator::getClosest(QVector<QPair<QVector<i
             min_n = i;
         }
     return hists.at(min_n);
-    //return hists.at(0);
-
 }
 
 QImage VideoPreviewCreator::getPreview(QString filename)
@@ -132,6 +130,11 @@ QImage VideoPreviewCreator::getPreview(QString filename)
         }
         hists.append(qMakePair(getHistogram(img), counter));
         fas_free_frame (image_buffer);
+        if (FAS_SUCCESS != fas_step_forward (context))
+        {
+            error = true;
+            break;
+        }
         counter++;
     }
     if (error) return QImage();
