@@ -140,19 +140,30 @@ void MediaListModel::addMedia(QVector<QSharedPointer<Media> > newmedias)
             }
         }
     }
-    if (was == newmedias.size()) return;
-    int toAdd = newmedias.size() - 1 - was;
-    beginInsertRows(QModelIndex(), medias.size(),
-                    medias.size() + toAdd);
-    for(int i=0; i< newmedias.size(); i++)
+    if (was != newmedias.size())
     {
-        if (!wasIndexes.contains(i))
+        int toAdd = newmedias.size() - 1 - was;
+        beginInsertRows(QModelIndex(), medias.size(),
+                        medias.size() + toAdd);
+        for(int i=0; i< newmedias.size(); i++)
         {
-            medias.append(newmedias.at(i));
+            if (!wasIndexes.contains(i))
+            {
+                medias.append(newmedias.at(i));
+            }
         }
+        endInsertRows();
+        emit modelChanged();
     }
-    endInsertRows();
-    emit modelChanged();
+    else
+    {
+        QStringList same;
+        foreach(int i, wasIndexes)
+            same.append(newmedias.at(i).data()->filepath());
+        QMessageBox::information(parentw, tr("Files not added"),
+                                 tr("This files are already in list, they were not added again:\n", 0, same.size())
+                                 + same.join("\n"));
+    }
 }
 
 void MediaListModel::removeMedia(int row)

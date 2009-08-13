@@ -337,6 +337,25 @@ from thumbnail</translation>
     </message>
 </context>
 <context>
+    <name>MediaListModel</name>
+    <message>
+        <location filename="../medialistmodel.cpp" line="163"/>
+        <source>Files not added</source>
+        <translation>Files not added</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../medialistmodel.cpp" line="164"/>
+        <source>This files are already in list, they were not added again:
+</source>
+        <translation>
+            <numerusform>This file is already in list, it was not added again:
+</numerusform>
+            <numerusform>This files are already in list, they were not added again:
+</numerusform>
+        </translation>
+    </message>
+</context>
+<context>
     <name>MediaListWidget</name>
     <message>
         <location filename="../medialistwidget.cpp" line="95"/>
@@ -468,94 +487,94 @@ from thumbnail</translation>
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="111"/>
+        <location filename="../resultswindow.cpp" line="115"/>
         <source>Direct links</source>
         <translation>Direct links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="116"/>
         <source>Short links</source>
         <translation>Short links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="117"/>
         <source>Hotlinks for web</source>
         <translation>Hotlinks for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="118"/>
         <source>Thumbnails for web</source>
         <translation>Thumbnails for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Thumbnails for forums 1</source>
         <translation>Thumbnails for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="116"/>
+        <location filename="../resultswindow.cpp" line="120"/>
         <source>Thumbnails for forums 2</source>
         <translation>Thumbnails for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="117"/>
+        <location filename="../resultswindow.cpp" line="121"/>
         <source>Hotlinks for forums 1</source>
         <translation>Hotlinks for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="118"/>
+        <location filename="../resultswindow.cpp" line="122"/>
         <source>Hotlinks for forums 2</source>
         <translation>Hotlinks for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="128"/>
-        <location filename="../resultswindow.cpp" line="139"/>
+        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="143"/>
         <source>Direct link</source>
         <translation>Direct link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="129"/>
+        <location filename="../resultswindow.cpp" line="133"/>
         <source>Short link</source>
         <translation>Short link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="130"/>
-        <location filename="../resultswindow.cpp" line="141"/>
+        <location filename="../resultswindow.cpp" line="134"/>
+        <location filename="../resultswindow.cpp" line="145"/>
         <source>Hotlink for web</source>
         <translation>Hotlink for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="131"/>
-        <location filename="../resultswindow.cpp" line="142"/>
+        <location filename="../resultswindow.cpp" line="135"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>Thumbnail for web</source>
         <translation>Thumbnail for web</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="132"/>
-        <location filename="../resultswindow.cpp" line="143"/>
+        <location filename="../resultswindow.cpp" line="136"/>
+        <location filename="../resultswindow.cpp" line="147"/>
         <source>Thumbnail for forums 1</source>
         <translation>Thumbnail for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="133"/>
-        <location filename="../resultswindow.cpp" line="144"/>
+        <location filename="../resultswindow.cpp" line="137"/>
+        <location filename="../resultswindow.cpp" line="148"/>
         <source>Thumbnail for forums 2</source>
         <translation>Thumbnail for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="134"/>
-        <location filename="../resultswindow.cpp" line="145"/>
+        <location filename="../resultswindow.cpp" line="138"/>
+        <location filename="../resultswindow.cpp" line="149"/>
         <source>Hotlink for forums 1</source>
         <translation>Hotlink for forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="135"/>
-        <location filename="../resultswindow.cpp" line="146"/>
+        <location filename="../resultswindow.cpp" line="139"/>
+        <location filename="../resultswindow.cpp" line="150"/>
         <source>Hotlink for forums 2</source>
         <translation>Hotlink for forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="140"/>
+        <location filename="../resultswindow.cpp" line="144"/>
         <source>Embedded video</source>
         <translation>Embedded video</translation>
     </message>
