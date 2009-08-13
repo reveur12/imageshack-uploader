@@ -98,6 +98,7 @@ void ImageInfoWidget::disable()
     m_ui->tags->clear();
     m_ui->resize->setCurrentIndex(0);
     m_ui->removeSize->setChecked(false);
+    m_ui->privacyPublic->setChecked(true);
 }
 
 void ImageInfoWidget::reset()
@@ -113,6 +114,7 @@ void ImageInfoWidget::reset()
     m_ui->tags->clear();
     m_ui->resize->setCurrentIndex(0);
     m_ui->removeSize->setChecked(false);
+    m_ui->privacyPublic->setChecked(true);
 }
 
 void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
