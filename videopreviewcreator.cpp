@@ -104,7 +104,7 @@ QByteArray VideoPreviewCreator::getPreview(QString filename)
 
         fas_free_frame (image_buffer);
 
-        video_error = fas_step_forward (context);
+        //video_error = fas_step_forward (context);
         counter++;
         return res;
       //qDebug() << "child thread should write this";
