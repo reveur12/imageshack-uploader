@@ -58,7 +58,14 @@ MediaListWidget::MediaListWidget(QWidget *parent) :
             this,
             SLOT(modelChanged()));
     updateStats();
-    m_ui->mediaList->setColumnWidth(0, size().width()-95);
+
+    connect((QObject*)m_ui->mediaList->verticalScrollBar(),
+            SIGNAL(rangeChanged(int,int)),
+            this,
+            SLOT(scrollbarUpdate(int, int)));
+
+    hasScrollbar = false;
+    m_ui->mediaList->setColumnWidth(0, size().width()-95-hasScrollbar*15);
 }
 
 MediaListWidget::~MediaListWidget()
@@ -220,7 +227,7 @@ void MediaListWidget::modelChanged()
 
 void MediaListWidget::resizeEvent ( QResizeEvent * )
 {
-    m_ui->mediaList->setColumnWidth(0, size().width()-95);
+    m_ui->mediaList->setColumnWidth(0, size().width()-95-hasScrollbar*15);
     m_ui->mediaList->resizeColumnToContents(1);
     //m_ui->mediaList->setColumnWidth(1, 10);
 }
@@ -260,4 +267,12 @@ void MediaListWidget::setEnabled(bool state)
         m_ui->mediaList->clearSelection();
         QItemSelectionModel *model = m_ui->mediaList->selectionModel();
     }
+}
+
+void MediaListWidget::scrollbarUpdate(int a, int b)
+{
+    if (a==0 && b==0) hasScrollbar = false;
+    else hasScrollbar = true;
+    resizeEvent(0);
+    //qDebug() << "!!!! scrollbar " << a << b;
 }

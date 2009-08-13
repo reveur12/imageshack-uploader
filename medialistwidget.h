@@ -59,6 +59,7 @@ private:
     MediaListModel *mediaList;
     void updateStats();
     QSharedPointer<MediaLoader> loader;
+    int hasScrollbar;
 
 private slots:
     void addFile();
@@ -69,6 +70,7 @@ private slots:
     void modelChanged();
     void mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList);
     void progressReceiver(int current, int total);
+    void scrollbarUpdate(int, int);
 
 signals:
     void mediaSelected(QSharedPointer<Media>);
