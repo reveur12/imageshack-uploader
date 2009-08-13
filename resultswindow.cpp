@@ -68,6 +68,9 @@ void ResultsWindow::setResults(QSharedPointer<QVector<QPair<QSharedPointer<Media
 
     translate2ndTab();
 
+    m_ui->next->setEnabled(res.data()->size()!=1);
+    m_ui->prev->setEnabled(res.data()->size()!=1);
+
     QStringList box1, box2, box3, box4, box5, box6, box7, box8;
     QPair<QSharedPointer<Media>,QStringList> element;
     for (int i=0; i<results.data()->size(); i++)
