@@ -71,7 +71,7 @@ private:
     UpdateChecker updateChecker;
     OptionsDialog* options;
     void checkUpdatesSilently();
-    MediaLoader *loader;
+    QSharedPointer<MediaLoader> loader;
 
 
 private slots:
@@ -89,6 +89,9 @@ private slots:
     void showOptions();
 public slots:
     void commandLineAddFile(const QString&);
+
+signals:
+    void addLoadFiles(QStringList);
 
 
 };

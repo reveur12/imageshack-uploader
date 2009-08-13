@@ -254,16 +254,23 @@ void MainWindow::changeEvent(QEvent *e)
 void MainWindow::commandLineAddFile(const QString& filenames)
 {
     QStringList files = filenames.split("\r\n");
-    loader = new MediaLoader(files);
-    connect(loader,
-            SIGNAL(results(QVector<QSharedPointer<Media> >, QStringList, QStringList)),
-            ui->mediaList,
-            SLOT(mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList)));
-    connect(loader,
-            SIGNAL(progress(int,int)),
-            ui->mediaList,
-            SLOT(progressReceiver(int, int)));
-    loader->start();
+
+    if (!loader.isNull() && loader.data()->isRunning()) emit addLoadFiles(files);
+    else
+    {
+        loader = QSharedPointer<MediaLoader>(new MediaLoader(files));
+        connect(loader.data(),
+                SIGNAL(results(QVector<QSharedPointer<Media> >, QStringList, QStringList)),
+                ui->mediaList,
+                SLOT(mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList)));
+        connect(loader.data(),
+                SIGNAL(progress(int,int)),
+                ui->mediaList,
+                SLOT(progressReceiver(int, int)));
+        connect(this, SIGNAL(addLoadFiles(QStringList)),
+                loader.data(), SLOT(addFiles(QStringList)));
+        loader.data()->start();
+    }
     this->activateWindow();
 }
 
