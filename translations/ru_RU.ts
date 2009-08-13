@@ -85,14 +85,14 @@ Got error messages from server:
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="91"/>
-        <location filename="../imageinfowidget.cpp" line="102"/>
+        <location filename="../imageinfowidget.cpp" line="92"/>
+        <location filename="../imageinfowidget.cpp" line="107"/>
         <location filename="../imageinfowidget.ui" line="52"/>
         <source>Thumbnail</source>
         <translation>Миниатюра</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.cpp" line="222"/>
+        <location filename="../imageinfowidget.cpp" line="230"/>
         <source>Log in to use this features</source>
         <translation>Войдите чтобы использовать эти возможности</translation>
     </message>
@@ -149,7 +149,7 @@ Got error messages from server:
     <message>
         <location filename="../imageinfowidget.ui" line="161"/>
         <source>Optimize only</source>
-        <translation>Оптимизация без изменения размера</translation>
+        <translation>Только оптимизация</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="183"/>
@@ -346,17 +346,17 @@ from thumbnail</source>
 <context>
     <name>MediaListWidget</name>
     <message>
-        <location filename="../medialistwidget.cpp" line="88"/>
+        <location filename="../medialistwidget.cpp" line="95"/>
         <source>Select one or more files to open</source>
         <translation>Выберите один или более файлов</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="91"/>
+        <location filename="../medialistwidget.cpp" line="98"/>
         <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</source>
         <translation>Поддерживаемые форматы (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="137"/>
+        <location filename="../medialistwidget.cpp" line="144"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
             <numerusform>Не удалось добавить %n файл, так как он сохранен в формате, который на данный момент не поддерживается:</numerusform>
@@ -365,7 +365,7 @@ from thumbnail</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="144"/>
+        <location filename="../medialistwidget.cpp" line="151"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n файл слишком большой для загрузки:</numerusform>
@@ -374,12 +374,12 @@ from thumbnail</source>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="149"/>
+        <location filename="../medialistwidget.cpp" line="156"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="231"/>
+        <location filename="../medialistwidget.cpp" line="238"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n файл</numerusform>
@@ -478,94 +478,94 @@ from thumbnail</source>
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="108"/>
+        <location filename="../resultswindow.cpp" line="111"/>
         <source>Direct links</source>
         <translation>Прямые ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="109"/>
+        <location filename="../resultswindow.cpp" line="112"/>
         <source>Short links</source>
         <translation>Короткие ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="110"/>
+        <location filename="../resultswindow.cpp" line="113"/>
         <source>Hotlinks for web</source>
         <translation>Горячие ссылки для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="111"/>
+        <location filename="../resultswindow.cpp" line="114"/>
         <source>Thumbnails for web</source>
         <translation>Миниатюры для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="115"/>
         <source>Thumbnails for forums 1</source>
         <translation>Миниатюры для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="116"/>
         <source>Thumbnails for forums 2</source>
         <translation>Миниатюры для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="117"/>
         <source>Hotlinks for forums 1</source>
         <translation>Горячие ссылки для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="118"/>
         <source>Hotlinks for forums 2</source>
         <translation>Горячие ссылки для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="125"/>
-        <location filename="../resultswindow.cpp" line="136"/>
+        <location filename="../resultswindow.cpp" line="128"/>
+        <location filename="../resultswindow.cpp" line="139"/>
         <source>Direct link</source>
         <translation>Прямая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="126"/>
+        <location filename="../resultswindow.cpp" line="129"/>
         <source>Short link</source>
         <translation>Короткая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="127"/>
-        <location filename="../resultswindow.cpp" line="138"/>
+        <location filename="../resultswindow.cpp" line="130"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for web</source>
         <translation>Горячая ссылка для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="128"/>
-        <location filename="../resultswindow.cpp" line="139"/>
+        <location filename="../resultswindow.cpp" line="131"/>
+        <location filename="../resultswindow.cpp" line="142"/>
         <source>Thumbnail for web</source>
         <translation>Миниатюра для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="129"/>
-        <location filename="../resultswindow.cpp" line="140"/>
+        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="143"/>
         <source>Thumbnail for forums 1</source>
         <translation>Миниатюра для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="130"/>
-        <location filename="../resultswindow.cpp" line="141"/>
+        <location filename="../resultswindow.cpp" line="133"/>
+        <location filename="../resultswindow.cpp" line="144"/>
         <source>Thumbnail for forums 2</source>
         <translation>Миниатюра для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="131"/>
-        <location filename="../resultswindow.cpp" line="142"/>
+        <location filename="../resultswindow.cpp" line="134"/>
+        <location filename="../resultswindow.cpp" line="145"/>
         <source>Hotlink for forums 1</source>
         <translation>Горячая ссылка для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="132"/>
-        <location filename="../resultswindow.cpp" line="143"/>
+        <location filename="../resultswindow.cpp" line="135"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>Hotlink for forums 2</source>
         <translation>Горячая ссылка для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="137"/>
+        <location filename="../resultswindow.cpp" line="140"/>
         <source>Embedded video</source>
         <translation>Встроенное видео</translation>
     </message>
@@ -636,7 +636,7 @@ from thumbnail</source>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
-        <location filename="../tagwidget.cpp" line="94"/>
+        <location filename="../tagwidget.cpp" line="96"/>
         <source>Log in to use this features</source>
         <translation>Войдите чтобы использовать эти возможности</translation>
     </message>
