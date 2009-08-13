@@ -134,7 +134,8 @@ void MainWindow::upload()
 void MainWindow::disableControls()
 {
     ui->loginWidget->setEnabled(false);
-    ui->tagWidget->setEnabled(false);
+    //ui->tagWidget->setEnabled(false);
+    ui->tagWidget->disable();
     ui->imageInfo->disable();
     ui->mediaList->setEnabled(false);
     controlsDisabled = true;
@@ -148,6 +149,7 @@ void MainWindow::enableControls()
     ui->loginWidget->setEnabled(true);
         //if (ui->loginWidget->isLoggedIn()) ui->tagWidget->setEnabled(true);
         //ui->imageInfo->enable();
+    ui->tagWidget->enable();
     ui->mediaList->setEnabled(true);
     controlsDisabled = false;
     setCursor(Qt::ArrowCursor);
