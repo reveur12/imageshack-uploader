@@ -53,7 +53,8 @@ TwitterClient::TwitterClient()
     int h = QApplication::desktop()->geometry().height();
     bar.move(w/2-150, h/2-10);
     bar.setWindowTitle(tr("Posting to twitter..."));
-    bar.setWindowFlags(Qt::Tool);
+    //bar.setEnabled(true);
+    //bar.setWindowFlags(Qt::Tool);
     bar.setStyle(new QPlastiqueStyle());
     bar.setFixedSize(300, 15);
     bar.setValue(0);
