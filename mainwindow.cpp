@@ -146,11 +146,10 @@ void MainWindow::disableControls()
 void MainWindow::enableControls()
 {
     ui->loginWidget->setEnabled(true);
-    if (ui->loginWidget->isLoggedIn())
-        ui->tagWidget->setEnabled(true);
+        //if (ui->loginWidget->isLoggedIn()) ui->tagWidget->setEnabled(true);
+        //ui->imageInfo->enable();
     ui->mediaList->setEnabled(true);
     controlsDisabled = false;
-    ui->imageInfo->enable();
     setCursor(Qt::ArrowCursor);
     ui->loginWidget->setCursor(Qt::ArrowCursor);
     ui->mediaList->setCursor(Qt::ArrowCursor);
