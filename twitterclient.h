@@ -42,13 +42,14 @@ class TwitterClient : public QObject
 public:
     TwitterClient();
     void post(QStringList, QString, QString, QString, QString);
+    QProgressBar bar;
 
 private:
     QHttp http;
     GalleryCreator gallery;
     QList<int>  ids;
 
-    QProgressBar bar;
+
 
 public slots:
     void post(QString, QString, QString, QString);

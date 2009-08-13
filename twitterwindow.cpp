@@ -63,6 +63,7 @@ void TwitterWindow::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         m_ui->retranslateUi(this);
+        twitter.bar.setWindowTitle(tr("Posting to twitter..."));
         break;
     default:
         break;

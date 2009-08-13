@@ -55,7 +55,8 @@ SOURCES += main.cpp \
     videopreviewcreator.cpp \
     filesource.cpp \
     ffmpeg_fas.c \
-    seek_indices.c
+    seek_indices.c \
+    advancedcheckbox.cpp
 HEADERS += mainwindow.h \
     uploadrequest.h \
     media.h \
@@ -89,7 +90,8 @@ HEADERS += mainwindow.h \
     videopreviewcreator.h \
     ffmpeg_fas.h \
     seek_indices.h \
-    defines.h
+    defines.h \
+    advancedcheckbox.h
 FORMS += mainwindow.ui \
     medialistwidget.ui \
     loginwidget.ui \
@@ -102,13 +104,11 @@ FORMS += mainwindow.ui \
     imageinfowidget.ui \
     optionsdialog.ui \
     copyabletextedit.ui \
-    twitterwindow.ui
-
+    twitterwindow.ui \
+    advancedcheckbox.ui
 RESOURCES += images_rc.qrc
-
 TRANSLATIONS += translations/ru_RU.ts \
     translations/en_US.ts
-
 win32:RC_FILE = windowsicon.rc
 macx:ICON = macicon.icns
 target.path = $$[QT_INSTALL_BINS]
@@ -127,7 +127,6 @@ mactrans.commands = lrelease \
 mactrans.path = Contents/Resources
 INSTALLS += target \
     trans
-
 PRE_TARGETDEPS = trans
 macx:PRE_TARGETDEPS = mactrans
 QMAKE_BUNDLE_DATA += mactrans

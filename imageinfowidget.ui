@@ -164,24 +164,15 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="removeSize">
+        <widget class="AdvancedCheckBox" name="removeSize" native="true">
          <property name="enabled">
           <bool>false</bool>
          </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Remove size / resolution bar
-from thumbnail</string>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>10</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -302,6 +293,15 @@ from thumbnail</string>
     <signal>clicked()</signal>
    </slots>
   </customwidget>
+  <customwidget>
+   <class>AdvancedCheckBox</class>
+   <extends>QWidget</extends>
+   <header>advancedcheckbox.h</header>
+   <container>1</container>
+   <slots>
+    <signal>stateChanged(int)</signal>
+   </slots>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections>
@@ -318,22 +318,6 @@ from thumbnail</string>
     <hint type="destinationlabel">
      <x>60</x>
      <y>263</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>removeSize</sender>
-   <signal>stateChanged(int)</signal>
-   <receiver>ImageInfoWidget</receiver>
-   <slot>setRemoveSize(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>353</x>
-     <y>129</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>109</x>
-     <y>266</y>
     </hint>
    </hints>
   </connection>
@@ -382,6 +366,22 @@ from thumbnail</string>
     <hint type="destinationlabel">
      <x>431</x>
      <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeSize</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>ImageInfoWidget</receiver>
+   <slot>setRemoveSize(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>266</y>
     </hint>
    </hints>
   </connection>
