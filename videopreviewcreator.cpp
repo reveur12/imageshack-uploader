@@ -3,8 +3,6 @@
 #include <QTemporaryFile>
 #include <QApplication>
 #include "videopreviewcreator.h"
-#include "sys/wait.h"
-#include "signal.h"
 
 VideoPreviewCreator::VideoPreviewCreator()
 {
@@ -41,11 +39,6 @@ static void ppm_save(fas_raw_image_type *image, char *filename)
     }
 
     fclose(f);
-}
-
-void sigsegv_handler(int s)
-{
-    abort();
 }
 
 QByteArray VideoPreviewCreator::getPreview(QString filename)
