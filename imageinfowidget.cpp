@@ -143,6 +143,10 @@ void ImageInfoWidget::setResize(int idx)
 {
     if (media)
         media->setResize(items.key(idx));
+    if (idx==1 || idx==2)
+        m_ui->removeSize->setEnabled(false);
+    else
+        m_ui->removeSize->setEnabled(true);
 }
 
 void ImageInfoWidget::setRemoveSize(int state)
