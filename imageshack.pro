@@ -125,8 +125,17 @@ mactrans.files += translations/en_US.qm \
 mactrans.commands = lrelease \
     translations/*ts
 mactrans.path = Contents/Resources
+
+menuitem.target = menuicon
+menuitem.files = imageshackuploader.desktop
+menuitem.path = /usr/share/applications/
+menuicon.target = menuicon
+menuicon.files = images/imageshack.png
+menuicon.path = /usr/share/pixmaps/
+
 INSTALLS += target \
-    trans
+            trans
+!macx:unix:INSTALLS += menuicon menuitem
 PRE_TARGETDEPS = trans
 macx:PRE_TARGETDEPS = mactrans
 QMAKE_BUNDLE_DATA += mactrans
@@ -135,13 +144,9 @@ deb.commands = rm \
     -rf \
     deb \
     && \
-    mkdir \
-    -p \
-    deb/usr/bin \
+    mkdir -p deb/usr/bin \
     && \
-    mkdir \
-    -p \
-    deb/usr/share/imageshack/translations \
+    mkdir -p deb/usr/share/imageshack/translations \
     && \
     cp \
     $$TARGET \
@@ -155,8 +160,11 @@ deb.commands = rm \
     translations/en_US.qm \
     deb/usr/share/imageshack/translations/en_US.qm \
     && \
-    mkdir \
-    deb/DEBIAN \
+    mkdir -p deb/usr/share/applications && \
+    mkdir -p deb/usr/share/pixmaps && \
+    cp images/linuxicon.png deb/usr/share/pixmaps/imageshack.png && \
+    cp imageshackuploader.desktop deb/usr/share/applications/ && \
+    mkdir -p deb/DEBIAN \
     && \
     echo \
     \"Package: \
@@ -222,8 +230,7 @@ deb.commands = rm \
     >> \
     deb/DEBIAN/control \
     && \
-    mkdir \
-    dist \
+    mkdir -p dist \
     && \
     dpkg \
     -b \
