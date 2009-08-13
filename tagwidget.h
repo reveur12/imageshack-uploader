@@ -47,6 +47,7 @@ public:
     virtual ~TagWidget();
     void setMediaList(MediaListModel*);
     void unsetMediaList();
+    void setEnabled(bool);
 
 protected:
     virtual void changeEvent(QEvent *e);
@@ -55,6 +56,7 @@ private:
     Ui::TagWidget *m_ui;
     QSharedPointer<Media> media;
     MediaListModel* medias;
+    bool loggedIn;
 
 private slots:
     void batchTagsUpdated();

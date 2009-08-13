@@ -84,12 +84,14 @@ void TagWidget::loginStatusReceiver(int state)
 {
     if (state == 0)
     {
+        loggedIn = true;
         if (media!=NULL)
             setEnabled(true);
         this->setToolTip(QString());
     }
     else
     {
+        loggedIn = false;
         setEnabled(false);
         setToolTip(tr("Log in to use this features"));
     }
@@ -104,7 +106,7 @@ void TagWidget::setMediaList(MediaListModel* model)
 void TagWidget::setMedia(QSharedPointer<Media> item)
 {
     media = item;
-    setEnabled(true);
+    if (loggedIn) setEnabled(true);
     //m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
     //m_ui->privacyPublic->setChecked(!media.data()->getPrivate());
 }
@@ -129,4 +131,10 @@ void TagWidget::batchPrivacyUpdated()
         medias->getMedia(i).data()->setPrivacy(m_ui->bPrivacyPrivate->isChecked());
     }
     emit batchPrivacy(m_ui->bPrivacyPrivate->isChecked());
+}
+
+void TagWidget::setEnabled(bool st)
+{
+    QWidget::setEnabled(st);
+    if (!st) m_ui->batchTags->clear();
 }
