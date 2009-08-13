@@ -1,4 +1,7 @@
 #include <QFile>
+#include <QPair>
+#include <QImage>
+#include <QColor>
 #include <QDebug>
 #include <QTemporaryFile>
 #include <QApplication>
@@ -41,7 +44,61 @@ static void ppm_save(fas_raw_image_type *image, char *filename)
     fclose(f);
 }
 
-QByteArray VideoPreviewCreator::getPreview(QString filename)
+QVector<int> VideoPreviewCreator::getHistogram(QImage img)
+{
+    QVector<int> hist;
+    hist.fill(0, 768);
+    for(int i=0; i<img.width(); i++)
+        for(int j=0; j<img.height(); j++)
+        {
+            QColor color;
+            color.setRgb(img.pixel(i, j));
+            hist[color.red()] += 1;
+            hist[color.green()+256] += 1;
+            hist[color.blue()+512] += 1;
+        }
+    return hist;
+}
+
+QVector<int> VideoPreviewCreator::getMedian(QVector<QPair<QVector<int>, int> > hists)
+{
+    QVector<int> median;
+    median.fill(0, 768);
+    for (int i=0; i<hists.size(); i++)
+        for (int j=0; j<768; j++)
+            median[j] += hists[i].first[j];
+    for(int i=0; i<768; i++)
+        median[i] /= hists.size();
+    return median;
+}
+
+QPair<QVector<int>, int> VideoPreviewCreator::getClosest(QVector<QPair<QVector<int>, int> > hists, QVector<int> median)
+{
+    QVector<qint64> diffs;
+    diffs.fill(0, hists.size());
+    for (int i=0; i< hists.size(); i++)
+    {
+        QVector<int> hist = hists[i].first;
+
+        qint64 sum = 0;
+        for(int j=0; j<768; j++)
+            sum += (median[j]-hist[j])*(median[j]-hist[j]);
+        diffs[i] = sum;
+    }
+    qint64 min = Q_INT64_C(932838457459459);
+    int min_n = diffs.size();
+    for(int i=0; i<diffs.size(); i++)
+        if (diffs[i]<min)
+        {
+            min = diffs[i];
+            min_n = i;
+        }
+    return hists.at(min_n);
+    //return hists.at(0);
+
+}
+
+QImage VideoPreviewCreator::getPreview(QString filename)
 {
     fas_error_type video_error;
     fas_context_ref_type context;
@@ -49,70 +106,44 @@ QByteArray VideoPreviewCreator::getPreview(QString filename)
 
     fas_initialize (FAS_FALSE, FAS_RGB24);
 
-    /*QTemporaryFile tf;
-    tf.setAutoRemove(false);
-    tf.open();
-    QString resfilename = tf.fileName();
-    qDebug() << resfilename;
-    int stat;
-    int pid = fork();
-    if (pid==0)
+    video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
+    if (video_error != FAS_SUCCESS)
     {
-        signal(SIGSEGV, sigsegv_handler);
-        signal(SIGABRT, SIG_IGN);*/
-        video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
-        if (video_error != FAS_SUCCESS)
-        {
-            qDebug() << "failed to open";
-            return QByteArray();
-            //abort();
-        }
+        qDebug() << "failed to open video file";
+        return QImage();
+    }
 
-        int counter = 0;
-    //while (fas_frame_available (context))
-//    {
-  //      qDebug() << counter;
+    QByteArray res;
+    int counter = 0;
+    QVector<QPair<QVector<int>, int> > hists;
+    bool error = false;
+    while (counter < 50)
+    {
         if (FAS_SUCCESS != fas_get_frame (context, &image_buffer))
         {
-            qDebug() << "failed on rgb image";
-            return QByteArray();
-            //abort();
+            error = true;
+            break;
         }
-      //char filename[50];
-
-      //fprintf(stderr, "Writing %s (counter=%d frame_index=%d)\n", filename, counter, fas_get_frame_index(context));
-      //ppm_save(&image_buffer, filename);
-      //char filename[50];
-      //sprintf(filename, "/home/a2k/tmp/ff/%04d.ppm", counter);
-      //ppm_save(&image_buffer, filename);
-        qDebug() << "got frame;";
-        QByteArray res = getImageData(&image_buffer);
-        qDebug() << "got image data;";
-        //tf.write(res);
-      /*
-      QFile f("/home/a2k/tmp/ff/"+QString::number(counter)+".ppm");
-      f.open(QFile::WriteOnly);
-      f.write(res);
-      f.close();*/
-
+        QImage img;
+        if (!img.loadFromData(getImageData(&image_buffer)))
+        {
+            error = true;
+            break;
+        }
+        hists.append(qMakePair(getHistogram(img), counter));
         fas_free_frame (image_buffer);
-
-        //video_error = fas_step_forward (context);
         counter++;
-        return res;
-      //qDebug() << "child thread should write this";
-      //abort();
-      //abort();
-      //exit(0);
-      //qDebug() << "child could not exit";
-    /*}
-    else
-    {
-        waitpid(pid, &stat, 0);
-    }*/
-    /*qDebug() << "parent thread should write this";
-    qDebug() << "child pid is" << pid;
-    qDebug() << "parent returning";
-    return resfilename;*/
+    }
+    if (error) return QImage();
+
+    QPair<QVector<int>, int> frame = getClosest(hists, getMedian(hists));
+
+    fas_seek_to_frame(context, frame.second);
+    fas_get_frame (context, &image_buffer);
+    QImage img;
+    img.loadFromData(getImageData(&image_buffer));
+    fas_free_frame (image_buffer);
+
+    return img;
 }
 
