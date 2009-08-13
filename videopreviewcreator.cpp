@@ -115,7 +115,7 @@ QImage VideoPreviewCreator::getPreview(QString filename)
     int counter = 0;
     QVector<QPair<QVector<int>, int> > hists;
     bool error = false;
-    while (counter < 50)
+    while (counter < 75)
     {
         if (FAS_SUCCESS != fas_get_frame (context, &image_buffer))
         {
