@@ -48,7 +48,7 @@ void sigsegv_handler(int s)
     abort();
 }
 
-QString VideoPreviewCreator::getPreview(QString filename)
+QByteArray VideoPreviewCreator::getPreview(QString filename)
 {
     fas_error_type video_error;
     fas_context_ref_type context;
@@ -56,7 +56,7 @@ QString VideoPreviewCreator::getPreview(QString filename)
 
     fas_initialize (FAS_FALSE, FAS_RGB24);
 
-    QTemporaryFile tf;
+    /*QTemporaryFile tf;
     tf.setAutoRemove(false);
     tf.open();
     QString resfilename = tf.fileName();
@@ -66,12 +66,13 @@ QString VideoPreviewCreator::getPreview(QString filename)
     if (pid==0)
     {
         signal(SIGSEGV, sigsegv_handler);
-        signal(SIGABRT, SIG_IGN);
+        signal(SIGABRT, SIG_IGN);*/
         video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
         if (video_error != FAS_SUCCESS)
         {
             qDebug() << "failed to open";
-            abort();
+            return QByteArray();
+            //abort();
         }
 
         int counter = 0;
@@ -81,7 +82,8 @@ QString VideoPreviewCreator::getPreview(QString filename)
         if (FAS_SUCCESS != fas_get_frame (context, &image_buffer))
         {
             qDebug() << "failed on rgb image";
-            abort();
+            return QByteArray();
+            //abort();
         }
       //char filename[50];
 
@@ -90,34 +92,34 @@ QString VideoPreviewCreator::getPreview(QString filename)
       //char filename[50];
       //sprintf(filename, "/home/a2k/tmp/ff/%04d.ppm", counter);
       //ppm_save(&image_buffer, filename);
-      qDebug() << "got frame;";
-      QByteArray res = getImageData(&image_buffer);
-      qDebug() << "got image data;";
-      tf.write(res);
+        qDebug() << "got frame;";
+        QByteArray res = getImageData(&image_buffer);
+        qDebug() << "got image data;";
+        //tf.write(res);
       /*
       QFile f("/home/a2k/tmp/ff/"+QString::number(counter)+".ppm");
       f.open(QFile::WriteOnly);
       f.write(res);
       f.close();*/
 
-      fas_free_frame (image_buffer);
+        fas_free_frame (image_buffer);
 
-      video_error = fas_step_forward (context);
-      counter++;
-
-      qDebug() << "child thread should write this";
-      abort();
+        video_error = fas_step_forward (context);
+        counter++;
+        return res;
+      //qDebug() << "child thread should write this";
+      //abort();
       //abort();
       //exit(0);
-      qDebug() << "child could not exit";
-    }
+      //qDebug() << "child could not exit";
+    /*}
     else
     {
         waitpid(pid, &stat, 0);
-    }
-    qDebug() << "parent thread should write this";
+    }*/
+    /*qDebug() << "parent thread should write this";
     qDebug() << "child pid is" << pid;
     qDebug() << "parent returning";
-    return resfilename;
+    return resfilename;*/
 }
 
