@@ -87,6 +87,7 @@ void ImageInfoWidget::enable()
 
 void ImageInfoWidget::disable()
 {
+    media.clear();
     m_ui->thumbnail->setEnabled(false);
     m_ui->thumbnail->setText(tr("Thumbnail"));
     m_ui->removeSize->setEnabled(false);
@@ -95,10 +96,13 @@ void ImageInfoWidget::disable()
     m_ui->privacyPublic->setEnabled(false);
     m_ui->tags->setEnabled(false);
     m_ui->tags->clear();
+    m_ui->resize->setCurrentIndex(0);
+    m_ui->removeSize->setChecked(false);
 }
 
 void ImageInfoWidget::reset()
 {
+    media.clear();
     m_ui->thumbnail->setText(tr("Thumbnail"));
     m_ui->thumbnail->setEnabled(false);
     m_ui->removeSize->setEnabled(false);
@@ -107,6 +111,8 @@ void ImageInfoWidget::reset()
     m_ui->privacyPublic->setEnabled(false);
     m_ui->tags->setEnabled(false);
     m_ui->tags->clear();
+    m_ui->resize->setCurrentIndex(0);
+    m_ui->removeSize->setChecked(false);
 }
 
 void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
