@@ -82,73 +82,98 @@ Got error messages from server:</numerusform>
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="83"/>
-        <location filename="../imageinfowidget.cpp" line="90"/>
-        <location filename="../imageinfowidget.ui" line="44"/>
+        <location filename="../imageinfowidget.cpp" line="91"/>
+        <location filename="../imageinfowidget.cpp" line="102"/>
+        <location filename="../imageinfowidget.ui" line="52"/>
         <source>Thumbnail</source>
         <translation>Thumbnail</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="92"/>
+        <location filename="../imageinfowidget.cpp" line="222"/>
+        <source>Log in to use this features</source>
+        <translation>Log in to use this features</translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="100"/>
         <source>Image resize:</source>
         <translation>Image resize:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="108"/>
+        <location filename="../imageinfowidget.ui" line="116"/>
         <source>Do not resize</source>
         <translation>Do not resize</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="113"/>
+        <location filename="../imageinfowidget.ui" line="121"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (avatar)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="118"/>
+        <location filename="../imageinfowidget.ui" line="126"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (thumbnail)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="123"/>
+        <location filename="../imageinfowidget.ui" line="131"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (for websites and email)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="128"/>
+        <location filename="../imageinfowidget.ui" line="136"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (for message boards)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="133"/>
+        <location filename="../imageinfowidget.ui" line="141"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (12-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="138"/>
+        <location filename="../imageinfowidget.ui" line="146"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (15-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="143"/>
+        <location filename="../imageinfowidget.ui" line="151"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (19-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="148"/>
+        <location filename="../imageinfowidget.ui" line="156"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (21-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="153"/>
+        <location filename="../imageinfowidget.ui" line="161"/>
         <source>Optimize only</source>
         <translation>Optimize only</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="175"/>
+        <location filename="../imageinfowidget.ui" line="183"/>
         <source>Remove size / resolution bar
 from thumbnail</source>
         <translation>Remove size / resolution bar
 from thumbnail</translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="219"/>
+        <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Privacy:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="226"/>
+        <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Tags:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="244"/>
+        <source>Public</source>
+        <translation>Public</translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="263"/>
+        <source>Private</source>
+        <translation>Private</translation>
     </message>
 </context>
 <context>
@@ -215,7 +240,7 @@ from thumbnail</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="47"/>
-        <location filename="../optionsdialog.cpp" line="137"/>
+        <location filename="../optionsdialog.cpp" line="144"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
         <translation>English</translation>
@@ -226,12 +251,12 @@ from thumbnail</translation>
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="103"/>
+        <location filename="../mainwindow.cpp" line="109"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="104"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Flash files can not be uploaded without logging in. Do you want to try anyway?</translation>
     </message>
@@ -279,7 +304,7 @@ from thumbnail</translation>
 <context>
     <name>Media</name>
     <message numerus="yes">
-        <location filename="../media.cpp" line="293"/>
+        <location filename="../media.cpp" line="294"/>
         <source>%n B</source>
         <translation>
             <numerusform>%n B</numerusform>
@@ -287,7 +312,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="294"/>
+        <location filename="../media.cpp" line="295"/>
         <source>%n KB</source>
         <translation>
             <numerusform>%n KB</numerusform>
@@ -295,7 +320,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="295"/>
+        <location filename="../media.cpp" line="296"/>
         <source>%n MB</source>
         <translation>
             <numerusform>%n MB</numerusform>
@@ -303,7 +328,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../media.cpp" line="296"/>
+        <location filename="../media.cpp" line="297"/>
         <source>%n GB</source>
         <translation>
             <numerusform>%n GB</numerusform>
@@ -314,17 +339,17 @@ from thumbnail</translation>
 <context>
     <name>MediaListWidget</name>
     <message>
-        <location filename="../medialistwidget.cpp" line="87"/>
+        <location filename="../medialistwidget.cpp" line="88"/>
         <source>Select one or more files to open</source>
         <translation>Select one or more files to open</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="90"/>
-        <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</source>
-        <translation>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.mov *.flv *.swf *.pdf)</translation>
+        <location filename="../medialistwidget.cpp" line="91"/>
+        <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</source>
+        <translation>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="136"/>
+        <location filename="../medialistwidget.cpp" line="137"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
             <numerusform>Could not add %n file, as it seems to be in a format we do not currently support:</numerusform>
@@ -332,7 +357,7 @@ from thumbnail</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="143"/>
+        <location filename="../medialistwidget.cpp" line="144"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n file is too large for upload:</numerusform>
@@ -340,12 +365,12 @@ from thumbnail</translation>
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="148"/>
+        <location filename="../medialistwidget.cpp" line="149"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="230"/>
+        <location filename="../medialistwidget.cpp" line="231"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n file</numerusform>
@@ -400,7 +425,7 @@ from thumbnail</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="42"/>
-        <location filename="../optionsdialog.cpp" line="112"/>
+        <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</translation>
     </message>
@@ -575,42 +600,33 @@ from thumbnail</translation>
 <context>
     <name>TagWidget</name>
     <message>
-        <location filename="../tagwidget.ui" line="20"/>
-        <source>Custom privacy &amp;&amp; tags</source>
-        <translation>Custom privacy &amp;&amp; tags</translation>
-    </message>
-    <message>
-        <location filename="../tagwidget.ui" line="32"/>
-        <location filename="../tagwidget.ui" line="113"/>
+        <location filename="../tagwidget.ui" line="38"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Privacy:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="47"/>
-        <location filename="../tagwidget.ui" line="128"/>
+        <location filename="../tagwidget.ui" line="53"/>
         <source>Public</source>
         <translation>Public</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="63"/>
-        <location filename="../tagwidget.ui" line="144"/>
+        <location filename="../tagwidget.ui" line="69"/>
         <source>Private</source>
         <translation>Private</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="88"/>
-        <location filename="../tagwidget.ui" line="169"/>
+        <location filename="../tagwidget.ui" line="94"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Tags:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="101"/>
+        <location filename="../tagwidget.ui" line="26"/>
         <source>Batch privacy &amp;&amp; tags</source>
         <translation>Batch privacy &amp;&amp; tags</translation>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
-        <location filename="../tagwidget.cpp" line="116"/>
+        <location filename="../tagwidget.cpp" line="94"/>
         <source>Log in to use this features</source>
         <translation>Log in to use this features</translation>
     </message>
