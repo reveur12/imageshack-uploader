@@ -94,6 +94,9 @@
        <property name="text">
         <string notr="true">&lt;a href=&quot;http://code.google.com/p/imageshack-uploader/&quot;&gt;http://code.google.com/p/imageshack-uploader/&lt;/a&gt;</string>
        </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
