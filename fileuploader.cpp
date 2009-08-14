@@ -201,7 +201,7 @@ void FileUploader::resultReceiver(QString value)
     failcount = 0;
     donecount += 1;
     res.data()->append(qMakePair(current, all));
-    medias->removeMedia(0);
+    medias->removeMedia(0+skip);
     if (!failed) process();
 }
 

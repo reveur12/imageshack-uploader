@@ -75,10 +75,12 @@ Got error messages from server:
         <translation>
             <numerusform>
 
-Got error message from server:</numerusform>
+Got error message from server:
+</numerusform>
             <numerusform>
 
-Got error messages from server:</numerusform>
+Got error messages from server:
+</numerusform>
         </translation>
     </message>
     <message>
