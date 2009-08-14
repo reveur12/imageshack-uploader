@@ -9,3 +9,12 @@ ui_*
 *qm
 qrc_*
 Makefile
+Makefile.*
+libavutil
+libavformat
+libavcodec
+libswscale
+debug
+release
+*.dll
+imageshack.pro.user
