@@ -36,6 +36,14 @@
     </message>
 </context>
 <context>
+    <name>AdvancedCheckBox</name>
+    <message>
+        <location filename="../advancedcheckbox.ui" line="69"/>
+        <source>Remove size/resolution bar from thumbnail</source>
+        <translation>Remove size/resolution bar from thumbnail</translation>
+    </message>
+</context>
+<context>
     <name>CopyableLineEdit</name>
     <message>
         <location filename="../copyablelineedit.ui" line="84"/>
@@ -89,7 +97,7 @@ Got error messages from server:</numerusform>
         <translation>Thumbnail</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.cpp" line="230"/>
+        <location filename="../imageinfowidget.cpp" line="235"/>
         <source>Log in to use this features</source>
         <translation>Log in to use this features</translation>
     </message>
@@ -149,29 +157,22 @@ Got error messages from server:</numerusform>
         <translation>Optimize only</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="183"/>
-        <source>Remove size / resolution bar
-from thumbnail</source>
-        <translation>Remove size / resolution bar
-from thumbnail</translation>
-    </message>
-    <message>
-        <location filename="../imageinfowidget.ui" line="219"/>
+        <location filename="../imageinfowidget.ui" line="210"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Privacy:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="226"/>
+        <location filename="../imageinfowidget.ui" line="217"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Tags:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="244"/>
+        <location filename="../imageinfowidget.ui" line="235"/>
         <source>Public</source>
         <translation>Public</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="263"/>
+        <location filename="../imageinfowidget.ui" line="254"/>
         <source>Private</source>
         <translation>Private</translation>
     </message>
@@ -666,44 +667,44 @@ from thumbnail</translation>
         <translation>Posting to Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="78"/>
-        <location filename="../twitterclient.cpp" line="110"/>
-        <location filename="../twitterclient.cpp" line="122"/>
-        <location filename="../twitterclient.cpp" line="143"/>
-        <location filename="../twitterclient.cpp" line="150"/>
-        <location filename="../twitterclient.cpp" line="156"/>
-        <location filename="../twitterclient.cpp" line="163"/>
+        <location filename="../twitterclient.cpp" line="79"/>
+        <location filename="../twitterclient.cpp" line="111"/>
+        <location filename="../twitterclient.cpp" line="123"/>
+        <location filename="../twitterclient.cpp" line="144"/>
+        <location filename="../twitterclient.cpp" line="151"/>
+        <location filename="../twitterclient.cpp" line="157"/>
+        <location filename="../twitterclient.cpp" line="164"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="79"/>
+        <location filename="../twitterclient.cpp" line="80"/>
         <source>First set twitter username and password in options</source>
         <translation>First set Twitter username and password in options</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="111"/>
+        <location filename="../twitterclient.cpp" line="112"/>
         <source>Could not send url to Twitter</source>
         <translation>Could not send url to Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="123"/>
-        <location filename="../twitterclient.cpp" line="164"/>
+        <location filename="../twitterclient.cpp" line="124"/>
+        <location filename="../twitterclient.cpp" line="165"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Could not post to twitter. Wrong server response.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="144"/>
+        <location filename="../twitterclient.cpp" line="145"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Could not post to twitter. Wrong credentials.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="151"/>
+        <location filename="../twitterclient.cpp" line="152"/>
         <source>Failed to update twitter status.</source>
         <translation>Failed to update twitter status.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="157"/>
+        <location filename="../twitterclient.cpp" line="158"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Could not post to twitter. Internal error.</translation>
     </message>
@@ -711,17 +712,22 @@ from thumbnail</translation>
 <context>
     <name>TwitterWindow</name>
     <message>
-        <location filename="../twitterwindow.cpp" line="75"/>
+        <location filename="../twitterwindow.cpp" line="66"/>
+        <source>Posting to twitter...</source>
+        <translation>Posting to Twitter...</translation>
+    </message>
+    <message>
+        <location filename="../twitterwindow.cpp" line="76"/>
         <source>Symbols left: %1</source>
         <translation>Symbols left: %1</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="101"/>
+        <location filename="../twitterwindow.cpp" line="102"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="101"/>
+        <location filename="../twitterwindow.cpp" line="102"/>
         <source>You have not entered username or password</source>
         <translation>You have not entered username or password</translation>
     </message>

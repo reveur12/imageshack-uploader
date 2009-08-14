@@ -90,6 +90,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string notr="true">&lt;a href=&quot;http://code.google.com/p/imageshack-uploader/&quot;&gt;http://code.google.com/p/imageshack-uploader/&lt;/a&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="label_5">
        <property name="text">
         <string>© ImageShack Corp.</string>

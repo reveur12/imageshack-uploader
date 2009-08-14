@@ -36,6 +36,14 @@
     </message>
 </context>
 <context>
+    <name>AdvancedCheckBox</name>
+    <message>
+        <location filename="../advancedcheckbox.ui" line="69"/>
+        <source>Remove size/resolution bar from thumbnail</source>
+        <translation>Убрать информацию о размере изображения с миниатюры</translation>
+    </message>
+</context>
+<context>
     <name>CopyableLineEdit</name>
     <message>
         <location filename="../copyablelineedit.ui" line="84"/>
@@ -92,7 +100,7 @@ Got error messages from server:
         <translation>Миниатюра</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.cpp" line="230"/>
+        <location filename="../imageinfowidget.cpp" line="235"/>
         <source>Log in to use this features</source>
         <translation>Войдите чтобы использовать эти возможности</translation>
     </message>
@@ -152,29 +160,22 @@ Got error messages from server:
         <translation>Только оптимизация</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="183"/>
-        <source>Remove size / resolution bar
-from thumbnail</source>
-        <translation>Убрать полоску с
-разрешением / размером</translation>
-    </message>
-    <message>
-        <location filename="../imageinfowidget.ui" line="219"/>
+        <location filename="../imageinfowidget.ui" line="210"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Доступ:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="226"/>
+        <location filename="../imageinfowidget.ui" line="217"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Теги:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="244"/>
+        <location filename="../imageinfowidget.ui" line="235"/>
         <source>Public</source>
         <translation>Общий</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="263"/>
+        <location filename="../imageinfowidget.ui" line="254"/>
         <source>Private</source>
         <translation>Только владельцу</translation>
     </message>
@@ -678,44 +679,44 @@ from thumbnail</source>
         <translation>Отправка на Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="78"/>
-        <location filename="../twitterclient.cpp" line="110"/>
-        <location filename="../twitterclient.cpp" line="122"/>
-        <location filename="../twitterclient.cpp" line="143"/>
-        <location filename="../twitterclient.cpp" line="150"/>
-        <location filename="../twitterclient.cpp" line="156"/>
-        <location filename="../twitterclient.cpp" line="163"/>
+        <location filename="../twitterclient.cpp" line="79"/>
+        <location filename="../twitterclient.cpp" line="111"/>
+        <location filename="../twitterclient.cpp" line="123"/>
+        <location filename="../twitterclient.cpp" line="144"/>
+        <location filename="../twitterclient.cpp" line="151"/>
+        <location filename="../twitterclient.cpp" line="157"/>
+        <location filename="../twitterclient.cpp" line="164"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="79"/>
+        <location filename="../twitterclient.cpp" line="80"/>
         <source>First set twitter username and password in options</source>
         <translation>Сначала задайте имя пользователя и пароль для Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="111"/>
+        <location filename="../twitterclient.cpp" line="112"/>
         <source>Could not send url to Twitter</source>
         <translation>Не удалось отправить ссылку на Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="123"/>
-        <location filename="../twitterclient.cpp" line="164"/>
+        <location filename="../twitterclient.cpp" line="124"/>
+        <location filename="../twitterclient.cpp" line="165"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Не удалось отправить на Twitter. Произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="144"/>
+        <location filename="../twitterclient.cpp" line="145"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Не удалось отправить на Twitter. Неправильные логин или пароль.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="151"/>
+        <location filename="../twitterclient.cpp" line="152"/>
         <source>Failed to update twitter status.</source>
         <translation>Не удалось обновить статус Twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="157"/>
+        <location filename="../twitterclient.cpp" line="158"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Не удалось отправить на Twitter. Внутреняя ошибка.</translation>
     </message>
@@ -723,17 +724,22 @@ from thumbnail</source>
 <context>
     <name>TwitterWindow</name>
     <message>
-        <location filename="../twitterwindow.cpp" line="75"/>
+        <location filename="../twitterwindow.cpp" line="66"/>
+        <source>Posting to twitter...</source>
+        <translation>Отправка на Twitter...</translation>
+    </message>
+    <message>
+        <location filename="../twitterwindow.cpp" line="76"/>
         <source>Symbols left: %1</source>
         <translation>Осталось символов: %1</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="101"/>
+        <location filename="../twitterwindow.cpp" line="102"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="101"/>
+        <location filename="../twitterwindow.cpp" line="102"/>
         <source>You have not entered username or password</source>
         <translation>Вы не ввели имя пользователя или пароль</translation>
     </message>

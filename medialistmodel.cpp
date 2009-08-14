@@ -155,7 +155,7 @@ void MediaListModel::addMedia(QVector<QSharedPointer<Media> > newmedias)
         endInsertRows();
         emit modelChanged();
     }
-    else
+    if (was)
     {
         QStringList same;
         foreach(int i, wasIndexes)
