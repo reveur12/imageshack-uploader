@@ -129,7 +129,7 @@ void FileUploader::resultReceiver(QString value)
     QDomElement doc = xml.documentElement();
     if (doc.isNull())
     {
-        fail();
+        fail("Server did not return valid response");
         process();
         return;
     }
@@ -138,14 +138,14 @@ void FileUploader::resultReceiver(QString value)
     {
         if (!error.text().isEmpty())
             fail(error.text());
-        else fail();
+        else fail(tr("Server returned no error text"));
         process();
         return;
     }
     QDomElement links = doc.firstChildElement("links");
     if (links.isNull())
     {
-        fail();
+        fail(tr("Wrong server response"));
         process();
         return;
     }
@@ -169,7 +169,7 @@ void FileUploader::resultReceiver(QString value)
             thumb_html.isNull() || thumb_bb.isNull() || thumb_bb2.isNull() ||
             ad_link.isNull())
         {
-            fail();
+            fail(tr("Server responce is not valid"));
             process();
             return;
         }
@@ -191,7 +191,7 @@ void FileUploader::resultReceiver(QString value)
         if (image_link.isNull() || thumb_html.isNull() || thumb_bb.isNull() ||
             thumb_bb2.isNull() || video_embed.isNull() || ad_link.isNull())
         {
-            fail();
+            fail(tr("Server responce is not valid"));
             process();
             return;
         }
@@ -220,12 +220,23 @@ void FileUploader::cancel()
 void FileUploader::fail(QString message)
 {
     qDebug() << "FileUploader failing";
-    message = medias->getMedia(skip).data()->filename() + ": " + message;
-    QString errorString = request.data()->rep->errorString();
-    if (!errors.contains(message) && errorString != "Unknown error")
-            errors.append(errorString);
+    QString filename = medias->getMedia(skip).data()->filename();
+    if (!message.isNull())
+        message = filename + ": " + message;
     if (message.size())
+    {
         if (!errors.contains(message))
             errors.append(message);
+    }
+    else
+    {
+        QString errorString = request.data()->rep->errorString();
+        if (errorString != "Unknown error")
+                errors.append(filename + ": " + errorString);
+        else
+        {
+            errors.append(filename + ": " + tr("Could not connect to server"));
+        }
+    }
     skip++;
 }
