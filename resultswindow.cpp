@@ -153,6 +153,7 @@ void ResultsWindow::translate1stTab()
 
 void ResultsWindow::setIndex(int index)
 {
+    m_ui->count->setText(tr("File %1 of %2").arg(index+1).arg(results.data()->size()));
     m_ui->thumbnail->setPixmap(QPixmap::fromImage(results.data()->at(index).first.data()->thumbnail()));
     m_ui->directLink->setText(results.data()->at(index).second.at(0));
     translate1stTab();
