@@ -276,7 +276,7 @@ bool Media::isTooLarge()
 
 QString Media::formatedSize()
 {
-    return formatSize(size());
+    return formatSize(size(), true);
 }
 
 QByteArray Media::data()
@@ -305,10 +305,10 @@ QString Media::formatSize(qint64 bytes, bool verbose)
         qreal tmp = tsize;
         qint64 exp = 0;
         while (tsize>1 && exp<4) { tmp=tsize; exp++; tsize/=1024; }
-        if (exp == 1) res = tr("%1 B").arg(tmp, 5, 'f', 0);
-        if (exp == 2) res = tr("%1 KB").arg(tmp, 5, 'f', 0);
-        if (exp == 3) res = tr("%1 MB").arg(tmp, 5, 'f', 2);
-        if (exp == 4) res = tr("%1 GB").arg(tmp, 5, 'f', 2);
+        if (exp == 1) res = tr("%1B").arg(tmp, 5, 'f', 0);
+        if (exp == 2) res = tr("%1K").arg(tmp, 5, 'f', 0);
+        if (exp == 3) res = tr("%1M").arg(tmp, 5, 'f', 2);
+        if (exp == 4) res = tr("%1G").arg(tmp, 5, 'f', 2);
     }
     return res;
 }

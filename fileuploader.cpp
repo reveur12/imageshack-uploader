@@ -115,7 +115,7 @@ void FileUploader::statusReceiver(int value)
         failcount++;
         if (failcount>3)
         {
-            fail();
+            fail(tr("3 attempts to upload file failed"));
         }
         process();
     }
