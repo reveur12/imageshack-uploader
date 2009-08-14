@@ -19,6 +19,12 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="LoginWidget" name="loginWidget" native="true">
       <property name="sizePolicy">
@@ -26,6 +32,12 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>10</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -42,10 +54,10 @@
         <pointsize>14</pointsize>
        </font>
       </property>
-      <property name="title">
-       <string>Image and video uploading</string>
-      </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QSplitter" name="splitter">
          <property name="midLineWidth">
