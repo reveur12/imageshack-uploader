@@ -72,7 +72,7 @@ void ImageInfoWidget::enable()
 {
     if (m_ui->thumbnail->text().size() == 0)
         m_ui->thumbnail->setEnabled(true);
-    if (!(media!=NULL && media.data()->getClass() == "video"))
+    if (!(media!=NULL && media.data()->getClass() != "video"))
     {
         m_ui->removeSize->setEnabled(true);
         m_ui->resize->setEnabled(true);
@@ -141,6 +141,7 @@ void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
 
 void ImageInfoWidget::setResize(int idx)
 {
+    if (media.isNull()) return;
     if (media)
         media->setResize(items.key(idx));
     if (idx==1 || idx==2)

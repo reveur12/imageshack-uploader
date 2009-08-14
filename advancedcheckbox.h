@@ -15,6 +15,7 @@ public:
     bool isChecked();
     void setText(QString);
     void setChecked(bool);
+    void setEnabled(bool);
 
 protected:
     void changeEvent(QEvent *e);
