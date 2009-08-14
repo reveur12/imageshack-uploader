@@ -91,11 +91,6 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-          </font>
-         </property>
          <property name="text">
           <string>Image resize:</string>
          </property>
@@ -105,11 +100,6 @@
         <widget class="QComboBox" name="resize">
          <property name="enabled">
           <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-          </font>
          </property>
          <item>
           <property name="text">
