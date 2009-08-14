@@ -129,17 +129,24 @@ QString UploadRequest::post()
 void UploadRequest::uploadFile(QString, QVector<QPair<QString,QString> > fields)
 {
     QString host;
+    QString path;
+
     if ((mediaClass == "image") || (mediaClass == "application"))
+    {
         host = "load"+QString::number((qrand()%9)+1)+"." + UPLOAD_HOSTNAME;
-    else
+        path = UPLOAD_PATH;
+    } else
+    {
         host = VIDEO_UPLOAD_HOSTNAME;
+        path = VIDEO_UPLOAD_PATH;
+    }
 
     QString boundary("UPLOADERBOUNDARY");
 
     data = QSharedPointer<FileSource>(new FileSource(media, fields));
     data.data()->open(QIODevice::ReadOnly);
 
-    QNetworkRequest req(QUrl("http://" + QString(host) + UPLOAD_PATH));
+    QNetworkRequest req(QUrl("http://" + QString(host) + path));
     req.setHeader(QNetworkRequest::ContentTypeHeader,
                   QString("multipart/form-data, boundary=" + boundary) );
 

@@ -33,9 +33,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UPDATE_HOSTNAME "toolbar.imageshack.us"
 #define UPDATE_PATH "/windows-uploader/version.xml"
 
-#define VIDEO_UPLOAD_HOSTNAME "render.imageshack.us"
 #define UPLOAD_HOSTNAME "imageshack.us"
 #define UPLOAD_PATH "/upload_api.php"
+
+#define VIDEO_UPLOAD_HOSTNAME "render.imageshack.us"
+#define VIDEO_UPLOAD_PATH "/upload_api.php"
 
 #define LOGIN_HOSTNAME "imageshack.us"
 #define LOGIN_PATH "/auth.php"
