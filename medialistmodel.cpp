@@ -254,8 +254,11 @@ bool MediaListModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     QStringList filelist;
     foreach (QUrl filename, data->urls())
     {
-        filelist.append(filename.toLocalFile());
+        QString localfilename = filename.toLocalFile();
+        if (!localfilename.isEmpty())
+            filelist.append(filename.toLocalFile());
     }
+    if (filelist.isEmpty()) return false;
     if (!loader.isNull() && loader.data()->isRunning()) emit addLoadFiles(filelist);
     else
     {
