@@ -156,6 +156,9 @@ void MainWindow::enableControls()
     setCursor(Qt::ArrowCursor);
     ui->loginWidget->setCursor(Qt::ArrowCursor);
     ui->mediaList->setCursor(Qt::ArrowCursor);
+
+    if (ui->mediaList->getModel()->rowCount())
+        ui->mediaList->selectFirst();
 }
 
 void MainWindow::mediaSelected(QSharedPointer<Media> media)
@@ -193,7 +196,6 @@ void MainWindow::mediaListProgressReceiver(int current, int total)
 
 void MainWindow::uploadStatusReceiver(int state)
 {
-    qDebug() << "!!! got upload status" << state;
     if (state == 0) disableControls();
     else enableControls();
 }
@@ -231,9 +233,7 @@ void MainWindow::mediasChanged()
     {
         ui->tagWidget->setEnabled(true);
         if (!ui->imageInfo->isEnabled())
-            ui->imageInfo->enable();/*
-        if (!ui->tagWidget->isEnabled() && ui->loginWidget->isLoggedIn())
-            ui->tagWidget->setEnabled(true);*/
+            ui->imageInfo->enable();
     }
 }
 

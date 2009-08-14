@@ -50,6 +50,7 @@ public:
     QVector<QSharedPointer<Media> > getAllMedias();
     MediaListModel* getModel();
     void setEnabled(bool);
+    void selectFirst();
 
 protected:
     virtual void changeEvent(QEvent *e);

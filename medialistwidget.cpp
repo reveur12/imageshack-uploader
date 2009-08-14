@@ -282,5 +282,13 @@ void MediaListWidget::scrollbarUpdate(int a, int b)
     if (a==0 && b==0) hasScrollbar = false;
     else hasScrollbar = true;
     resizeEvent(0);
-    //qDebug() << "!!!! scrollbar " << a << b;
+}
+
+void MediaListWidget::selectFirst()
+{
+    if (!mediaList->rowCount()) return;
+    QModelIndex index = mediaList->index(0,0,QModelIndex());
+    QItemSelectionModel *model = m_ui->mediaList->selectionModel();
+    model->select(index, QItemSelectionModel::SelectCurrent | QItemSelectionModel::Rows);
+    m_ui->mediaList->setFocus(Qt::MouseFocusReason);
 }
