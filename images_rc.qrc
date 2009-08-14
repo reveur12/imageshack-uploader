@@ -15,5 +15,6 @@
         <file>images/twitter.png</file>
         <file>images/gallery.gif</file>
         <file>images/windowsicon.ico</file>
+        <file>images/tiff.png</file>
     </qresource>
 </RCC>

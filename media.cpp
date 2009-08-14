@@ -92,7 +92,17 @@ Media::Media(QString filename)
     {
         QImage image;
         valid = image.load(filename);
+#ifdef Q_OS_WIN
+        if (!valid)
+        {
+            if (mediaType == "tiff")
+                image.load(":/images/images/tiff.png");
+            else
+                return;
+        }
+#else
         if (!valid) return;
+#endif
         image_width = image.width();
         image_height = image.height();
         thumb = make_thumbnail(image);
