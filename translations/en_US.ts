@@ -25,12 +25,12 @@
         <translation>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</translation>
     </message>
     <message utf8="true">
-        <location filename="../aboutwindow.ui" line="95"/>
+        <location filename="../aboutwindow.ui" line="102"/>
         <source>© ImageShack Corp.</source>
         <translation>© ImageShack Corp.</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="117"/>
+        <location filename="../aboutwindow.ui" line="124"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -104,77 +104,77 @@ Got error messages from server:
         <translation>Log in to use this features</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="100"/>
+        <location filename="../imageinfowidget.ui" line="95"/>
         <source>Image resize:</source>
         <translation>Image resize:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="116"/>
+        <location filename="../imageinfowidget.ui" line="106"/>
         <source>Do not resize</source>
         <translation>Do not resize</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="121"/>
+        <location filename="../imageinfowidget.ui" line="111"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (avatar)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="126"/>
+        <location filename="../imageinfowidget.ui" line="116"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (thumbnail)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="131"/>
+        <location filename="../imageinfowidget.ui" line="121"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (for websites and email)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="136"/>
+        <location filename="../imageinfowidget.ui" line="126"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (for message boards)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="141"/>
+        <location filename="../imageinfowidget.ui" line="131"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (12-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="146"/>
+        <location filename="../imageinfowidget.ui" line="136"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (15-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="151"/>
+        <location filename="../imageinfowidget.ui" line="141"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (19-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="156"/>
+        <location filename="../imageinfowidget.ui" line="146"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (21-inch monitor)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="161"/>
+        <location filename="../imageinfowidget.ui" line="151"/>
         <source>Optimize only</source>
         <translation>Optimize only</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="210"/>
+        <location filename="../imageinfowidget.ui" line="200"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Privacy:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="217"/>
+        <location filename="../imageinfowidget.ui" line="207"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Tags:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="235"/>
+        <location filename="../imageinfowidget.ui" line="225"/>
         <source>Public</source>
         <translation>Public</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="254"/>
+        <location filename="../imageinfowidget.ui" line="244"/>
         <source>Private</source>
         <translation>Private</translation>
     </message>
@@ -306,37 +306,29 @@ Got error messages from server:
 </context>
 <context>
     <name>Media</name>
-    <message numerus="yes">
-        <location filename="../media.cpp" line="294"/>
-        <source>%n B</source>
-        <translation>
-            <numerusform>%n B</numerusform>
-            <numerusform>%n B</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../media.cpp" line="295"/>
-        <source>%n KB</source>
-        <translation>
-            <numerusform>%n KB</numerusform>
-            <numerusform>%n KB</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <location filename="../media.cpp" line="296"/>
-        <source>%n MB</source>
-        <translation>
-            <numerusform>%n MB</numerusform>
-            <numerusform>%n MB</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
+    <message>
         <location filename="../media.cpp" line="297"/>
-        <source>%n GB</source>
-        <translation>
-            <numerusform>%n GB</numerusform>
-            <numerusform>%n GB</numerusform>
-        </translation>
+        <location filename="../media.cpp" line="308"/>
+        <source>%1 B</source>
+        <translation>%1 B</translation>
+    </message>
+    <message>
+        <location filename="../media.cpp" line="298"/>
+        <location filename="../media.cpp" line="309"/>
+        <source>%1 KB</source>
+        <translation>%1 KB</translation>
+    </message>
+    <message>
+        <location filename="../media.cpp" line="299"/>
+        <location filename="../media.cpp" line="310"/>
+        <source>%1 MB</source>
+        <translation>%1 MB</translation>
+    </message>
+    <message>
+        <location filename="../media.cpp" line="300"/>
+        <location filename="../media.cpp" line="311"/>
+        <source>%1 GB</source>
+        <translation>%1 GB</translation>
     </message>
 </context>
 <context>
@@ -582,6 +574,11 @@ Got error messages from server:
         <translation>Embedded video</translation>
     </message>
     <message>
+        <location filename="../resultswindow.cpp" line="156"/>
+        <source>File %1 of %2</source>
+        <translation>File %1 of %2</translation>
+    </message>
+    <message>
         <location filename="../resultswindow.ui" line="20"/>
         <source>Uploaded files</source>
         <translation>Uploaded files</translation>
@@ -599,22 +596,27 @@ Got error messages from server:
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
-        <location filename="../resultswindow.ui" line="377"/>
+        <location filename="../resultswindow.ui" line="393"/>
         <source>Tweet this</source>
         <translation>Tweet this</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="320"/>
+        <location filename="../resultswindow.ui" line="149"/>
+        <source>File 1 of 1</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../resultswindow.ui" line="336"/>
         <source>All images and video files</source>
         <translation>All images and video files</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="374"/>
+        <location filename="../resultswindow.ui" line="390"/>
         <source>Create gallery and post to twitter</source>
         <translation>Create gallery and post to twitter</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="434"/>
+        <location filename="../resultswindow.ui" line="450"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -648,7 +650,7 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
-        <location filename="../tagwidget.cpp" line="96"/>
+        <location filename="../tagwidget.cpp" line="98"/>
         <source>Log in to use this features</source>
         <translation>Log in to use this features</translation>
     </message>
