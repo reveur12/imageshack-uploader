@@ -123,7 +123,7 @@ void FileUploader::statusReceiver(int value)
 
 void FileUploader::resultReceiver(QString value)
 {
-    //qDebug() << value;
+    qDebug() << value;
     QDomDocument xml;
     xml.setContent(value);
     QDomElement doc = xml.documentElement();
@@ -151,52 +151,41 @@ void FileUploader::resultReceiver(QString value)
     }
 
     QStringList all;
-    if ((current->getClass() == "image") || (current->getClass() == "application"))
-    {
-        QDomElement image_link = links.firstChildElement("image_link");
-        QDomElement image_html = links.firstChildElement("image_html");
-        QDomElement image_bb = links.firstChildElement("image_bb");
-        QDomElement image_bb2 = links.firstChildElement("image_bb2");
-        QDomElement yfrog_link = links.firstChildElement("yfrog_link");
-        QDomElement yfrog_thumb = links.firstChildElement("yfrog_thumb");
-        QDomElement thumb_html = links.firstChildElement("thumb_html");
-        QDomElement thumb_bb = links.firstChildElement("thumb_bb");
-        QDomElement thumb_bb2 = links.firstChildElement("thumb_bb2");
-        QDomElement ad_link = links.firstChildElement("ad_link");
+    QDomElement image_link, image_html, image_bb, image_bb2, yfrog_link,
+                yfrog_thumb, thumb_html, thumb_bb, thumb_bb2, ad_link;
 
-        if (image_link.isNull() || image_html.isNull() || image_bb.isNull() ||
-            image_bb2.isNull() || yfrog_link.isNull() || yfrog_thumb.isNull() ||
-            thumb_html.isNull() || thumb_bb.isNull() || thumb_bb2.isNull() ||
-            ad_link.isNull())
-        {
-            fail(tr("Server responce is not valid"));
-            process();
-            return;
-        }
-        all << image_link.text() << image_html.text() << image_bb.text()
-                << image_bb2.text() << yfrog_link.text() << yfrog_thumb.text()
-                << thumb_html.text() << thumb_bb.text() << thumb_bb2.text()
-                << ad_link.text();
+    image_link = links.firstChildElement("image_link");
+    if (current.data()->getClass() == "video")
+    {
+        image_html = links.firstChildElement("thumb_html");
+        image_bb = links.firstChildElement("frame_bb");
+        image_bb2 = links.firstChildElement("frame_bb2");
     }
     else
     {
-        QDomElement image_link = links.firstChildElement("image_link");
-        QDomElement thumb_html = links.firstChildElement("thumb_html");
-        QDomElement thumb_bb = links.firstChildElement("thumb_bb");
-        QDomElement thumb_bb2 = links.firstChildElement("thumb_bb2");
-        QDomElement video_embed = links.firstChildElement("video_embed");
-        QDomElement ad_link = links.firstChildElement("ad_link");
-        all << image_link.text() << thumb_html.text() << thumb_bb.text()
-                << thumb_bb2.text() << video_embed.text() << ad_link.text();
-        if (image_link.isNull() || thumb_html.isNull() || thumb_bb.isNull() ||
-            thumb_bb2.isNull() || video_embed.isNull() || ad_link.isNull())
-        {
-            fail(tr("Server responce is not valid"));
-            process();
-            return;
-        }
+        image_html = links.firstChildElement("image_html");
+        image_bb = links.firstChildElement("image_bb");
+        image_bb2 = links.firstChildElement("image_bb2");
     }
-
+    yfrog_link = links.firstChildElement("yfrog_link");
+    yfrog_thumb = links.firstChildElement("yfrog_thumb");
+    thumb_html = links.firstChildElement("thumb_html");
+    thumb_bb = links.firstChildElement("thumb_bb");
+    thumb_bb2 = links.firstChildElement("thumb_bb2");
+    ad_link = links.firstChildElement("ad_link");
+    if (image_link.isNull() || image_html.isNull() || image_bb.isNull() ||
+        image_bb2.isNull() || yfrog_link.isNull() || yfrog_thumb.isNull() ||
+        thumb_html.isNull() || thumb_bb.isNull() || thumb_bb2.isNull() ||
+        ad_link.isNull())
+    {
+        fail(tr("Server responce is not valid"));
+        process();
+        return;
+    }
+    all << image_link.text() << image_html.text() << image_bb.text()
+            << image_bb2.text() << yfrog_link.text() << yfrog_thumb.text()
+            << thumb_html.text() << thumb_bb.text() << thumb_bb2.text()
+            << ad_link.text();
 
     failcount = 0;
     donecount += 1;
