@@ -18,3 +18,7 @@ debug
 release
 *.dll
 imageshack.pro.user
+msibuild/Release
+msibuild/Debug
+msibuild/*.suo
+object_script.*
