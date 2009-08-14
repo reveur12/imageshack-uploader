@@ -86,9 +86,9 @@ void TagWidget::loginStatusReceiver(int state)
     if (state == 0)
     {
         loggedIn = true;
-        if (media!=NULL && enabled)
-            if (enabled)
-                setEnabled(true);
+        //if (media!=NULL && enabled)
+        //    if (enabled)
+        setEnabled(true);
         this->setToolTip(QString());
     }
     else
