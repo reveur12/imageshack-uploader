@@ -64,9 +64,6 @@ private:
 private slots:
     void batchTagsUpdated();
     void batchPrivacyUpdated();
-    void setMedia(QSharedPointer<Media>);
-    void unsetMedia();
-
     void loginStatusReceiver(int);
 
 signals:

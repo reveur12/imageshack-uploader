@@ -123,7 +123,7 @@ void FileUploader::statusReceiver(int value)
 
 void FileUploader::resultReceiver(QString value)
 {
-    qDebug() << value;
+    //qDebug() << value;
     QDomDocument xml;
     xml.setContent(value);
     QDomElement doc = xml.documentElement();
