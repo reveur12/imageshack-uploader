@@ -285,17 +285,31 @@ QByteArray Media::data()
     return file.readAll();
 }
 
-QString Media::formatSize(qint64 bytes)
+QString Media::formatSize(qint64 bytes, bool verbose)
 {
-    qint64 tsize = bytes;
-    qint64 tmp = tsize;
-    qint64 exp = 0;
-    while (tsize>0 && exp<4) { tmp=tsize; exp++; tsize/=1024; }
     QString res;
-    if (exp == 1) res = tr("%n B", "", tmp);
-    if (exp == 2) res = tr("%n KB", "", tmp);
-    if (exp == 3) res = tr("%n MB", "", tmp);
-    if (exp == 4) res = tr("%n GB", "", tmp);
+    if (!verbose)
+    {
+        qint64 tsize = bytes;
+        qint64 tmp = tsize;
+        qint64 exp = 0;
+        while (tsize>0 && exp<4) { tmp=tsize; exp++; tsize/=1024; }
+        if (exp == 1) res = tr("%1 B").arg(tmp);
+        if (exp == 2) res = tr("%1 KB").arg(tmp);
+        if (exp == 3) res = tr("%1 MB").arg(tmp);
+        if (exp == 4) res = tr("%1 GB").arg(tmp);
+    }
+    else
+    {
+        qreal tsize = bytes;
+        qreal tmp = tsize;
+        qint64 exp = 0;
+        while (tsize>1 && exp<4) { tmp=tsize; exp++; tsize/=1024; }
+        if (exp == 1) res = tr("%1 B").arg(tmp, 5, 'f', 0);
+        if (exp == 2) res = tr("%1 KB").arg(tmp, 5, 'f', 0);
+        if (exp == 3) res = tr("%1 MB").arg(tmp, 5, 'f', 2);
+        if (exp == 4) res = tr("%1 GB").arg(tmp, 5, 'f', 2);
+    }
     return res;
 }
 

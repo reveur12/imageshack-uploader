@@ -212,7 +212,7 @@ qint64 MediaListModel::totalSize()
 
 QString MediaListModel::formattedTotalSize()
 {
-    return Media().formatSize(totalSize());
+    return Media().formatSize(totalSize(), true);
 }
 
 void MediaListModel::setTags(QStringList taglist)

@@ -49,7 +49,7 @@ public:
     QString filepath();
     QString filename();
     QString formatedSize();
-    QString formatSize(qint64);
+    QString formatSize(qint64, bool verbose = false);
     QString getType();
     QString getClass();
     QImage getPreview();
