@@ -39,6 +39,7 @@ TagWidget::TagWidget(QWidget *parent) :
     medias = NULL;
     setToolTip(tr("Log in to use this features"));
     setFont(QApplication::font());
+    enabled = true;
 }
 
 TagWidget::~TagWidget()
@@ -86,7 +87,8 @@ void TagWidget::loginStatusReceiver(int state)
     {
         loggedIn = true;
         if (media!=NULL && enabled)
-            setEnabled(true);
+            if (enabled)
+                setEnabled(true);
         this->setToolTip(QString());
     }
     else
@@ -101,19 +103,6 @@ void TagWidget::loginStatusReceiver(int state)
 void TagWidget::setMediaList(MediaListModel* model)
 {
     medias = model;
-}
-
-void TagWidget::setMedia(QSharedPointer<Media> item)
-{
-    media = item;
-    if (loggedIn) setEnabled(true);
-    //m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
-    //m_ui->privacyPublic->setChecked(!media.data()->getPrivate());
-}
-
-void TagWidget::unsetMedia()
-{
-    media = QSharedPointer<Media>();
 }
 
 void TagWidget::unsetMediaList()
@@ -135,18 +124,20 @@ void TagWidget::batchPrivacyUpdated()
 
 void TagWidget::setEnabled(bool st)
 {
-    QWidget::setEnabled(st);
-    if (!st) m_ui->batchTags->clear();
+    qDebug() << "tag widget setEnabled(" << st<< ")";
+    if (st && enabled && loggedIn && medias && medias->rowCount())
+        QWidget::setEnabled(st);
+    if (!st) { m_ui->batchTags->clear(); QWidget::setEnabled(st); }
 }
 
 void TagWidget::enable()
 {
-    if (loggedIn && medias && medias->rowCount()) setEnabled(true);
+    if (loggedIn && medias && medias->rowCount()) QWidget::setEnabled(true);
     enabled = true;
 }
 
 void TagWidget::disable()
 {
-    setEnabled(false);
+    QWidget::setEnabled(false);
     enabled = false;
 }

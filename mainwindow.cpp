@@ -51,18 +51,18 @@ MainWindow::MainWindow(QWidget *parent)
             SIGNAL(mediaSelected(QSharedPointer<Media>)),
             this,
             SLOT(mediaSelected(QSharedPointer<Media>)));
-    connect(ui->mediaList,
+    /*connect(ui->mediaList,
             SIGNAL(mediaSelected(QSharedPointer<Media>)),
             ui->tagWidget,
-            SLOT(setMedia(QSharedPointer<Media>)));
+            SLOT(setMedia(QSharedPointer<Media>)));*/
     connect(ui->mediaList,
             SIGNAL(modelReset()),
             this,
             SLOT(mediasReseted()));
-    connect(ui->mediaList,
+    /*connect(ui->mediaList,
             SIGNAL(modelReset()),
             ui->tagWidget,
-            SLOT(unsetMedia()));
+            SLOT(unsetMedia()));*/
     connect(ui->mediaList,
             SIGNAL(mediasChanged()),
             this,
@@ -146,6 +146,7 @@ void MainWindow::disableControls()
 
 void MainWindow::enableControls()
 {
+    qDebug() << "enable controls";
     ui->loginWidget->setEnabled(true);
         //if (ui->loginWidget->isLoggedIn()) ui->tagWidget->setEnabled(true);
         //ui->imageInfo->enable();
@@ -192,6 +193,7 @@ void MainWindow::mediaListProgressReceiver(int current, int total)
 
 void MainWindow::uploadStatusReceiver(int state)
 {
+    qDebug() << "!!! got upload status" << state;
     if (state == 0) disableControls();
     else enableControls();
 }
@@ -227,10 +229,11 @@ void MainWindow::mediasChanged()
     }
     else
     {
+        ui->tagWidget->setEnabled(true);
         if (!ui->imageInfo->isEnabled())
-            ui->imageInfo->enable();
+            ui->imageInfo->enable();/*
         if (!ui->tagWidget->isEnabled() && ui->loginWidget->isLoggedIn())
-            ui->tagWidget->setEnabled(true);
+            ui->tagWidget->setEnabled(true);*/
     }
 }
 
