@@ -734,7 +734,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ImageShack Uploader 2.0"
         "ProductCode" = "8:{7DE736C9-D452-4075-B449-82F585525E57}"
-        "PackageCode" = "8:{9EC075E4-794F-48B0-AAC7-2361B6BA31D8}"
+        "PackageCode" = "8:{96A61A15-FC2A-4D0A-953A-637D29BEB253}"
         "UpgradeCode" = "8:{8BCD7AE7-F713-4D50-BAB9-7839B938686D}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -853,7 +853,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_71A732A6185849AA9E2C72FD7391D24F"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4F90552A351345B89D2CBAC45CED19D3"
             {
             "Name" = "8:ImageShack Uploader"
             "Arguments" = "8:"
@@ -861,9 +861,9 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_8D377C69B42D4A1EA23738C22D629AD0"
+            "Target" = "8:_29B836F26E5442D6B3B3661B8A7E1A23"
             "Folder" = "8:_7F1456F26E664098AE2580C4583C0CFE"
-            "WorkingFolder" = "8:_7F1456F26E664098AE2580C4583C0CFE"
+            "WorkingFolder" = "8:_54CEB7F30003451C8EF16585D615C032"
             "Icon" = "8:_FA9CD675E60A4B22AB4424958D059326"
             "Feature" = "8:"
             }
