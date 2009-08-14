@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/images" >
+        <file>images/loading.gif</file>
+        <file>images/icon.png</file>
+        <file>images/upload.png</file>
+        <file>images/login.png</file>
+        <file>images/add.png</file>
+        <file>images/clear.png</file>
+        <file>images/remove.png</file>
+        <file>images/copy.png</file>
+        <file>images/logo.png</file>
+        <file>images/pdf.jpg</file>
+        <file>images/flash.png</file>
+        <file>images/video.png</file>
+        <file>images/twitter.png</file>
+        <file>images/gallery.gif</file>
+        <file>images/windowsicon.ico</file>
+    </qresource>
+</RCC>
