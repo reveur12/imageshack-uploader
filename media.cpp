@@ -65,6 +65,7 @@ Media::Media(QString filename)
     types["pdf"] = qMakePair(QString("application"), QString("pdf"));
     types["flv"] = qMakePair(QString("video"), QString("x-flv"));
     types["mp4"] = qMakePair(QString("video"), QString("mp4"));
+    types["m4v"] = qMakePair(QString("video"), QString("x-m4v"));
     types["wmv"] = qMakePair(QString("video"), QString("x-ms-wmv"));
     types["3gp"] = qMakePair(QString("video"), QString("3gpp"));
     types["avi"] = qMakePair(QString("video"), QString("avi"));
