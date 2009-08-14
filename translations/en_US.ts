@@ -88,6 +88,32 @@ Got error messages from server:
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
+    <message>
+        <location filename="../fileuploader.cpp" line="118"/>
+        <source>3 attempts to upload file failed</source>
+        <translation>3 attempts to upload file failed</translation>
+    </message>
+    <message>
+        <location filename="../fileuploader.cpp" line="141"/>
+        <source>Server returned no error text</source>
+        <translation>Server returned no error text</translation>
+    </message>
+    <message>
+        <location filename="../fileuploader.cpp" line="148"/>
+        <source>Wrong server response</source>
+        <translation>Wrong server response</translation>
+    </message>
+    <message>
+        <location filename="../fileuploader.cpp" line="172"/>
+        <location filename="../fileuploader.cpp" line="194"/>
+        <source>Server responce is not valid</source>
+        <translation>Server responce is not valid</translation>
+    </message>
+    <message>
+        <location filename="../fileuploader.cpp" line="238"/>
+        <source>Could not connect to server</source>
+        <translation>Could not connect to server</translation>
+    </message>
 </context>
 <context>
     <name>ImageInfoWidget</name>
@@ -204,37 +230,37 @@ Got error messages from server:
         <translation>Wrong credentials.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.ui" line="30"/>
+        <location filename="../loginwidget.ui" line="42"/>
         <source>Login name / E-mail:</source>
         <translation>Login name / E-mail:</translation>
     </message>
     <message>
-        <location filename="../loginwidget.ui" line="53"/>
+        <location filename="../loginwidget.ui" line="65"/>
         <source>Password:</source>
         <translation>Password:</translation>
     </message>
     <message>
-        <location filename="../loginwidget.ui" line="79"/>
+        <location filename="../loginwidget.ui" line="91"/>
         <source>Remember password</source>
         <translation>Remember password</translation>
     </message>
     <message>
-        <location filename="../loginwidget.ui" line="95"/>
+        <location filename="../loginwidget.ui" line="113"/>
         <source>Login</source>
         <translation>Login</translation>
     </message>
     <message>
-        <location filename="../loginwidget.ui" line="142"/>
+        <location filename="../loginwidget.ui" line="166"/>
         <source>Logging in...</source>
         <translation>Logging in...</translation>
     </message>
     <message>
-        <location filename="../loginwidget.ui" line="171"/>
+        <location filename="../loginwidget.ui" line="201"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../loginwidget.ui" line="212"/>
+        <location filename="../loginwidget.ui" line="260"/>
         <source>Logout</source>
         <translation>Logout</translation>
     </message>
@@ -264,42 +290,37 @@ Got error messages from server:
         <translation>Flash files can not be uploaded without logging in. Do you want to try anyway?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="46"/>
-        <source>Image and video uploading</source>
-        <translation>Image and video uploading</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="116"/>
+        <location filename="../mainwindow.ui" line="141"/>
         <source>File</source>
         <translation>File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="123"/>
+        <location filename="../mainwindow.ui" line="148"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="134"/>
+        <location filename="../mainwindow.ui" line="159"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="142"/>
+        <location filename="../mainwindow.ui" line="167"/>
         <source>Support</source>
         <translation>Support</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="150"/>
+        <location filename="../mainwindow.ui" line="175"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="158"/>
+        <location filename="../mainwindow.ui" line="183"/>
         <source>Check for updates</source>
         <translation>Check for updates</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="166"/>
+        <location filename="../mainwindow.ui" line="191"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
@@ -308,27 +329,43 @@ Got error messages from server:
     <name>Media</name>
     <message>
         <location filename="../media.cpp" line="297"/>
-        <location filename="../media.cpp" line="308"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
     <message>
         <location filename="../media.cpp" line="298"/>
-        <location filename="../media.cpp" line="309"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
         <location filename="../media.cpp" line="299"/>
-        <location filename="../media.cpp" line="310"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
         <location filename="../media.cpp" line="300"/>
-        <location filename="../media.cpp" line="311"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
+    </message>
+    <message>
+        <location filename="../media.cpp" line="308"/>
+        <source>%1B</source>
+        <translation>%1B</translation>
+    </message>
+    <message>
+        <location filename="../media.cpp" line="309"/>
+        <source>%1K</source>
+        <translation>%1K</translation>
+    </message>
+    <message>
+        <location filename="../media.cpp" line="310"/>
+        <source>%1M</source>
+        <translation>%1M</translation>
+    </message>
+    <message>
+        <location filename="../media.cpp" line="311"/>
+        <source>%1G</source>
+        <translation>%1G</translation>
     </message>
 </context>
 <context>
@@ -384,7 +421,7 @@ Got error messages from server:
         <translation>Warning</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="238"/>
+        <location filename="../medialistwidget.cpp" line="246"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n file</numerusform>
