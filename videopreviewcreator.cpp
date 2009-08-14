@@ -104,7 +104,7 @@ QImage VideoPreviewCreator::getPreview(QString filename)
 
     fas_initialize (FAS_FALSE, FAS_RGB24);
 
-    video_error = fas_open_video (&context, (char*)filename.toStdString().c_str());
+    video_error = fas_open_video (&context, filename.toLocal8Bit().data());
     if (video_error != FAS_SUCCESS)
     {
         qDebug() << "failed to open video file";
