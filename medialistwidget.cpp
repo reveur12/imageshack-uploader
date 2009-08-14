@@ -227,7 +227,15 @@ void MediaListWidget::modelChanged()
 
 void MediaListWidget::resizeEvent ( QResizeEvent * )
 {
-    m_ui->mediaList->setColumnWidth(0, size().width()-95-hasScrollbar*15);
+#ifdef Q_OS_MAC
+    m_ui->mediaList->setColumnWidth(0, size().width()-100-hasScrollbar*15);
+#endif
+#ifdef Q_OS_WIN
+    m_ui->mediaList->setColumnWidth(0, size().width()-70-hasScrollbar*15);
+#endif
+#ifdef Q_WS_X11
+    m_ui->mediaList->setColumnWidth(0, size().width()-75-hasScrollbar*15);
+#endif
     m_ui->mediaList->resizeColumnToContents(1);
     //m_ui->mediaList->setColumnWidth(1, 10);
 }
