@@ -201,7 +201,7 @@ void FileUploader::resultReceiver(QString value)
     failcount = 0;
     donecount += 1;
     res.data()->append(qMakePair(current, all));
-    medias->removeMedia(0+skip);
+    medias->removeMedia(skip);
     if (!failed) process();
 }
 
@@ -220,8 +220,10 @@ void FileUploader::cancel()
 void FileUploader::fail(QString message)
 {
     qDebug() << "FileUploader failing";
-    if (!errors.contains(message))
-            errors.append(request.data()->rep->errorString());
+    message = medias->getMedia(skip).data()->filename() + ": " + message;
+    QString errorString = request.data()->rep->errorString();
+    if (!errors.contains(message) && errorString != "Unknown error")
+            errors.append(errorString);
     if (message.size())
         if (!errors.contains(message))
             errors.append(message);
