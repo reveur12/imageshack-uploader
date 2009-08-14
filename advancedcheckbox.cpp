@@ -7,6 +7,7 @@ AdvancedCheckBox::AdvancedCheckBox(QWidget *parent) :
 {
     m_ui->setupUi(this);
     //m_ui->label->setText(tr("Remove size/resolution bar from thumbnail"));
+    setFont(QApplication::font());
 }
 
 AdvancedCheckBox::~AdvancedCheckBox()
