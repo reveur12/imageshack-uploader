@@ -1,3 +1,4 @@
+#include <QDebug>
 #include "advancedcheckbox.h"
 #include "ui_advancedcheckbox.h"
 
@@ -5,6 +6,7 @@ AdvancedCheckBox::AdvancedCheckBox(QWidget *parent) :
     QWidget(parent),
     m_ui(new Ui::AdvancedCheckBox)
 {
+    setParent(parent);
     m_ui->setupUi(this);
     //m_ui->label->setText(tr("Remove size/resolution bar from thumbnail"));
     setFont(QApplication::font());
@@ -45,4 +47,10 @@ void AdvancedCheckBox::setChecked(bool st)
 void AdvancedCheckBox::checkboxClicked(int st)
 {
     emit stateChanged(st);
+}
+
+void AdvancedCheckBox::setEnabled(bool st)
+{
+    qDebug() << "ACB setEnabled(" << st<< ")";
+    QWidget::setEnabled(st);
 }
