@@ -75,13 +75,16 @@ Got error messages from server:
         <translation>
             <numerusform>
 
-Получено сообщение от сервера:</numerusform>
+Получено сообщение от сервера:
+</numerusform>
             <numerusform>
 
-Получены сообщения от сервера:</numerusform>
+Получены сообщения от сервера:
+</numerusform>
             <numerusform>
 
-Получены сообщения от сервера:</numerusform>
+Получены сообщения от сервера:
+</numerusform>
         </translation>
     </message>
     <message>
