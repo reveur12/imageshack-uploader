@@ -208,5 +208,9 @@ void UploadRequest::fail()
     if (failed) return;
     qDebug() << "UploadRequest failing";
     failed = true;
+    rep->disconnect(this, SLOT(uploadFinished()));
+    rep->disconnect(this, SLOT(updateProgress(qint64,qint64)));
+    rep->disconnect(this, SLOT(uploadFailed(QNetworkReply::NetworkError)));
+    rep = NULL;
     emit status(2);
 }
