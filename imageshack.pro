@@ -172,7 +172,7 @@ deb.commands = rm \
     deb/usr/share/pixmaps \
     && \
     cp \
-    images/linuxicon.png \
+    images/imageshack.png \
     deb/usr/share/pixmaps/imageshack.png \
     && \
     cp \

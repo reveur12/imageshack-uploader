@@ -119,5 +119,10 @@ void ProgressWidget::updateETA(int secs)
     if(!hours && !minutes && seconds) text.append(tr(" less than 1 min."));
     if(!hours && !minutes && !seconds) text.append(tr(" almost done..."));
     m_ui->ETA->setText(text);
-    //qDebug() << "got ETA:"<< seconds;
+}
+
+void ProgressWidget::setCurrentIndex(int idx)
+{
+    QStackedWidget::setCurrentIndex(idx);
+    if (idx == 1) m_ui->ETA->setText(tr("Time left: estimating..."));
 }

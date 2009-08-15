@@ -121,89 +121,89 @@ Got error messages from server:
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="92"/>
-        <location filename="../imageinfowidget.cpp" line="107"/>
+        <location filename="../imageinfowidget.cpp" line="97"/>
+        <location filename="../imageinfowidget.cpp" line="116"/>
         <location filename="../imageinfowidget.ui" line="52"/>
         <source>Thumbnail</source>
         <translation>Миниатюра</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.cpp" line="235"/>
+        <location filename="../imageinfowidget.cpp" line="250"/>
         <source>Log in to use this features</source>
         <translation>Войдите чтобы использовать эти возможности</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="95"/>
+        <location filename="../imageinfowidget.ui" line="98"/>
         <source>Image resize:</source>
         <translation>Размер:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="106"/>
+        <location filename="../imageinfowidget.ui" line="109"/>
         <source>Do not resize</source>
         <translation>Не изменять размер</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="111"/>
+        <location filename="../imageinfowidget.ui" line="114"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (аватар)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="116"/>
+        <location filename="../imageinfowidget.ui" line="119"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (миниатюра)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="121"/>
+        <location filename="../imageinfowidget.ui" line="124"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (для веб и почты)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="126"/>
+        <location filename="../imageinfowidget.ui" line="129"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (для форумов)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="131"/>
+        <location filename="../imageinfowidget.ui" line="134"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (12-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="136"/>
+        <location filename="../imageinfowidget.ui" line="139"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (15-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="141"/>
+        <location filename="../imageinfowidget.ui" line="144"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (19-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="146"/>
+        <location filename="../imageinfowidget.ui" line="149"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (21-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="151"/>
+        <location filename="../imageinfowidget.ui" line="154"/>
         <source>Optimize only</source>
         <translation>Только оптимизация</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="200"/>
+        <location filename="../imageinfowidget.ui" line="206"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Доступ:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="207"/>
+        <location filename="../imageinfowidget.ui" line="216"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Теги:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="225"/>
+        <location filename="../imageinfowidget.ui" line="234"/>
         <source>Public</source>
         <translation>Общий</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="244"/>
+        <location filename="../imageinfowidget.ui" line="253"/>
         <source>Private</source>
         <translation>Только владельцу</translation>
     </message>
@@ -503,7 +503,7 @@ Got error messages from server:
         <translation>Всего: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="237"/>
+        <location filename="../progresswidget.cpp" line="127"/>
         <source>Time left: estimating...</source>
         <translation>Осталось времени: замеряем...</translation>
     </message>

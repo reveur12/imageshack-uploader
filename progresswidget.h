@@ -44,6 +44,7 @@ public:
     void setProgress(int, int);
     void setMediaLoadProgress(int, int);
     void setUploadEnabled(bool);
+    void setCurrentIndex(int);
 
 protected:
     virtual void changeEvent(QEvent *e);

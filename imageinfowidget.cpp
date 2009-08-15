@@ -74,15 +74,20 @@ void ImageInfoWidget::enable()
         m_ui->thumbnail->setEnabled(true);
     if (!(media!=NULL && media.data()->getClass() != "video"))
     {
+        m_ui->resizeLabel->setEnabled(true);
         m_ui->removeSize->setEnabled(true);
         m_ui->resize->setEnabled(true);
     }
     if (!media.isNull() && loggedIn)
     {
+        m_ui->privacyLabel->setEnabled(true);
+        m_ui->tagsLabel->setEnabled(true);
         m_ui->privacyPrivate->setEnabled(true);
         m_ui->privacyPublic->setEnabled(true);
         m_ui->tags->setEnabled(true);
     }
+
+
 }
 
 void ImageInfoWidget::disable()
@@ -99,9 +104,13 @@ void ImageInfoWidget::disable()
     m_ui->resize->setCurrentIndex(0);
     m_ui->removeSize->setChecked(false);
     m_ui->privacyPublic->setChecked(true);
+    m_ui->privacyLabel->setEnabled(false);
+    m_ui->tagsLabel->setEnabled(false);
+    m_ui->resizeLabel->setEnabled(false);
 }
 
 void ImageInfoWidget::reset()
+// I dont know why i need this function if there is disable(). But dont touch it.
 {
     media.clear();
     m_ui->thumbnail->setText(tr("Thumbnail"));
@@ -115,6 +124,9 @@ void ImageInfoWidget::reset()
     m_ui->resize->setCurrentIndex(0);
     m_ui->removeSize->setChecked(false);
     m_ui->privacyPublic->setChecked(true);
+    m_ui->privacyLabel->setEnabled(false);
+    m_ui->tagsLabel->setEnabled(false);
+    m_ui->resizeLabel->setEnabled(false);
 }
 
 void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
@@ -127,11 +139,14 @@ void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
     bool isImage = (media.data()->getClass() == "image");
     m_ui->resize->setEnabled(isImage);
     m_ui->removeSize->setEnabled(isImage && items[media->getResize()]!=1 && items[media->getResize()]!=2);
+    m_ui->resizeLabel->setEnabled(true);
     m_ui->tags->setText(media.data()->getTags().join(", "));
     m_ui->privacyPrivate->setChecked(media.data()->getPrivate());
     m_ui->privacyPublic->setChecked(!media.data()->getPrivate());
     if (loggedIn)
     {
+        m_ui->privacyLabel->setEnabled(true);
+        m_ui->tagsLabel->setEnabled(true);
         m_ui->privacyPrivate->setEnabled(true);
         m_ui->privacyPublic->setEnabled(true);
         m_ui->tags->setText(media.data()->getTags().join(", "));
