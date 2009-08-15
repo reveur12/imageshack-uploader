@@ -515,12 +515,12 @@ Got error messages from server:
         <translation>Loading files: %1 of %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="113"/>
+        <location filename="../progresswidget.cpp" line="115"/>
         <source>Time left:</source>
         <translation>Time left:</translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="114"/>
+        <location filename="../progresswidget.cpp" line="116"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n hr.</numerusform>
@@ -528,23 +528,20 @@ Got error messages from server:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="115"/>
+        <location filename="../progresswidget.cpp" line="117"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n min.</numerusform>
             <numerusform> %n min.</numerusform>
         </translation>
     </message>
-    <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="116"/>
-        <source> %n sec.</source>
-        <translation>
-            <numerusform> %n sec.</numerusform>
-            <numerusform> %n sec.</numerusform>
-        </translation>
+    <message>
+        <location filename="../progresswidget.cpp" line="119"/>
+        <source> less than 1 min.</source>
+        <translation> less than 1 min.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="117"/>
+        <location filename="../progresswidget.cpp" line="120"/>
         <source> almost done...</source>
         <translation> almost done...</translation>
     </message>
