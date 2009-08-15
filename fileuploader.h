@@ -60,16 +60,25 @@ private:
     void fail(QString reason = NULL);
     QStringList errors;
 
+    qint64 totalsize;
+    QTimer seconds;
+
+    int time;
+    qint64 uploadedCurrent;
+    qint64 uploadedTotal;
+
 private slots:
     void progressReceiver(int value);
     void statusReceiver(int value);
     void resultReceiver(QString value);
     void cancel();
+    void updateETA();
 
 
 
 signals:
     void status(int); // 0 - begin, 1 - done, 2 - error, 3 - abort;
     void results(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > >);
+    void ETA(int);
 };
 #endif // FILEUPLOADER_H

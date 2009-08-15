@@ -120,14 +120,12 @@ void MainWindow::upload()
             SIGNAL(results(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > >)),
             this,
             SLOT(uploadResultReceiver(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > >)));
-    connect(uploader.data(),
-            SIGNAL(status(int)),
-            this,
-            SLOT(uploadStatusReceiver(int)));
-    connect(ui->progressWidget,
-            SIGNAL(cancel()),
-            uploader.data(),
-            SLOT(cancel()));
+    connect(uploader.data(), SIGNAL(status(int)),
+            this, SLOT(uploadStatusReceiver(int)));
+    connect(ui->progressWidget, SIGNAL(cancel()),
+            uploader.data(), SLOT(cancel()));
+    connect(uploader.data(), SIGNAL(ETA(int)),
+            ui->progressWidget, SLOT(updateETA(int)));
     uploader.data()->begin();
 }
 

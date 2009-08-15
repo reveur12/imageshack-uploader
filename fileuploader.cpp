@@ -41,6 +41,10 @@ FileUploader::FileUploader(ProgressWidget *prog, MediaListModel* list)
     http = QSharedPointer<QHttp>(new QHttp);
     res = QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > >
           ( new QVector<QPair<QSharedPointer<Media>,QStringList> >);
+    connect(&seconds, SIGNAL(timeout()),
+            this, SLOT(updateETA()));
+    uploadedTotal = 0;
+    uploadedCurrent = 0;
 }
 
 void FileUploader::begin()
@@ -50,6 +54,9 @@ void FileUploader::begin()
     progress->setCurrentIndex(1);
     failcount = 0;
     skip = 0;
+    totalsize = medias->totalSize();
+    time = 0;
+    seconds.start(500);
     process();
 }
 
@@ -58,22 +65,18 @@ void FileUploader::process()
     if (failed) { failed = true; emit status(2); return;}
     if (medias->rowCount() && (skip < medias->rowCount()))
     {
+        uploadedTotal += uploadedCurrent;
+        uploadedCurrent = 0;
         current = medias->getMedia(skip);
 
         request = QSharedPointer<UploadRequest>(new UploadRequest(current, http.data()));
         tmp.append(request);
-        connect(request.data(),
-                SIGNAL(progress(int)),
-                this,
-                SLOT(progressReceiver(int)));
-        connect(request.data(),
-                SIGNAL(status(int)),
-                this,
-                SLOT(statusReceiver(int)));
-        connect(request.data(),
-                SIGNAL(result(QString)),
-                this,
-                SLOT(resultReceiver(QString)));
+        connect(request.data(), SIGNAL(progress(int)),
+                this, SLOT(progressReceiver(int)));
+        connect(request.data(), SIGNAL(status(int)),
+                this, SLOT(statusReceiver(int)));
+        connect(request.data(), SIGNAL(result(QString)),
+                this, SLOT(resultReceiver(QString)));
         if (!cookie.isEmpty())
             request.data()->setAuth(cookie);
         QStringList tags = current->getTags() + medias->getTags();
@@ -111,7 +114,6 @@ void FileUploader::statusReceiver(int value)
     qDebug() << "got status" << value << "from uploader";
     if (value == 2)
     {
-        qDebug() << "got status 2 from uploader";
         failcount++;
         if (failcount>3)
         {
@@ -228,4 +230,13 @@ void FileUploader::fail(QString message)
         }
     }
     skip++;
+}
+
+void FileUploader::updateETA()
+{
+    time++;
+    uploadedCurrent = request.data()->uploaded;
+    qint64 speed = (uploadedCurrent + uploadedTotal) / (time*2);
+    int left = (totalsize - (uploadedCurrent + uploadedTotal))/speed;
+    emit ETA(left);
 }
