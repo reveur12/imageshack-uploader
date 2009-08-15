@@ -93,6 +93,9 @@ Media::Media(QString filename)
         QImage image;
         valid = image.load(filename);
 #ifdef Q_OS_WIN
+// This is hack to upload TIFFs on Windows where some
+// TIFF encodings are not supported.
+// Yes, Windows really sucks.
         if (!valid)
         {
             if (mediaType == "tiff")

@@ -45,12 +45,14 @@ public:
     virtual ~MediaWidget();
     void setMedia(QSharedPointer<Media>);
     void mousePressEvent ( QMouseEvent * );
+    void show();
 
 protected:
     virtual void changeEvent(QEvent *e);
 
 private:
     Ui::MediaWidget *m_ui;
+    bool valid;
 };
 
 #endif // MEDIAWIDGET_H
