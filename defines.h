@@ -39,7 +39,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define VIDEO_UPLOAD_HOSTNAME "render.imageshack.us"
 #define VIDEO_UPLOAD_PATH "/upload_api.php"
 
-#define LOGIN_HOSTNAME "imageshack.us"
+#define LOGIN_HOSTNAME "www.imageshack.us"
 #define LOGIN_PATH "/auth.php"
 
 #define GALLERY_HOSTNAME "imageshack.us"

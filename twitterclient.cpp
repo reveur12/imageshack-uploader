@@ -35,6 +35,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QPlastiqueStyle>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QThread>
 #include "twitterclient.h"
 #include "defines.h"
 
@@ -92,6 +93,8 @@ void TwitterClient::post(QString url, QString text, QString user, QString pass)
     ids.append(id);
 
     bar.show();
+    bar.raise();
+    bar.activateWindow();
 }
 
 void TwitterClient::post(QStringList urls, QString text, QString user, QString pass, QString shortlink)
