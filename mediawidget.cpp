@@ -58,6 +58,8 @@ void MediaWidget::changeEvent(QEvent *e)
 void MediaWidget::setMedia(QSharedPointer<Media> media)
 {
     QPixmap image = QPixmap::fromImage(media.data()->getPreview());
+    if (image.isNull()) { valid = false; return; }
+    valid = true;
     m_ui->image->setPixmap(image);
     setFixedSize(QSize(image.width(), image.height()));
 }
@@ -65,4 +67,9 @@ void MediaWidget::setMedia(QSharedPointer<Media> media)
 void MediaWidget::mousePressEvent ( QMouseEvent * )
 {
     this->close();
+}
+
+void MediaWidget::show()
+{
+    if (valid) QDialog::show();
 }

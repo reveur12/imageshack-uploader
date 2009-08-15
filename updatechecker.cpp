@@ -139,7 +139,7 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
         {
             if (!workSilent)
             QMessageBox::information(NULL, tr("No updates available"),
-             tr("You have lastest version of application."));
+             tr("You have the latest version of this application."));
             inProgress = false;
             return;
         }
