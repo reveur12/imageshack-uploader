@@ -30,6 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define TWITTERWINDOW_H
 
 #include <QtGui/QDialog>
+#include <QSharedPointer>
 #include <twitterclient.h>
 
 namespace Ui {
@@ -49,7 +50,7 @@ protected:
 
 private:
     Ui::TwitterWindow *m_ui;
-    TwitterClient twitter;
+    QSharedPointer<TwitterClient> twitter;
     QString link;
     QStringList links;
     QString shortlink;

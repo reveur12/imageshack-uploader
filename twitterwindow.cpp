@@ -37,6 +37,7 @@ TwitterWindow::TwitterWindow(QWidget *parent) :
 {
     setParent(parent);
     m_ui->setupUi(this);
+    twitter = QSharedPointer<TwitterClient>(new TwitterClient(parent));
     textChanged();
     QSettings sets;
     QString user = QByteArray::fromBase64(sets.value("twitteruser",
@@ -47,7 +48,7 @@ TwitterWindow::TwitterWindow(QWidget *parent) :
     m_ui->username->setText(user);
     m_ui->password->setText(pass);
 
-    connect(&twitter,
+    connect(twitter.data(),
             SIGNAL(errorHappened()),
             this,
             SLOT(twitterError()));
@@ -64,7 +65,7 @@ void TwitterWindow::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         m_ui->retranslateUi(this);
-        twitter.bar.setWindowTitle(tr("Posting to twitter..."));
+        twitter.data()->bar.setWindowTitle(tr("Posting to twitter..."));
         break;
     default:
         break;
@@ -118,10 +119,10 @@ void TwitterWindow::submit()
         sets.setValue("twitterpass", QVariant());
     }
     if (gallery)
-        twitter.post(links, m_ui->text->toPlainText(),
+        twitter.data()->post(links, m_ui->text->toPlainText(),
                      m_ui->username->text(), m_ui->password->text(), shortlink);
     else
-        twitter.post(link, m_ui->text->toPlainText(),
+        twitter.data()->post(link, m_ui->text->toPlainText(),
                      m_ui->username->text(), m_ui->password->text());
     hide();
 }
