@@ -35,6 +35,7 @@ TwitterWindow::TwitterWindow(QWidget *parent) :
     QDialog(parent),
     m_ui(new Ui::TwitterWindow)
 {
+    setParent(parent);
     m_ui->setupUi(this);
     textChanged();
     QSettings sets;

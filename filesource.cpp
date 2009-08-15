@@ -69,20 +69,9 @@ qint64 FileSource::readData(char* to, qint64 max)
     }
     while ((curPos < (header.size()+data->size())) && buf.size() < max)
     {
-        // read data
-        int lpos = curPos - header.size();
-        data->seek(lpos);
-        if ( (data->size() - lpos) < max )
-        {
-            buf.append(data->read(data->size()-lpos));
-            curPos += data->size()-lpos;
-        }
-        else
-        {
-            int oldbufsize = buf.size();
-            buf.append(data->read(max - oldbufsize));
-            curPos += max - oldbufsize;
-        }
+        QByteArray newdata = data.data()->read(max-buf.size());
+        buf.append(newdata);
+        curPos += newdata.size();
     }
     int fullsize = header.size() + data->size() + footer.size();
     while ((curPos >= ( header.size()+data->size()) && (curPos < fullsize)) && buf.size() < max)
