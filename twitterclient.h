@@ -40,7 +40,7 @@ class TwitterClient : public QObject
 {
     Q_OBJECT
 public:
-    TwitterClient();
+    TwitterClient(QWidget *parent = 0);
     ~TwitterClient();
     void post(QStringList, QString, QString, QString, QString);
     QProgressBar bar;

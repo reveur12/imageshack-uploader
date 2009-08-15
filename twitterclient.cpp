@@ -39,7 +39,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "twitterclient.h"
 #include "defines.h"
 
-TwitterClient::TwitterClient()
+TwitterClient::TwitterClient(QWidget *parent)
 {
     http.setHost(TWITTER_HOST);
     connect(&http,
@@ -52,6 +52,7 @@ TwitterClient::TwitterClient()
             SLOT(post(QString, QString, QString, QString)));
     int w = QApplication::desktop()->geometry().width();
     int h = QApplication::desktop()->geometry().height();
+    bar.setParent(parent);
     bar.move(w/2-150, h/2-10);
     bar.setWindowTitle(tr("Posting to twitter..."));
     //bar.setEnabled(true);
