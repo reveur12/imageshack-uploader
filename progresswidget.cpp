@@ -114,7 +114,7 @@ void ProgressWidget::updateETA(int secs)
     if (hours) text.append(tr(" %n hrs.", 0, hours));
     if (minutes) text.append(tr(" %n min.", 0, minutes));
     if (seconds) text.append(tr(" %n sec.", 0, seconds));
-
+    if(!hours && !minutes && !seconds) text.append(tr("almost done..."));
     m_ui->ETA->setText(text);
     //qDebug() << "got ETA:"<< seconds;
 }

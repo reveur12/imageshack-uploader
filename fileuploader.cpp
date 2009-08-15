@@ -56,7 +56,7 @@ void FileUploader::begin()
     skip = 0;
     totalsize = medias->totalSize();
     time = 0;
-    seconds.start(500);
+    seconds.start(1000);
     process();
 }
 
@@ -236,7 +236,7 @@ void FileUploader::updateETA()
 {
     time++;
     uploadedCurrent = request.data()->uploaded;
-    qint64 speed = (uploadedCurrent + uploadedTotal) / (time*2);
+    qint64 speed = (uploadedCurrent + uploadedTotal) / time;
     int left = (totalsize - (uploadedCurrent + uploadedTotal))/speed;
     emit ETA(left);
 }
