@@ -110,10 +110,13 @@ void ProgressWidget::updateETA(int secs)
     int hours = secs/60/60;
     int minutes = (secs - hours*60*60)/60;
     int seconds = secs - (hours*60*60) - minutes*60;
+    if (seconds>30) minutes++;
+    if (minutes>59) { hours++; minutes -= 60; }
     QString text = tr("Time left:");
     if (hours) text.append(tr(" %n hrs.", 0, hours));
     if (minutes) text.append(tr(" %n min.", 0, minutes));
-    if (seconds) text.append(tr(" %n sec.", 0, seconds));
+    //if (seconds) text.append(tr(" %n sec.", 0, seconds));
+    if(!hours && !minutes && seconds) text.append(tr(" less than 1 min."));
     if(!hours && !minutes && !seconds) text.append(tr(" almost done..."));
     m_ui->ETA->setText(text);
     //qDebug() << "got ETA:"<< seconds;
