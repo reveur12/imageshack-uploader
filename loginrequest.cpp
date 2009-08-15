@@ -42,6 +42,12 @@ LoginRequest::LoginRequest()
              this, SLOT(requestFinished(int, bool)));
 }
 
+LoginRequest::~LoginRequest()
+{
+    http.disconnect(this, SLOT(requestFinished(int, bool)));
+    http.abort();
+}
+
 void LoginRequest::login(QString login, QString pass)
 {
     aborted = false;

@@ -107,7 +107,7 @@ void UploadRequest::setRemoveBar(bool value)
 QString UploadRequest::post()
 {
     QVector<QPair<QString,QString> > fields;
-    QString alltags = Qt::escape(tags.join(","));
+    QString alltags = tags.join(",");
     fields << qMakePair(QString("public"), QString(isPublic?"yes":"no"));
     if (!cookie.isEmpty()) fields << qMakePair(QString("cookie"), cookie);
     if (!alltags.isEmpty()) fields << qMakePair(QString("tags"), alltags);

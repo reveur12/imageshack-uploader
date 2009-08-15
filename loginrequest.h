@@ -37,6 +37,7 @@ class LoginRequest : public QObject
     Q_OBJECT
 public:
     LoginRequest();
+    ~LoginRequest();
     void login(QString, QString);
     void abort();
     QHttp http;

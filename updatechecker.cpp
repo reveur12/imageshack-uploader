@@ -48,6 +48,12 @@ UpdateChecker::UpdateChecker()
             SLOT(resultReceiver(int, bool)));
 }
 
+UpdateChecker::~UpdateChecker()
+{
+    req.disconnect(this, SLOT(resultReceiver(int, bool)));
+    req.abort();
+}
+
 void UpdateChecker::check(bool silent)
 {
     workSilent = silent;

@@ -37,6 +37,7 @@ class UpdateChecker : public QObject
     Q_OBJECT
 public:
     UpdateChecker();
+    ~UpdateChecker();
     void check(bool silent = false);
 
 private:
