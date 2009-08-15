@@ -545,8 +545,8 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="117"/>
-        <source>almost done...</source>
-        <translation>almost done...</translation>
+        <source> almost done...</source>
+        <translation> almost done...</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="199"/>

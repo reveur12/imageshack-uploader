@@ -557,8 +557,8 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="117"/>
-        <source>almost done...</source>
-        <translation>почти готово...</translation>
+        <source> almost done...</source>
+        <translation> почти готово...</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="199"/>
