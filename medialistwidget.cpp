@@ -289,6 +289,7 @@ void MediaListWidget::selectFirst()
     if (!mediaList->rowCount()) return;
     QModelIndex index = mediaList->index(0,0,QModelIndex());
     QItemSelectionModel *model = m_ui->mediaList->selectionModel();
+    model->select(index, QItemSelectionModel::Clear);
     model->select(index, QItemSelectionModel::SelectCurrent | QItemSelectionModel::Rows);
     m_ui->mediaList->setFocus(Qt::MouseFocusReason);
 }
