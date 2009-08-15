@@ -96,7 +96,10 @@ Media::Media(QString filename)
         if (!valid)
         {
             if (mediaType == "tiff")
+            {
                 image.load(":/images/images/tiff.png");
+                valid = true;
+            }
             else
                 return;
         }
