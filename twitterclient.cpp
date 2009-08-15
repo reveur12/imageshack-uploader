@@ -63,6 +63,12 @@ TwitterClient::TwitterClient()
     bar.setAlignment(Qt::AlignCenter);
 }
 
+TwitterClient::~TwitterClient()
+{
+    http.disconnect(this, SLOT(requestFinished(int, bool)));
+    http.abort();
+}
+
 void TwitterClient::post(QString url, QString text, QString user, QString pass)
 {
     QHttpRequestHeader header("POST", TWITTER_PATH, 1, 1);
