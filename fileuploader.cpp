@@ -236,7 +236,9 @@ void FileUploader::updateETA()
 {
     time++;
     uploadedCurrent = request.data()->uploaded;
+    if (!time) return;
     qint64 speed = (uploadedCurrent + uploadedTotal) / time;
+    if (!speed) return;
     int left = (totalsize - (uploadedCurrent + uploadedTotal))/speed;
     emit ETA(left);
 }
