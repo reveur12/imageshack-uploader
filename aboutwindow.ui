@@ -102,7 +102,7 @@
      <item>
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>© ImageShack Corp.</string>
+        <string>© 2009 ImageShack Corp.</string>
        </property>
       </widget>
      </item>

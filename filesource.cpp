@@ -1,6 +1,7 @@
 #include "filesource.h"
 #include "defines.h"
 #include <QDebug>
+#include <QUrl>
 
 FileSource::FileSource(QSharedPointer<Media> media,
                        QVector<QPair<QString,QString> > fields)
@@ -40,6 +41,8 @@ FileSource::FileSource(QSharedPointer<Media> media,
     footer.append("--");
     footer.append(boundary);
     footer.append(nl);
+
+    qDebug() << footer;
 
     data = QSharedPointer<QFile>(new QFile(filename));
     data->open(QIODevice::ReadOnly);
