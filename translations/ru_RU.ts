@@ -26,8 +26,8 @@
     </message>
     <message utf8="true">
         <location filename="../aboutwindow.ui" line="105"/>
-        <source>© ImageShack Corp.</source>
-        <translation>© Корпорация ImageShack.</translation>
+        <source>© 2009 ImageShack Corp.</source>
+        <translation>© 2009 Корпорация ImageShack.</translation>
     </message>
     <message>
         <location filename="../aboutwindow.ui" line="127"/>
@@ -123,7 +123,7 @@ Got error messages from server:
     <message>
         <location filename="../imageinfowidget.cpp" line="97"/>
         <location filename="../imageinfowidget.cpp" line="116"/>
-        <location filename="../imageinfowidget.ui" line="52"/>
+        <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
         <translation>Миниатюра</translation>
     </message>
@@ -133,77 +133,77 @@ Got error messages from server:
         <translation>Войдите чтобы использовать эти возможности</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="98"/>
+        <location filename="../imageinfowidget.ui" line="113"/>
         <source>Image resize:</source>
         <translation>Размер:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="109"/>
+        <location filename="../imageinfowidget.ui" line="124"/>
         <source>Do not resize</source>
         <translation>Не изменять размер</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="114"/>
+        <location filename="../imageinfowidget.ui" line="129"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (аватар)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="119"/>
+        <location filename="../imageinfowidget.ui" line="134"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (миниатюра)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="124"/>
+        <location filename="../imageinfowidget.ui" line="139"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (для веб и почты)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="129"/>
+        <location filename="../imageinfowidget.ui" line="144"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (для форумов)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="134"/>
+        <location filename="../imageinfowidget.ui" line="149"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (12-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="139"/>
+        <location filename="../imageinfowidget.ui" line="154"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (15-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="144"/>
+        <location filename="../imageinfowidget.ui" line="159"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (19-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="149"/>
+        <location filename="../imageinfowidget.ui" line="164"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (21-дюймовый монитор)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="154"/>
+        <location filename="../imageinfowidget.ui" line="169"/>
         <source>Optimize only</source>
         <translation>Только оптимизация</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="206"/>
+        <location filename="../imageinfowidget.ui" line="221"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Доступ:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="216"/>
+        <location filename="../imageinfowidget.ui" line="231"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Теги:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="234"/>
+        <location filename="../imageinfowidget.ui" line="249"/>
         <source>Public</source>
         <translation>Общий</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="253"/>
+        <location filename="../imageinfowidget.ui" line="268"/>
         <source>Private</source>
         <translation>Только владельцу</translation>
     </message>
@@ -217,8 +217,8 @@ Got error messages from server:
         <translation>Вы авторизированы как %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="148"/>
-        <location filename="../loginwidget.cpp" line="157"/>
+        <location filename="../loginwidget.cpp" line="152"/>
+        <location filename="../loginwidget.cpp" line="160"/>
         <source>Authentication failed</source>
         <translation>Аутентификация не удалась</translation>
     </message>
@@ -228,7 +228,7 @@ Got error messages from server:
         <translation>Не удалось подключиться к серверу ImageShaсk.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="158"/>
+        <location filename="../loginwidget.cpp" line="161"/>
         <source>Wrong credentials.</source>
         <translation>Неправильное имя пользователя или пароль.</translation>
     </message>
@@ -271,37 +271,37 @@ Got error messages from server:
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="144"/>
+        <location filename="../mainwindow.ui" line="147"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="151"/>
+        <location filename="../mainwindow.ui" line="154"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="162"/>
+        <location filename="../mainwindow.ui" line="165"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="170"/>
+        <location filename="../mainwindow.ui" line="173"/>
         <source>Support</source>
         <translation>Поддержка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="178"/>
+        <location filename="../mainwindow.ui" line="181"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="186"/>
+        <location filename="../mainwindow.ui" line="189"/>
         <source>Check for updates</source>
         <translation>Проверить обновления</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="194"/>
+        <location filename="../mainwindow.ui" line="197"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -331,42 +331,42 @@ Got error messages from server:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="307"/>
+        <location filename="../media.cpp" line="313"/>
         <source>%1 B</source>
         <translation>%1 Б</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="308"/>
+        <location filename="../media.cpp" line="314"/>
         <source>%1 KB</source>
         <translation>%1 КБ</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="309"/>
+        <location filename="../media.cpp" line="315"/>
         <source>%1 MB</source>
         <translation>%1 МБ</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="310"/>
+        <location filename="../media.cpp" line="316"/>
         <source>%1 GB</source>
         <translation>%1 ГБ</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="318"/>
+        <location filename="../media.cpp" line="324"/>
         <source>%1B</source>
         <translation>%1Б</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="319"/>
+        <location filename="../media.cpp" line="325"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="320"/>
+        <location filename="../media.cpp" line="326"/>
         <source>%1M</source>
         <translation>%1М</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="321"/>
+        <location filename="../media.cpp" line="327"/>
         <source>%1G</source>
         <translation>%1Г</translation>
     </message>
@@ -695,27 +695,27 @@ Got error messages from server:
 <context>
     <name>TagWidget</name>
     <message>
-        <location filename="../tagwidget.ui" line="38"/>
+        <location filename="../tagwidget.ui" line="41"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Доступ:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="53"/>
+        <location filename="../tagwidget.ui" line="56"/>
         <source>Public</source>
         <translation>Общий</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="69"/>
+        <location filename="../tagwidget.ui" line="72"/>
         <source>Private</source>
         <translation>Только владельцу</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="94"/>
+        <location filename="../tagwidget.ui" line="97"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Теги:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../tagwidget.ui" line="26"/>
+        <location filename="../tagwidget.ui" line="29"/>
         <source>Batch privacy &amp;&amp; tags</source>
         <translation>Общие доступ и теги</translation>
     </message>
@@ -737,49 +737,49 @@ Got error messages from server:
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="55"/>
+        <location filename="../twitterclient.cpp" line="56"/>
         <source>Posting to twitter...</source>
         <translation>Отправка на Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="79"/>
-        <location filename="../twitterclient.cpp" line="111"/>
-        <location filename="../twitterclient.cpp" line="123"/>
-        <location filename="../twitterclient.cpp" line="144"/>
-        <location filename="../twitterclient.cpp" line="151"/>
-        <location filename="../twitterclient.cpp" line="157"/>
-        <location filename="../twitterclient.cpp" line="164"/>
+        <location filename="../twitterclient.cpp" line="86"/>
+        <location filename="../twitterclient.cpp" line="120"/>
+        <location filename="../twitterclient.cpp" line="132"/>
+        <location filename="../twitterclient.cpp" line="153"/>
+        <location filename="../twitterclient.cpp" line="160"/>
+        <location filename="../twitterclient.cpp" line="166"/>
+        <location filename="../twitterclient.cpp" line="173"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="80"/>
+        <location filename="../twitterclient.cpp" line="87"/>
         <source>First set twitter username and password in options</source>
         <translation>Сначала задайте имя пользователя и пароль для Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="112"/>
+        <location filename="../twitterclient.cpp" line="121"/>
         <source>Could not send url to Twitter</source>
         <translation>Не удалось отправить ссылку на Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="124"/>
-        <location filename="../twitterclient.cpp" line="165"/>
+        <location filename="../twitterclient.cpp" line="133"/>
+        <location filename="../twitterclient.cpp" line="174"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Не удалось отправить на Twitter. Произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="145"/>
+        <location filename="../twitterclient.cpp" line="154"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Не удалось отправить на Twitter. Неправильные логин или пароль.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="152"/>
+        <location filename="../twitterclient.cpp" line="161"/>
         <source>Failed to update twitter status.</source>
         <translation>Не удалось обновить статус Twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="158"/>
+        <location filename="../twitterclient.cpp" line="167"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Не удалось отправить на Twitter. Внутреняя ошибка.</translation>
     </message>
@@ -845,77 +845,73 @@ Got error messages from server:
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="85"/>
-        <location filename="../updatechecker.cpp" line="100"/>
-        <location filename="../updatechecker.cpp" line="113"/>
+        <location filename="../updatechecker.cpp" line="91"/>
+        <location filename="../updatechecker.cpp" line="106"/>
+        <location filename="../updatechecker.cpp" line="119"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="55"/>
+        <location filename="../updatechecker.cpp" line="61"/>
         <source>Please wait...</source>
         <translation>Подождите...</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="56"/>
+        <location filename="../updatechecker.cpp" line="62"/>
         <source>Update checkup is currently in progress.</source>
         <translation>Уже происходит проверка обновлений.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="101"/>
+        <location filename="../updatechecker.cpp" line="107"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>Не удалось проверить обновления. Произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="114"/>
+        <location filename="../updatechecker.cpp" line="120"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>Не удалось проверить обновления. Не найдено версий.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="151"/>
+        <location filename="../updatechecker.cpp" line="157"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="152"/>
+        <location filename="../updatechecker.cpp" line="158"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="154"/>
+        <location filename="../updatechecker.cpp" line="160"/>
         <source>Update available</source>
         <translation>Доступны обновления</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="166"/>
+        <location filename="../updatechecker.cpp" line="148"/>
+        <location filename="../updatechecker.cpp" line="172"/>
         <source>You have the latest version of this application.</source>
         <translation>У вас самая последняя версия программы.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="153"/>
+        <location filename="../updatechecker.cpp" line="159"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Последняя версия - %1. Произвести обновление?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="86"/>
+        <location filename="../updatechecker.cpp" line="92"/>
         <source>Could not check for updates. Please try again later.</source>
         <translation>Не удалось проверить обновления. Попробуйте позже.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="87"/>
+        <location filename="../updatechecker.cpp" line="93"/>
         <source>Error message is:</source>
         <translation>Ошибка:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="141"/>
-        <location filename="../updatechecker.cpp" line="165"/>
+        <location filename="../updatechecker.cpp" line="147"/>
+        <location filename="../updatechecker.cpp" line="171"/>
         <source>No updates available</source>
         <translation>Нету доступных обновлений</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="142"/>
-        <source>You have lastest version of application.</source>
-        <translation>У вас последняя версия приложения.</translation>
     </message>
 </context>
 <context>
