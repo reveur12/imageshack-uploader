@@ -82,8 +82,11 @@
          </widget>
          <widget class="QWidget" name="verticalLayoutWidget_2">
           <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="topMargin">
+            <number>0</number>
+           </property>
            <item>
-            <widget class="ImageInfoWidget" name="imageInfo"/>
+            <widget class="ImageInfoWidget" name="imageInfo" native="true"/>
            </item>
            <item>
             <widget class="TagWidget" name="tagWidget" native="true">
@@ -230,7 +233,7 @@
   </customwidget>
   <customwidget>
    <class>ImageInfoWidget</class>
-   <extends>QGroupBox</extends>
+   <extends>QWidget</extends>
    <header>imageinfowidget.h</header>
    <container>1</container>
   </customwidget>

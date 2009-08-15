@@ -33,7 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QMovie>
 
 ImageInfoWidget::ImageInfoWidget(QWidget *parent) :
-    QGroupBox(parent),
+    QWidget(parent),
     m_ui(new Ui::ImageInfoWidget)
 {
     m_ui->setupUi(this);

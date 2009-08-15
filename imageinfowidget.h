@@ -29,7 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef IMAGEINFOWIDGET_H
 #define IMAGEINFOWIDGET_H
 
-#include <QtGui/QGroupBox>
+#include <QtGui/QWidget>
 #include <QMap>
 #include <QSharedPointer>
 #include "media.h"
@@ -38,7 +38,7 @@ namespace Ui {
     class ImageInfoWidget;
 }
 
-class ImageInfoWidget : public QGroupBox {
+class ImageInfoWidget : public QWidget {
     Q_OBJECT
     Q_DISABLE_COPY(ImageInfoWidget)
 public:
