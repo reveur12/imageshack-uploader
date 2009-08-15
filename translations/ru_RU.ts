@@ -25,12 +25,12 @@
         <translation>Загризчик ImageShack  - это совершенное средство загрузки изображений и видео файлов на веб-сервисы ImageShack.</translation>
     </message>
     <message utf8="true">
-        <location filename="../aboutwindow.ui" line="102"/>
+        <location filename="../aboutwindow.ui" line="105"/>
         <source>© ImageShack Corp.</source>
         <translation>© Корпорация ImageShack.</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="124"/>
+        <location filename="../aboutwindow.ui" line="127"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -62,12 +62,12 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="91"/>
+        <location filename="../fileuploader.cpp" line="94"/>
         <source>Some files could not be uploaded.</source>
         <translation>Не удалось загрузить некоторые файлы.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileuploader.cpp" line="94"/>
+        <location filename="../fileuploader.cpp" line="97"/>
         <source>
 
 Got error messages from server:
@@ -88,32 +88,32 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="97"/>
+        <location filename="../fileuploader.cpp" line="100"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="118"/>
+        <location filename="../fileuploader.cpp" line="120"/>
         <source>3 attempts to upload file failed</source>
         <translation>Не удалось загрузить файл с трех попыток</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="141"/>
+        <location filename="../fileuploader.cpp" line="143"/>
         <source>Server returned no error text</source>
         <translation>Сервер вернул пустой текст ошибки</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="148"/>
+        <location filename="../fileuploader.cpp" line="150"/>
         <source>Wrong server response</source>
         <translation>Неправильный ответ сервера</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="181"/>
+        <location filename="../fileuploader.cpp" line="183"/>
         <source>Server responce is not valid</source>
         <translation>Неправильный ответ сервера</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="227"/>
+        <location filename="../fileuploader.cpp" line="229"/>
         <source>Could not connect to server</source>
         <translation>Не удалось подключиться к серверу</translation>
     </message>
@@ -271,37 +271,37 @@ Got error messages from server:
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="141"/>
+        <location filename="../mainwindow.ui" line="144"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="148"/>
+        <location filename="../mainwindow.ui" line="151"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="159"/>
+        <location filename="../mainwindow.ui" line="162"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="167"/>
+        <location filename="../mainwindow.ui" line="170"/>
         <source>Support</source>
         <translation>Поддержка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="175"/>
+        <location filename="../mainwindow.ui" line="178"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="183"/>
+        <location filename="../mainwindow.ui" line="186"/>
         <source>Check for updates</source>
         <translation>Проверить обновления</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="191"/>
+        <location filename="../mainwindow.ui" line="194"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
@@ -331,42 +331,42 @@ Got error messages from server:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="297"/>
+        <location filename="../media.cpp" line="307"/>
         <source>%1 B</source>
         <translation>%1 Б</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="298"/>
+        <location filename="../media.cpp" line="308"/>
         <source>%1 KB</source>
         <translation>%1 КБ</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="299"/>
+        <location filename="../media.cpp" line="309"/>
         <source>%1 MB</source>
         <translation>%1 МБ</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="300"/>
+        <location filename="../media.cpp" line="310"/>
         <source>%1 GB</source>
         <translation>%1 ГБ</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="308"/>
+        <location filename="../media.cpp" line="318"/>
         <source>%1B</source>
         <translation>%1Б</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="309"/>
+        <location filename="../media.cpp" line="319"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="310"/>
+        <location filename="../media.cpp" line="320"/>
         <source>%1M</source>
         <translation>%1М</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="311"/>
+        <location filename="../media.cpp" line="321"/>
         <source>%1G</source>
         <translation>%1Г</translation>
     </message>
@@ -437,17 +437,17 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.ui" line="105"/>
+        <location filename="../medialistwidget.ui" line="111"/>
         <source>Add</source>
         <translation>Добавить</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.ui" line="119"/>
+        <location filename="../medialistwidget.ui" line="125"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.ui" line="133"/>
+        <location filename="../medialistwidget.ui" line="139"/>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
@@ -492,15 +492,20 @@ Got error messages from server:
 <context>
     <name>ProgressWidget</name>
     <message>
-        <location filename="../progresswidget.ui" line="65"/>
-        <location filename="../progresswidget.ui" line="224"/>
+        <location filename="../progresswidget.ui" line="73"/>
+        <location filename="../progresswidget.ui" line="318"/>
         <source>Upload</source>
         <translation>Загрузить</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="103"/>
+        <location filename="../progresswidget.ui" line="137"/>
         <source>Total: %p%</source>
         <translation>Всего: %p%</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.ui" line="237"/>
+        <source>Time left: estimating...</source>
+        <translation>Осталось времени: замеряем...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="80"/>
@@ -509,7 +514,7 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="84"/>
-        <location filename="../progresswidget.ui" line="131"/>
+        <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Текущий: %p%</translation>
     </message>
@@ -519,7 +524,39 @@ Got error messages from server:
         <translation>Загрузка файлов: %1 из %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="165"/>
+        <location filename="../progresswidget.cpp" line="113"/>
+        <source>Time left:</source>
+        <translation>Осталось времени:</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../progresswidget.cpp" line="114"/>
+        <source> %n hrs.</source>
+        <translation>
+            <numerusform> %n час.</numerusform>
+            <numerusform> %n час.</numerusform>
+            <numerusform> %n час.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../progresswidget.cpp" line="115"/>
+        <source> %n min.</source>
+        <translation>
+            <numerusform> %n мин.</numerusform>
+            <numerusform> %n мин.</numerusform>
+            <numerusform> %n мин.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../progresswidget.cpp" line="116"/>
+        <source> %n sec.</source>
+        <translation>
+            <numerusform> %n сек.</numerusform>
+            <numerusform> %n сек.</numerusform>
+            <numerusform> %n сек.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.ui" line="199"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>

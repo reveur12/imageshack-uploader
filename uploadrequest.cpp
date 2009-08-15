@@ -56,6 +56,7 @@ UploadRequest::UploadRequest(QSharedPointer<Media> smedia, QHttp *)
     finished = false;
     failed = false;
     aborted = false;
+    uploaded = 0;
 }
 
 void UploadRequest::setFileName(QString file)
@@ -188,6 +189,7 @@ void UploadRequest::uploadFinished()
 
 void UploadRequest::updateProgress(qint64 done, qint64 total)
 {
+    uploaded = media.data()->size() * done / total;
     if (total) emit progress(done*100/total);
 }
 

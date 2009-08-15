@@ -62,6 +62,8 @@ public:
 
     QNetworkReply* rep;
 
+    qint64 uploaded;
+
 private:
     QString mediaClass;
     QString mediaType;

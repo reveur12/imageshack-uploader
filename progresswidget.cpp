@@ -105,3 +105,16 @@ void ProgressWidget::setUploadEnabled(bool value)
     m_ui->upload->setEnabled(value);
 }
 
+void ProgressWidget::updateETA(int secs)
+{
+    int hours = secs/60/60;
+    int minutes = (secs - hours*60*60)/60;
+    int seconds = secs - (hours*60*60) - minutes*60;
+    QString text = tr("Time left:");
+    if (hours) text.append(tr(" %n hrs.", 0, hours));
+    if (minutes) text.append(tr(" %n min.", 0, minutes));
+    if (seconds) text.append(tr(" %n sec.", 0, seconds));
+
+    m_ui->ETA->setText(text);
+    //qDebug() << "got ETA:"<< seconds;
+}

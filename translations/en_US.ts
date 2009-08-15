@@ -25,12 +25,12 @@
         <translation>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</translation>
     </message>
     <message utf8="true">
-        <location filename="../aboutwindow.ui" line="102"/>
+        <location filename="../aboutwindow.ui" line="105"/>
         <source>© ImageShack Corp.</source>
         <translation>© ImageShack Corp.</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="124"/>
+        <location filename="../aboutwindow.ui" line="127"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -62,12 +62,12 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="91"/>
+        <location filename="../fileuploader.cpp" line="94"/>
         <source>Some files could not be uploaded.</source>
         <translation>Some files could not be uploaded.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileuploader.cpp" line="94"/>
+        <location filename="../fileuploader.cpp" line="97"/>
         <source>
 
 Got error messages from server:
@@ -84,32 +84,32 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="97"/>
+        <location filename="../fileuploader.cpp" line="100"/>
         <source>Warning</source>
         <translation>Warning</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="118"/>
+        <location filename="../fileuploader.cpp" line="120"/>
         <source>3 attempts to upload file failed</source>
         <translation>3 attempts to upload file failed</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="141"/>
+        <location filename="../fileuploader.cpp" line="143"/>
         <source>Server returned no error text</source>
         <translation>Server returned no error text</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="148"/>
+        <location filename="../fileuploader.cpp" line="150"/>
         <source>Wrong server response</source>
         <translation>Wrong server response</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="181"/>
+        <location filename="../fileuploader.cpp" line="183"/>
         <source>Server responce is not valid</source>
         <translation>Server responce is not valid</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="227"/>
+        <location filename="../fileuploader.cpp" line="229"/>
         <source>Could not connect to server</source>
         <translation>Could not connect to server</translation>
     </message>
@@ -289,37 +289,37 @@ Got error messages from server:
         <translation>Flash files can not be uploaded without logging in. Do you want to try anyway?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="141"/>
+        <location filename="../mainwindow.ui" line="144"/>
         <source>File</source>
         <translation>File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="148"/>
+        <location filename="../mainwindow.ui" line="151"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="159"/>
+        <location filename="../mainwindow.ui" line="162"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="167"/>
+        <location filename="../mainwindow.ui" line="170"/>
         <source>Support</source>
         <translation>Support</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="175"/>
+        <location filename="../mainwindow.ui" line="178"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="183"/>
+        <location filename="../mainwindow.ui" line="186"/>
         <source>Check for updates</source>
         <translation>Check for updates</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="191"/>
+        <location filename="../mainwindow.ui" line="194"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
@@ -327,42 +327,42 @@ Got error messages from server:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="297"/>
+        <location filename="../media.cpp" line="307"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="298"/>
+        <location filename="../media.cpp" line="308"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="299"/>
+        <location filename="../media.cpp" line="309"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="300"/>
+        <location filename="../media.cpp" line="310"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="308"/>
+        <location filename="../media.cpp" line="318"/>
         <source>%1B</source>
         <translation>%1B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="309"/>
+        <location filename="../media.cpp" line="319"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="310"/>
+        <location filename="../media.cpp" line="320"/>
         <source>%1M</source>
         <translation>%1M</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="311"/>
+        <location filename="../media.cpp" line="321"/>
         <source>%1G</source>
         <translation>%1G</translation>
     </message>
@@ -428,17 +428,17 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../medialistwidget.ui" line="105"/>
+        <location filename="../medialistwidget.ui" line="111"/>
         <source>Add</source>
         <translation>Add</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.ui" line="119"/>
+        <location filename="../medialistwidget.ui" line="125"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.ui" line="133"/>
+        <location filename="../medialistwidget.ui" line="139"/>
         <source>Clear</source>
         <translation>Clear</translation>
     </message>
@@ -483,15 +483,20 @@ Got error messages from server:
 <context>
     <name>ProgressWidget</name>
     <message>
-        <location filename="../progresswidget.ui" line="65"/>
-        <location filename="../progresswidget.ui" line="224"/>
+        <location filename="../progresswidget.ui" line="73"/>
+        <location filename="../progresswidget.ui" line="318"/>
         <source>Upload</source>
         <translation>Upload</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="103"/>
+        <location filename="../progresswidget.ui" line="137"/>
         <source>Total: %p%</source>
         <translation>Total: %p%</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.ui" line="237"/>
+        <source>Time left: estimating...</source>
+        <translation>Time left: estimating...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="80"/>
@@ -500,7 +505,7 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="84"/>
-        <location filename="../progresswidget.ui" line="131"/>
+        <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Current: %p%</translation>
     </message>
@@ -510,7 +515,36 @@ Got error messages from server:
         <translation>Loading files: %1 of %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="165"/>
+        <location filename="../progresswidget.cpp" line="113"/>
+        <source>Time left:</source>
+        <translation>Time left:</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../progresswidget.cpp" line="114"/>
+        <source> %n hrs.</source>
+        <translation>
+            <numerusform> %n hr.</numerusform>
+            <numerusform> %n hrs.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../progresswidget.cpp" line="115"/>
+        <source> %n min.</source>
+        <translation>
+            <numerusform> %n min.</numerusform>
+            <numerusform> %n min.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../progresswidget.cpp" line="116"/>
+        <source> %n sec.</source>
+        <translation>
+            <numerusform> %n sec.</numerusform>
+            <numerusform> %n sec.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.ui" line="199"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>

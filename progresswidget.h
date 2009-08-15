@@ -54,6 +54,7 @@ private:
 private slots:
     void uploadClicked();
     void cancelClicked();
+    void updateETA(int);
 
 signals:
     void cancel();
