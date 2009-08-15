@@ -113,6 +113,9 @@ void ProgressWidget::updateETA(int secs)
     if (seconds>30) minutes++;
     if (minutes>59) { hours++; minutes -= 60; }
     QString text = tr("Time left:");
+    if (minutes < 0) minutes = 0;
+    if (hours < 0) hours = 0;
+    if (seconds < 0) seconds = 0;
     if (hours) text.append(tr(" %n hrs.", 0, hours));
     if (minutes) text.append(tr(" %n min.", 0, minutes));
     //if (seconds) text.append(tr(" %n sec.", 0, seconds));
