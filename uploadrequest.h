@@ -88,6 +88,8 @@ private:
 
     QNetworkAccessManager qnam;
 
+    void disconnectReply();
+
 public slots:
     void updateProgress(qint64, qint64);
 
