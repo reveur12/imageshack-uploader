@@ -145,8 +145,11 @@ void LoginWidget::successReceiver(QString value, QString name)
 void LoginWidget::failReceiver()
 {
     setCurrentIndex(0);
-    QMessageBox::critical(this, tr("Authentication failed"),
-                       tr("Could not connect to ImageShack server.") + "\n" + request.http.errorString());
+    QString error = request.http.errorString();
+    QString text = tr("Could not connect to ImageShack server.");
+    if (error != "Unknown error")
+        text += "\n" + error;
+    QMessageBox::critical(this, tr("Authentication failed"), text);
     loggedIn = false;
     emit loginStatus(1);
 }
