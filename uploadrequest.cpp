@@ -170,6 +170,7 @@ void UploadRequest::uploadFailed(QNetworkReply::NetworkError code)
     qDebug() << "upload failed with code " << code;
     if (failed || aborted) return;
     failed = true;
+    disconnectReply();
     emit status(2);
 }
 
@@ -183,6 +184,7 @@ void UploadRequest::uploadFinished()
         uploadFailed(QNetworkReply::ContentNotFoundError);
         return;
     }
+    disconnectReply();
     emit status(1);
     emit result(res);
 }
@@ -200,6 +202,7 @@ void UploadRequest::stop()
 {
     aborted = true;
     emit status(3);
+    disconnectReply();
     rep->abort();
 }
 
@@ -208,9 +211,15 @@ void UploadRequest::fail()
     if (failed) return;
     qDebug() << "UploadRequest failing";
     failed = true;
+    disconnectReply();
+    emit status(2);
+}
+
+void UploadRequest::disconnectReply()
+{
+    if (rep==NULL) return;
     rep->disconnect(this, SLOT(uploadFinished()));
     rep->disconnect(this, SLOT(updateProgress(qint64,qint64)));
     rep->disconnect(this, SLOT(uploadFailed(QNetworkReply::NetworkError)));
     rep = NULL;
-    emit status(2);
 }
