@@ -189,8 +189,11 @@ void UploadRequest::uploadFinished()
 
 void UploadRequest::updateProgress(qint64 done, qint64 total)
 {
-    uploaded = media.data()->size() * done / total;
-    if (total) emit progress(done*100/total);
+    if (total)
+    {
+        uploaded = media.data()->size() * done / total;
+        emit progress(done*100/total);
+    }
 }
 
 void UploadRequest::stop()
