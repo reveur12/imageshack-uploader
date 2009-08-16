@@ -202,8 +202,8 @@ void UploadRequest::stop()
 {
     aborted = true;
     emit status(3);
-    disconnectReply();
     rep->abort();
+    disconnectReply();
 }
 
 void UploadRequest::fail()
@@ -211,6 +211,7 @@ void UploadRequest::fail()
     if (failed) return;
     qDebug() << "UploadRequest failing";
     failed = true;
+    rep->abort();
     disconnectReply();
     emit status(2);
 }
