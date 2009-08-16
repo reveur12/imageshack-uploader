@@ -117,8 +117,8 @@ trans.path = $$UNIX_TRANSLATIONS_DIR
 win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
 trans.files += translations/*qm
-trans.commands = lrelease \
-    translations/*ts
+win32:trans.commands = lrelease translations\*ts
+unix:trans.commands = lrelease translations/*ts
 mactrans.target = mactrans
 mactrans.files += translations/en_US.qm \
     translations/ru_RU.qm
