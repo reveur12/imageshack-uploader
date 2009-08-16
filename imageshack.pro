@@ -355,5 +355,15 @@ dmg.commands = macdeployqt \
 
 msi.target = msi
 msi.delends = all
-msi.commands = candle ImageShackUploader.wxs && \
+QTDIR = $$replace(QMAKE_LIBDIR_QT, "/", "\\")\..
+msi.commands = copy $$QTDIR\bin\QtGui4.dll dlls && \
+               copy $$QTDIR\bin\QtXml4.dll dlls && \
+               copy $$QTDIR\bin\QtNetwork4.dll dlls && \
+               copy $$QTDIR\bin\mingwm10.dll dlls && \
+               copy avcodec.dll dlls && \
+               copy avutil.dll dlls && \
+               copy avformat.dll dlls && \
+               copy avdevice.dll dlls && \
+               copy swscale.dll dlls && \
+               candle ImageShackUploader.wxs && \
                light -ext WixUIExtension ImageShackUploader.wixobj
