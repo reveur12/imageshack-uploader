@@ -63,11 +63,17 @@
 
         <Property Id="WIXUI_INSTALLDIR" Value="APPDIR" />
         <UIRef Id="WixUI_InstallDir" />
-         <UI>
-          <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">1</Publish>
-          <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">NOT Installed</Publish>
-    </UI>
+        <UI>
+            <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">1</Publish>
+            <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">NOT Installed</Publish>
+        </UI>
 
         <Icon Id="ImageShackUploader.exe" SourceFile="release/ImageShackUploader.exe" />
+        <InstallExecuteSequence>
+            <Custom Action="CleanRegistry" After='InstallFinalize'>(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+        </InstallExecuteSequence>
+
+        <CustomAction Id='CleanRegistry' BinaryKey='ImageShackUploader.exe' ExeCommand='-unregister' Return='asyncWait'  />
+        <Binary Id="ImageShackUploader.exe" SourceFile="release/ImageShackUploader.exe" />
     </Product>
 </Wix>
