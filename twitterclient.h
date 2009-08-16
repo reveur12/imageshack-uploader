@@ -30,6 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define TWITTERCLIENT_H
 
 #include <QObject>
+#include <QDialog>
 #include <QHttp>
 #include <QList>
 #include <QProgressBar>
@@ -43,7 +44,8 @@ public:
     TwitterClient(QWidget *parent = 0);
     ~TwitterClient();
     void post(QStringList, QString, QString, QString, QString);
-    QProgressBar bar;
+    QDialog bar;
+    QProgressBar pbar;
 
 private:
     QHttp http;
