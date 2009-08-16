@@ -342,6 +342,7 @@ macx:clean.commands = rm \
 QMAKE_EXTRA_TARGETS += deb \
     rpm \
     dmg \
+    msi \
     packages \
     clean \
     trans \
@@ -351,3 +352,8 @@ dmg.depends = all
 dmg.commands = macdeployqt \
     $$TARGET\.app \
     -dmg
+
+msi.target = msi
+msi.delends = all
+msi.commands = candle ImageShackUploader.wxs && \
+               light -ext WixUIExtension ImageShackUploader.wixobj
