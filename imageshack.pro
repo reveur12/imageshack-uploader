@@ -3,6 +3,7 @@ include(qtsingleapplication/qtsingleapplication.pri)
 QT += network \
     xml
 TARGET = ImageShackUploader
+unix:!macx:TARGET = imageshack-uploader
 unix { 
     LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
