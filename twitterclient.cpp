@@ -54,21 +54,24 @@ TwitterClient::TwitterClient(QWidget *parent)
     int w = QApplication::desktop()->geometry().width();
     int h = QApplication::desktop()->geometry().height();
     bar.setParent(parent);
-    bar.move(w/2-150, h/2-10);
+
     bar.setWindowTitle(tr("Posting to twitter..."));
     //bar.setEnabled(true);
-    //bar.setWindowFlags(Qt::Tool);
 
     bar.setFixedSize(300, 15);
+    bar.move(w/2-150, h/2-10);
 
     QVBoxLayout *l = new QVBoxLayout();
     bar.setLayout(l);
+    l->setMargin(0);
+    bar.setContentsMargins(0, 0, 0, 0);
 
-    l->addWidget(&pbar);
     pbar.setStyle(new QPlastiqueStyle());
     pbar.setValue(0);
     pbar.setMaximum(0);
     pbar.setAlignment(Qt::AlignCenter);
+    pbar.setFormat(tr("Posting to twitter..."));
+    l->addWidget(&pbar);
 
 }
 
