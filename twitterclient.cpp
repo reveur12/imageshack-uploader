@@ -36,6 +36,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QThread>
+#include <QVBoxLayout>
 #include "twitterclient.h"
 #include "defines.h"
 
@@ -57,11 +58,18 @@ TwitterClient::TwitterClient(QWidget *parent)
     bar.setWindowTitle(tr("Posting to twitter..."));
     //bar.setEnabled(true);
     //bar.setWindowFlags(Qt::Tool);
-    bar.setStyle(new QPlastiqueStyle());
+
     bar.setFixedSize(300, 15);
-    bar.setValue(0);
-    bar.setMaximum(0);
-    bar.setAlignment(Qt::AlignCenter);
+
+    QVBoxLayout *l = new QVBoxLayout();
+    bar.setLayout(l);
+
+    l->addWidget(&pbar);
+    pbar.setStyle(new QPlastiqueStyle());
+    pbar.setValue(0);
+    pbar.setMaximum(0);
+    pbar.setAlignment(Qt::AlignCenter);
+
 }
 
 TwitterClient::~TwitterClient()
