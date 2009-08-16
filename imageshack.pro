@@ -15,7 +15,7 @@ win32:LIBS += -L. \
     -lavutil
 INCLUDEPATH += qtsingleapplication
 macx:INCLUDEPATH += $$system(pkg-config --cflags-only-I libavcodec libavformat libswscale libavutil | sed s/-I//g)
-UNIX_TRANSLATIONS_DIR = "/usr/share/imageshackuploader/translations"
+UNIX_TRANSLATIONS_DIR = "/usr/share/imageshack-uploader/translations"
 DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
 VERSION = 2.0
 DEFINES += VERSION="\\\"$$VERSION\\\""
@@ -149,19 +149,19 @@ deb.commands = rm \
     && \
     mkdir \
     -p \
-    deb/usr/share/imageshack/translations \
+    deb/$$UNIX_TRANSLATIONS_DIR \
     && \
     cp \
     $$TARGET \
-    deb/usr/bin/imageshack \
+    deb/usr/bin/imageshack-uploader \
     && \
     cp \
     translations/ru_RU.qm \
-    deb/usr/share/imageshack/translations/ru_RU.qm \
+    deb$$UNIX_TRANSLATIONS_DIR/ru_RU.qm \
     && \
     cp \
     translations/en_US.qm \
-    deb/usr/share/imageshack/translations/en_US.qm \
+    deb$$UNIX_TRANSLATIONS_DIR/en_US.qm \
     && \
     mkdir \
     -p \
@@ -185,7 +185,7 @@ deb.commands = rm \
     && \
     echo \
     \"Package: \
-    imageshack\" \
+    imageshack-uploader\" \
     > \
     deb/DEBIAN/control \
     && \
@@ -254,16 +254,16 @@ deb.commands = rm \
     dpkg \
     -b \
     deb \
-    dist/imageshack-$$VERSION\.deb
+    dist/imageshack-uploader-$$VERSION\.deb
 rpm.target = rpm
 rpm.commands = sudo \
     alien \
     --to-rpm \
-    dist/imageshack-$$VERSION\.deb \
+    dist/imageshack-uploader-$$VERSION\.deb \
     && \
     mv \
-    imageshack-$$VERSION-2.i686.rpm \
-    dist/imageshack-2.0\.rpm
+    imageshack-uploader-$$VERSION-2.i686.rpm \
+    dist/imageshack-uploader-2.0\.rpm
 rpm.depends = deb
 packages.target = packages
 packages.depends = deb \
