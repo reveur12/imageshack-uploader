@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ImageShackUploaderSetup", "ImageShackUploaderSetup.vdproj", "{60F38D80-86D0-4061-A9F5-F7FFCA7435EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60F38D80-86D0-4061-A9F5-F7FFCA7435EC}.Debug|Default.ActiveCfg = Debug
+		{60F38D80-86D0-4061-A9F5-F7FFCA7435EC}.Debug|Default.Build.0 = Debug
+		{60F38D80-86D0-4061-A9F5-F7FFCA7435EC}.Release|Default.ActiveCfg = Release
+		{60F38D80-86D0-4061-A9F5-F7FFCA7435EC}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
