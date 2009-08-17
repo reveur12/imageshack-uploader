@@ -159,7 +159,7 @@ void FileUploader::resultReceiver(QString value)
     image_link = links.firstChildElement("image_link");
     if (current.data()->getClass() == "video")
     {
-        image_html = links.firstChildElement("thumb_html");
+        image_html = links.firstChildElement("frame_html");
         image_bb = links.firstChildElement("frame_bb");
         image_bb2 = links.firstChildElement("frame_bb2");
     }
