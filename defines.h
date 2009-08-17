@@ -34,7 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #undef YUV_TEST
 
 #define UPDATE_HOSTNAME "toolbar.imageshack.us"
-#define UPDATE_PATH "/windows-uploader/version.xml"
+#define UPDATE_PATH "/windows-uploader/update.xml"
 
 #define UPLOAD_HOSTNAME "imageshack.us"
 #define UPLOAD_PATH "/upload_api.php"
