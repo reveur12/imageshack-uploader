@@ -29,6 +29,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef DEFINES_H
 #define DEFINES_H
 
+// Define this to test using special URL for new video processing
+// pipeline
+#undef YUV_TEST
 
 #define UPDATE_HOSTNAME "toolbar.imageshack.us"
 #define UPDATE_PATH "/windows-uploader/version.xml"
@@ -36,8 +39,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define UPLOAD_HOSTNAME "imageshack.us"
 #define UPLOAD_PATH "/upload_api.php"
 
-#define VIDEO_UPLOAD_HOSTNAME "render.imageshack.us"
-#define VIDEO_UPLOAD_PATH "/upload_api.php"
+#ifdef YUV_TEST
+# define VIDEO_UPLOAD_HOSTNAME "render1.imageshack.us"
+# define VIDEO_UPLOAD_PATH "/upload_api2.php"
+#else 
+# define VIDEO_UPLOAD_HOSTNAME "render.imageshack.us"
+# define VIDEO_UPLOAD_PATH "/upload_api.php"
+#endif
 
 #define LOGIN_HOSTNAME "www.imageshack.us"
 #define LOGIN_PATH "/auth.php"
