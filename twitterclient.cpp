@@ -59,6 +59,7 @@ TwitterClient::TwitterClient(QWidget *parent)
     //bar.setEnabled(true);
 
     bar.setFixedSize(300, 15);
+    qDebug() << "!!! TWITTER PROGRESSBAR POSITION WILL BE:"<< w/2-150 << ":" << h/2-10;
     bar.move(w/2-150, h/2-10);
 
     QVBoxLayout *l = new QVBoxLayout();
