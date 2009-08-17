@@ -43,7 +43,14 @@ ProgressWidget::ProgressWidget(QWidget *parent) :
     m_ui->progressBar_2->setStyle(new QPlastiqueStyle());
     m_ui->progressBar_3->setStyle(new QPlastiqueStyle());
 #endif
-    setFont(QApplication::font());
+    QFont font = QApplication::font();
+    setFont(font);
+#ifndef Q_OS_MACX
+// On mac this font is small, but it is too big on windows default style \
+// and linux's Ozone (most popular Qt style).
+    font.setPointSize(8);
+    m_ui->ETA->setFont(font);
+#endif
 }
 
 ProgressWidget::~ProgressWidget()
