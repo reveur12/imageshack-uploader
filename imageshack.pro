@@ -357,10 +357,14 @@ dmg.commands = macdeployqt \
 msi.target = msi
 msi.delends = all
 QTDIR = $$replace(QMAKE_LIBDIR_QT, "/", "\\")\..
-msi.commands = copy $$QTDIR\bin\QtGui4.dll dlls && \
+msi.commands = mkdir dlls | \
+               copy $$QTDIR\bin\QtCore4.dll dlls && \
+               copy $$QTDIR\bin\QtGui4.dll dlls && \
                copy $$QTDIR\bin\QtXml4.dll dlls && \
                copy $$QTDIR\bin\QtNetwork4.dll dlls && \
                copy $$QTDIR\bin\mingwm10.dll dlls && \
+               mkdir dlls\imageformats | \
+               copy $$QTDIR\..\bin\imageformats dlls\imageformats && \
                copy avcodec.dll dlls && \
                copy avutil.dll dlls && \
                copy avformat.dll dlls && \
