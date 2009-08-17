@@ -40,7 +40,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "twitterclient.h"
 #include "defines.h"
 
-TwitterClient::TwitterClient(QWidget *parent)
+TwitterClient::TwitterClient(QDialog *parent)
 {
     http.setHost(TWITTER_HOST);
     connect(&http,
@@ -51,16 +51,11 @@ TwitterClient::TwitterClient(QWidget *parent)
             SIGNAL(creationFinished(QString, QString, QString, QString)),
             this,
             SLOT(post(QString, QString, QString, QString)));
-    int w = QApplication::desktop()->geometry().width();
-    int h = QApplication::desktop()->geometry().height();
-    bar.setParent(parent);
 
+    bar.setParent(parent);
     bar.setWindowTitle(tr("Posting to twitter..."));
-    //bar.setEnabled(true);
 
     bar.setFixedSize(300, 15);
-    qDebug() << "!!! TWITTER PROGRESSBAR POSITION WILL BE:"<< w/2-150 << ":" << h/2-10;
-    bar.move(w/2-150, h/2-10);
 
     QVBoxLayout *l = new QVBoxLayout();
     bar.setLayout(l);
@@ -82,7 +77,7 @@ TwitterClient::~TwitterClient()
     http.abort();
 }
 
-void TwitterClient::post(QString url, QString text, QString user, QString pass)
+void TwitterClient::post(QString url, QString text, QString user, QString pass, bool showProgressbar, QPoint pos)
 {
     QHttpRequestHeader header("POST", TWITTER_PATH, 1, 1);
     header.addValue("Content-Type","application/x-www-form-urlencoded");
@@ -111,13 +106,12 @@ void TwitterClient::post(QString url, QString text, QString user, QString pass)
     int id = http.request(header, postdata);
     ids.append(id);
 
-    bar.show();
-    bar.raise();
-    bar.activateWindow();
+    if (showProgressbar) showProgressBar(pos);
 }
 
-void TwitterClient::post(QStringList urls, QString text, QString user, QString pass, QString shortlink)
+void TwitterClient::post(QStringList urls, QString text, QString user, QString pass, QString shortlink, bool showProgressbar, QPoint pos)
 {
+    if (showProgressbar) showProgressBar(pos);
     gallery.create(urls, text, user, pass, shortlink);
 }
 
@@ -195,4 +189,14 @@ void TwitterClient::requestFinished(int id, bool failed)
             QDesktopServices().openUrl(QUrl(addr));
         }
     }
+}
+
+void TwitterClient::showProgressBar(QPoint pos)
+{
+    int x = pos.x() - bar.width()/2;
+    int y = pos.y() - bar.height()/2;
+    bar.move(x, y);
+    bar.show();
+    bar.raise();
+    bar.activateWindow();
 }

@@ -41,9 +41,9 @@ class TwitterClient : public QObject
 {
     Q_OBJECT
 public:
-    TwitterClient(QWidget *parent = 0);
+    TwitterClient(QDialog *parent = 0);
     ~TwitterClient();
-    void post(QStringList, QString, QString, QString, QString);
+    void post(QStringList, QString, QString, QString, QString, bool showProgressbar = false, QPoint pos = QPoint());
     QDialog bar;
     QProgressBar pbar;
 
@@ -51,11 +51,12 @@ private:
     QHttp http;
     GalleryCreator gallery;
     QList<int>  ids;
+    void showProgressBar(QPoint);
 
 
 
 public slots:
-    void post(QString, QString, QString, QString);
+    void post(QString, QString, QString, QString, bool showProgressbar = false, QPoint pos = QPoint());
     void requestFinished(int, bool);
 
 signals:

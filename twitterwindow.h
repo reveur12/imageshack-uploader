@@ -40,7 +40,7 @@ namespace Ui {
 class TwitterWindow : public QDialog {
     Q_OBJECT
 public:
-    TwitterWindow(QWidget *parent = 0);
+    TwitterWindow(QDialog *parent = 0);
     ~TwitterWindow();
     void post(QString);
     void post(QStringList, QString);
