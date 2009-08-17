@@ -331,7 +331,7 @@ macx:clean.commands = rm \
     && \
     rm \
     -rf \
-    ImageShackUploader.dmg \
+    ImageShackUploader-$$VERSION\.dmg \
     && \
     rm \
     -rf \
@@ -351,8 +351,7 @@ QMAKE_EXTRA_TARGETS += deb \
 dmg.target = dmg
 dmg.depends = all
 dmg.commands = macdeployqt \
-    $$TARGET\.app \
-    -dmg
+    $$TARGET\.app -dmg && mv $$TARGET\.dmg $$TARGET-$$VERSION\.dmg
 
 msi.target = msi
 msi.delends = all
