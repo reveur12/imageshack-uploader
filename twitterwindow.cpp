@@ -31,7 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "twitterwindow.h"
 #include "ui_twitterwindow.h"
 
-TwitterWindow::TwitterWindow(QWidget *parent) :
+TwitterWindow::TwitterWindow(QDialog *parent) :
     QDialog(parent),
     m_ui(new Ui::TwitterWindow)
 {
@@ -118,12 +118,15 @@ void TwitterWindow::submit()
         sets.setValue("twitteruser", QVariant());
         sets.setValue("twitterpass", QVariant());
     }
+    QPoint barpos;
+    barpos.setX(pos().x() + this->width()/2);
+    barpos.setY(pos().y() + this->height()/2);
     if (gallery)
         twitter.data()->post(links, m_ui->text->toPlainText(),
-                     m_ui->username->text(), m_ui->password->text(), shortlink);
+                     m_ui->username->text(), m_ui->password->text(), shortlink, true, barpos);
     else
         twitter.data()->post(link, m_ui->text->toPlainText(),
-                     m_ui->username->text(), m_ui->password->text());
+                     m_ui->username->text(), m_ui->password->text(), true, barpos);
     hide();
 }
 
