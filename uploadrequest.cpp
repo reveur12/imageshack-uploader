@@ -31,6 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QVector>
 #include <QPair>
 #include <QTextDocument>
+#include <QApplication>
 #include <QFileInfo>
 #include <QHttpRequestHeader>
 #include <QBuffer>
@@ -150,6 +151,24 @@ void UploadRequest::uploadFile(QString, QVector<QPair<QString,QString> > fields)
     QNetworkRequest req(QUrl("http://" + QString(host) + path));
     req.setHeader(QNetworkRequest::ContentTypeHeader,
                   QString("multipart/form-data, boundary=" + boundary) );
+
+    QByteArray userAgent;
+    userAgent += "ImageShack Uploader";
+    userAgent += " " + QApplication::applicationVersion() + " ";
+
+#ifdef Q_OS_WIN
+    userAgent += "(Windows)";
+#endif
+#ifdef Q_WS_X11
+#ifndef Q_OS_MACX
+    userAgent += "(Unix)";
+#endif
+#endif
+#ifdef Q_OS_MACX
+    userAgent += "(MacOS)";
+#endif
+
+    req.setRawHeader("User-Agent", userAgent);
 
     rep = qnam.post(req, data.data());
 
