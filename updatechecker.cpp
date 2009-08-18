@@ -70,16 +70,16 @@ bool versionCompare(QString one, QString two)
 {
     QStringList ones = one.split(".");
     QStringList twos = two.split(".");
-    for (int i=0; i<(ones.size()>twos.size()?twos.size():ones.size()); i++)
+    while (ones.size()<twos.size()) ones.append("0");
+    while (ones.size()>twos.size()) twos.append("0");
+    for (int i=0; i<ones.size(); i++)
     {
         QString curone = ones.at(i);
         QString curtwo = twos.at(i);
-        qDebug() << curone << curtwo;
         if (curone.toInt()>curtwo.toInt()) return true;
         if (curone.toInt()<curtwo.toInt()) return false;
     }
-    if (ones.size()>twos.size()) return true;
-    else return false;
+    return false;
 }
 
 void UpdateChecker::resultReceiver(int reqid, bool error)

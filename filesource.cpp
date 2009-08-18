@@ -42,8 +42,6 @@ FileSource::FileSource(QSharedPointer<Media> media,
     footer.append(boundary);
     footer.append(nl);
 
-    qDebug() << footer;
-
     data = QSharedPointer<QFile>(new QFile(filename));
     data->open(QIODevice::ReadOnly);
     curPos = 0;

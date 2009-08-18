@@ -121,7 +121,6 @@ QString UploadRequest::post()
         }
         if (removeBar) fields << qMakePair(QString("rembar"), QString("1"));
     }
-    qDebug() << fields;
     fields << qMakePair(QString("key"), key);
 
     uploadFile(filename, fields);
