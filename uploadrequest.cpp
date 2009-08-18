@@ -218,6 +218,7 @@ void UploadRequest::updateProgress(qint64 done, qint64 total)
 
 void UploadRequest::stop()
 {
+    if (aborted) return;
     aborted = true;
     emit status(3);
     rep->abort();
