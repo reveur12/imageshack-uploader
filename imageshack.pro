@@ -4,7 +4,7 @@ QT += network \
     xml
 TARGET = ImageShackUploader
 unix:!macx:TARGET = imageshack-uploader
-unix { 
+unix {
     LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
     LIBS += $$LIBRARIES
@@ -363,11 +363,15 @@ msi.commands = mkdir dlls | \
                copy $$QTDIR\bin\QtNetwork4.dll dlls && \
                copy $$QTDIR\bin\mingwm10.dll dlls && \
                mkdir dlls\imageformats | \
-               copy $$QTDIR\..\bin\imageformats dlls\imageformats && \
+               copy $$QTDIR\plugins\imageformats\qgif4.dll dlls\imageformats && \
+               copy $$QTDIR\plugins\imageformats\qico4.dll dlls\imageformats && \
+               copy $$QTDIR\plugins\imageformats\qjpeg4.dll dlls\imageformats && \
+               copy $$QTDIR\plugins\imageformats\qmng4.dll dlls\imageformats && \
+               copy $$QTDIR\plugins\imageformats\qsvg4.dll dlls\imageformats && \
+               copy $$QTDIR\plugins\imageformats\qtiff4.dll dlls\imageformats && \
                copy avcodec.dll dlls && \
                copy avutil.dll dlls && \
                copy avformat.dll dlls && \
-               copy avdevice.dll dlls && \
                copy swscale.dll dlls && \
                candle ImageShackUploader.wxs && \
                light -ext WixUIExtension ImageShackUploader.wixobj
