@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="*" Name="ImageShack Uploader 2.0"
+    <Product Id="*" Name="ImageShack Uploader 2.0.1"
              Language="1033" Version="2.0.1" Manufacturer="ImageShack Corp."
              UpgradeCode="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
 
