@@ -99,7 +99,7 @@
    </layout>
   </widget>
   <widget class="QWidget" name="page">
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout_7">
     <property name="spacing">
      <number>0</number>
     </property>
@@ -107,7 +107,7 @@
      <number>0</number>
     </property>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -169,40 +169,73 @@
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="cancel">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>150</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Cancel</string>
-        </property>
-        <property name="icon">
-         <iconset resource="images_rc.qrc">
-          <normaloff>:/images/images/clear.png</normaloff>:/images/images/clear.png</iconset>
-        </property>
-       </widget>
+        <item>
+         <widget class="QPushButton" name="pause">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Pause</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="cancel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+          <property name="icon">
+           <iconset resource="images_rc.qrc">
+            <normaloff>:/images/images/clear.png</normaloff>:/images/images/clear.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
@@ -374,8 +407,8 @@
    <slot>cancelClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>348</x>
-     <y>33</y>
+     <x>419</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel">
      <x>213</x>
@@ -383,9 +416,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pause</sender>
+   <signal>clicked()</signal>
+   <receiver>ProgressWidget</receiver>
+   <slot>pauseClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>326</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>cancelClicked()</slot>
   <slot>uploadClicked()</slot>
+  <slot>pauseClicked()</slot>
  </slots>
 </ui>

@@ -20,17 +20,17 @@
         <translation>&lt;b&gt;ImageShack Uploader&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="85"/>
+        <location filename="../aboutwindow.ui" line="91"/>
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
         <translation>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</translation>
     </message>
     <message utf8="true">
-        <location filename="../aboutwindow.ui" line="105"/>
+        <location filename="../aboutwindow.ui" line="111"/>
         <source>© 2009 ImageShack Corp.</source>
         <translation>© 2009 ImageShack Corp.</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="127"/>
+        <location filename="../aboutwindow.ui" line="146"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -94,22 +94,22 @@ Got error messages from server:
         <translation>3 attempts to upload file failed</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="143"/>
+        <location filename="../fileuploader.cpp" line="142"/>
         <source>Server returned no error text</source>
         <translation>Server returned no error text</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="150"/>
+        <location filename="../fileuploader.cpp" line="149"/>
         <source>Wrong server response</source>
         <translation>Wrong server response</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="183"/>
+        <location filename="../fileuploader.cpp" line="182"/>
         <source>Server responce is not valid</source>
         <translation>Server responce is not valid</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="229"/>
+        <location filename="../fileuploader.cpp" line="228"/>
         <source>Could not connect to server</source>
         <translation>Could not connect to server</translation>
     </message>
@@ -484,7 +484,7 @@ Got error messages from server:
     <name>ProgressWidget</name>
     <message>
         <location filename="../progresswidget.ui" line="73"/>
-        <location filename="../progresswidget.ui" line="318"/>
+        <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
         <translation>Upload</translation>
     </message>
@@ -494,33 +494,48 @@ Got error messages from server:
         <translation>Total: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="127"/>
+        <location filename="../progresswidget.cpp" line="152"/>
         <source>Time left: estimating...</source>
         <translation>Time left: estimating...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="80"/>
+        <location filename="../progresswidget.cpp" line="92"/>
         <source>Waiting for links...</source>
         <translation>Waiting for links...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="84"/>
+        <location filename="../progresswidget.cpp" line="150"/>
+        <location filename="../progresswidget.cpp" line="164"/>
+        <location filename="../progresswidget.cpp" line="177"/>
+        <location filename="../progresswidget.ui" line="198"/>
+        <source>Pause</source>
+        <translation>Pause</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="96"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Current: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="97"/>
+        <location filename="../progresswidget.cpp" line="109"/>
         <source>Loading files: %1 of %2</source>
         <translation>Loading files: %1 of %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="115"/>
+        <location filename="../progresswidget.cpp" line="124"/>
+        <location filename="../progresswidget.cpp" line="132"/>
         <source>Time left:</source>
         <translation>Time left:</translation>
     </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="124"/>
+        <source>unknown...</source>
+        <translation>unknown...</translation>
+    </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="116"/>
+        <location filename="../progresswidget.cpp" line="136"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n hr.</numerusform>
@@ -528,7 +543,7 @@ Got error messages from server:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="117"/>
+        <location filename="../progresswidget.cpp" line="137"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n min.</numerusform>
@@ -536,17 +551,37 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="119"/>
+        <location filename="../progresswidget.cpp" line="139"/>
         <source> less than 1 min.</source>
         <translation> less than 1 min.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="120"/>
+        <location filename="../progresswidget.cpp" line="140"/>
         <source> almost done...</source>
         <translation> almost done...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="199"/>
+        <location filename="../progresswidget.cpp" line="161"/>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="162"/>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="163"/>
+        <source>Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?</source>
+        <translation>Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="168"/>
+        <source>Resume</source>
+        <translation>Resume</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.ui" line="230"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
@@ -727,48 +762,49 @@ Got error messages from server:
     <name>TwitterClient</name>
     <message>
         <location filename="../twitterclient.cpp" line="56"/>
+        <location filename="../twitterclient.cpp" line="69"/>
         <source>Posting to twitter...</source>
         <translation>Posting to Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="86"/>
-        <location filename="../twitterclient.cpp" line="120"/>
-        <location filename="../twitterclient.cpp" line="132"/>
-        <location filename="../twitterclient.cpp" line="153"/>
+        <location filename="../twitterclient.cpp" line="94"/>
+        <location filename="../twitterclient.cpp" line="127"/>
+        <location filename="../twitterclient.cpp" line="139"/>
         <location filename="../twitterclient.cpp" line="160"/>
-        <location filename="../twitterclient.cpp" line="166"/>
+        <location filename="../twitterclient.cpp" line="167"/>
         <location filename="../twitterclient.cpp" line="173"/>
+        <location filename="../twitterclient.cpp" line="180"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="87"/>
+        <location filename="../twitterclient.cpp" line="95"/>
         <source>First set twitter username and password in options</source>
         <translation>First set Twitter username and password in options</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="121"/>
+        <location filename="../twitterclient.cpp" line="128"/>
         <source>Could not send url to Twitter</source>
         <translation>Could not send url to Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="133"/>
-        <location filename="../twitterclient.cpp" line="174"/>
+        <location filename="../twitterclient.cpp" line="140"/>
+        <location filename="../twitterclient.cpp" line="181"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Could not post to twitter. Wrong server response.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="154"/>
+        <location filename="../twitterclient.cpp" line="161"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Could not post to twitter. Wrong credentials.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="161"/>
+        <location filename="../twitterclient.cpp" line="168"/>
         <source>Failed to update twitter status.</source>
         <translation>Failed to update twitter status.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="167"/>
+        <location filename="../twitterclient.cpp" line="174"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Could not post to twitter. Internal error.</translation>
     </message>
@@ -776,22 +812,22 @@ Got error messages from server:
 <context>
     <name>TwitterWindow</name>
     <message>
-        <location filename="../twitterwindow.cpp" line="66"/>
+        <location filename="../twitterwindow.cpp" line="68"/>
         <source>Posting to twitter...</source>
         <translation>Posting to Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="76"/>
+        <location filename="../twitterwindow.cpp" line="78"/>
         <source>Symbols left: %1</source>
         <translation>Symbols left: %1</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="102"/>
+        <location filename="../twitterwindow.cpp" line="104"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="102"/>
+        <location filename="../twitterwindow.cpp" line="104"/>
         <source>You have not entered username or password</source>
         <translation>You have not entered username or password</translation>
     </message>

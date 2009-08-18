@@ -73,6 +73,7 @@ private slots:
     void resultReceiver(QString value);
     void cancel();
     void updateETA();
+    void pause(bool);
 
 
 

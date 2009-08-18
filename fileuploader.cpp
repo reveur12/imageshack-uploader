@@ -241,3 +241,23 @@ void FileUploader::updateETA()
     int left = (totalsize - (uploadedCurrent + uploadedTotal))/speed;
     emit ETA(left);
 }
+
+void FileUploader::pause(bool st)
+{
+    if (st)
+    {
+        request.data()->stop();
+        seconds.stop();
+        int total = (int)((100.0/filecount)*donecount);
+        progress->setProgress(total, 0);
+        emit ETA(-100);
+        time = 0;
+        uploadedTotal = 0;
+        uploadedCurrent = 0;
+    }
+    else
+    {
+        process();
+        seconds.start(1000);
+    }
+}

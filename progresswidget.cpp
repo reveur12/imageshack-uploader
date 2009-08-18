@@ -29,6 +29,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "progresswidget.h"
 #include "ui_progresswidget.h"
 #include <QPlastiqueStyle>
+#include <QMessageBox>
 #include <QMainWindow>
 #include <QDebug>
 
@@ -46,11 +47,12 @@ ProgressWidget::ProgressWidget(QWidget *parent) :
     QFont font = QApplication::font();
     setFont(font);
 #ifndef Q_OS_MACX
-// On mac this font is small, but it is too big on windows default style \
+// On mac this font is small, but it is too big on windows default style
 // and linux's Ozone (most popular Qt style).
     font.setPointSize(8);
     m_ui->ETA->setFont(font);
 #endif
+    paused = false;
 }
 
 ProgressWidget::~ProgressWidget()
@@ -78,6 +80,9 @@ void ProgressWidget::uploadClicked()
 void ProgressWidget::cancelClicked()
 {
     emit cancel();
+    paused = false;
+    m_ui->pause->setText(tr("Pause"));
+    m_ui->pause->setIcon(QIcon(":/images/images/pause.png"));
 }
 
 void ProgressWidget::setProgress(int total, int current)
@@ -114,6 +119,11 @@ void ProgressWidget::setUploadEnabled(bool value)
 
 void ProgressWidget::updateETA(int secs)
 {
+    if (secs == -100)
+    {
+        m_ui->ETA->setText(tr("Time left:")+" "+ tr("unknown..."));
+        return;
+    }
     int hours = secs/60/60;
     int minutes = (secs - hours*60*60)/60;
     int seconds = secs - (hours*60*60) - minutes*60;
@@ -134,5 +144,37 @@ void ProgressWidget::updateETA(int secs)
 void ProgressWidget::setCurrentIndex(int idx)
 {
     QStackedWidget::setCurrentIndex(idx);
-    if (idx == 1) m_ui->ETA->setText(tr("Time left: estimating..."));
+    if (idx == 1)
+    {
+        paused = false;
+        m_ui->pause->setText(tr("Pause"));
+        m_ui->pause->setIcon(QIcon(":/images/images/pause.png"));
+        m_ui->ETA->setText(tr("Time left: estimating..."));
+    }
+}
+
+void ProgressWidget::pauseClicked()
+{
+    if (!paused)
+    {
+        QMessageBox msg;
+        msg.addButton(tr("Yes"), QMessageBox::YesRole);
+        msg.addButton(tr("No"), QMessageBox::NoRole);
+        msg.setText(tr("Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?"));
+        msg.setWindowTitle(tr("Pause"));
+        msg.exec();
+        if (msg.buttonRole(msg.clickedButton()) != QMessageBox::YesRole)
+            return;
+        m_ui->pause->setText(tr("Resume"));
+        m_ui->pause->setIcon(QIcon(":/images/images/resume.png"));
+        paused = true;
+        emit pause(true);
+    }
+    else
+    {
+        emit pause(false);
+        paused = false;
+        m_ui->pause->setText(tr("Pause"));
+        m_ui->pause->setIcon(QIcon(":/images/images/pause.png"));
+    }
 }
