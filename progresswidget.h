@@ -51,15 +51,18 @@ protected:
 
 private:
     Ui::ProgressWidget *m_ui;
+    bool paused;
 
 private slots:
     void uploadClicked();
     void cancelClicked();
     void updateETA(int);
+    void pauseClicked();
 
 signals:
     void cancel();
     void upload();
+    void pause(bool);
 };
 
 #endif // PROGRESSWIDGET_H

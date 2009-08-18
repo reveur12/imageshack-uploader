@@ -16,5 +16,7 @@
         <file>images/gallery.gif</file>
         <file>images/windowsicon.ico</file>
         <file>images/tiff.png</file>
+        <file>images/resume.png</file>
+        <file>images/pause.png</file>
     </qresource>
 </RCC>

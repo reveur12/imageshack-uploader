@@ -124,6 +124,8 @@ void MainWindow::upload()
             this, SLOT(uploadStatusReceiver(int)));
     connect(ui->progressWidget, SIGNAL(cancel()),
             uploader.data(), SLOT(cancel()));
+    connect(ui->progressWidget, SIGNAL(pause(bool)),
+            uploader.data(), SLOT(pause(bool)));
     connect(uploader.data(), SIGNAL(ETA(int)),
             ui->progressWidget, SLOT(updateETA(int)));
     uploader.data()->begin();
