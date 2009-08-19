@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QUrl>
 
+
 FileSource::FileSource(QSharedPointer<Media> media,
                        QVector<QPair<QString,QString> > fields)
 {

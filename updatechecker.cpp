@@ -42,10 +42,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 UpdateChecker::UpdateChecker()
 {
     inProgress = false;
-    connect(&req,
-            SIGNAL(requestFinished(int, bool)),
-            this,
-            SLOT(resultReceiver(int, bool)));
+    connect(&req, SIGNAL(requestFinished(int, bool)),
+            this, SLOT(resultReceiver(int, bool)));
 }
 
 UpdateChecker::~UpdateChecker()
@@ -68,8 +66,8 @@ void UpdateChecker::check(bool silent)
 
 bool versionCompare(QString one, QString two)
 {
-    QStringList ones = one.split(".");
-    QStringList twos = two.split(".");
+    QStringList ones = one.split("."); // if versions has different length,
+    QStringList twos = two.split("."); // add zeros to shorter version
     while (ones.size()<twos.size()) ones.append("0");
     while (ones.size()>twos.size()) twos.append("0");
     for (int i=0; i<ones.size(); i++)

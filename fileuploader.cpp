@@ -111,7 +111,6 @@ void FileUploader::progressReceiver(int value)
 
 void FileUploader::statusReceiver(int value)
 {
-    qDebug() << "got status" << value << "from uploader";
     if (value == 2)
     {
         failcount++;
@@ -251,7 +250,7 @@ void FileUploader::pause(bool st)
         int total = (int)((100.0/filecount)*donecount);
         progress->setProgress(total, 0);
         emit ETA(-100);
-        time = 0;
+        time = 0;             // I think, ETA should be reseted too
         uploadedTotal = 0;
         uploadedCurrent = 0;
     }

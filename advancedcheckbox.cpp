@@ -36,7 +36,6 @@ AdvancedCheckBox::AdvancedCheckBox(QWidget *parent) :
 {
     setParent(parent);
     m_ui->setupUi(this);
-    //m_ui->label->setText(tr("Remove size/resolution bar from thumbnail"));
     setFont(QApplication::font());
 }
 
@@ -79,6 +78,6 @@ void AdvancedCheckBox::checkboxClicked(int st)
 
 void AdvancedCheckBox::setEnabled(bool st)
 {
-    qDebug() << "ACB setEnabled(" << st<< ")";
+    // I dont really remember why did i overload this function. But let it be.
     QWidget::setEnabled(st);
 }

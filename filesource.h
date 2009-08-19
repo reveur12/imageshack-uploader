@@ -9,6 +9,8 @@
 #include <QVector>
 #include "media.h"
 
+// This class id QIODevice to read file from hard drive by 16kbyte parts
+
 class FileSource : public QIODevice
 {
     Q_OBJECT

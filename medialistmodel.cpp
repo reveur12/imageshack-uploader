@@ -255,7 +255,7 @@ bool MediaListModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     foreach (QUrl filename, data->urls())
     {
         QString localfilename = filename.toLocalFile();
-        if (!localfilename.isEmpty())
+        if (!localfilename.isEmpty()) // Accept only local files
             filelist.append(filename.toLocalFile());
     }
     if (filelist.isEmpty()) return false;
