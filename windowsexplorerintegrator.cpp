@@ -43,6 +43,9 @@ void WindowsExplorerIntegrator::integrate()
     formats << "jpg" << "jpeg" << "png" << "gif" << "bmp" << "tiff"
             << "tif" << "swf" << "pdf" << "mp4" << "wmv" << "3gp"
             << "avi" << "mov" << "mkv";
+    // Windows sucks. In registry formats has default handlers, which has
+    // context menu associations. So first i have to get handler name
+    // and then add item to it's context menu.
     foreach(QString format, formats)
     {
         QSettings reg("HKEY_CLASSES_ROOT\\."+format, QSettings::NativeFormat);

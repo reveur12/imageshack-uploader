@@ -237,6 +237,8 @@ void UploadRequest::fail()
 
 void UploadRequest::disconnectReply()
 {
+    // If do not disconnect reply on exit, program will crash.
+    // This is QHttp's bug.
     if (rep==NULL) return;
     rep->disconnect(this, SLOT(uploadFinished()));
     rep->disconnect(this, SLOT(updateProgress(qint64,qint64)));

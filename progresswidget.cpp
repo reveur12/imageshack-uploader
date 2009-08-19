@@ -104,7 +104,6 @@ void ProgressWidget::setProgress(int total, int current)
 
 void ProgressWidget::setMediaLoadProgress(int current, int total)
 {
-    qDebug() << "progress widget got values" << current << total;
     int tmp = current<total?current+1:total;
     QString format = tr("Loading files: %1 of %2").arg(tmp).arg(total);
     m_ui->progressBar_3->setFormat(format);

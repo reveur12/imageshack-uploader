@@ -137,7 +137,7 @@ void MainWindow::disableControls()
     //ui->tagWidget->setEnabled(false);
     ui->tagWidget->disable();
     ui->imageInfo->disable();
-    ui->mediaList->setEnabled(false);
+    ui->mediaList->setEnabled(false);             // DO NOT TOUSH THIS FUNCTION
     controlsDisabled = true;
     setCursor(Qt::WaitCursor);
     ui->loginWidget->setCursor(Qt::WaitCursor);
@@ -152,7 +152,7 @@ void MainWindow::enableControls()
         //ui->imageInfo->enable();
     ui->tagWidget->enable();
     ui->mediaList->setEnabled(true);
-    controlsDisabled = false;
+    controlsDisabled = false;                    // DO NOT TOUSH THIS FUNCTION
     setCursor(Qt::ArrowCursor);
     ui->loginWidget->setCursor(Qt::ArrowCursor);
     ui->mediaList->setCursor(Qt::ArrowCursor);

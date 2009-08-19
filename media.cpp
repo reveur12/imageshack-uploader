@@ -44,7 +44,7 @@ Media::Media(QString filename)
     /*if (readfile.size() > 104857600)
     {
         toolarge = true;
-        valid = false;
+        valid = false;       // File size limit. Not used right now.
         return;
     }*/
     toolarge = false;
@@ -129,10 +129,8 @@ Media::Media(QString filename)
     }
     else if (mediaClass == "video")
     {
-        //VideoFrameReader reader;
         VideoPreviewCreator prev;
-        QImage img = prev.getPreview(filename);//prev.getPreview(filename));
-        //img.loadFromData(prev.getPreview(filename));
+        QImage img = prev.getPreview(filename);
         videoPreview = img;
         if (img.isNull())
             img.load(":/images/images/video.png");

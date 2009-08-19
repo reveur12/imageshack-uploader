@@ -79,7 +79,10 @@ void TwitterWindow::textChanged()
 }
 
 void TwitterWindow::rememberChanged()
-{/*
+{
+    // I dont remember what this function should do, so it is commented untill
+    // i call back. Anyway everything works without it.
+    /*
     QSettings sets;
     if (m_ui->remember->isChecked())
     {
@@ -101,7 +104,8 @@ void TwitterWindow::submit()
     rememberChanged();
     if (m_ui->username->text().isEmpty() || m_ui->password->text().isEmpty())
     {
-        QMessageBox::critical(this, tr("Error"), tr("You have not entered username or password"));
+        QMessageBox::critical(this, tr("Error"),
+                              tr("You have not entered username or password"));
         return;
     }
     QSettings sets;
@@ -123,10 +127,12 @@ void TwitterWindow::submit()
     barpos.setY(pos().y() + this->height()/2);
     if (gallery)
         twitter.data()->post(links, m_ui->text->toPlainText(),
-                     m_ui->username->text(), m_ui->password->text(), shortlink, true, barpos);
+                             m_ui->username->text(), m_ui->password->text(),
+                             shortlink, true, barpos);
     else
         twitter.data()->post(link, m_ui->text->toPlainText(),
-                     m_ui->username->text(), m_ui->password->text(), true, barpos);
+                             m_ui->username->text(), m_ui->password->text(),
+                             true, barpos);
     hide();
 }
 
