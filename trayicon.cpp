@@ -28,6 +28,7 @@ TrayIcon::TrayIcon(QMainWindow *w)
             this, SLOT(iconClicked(QSystemTrayIcon::ActivationReason)));
     connect(this, SIGNAL(addFiles(QStringList)),
             parent, SLOT(addFiles(QStringList)));
+    hidden = false;
 }
 
 void TrayIcon::show()
@@ -78,8 +79,13 @@ void TrayIcon::showUploader()
         parent->show();
         parent->raise();
         parent->activateWindow();
+        hidden = false;
     }
-    else parent->hide();
+    else
+    {
+        parent->hide();
+        hidden = true;
+    }
 }
 
 void TrayIcon::iconClicked(QSystemTrayIcon::ActivationReason reason)
@@ -91,4 +97,9 @@ void TrayIcon::iconClicked(QSystemTrayIcon::ActivationReason reason)
 void TrayIcon::quit()
 {
     QApplication::quit();
+}
+
+bool TrayIcon::isHidden()
+{
+    return hidden;
 }
