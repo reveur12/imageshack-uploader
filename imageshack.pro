@@ -111,9 +111,11 @@ FORMS += mainwindow.ui \
     advancedcheckbox.ui
 RESOURCES += images_rc.qrc
 unix:TRANSLATIONS = $$system("ls translations/*.ts")
-win32:TRANSLATIONS = $$system("dir translations\\*.ts /B")
-#TRANSLATIONS += translations/ru_RU.ts \
-#    translations/en_US.ts
+win32 {
+    for(lang, $$system("dir translations\\*.ts /B")) {
+        TRANSLATIONS += translations\$${lang}
+    }
+}
 win32:RC_FILE = windowsicon.rc
 macx:ICON = macicon.icns
 target.path = $$[QT_INSTALL_BINS]
