@@ -33,6 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QApplication>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QMap>
 #include <QFile>
 #include <QStringList>
 #include <QPushButton>
@@ -130,14 +131,17 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
 #endif
         if (platform.isEmpty()) platform = "UNIX";
         QStringList versions;
+        QMap<QString, QUrl> urls;
         for(unsigned int i=0; i<versionsx.length(); i++)
         {
             QDomNode version = versionsx.at(i);
             QDomNode platformx = version.attributes().namedItem("platform");
             if (platformx.isNull()) continue;
             QString vpl = platformx.nodeValue();
-            if ((vpl == platform) || (vpl == "ALL"))
-            versions << version.attributes().namedItem("id").nodeValue();
+            if ((vpl != platform) && (vpl == "ALL")) continue;
+            QString ver = version.attributes().namedItem("id").nodeValue();
+            QDomElement xurl = version.toElement().firstChildElement("url");
+            urls[ver] = QUrl(xurl.text());
         }
         if (!versions.size())
         {
@@ -147,8 +151,8 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
             inProgress = false;
             return;
         }
-        qSort( versions.begin(), versions.end(), versionCompare);
-        QString version = versions.first();
+        qSort( versions.begin(), versions.end(), versionCompare); // I should write Version class with right compare
+        QString version = versions.first();                       // operator and use QMap's auto sorting.
         if (versionCompare(version, QApplication::applicationVersion()))
         {
             QMessageBox msg;
@@ -159,7 +163,7 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
             msg.exec();
             if (msg.buttonRole(msg.clickedButton()) == QMessageBox::YesRole)
             {
-                QDesktopServices().openUrl(QUrl(url));
+                QDesktopServices().openUrl(urls[version]);
             }
         }
         else
