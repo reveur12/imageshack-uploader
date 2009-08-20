@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B938686E" Name="ImageShack Uploader 2.0.1"
-             Language="1033" Version="2.0.1" Manufacturer="ImageShack Corp."
+    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B938686E" Name="ImageShack Uploader 2.1.0"
+             Language="1033" Version="2.1.0" Manufacturer="ImageShack Corp."
              UpgradeCode="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
 
         <Package Description="ImageShack bulk uploader"
@@ -12,8 +12,8 @@
 
         <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
         <Upgrade Id="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
-            <UpgradeVersion Minimum="1.0.0" Maximum="2.0.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
-            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.0.1' IncludeMinimum='no' />
+            <UpgradeVersion Minimum="1.0.0" Maximum="2.0.1" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
+            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.1.0' IncludeMinimum='no' />
         </Upgrade>
 
         <Directory Id="TARGETDIR" Name="SourceDir">
@@ -46,6 +46,8 @@
                         <Component Id="Translations" Guid="54312363-1234-1234-1234-123456789014">
                             <File Id="ru" Name="ru_RU.qm" DiskId="1" Source="translations/ru_RU.qm" />
                             <File Id="en" Name="en_US.qm" DiskId="1" Source="translations/en_US.qm" />
+                            <File Id="en" Name="el_GR.qm" DiskId="1" Source="translations/el_GR.qm" />
+                            <File Id="en" Name="fr_FR.qm" DiskId="1" Source="translations/fr_FR.qm" />
                             <File Id="example" Name="en_US.ts" DiskId="1" Source="translations/en_US.ts" />
                         </Component>
                     </Directory>
