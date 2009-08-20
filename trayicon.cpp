@@ -8,6 +8,7 @@
 #include <QImage>
 #include <QRegExp>
 #include <QTemporaryFile>
+#include <QFile>
 #include <QDebug>
 
 TrayIcon::TrayIcon(QMainWindow *w)
@@ -67,7 +68,9 @@ void TrayIcon::addFile()
     else if (mime->hasText())
     {
         QString txt = mime->text();
-        files.append(txt.split(QRegExp("\\s", Qt::CaseInsensitive, QRegExp::RegExp2)));
+        foreach(QString filename , txt.split(QRegExp("\\s")))
+            if (QFile(filename).exists())
+                files.append(filename);
     }
     emit addFiles(files);
 }
