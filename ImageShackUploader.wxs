@@ -1,20 +1,21 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="*" Name="ImageShack Uploader 2.0.1"
+    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B938686E" Name="ImageShack Uploader 2.0.1"
              Language="1033" Version="2.0.1" Manufacturer="ImageShack Corp."
              UpgradeCode="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
 
         <Package Description="ImageShack bulk uploader"
                  Comments="Tool to upload your images and videos to ImageShack"
                  Manufacturer="ImageShack Corp." InstallerVersion="200" Compressed="yes"  InstallScope="perMachine"/>
- 
+
         <Media Id="1" Cabinet="product.cab" EmbedCab="yes" />
 
         <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
         <Upgrade Id="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
             <UpgradeVersion Minimum="1.0.0" Maximum="2.0.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
+            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.0.1' IncludeMinimum='no' />
         </Upgrade>
- 
+
         <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="ProgramFilesFolder" Name="PFiles">
                 <Directory Id="APPDIR" Name="ImageShack Uploader">
@@ -93,9 +94,13 @@
         <InstallExecuteSequence>
             <RemoveExistingProducts Before="InstallInitialize" />
             <Custom Action="CleanRegistry" After="InstallFinalize">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+            <Custom Action="RemoveOld" After="InstallFinalize" />
+            <Custom Action='NoDowngrade' After='FindRelatedProducts'>NEWERFOUND</Custom>
         </InstallExecuteSequence>
 
         <CustomAction Id="CleanRegistry" BinaryKey="ImageShackUploader.exe" ExeCommand="-unregister" Return="asyncWait"  />
+        <CustomAction Id='RemoveOld' Directory='ProgramFilesFolder' ExeCommand='msiexec /uninstall {54312363-1234-1234-1234-123456789012} /quiet' Return='asyncNoWait' />
+        <CustomAction Id='NoDowngrade' Error='A later version of [ProductName] is already installed.' />
         <Binary Id="ImageShackUploader.exe" SourceFile="release/ImageShackUploader.exe" />
     </Product>
 </Wix>
