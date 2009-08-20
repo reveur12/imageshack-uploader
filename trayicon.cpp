@@ -73,7 +73,7 @@ void TrayIcon::addFile()
 
 void TrayIcon::showUploader()
 {
-    if (!parent->isActiveWindow())
+    if (!parent->isVisible())
     {
         parent->show();
         parent->raise();
