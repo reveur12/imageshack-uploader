@@ -111,6 +111,7 @@ FORMS += mainwindow.ui \
     advancedcheckbox.ui
 RESOURCES += images_rc.qrc
 unix:TRANSLATIONS = $$system("ls translations/*.ts")
+TRANSLATIONS = ""
 win32 {
     for(lang, $$system("dir translations\\*.ts /B")) {
         TRANSLATIONS += translations\$${lang}
