@@ -4,7 +4,7 @@ QT += network \
     xml
 TARGET = ImageShackUploader
 unix:!macx:TARGET = imageshack-uploader
-unix { 
+unix {
     LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
     LIBS += $$LIBRARIES
@@ -111,11 +111,9 @@ FORMS += mainwindow.ui \
     advancedcheckbox.ui
 RESOURCES += images_rc.qrc
 unix:TRANSLATIONS = $$system("ls translations/*.ts")
-TRANSLATIONS = ""
 win32 {
-    for(lang, $$system("dir translations\\*.ts /B")) {
-        TRANSLATIONS += translations\$${lang}
-    }
+LIST = $$system("dir translations\\*.ts /B")
+for(a, LIST): TRANSLATIONS += translations\\$${a}
 }
 win32:RC_FILE = windowsicon.rc
 macx:ICON = macicon.icns
