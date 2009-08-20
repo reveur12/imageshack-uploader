@@ -4,7 +4,7 @@ QT += network \
     xml
 TARGET = ImageShackUploader
 unix:!macx:TARGET = imageshack-uploader
-unix {
+unix { 
     LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
     LIBS += $$LIBRARIES
@@ -57,7 +57,8 @@ SOURCES += main.cpp \
     filesource.cpp \
     ffmpeg_fas.c \
     seek_indices.c \
-    advancedcheckbox.cpp
+    advancedcheckbox.cpp \
+    trayicon.cpp
 HEADERS += mainwindow.h \
     uploadrequest.h \
     media.h \
@@ -92,7 +93,8 @@ HEADERS += mainwindow.h \
     ffmpeg_fas.h \
     seek_indices.h \
     defines.h \
-    advancedcheckbox.h
+    advancedcheckbox.h \
+    trayicon.h
 FORMS += mainwindow.ui \
     medialistwidget.ui \
     loginwidget.ui \
@@ -118,8 +120,11 @@ trans.path = $$UNIX_TRANSLATIONS_DIR
 win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
 trans.files += translations/*qm
-win32:trans.commands = lrelease translations\\ru_RU.ts translations\\en_US.ts
-unix:trans.commands = lrelease translations/*ts
+win32:trans.commands = lrelease \
+    translations\\ru_RU.ts \
+    translations\\en_US.ts
+unix:trans.commands = lrelease \
+    translations/*ts
 mactrans.target = mactrans
 mactrans.files += translations/en_US.qm \
     translations/ru_RU.qm
@@ -351,27 +356,85 @@ QMAKE_EXTRA_TARGETS += deb \
 dmg.target = dmg
 dmg.depends = all
 dmg.commands = macdeployqt \
-    $$TARGET\.app -dmg && mv $$TARGET\.dmg $$TARGET-$$VERSION\.dmg
-
+    $$TARGET\.app \
+    -dmg \
+    && \
+    mv \
+    $$TARGET\.dmg \
+    $$TARGET-$$VERSION\.dmg
 msi.target = msi
 msi.delends = all
 QTDIR = $$replace(QMAKE_LIBDIR_QT, "/", "\\")\..
-msi.commands = mkdir dlls | \
-               copy $$QTDIR\bin\QtCore4.dll dlls && \
-               copy $$QTDIR\bin\QtGui4.dll dlls && \
-               copy $$QTDIR\bin\QtXml4.dll dlls && \
-               copy $$QTDIR\bin\QtNetwork4.dll dlls && \
-               copy $$QTDIR\bin\mingwm10.dll dlls && \
-               mkdir dlls\imageformats | \
-               copy $$QTDIR\plugins\imageformats\qgif4.dll dlls\imageformats && \
-               copy $$QTDIR\plugins\imageformats\qico4.dll dlls\imageformats && \
-               copy $$QTDIR\plugins\imageformats\qjpeg4.dll dlls\imageformats && \
-               copy $$QTDIR\plugins\imageformats\qmng4.dll dlls\imageformats && \
-               copy $$QTDIR\plugins\imageformats\qsvg4.dll dlls\imageformats && \
-               copy $$QTDIR\plugins\imageformats\qtiff4.dll dlls\imageformats && \
-               copy avcodec.dll dlls && \
-               copy avutil.dll dlls && \
-               copy avformat.dll dlls && \
-               copy swscale.dll dlls && \
-               candle ImageShackUploader.wxs && \
-               light -ext WixUIExtension ImageShackUploader.wixobj
+msi.commands = mkdir \
+    dlls \
+    | \
+    copy \
+    $$QTDIR\bin\QtCore4.dll \
+    dlls \
+    && \
+    copy \
+    $$QTDIR\bin\QtGui4.dll \
+    dlls \
+    && \
+    copy \
+    $$QTDIR\bin\QtXml4.dll \
+    dlls \
+    && \
+    copy \
+    $$QTDIR\bin\QtNetwork4.dll \
+    dlls \
+    && \
+    copy \
+    $$QTDIR\bin\mingwm10.dll \
+    dlls \
+    && \
+    mkdir \
+    dlls\imageformats \
+    | \
+    copy \
+    $$QTDIR\plugins\imageformats\qgif4.dll \
+    dlls\imageformats \
+    && \
+    copy \
+    $$QTDIR\plugins\imageformats\qico4.dll \
+    dlls\imageformats \
+    && \
+    copy \
+    $$QTDIR\plugins\imageformats\qjpeg4.dll \
+    dlls\imageformats \
+    && \
+    copy \
+    $$QTDIR\plugins\imageformats\qmng4.dll \
+    dlls\imageformats \
+    && \
+    copy \
+    $$QTDIR\plugins\imageformats\qsvg4.dll \
+    dlls\imageformats \
+    && \
+    copy \
+    $$QTDIR\plugins\imageformats\qtiff4.dll \
+    dlls\imageformats \
+    && \
+    copy \
+    avcodec.dll \
+    dlls \
+    && \
+    copy \
+    avutil.dll \
+    dlls \
+    && \
+    copy \
+    avformat.dll \
+    dlls \
+    && \
+    copy \
+    swscale.dll \
+    dlls \
+    && \
+    candle \
+    ImageShackUploader.wxs \
+    && \
+    light \
+    -ext \
+    WixUIExtension \
+    ImageShackUploader.wixobj
