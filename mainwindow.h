@@ -39,6 +39,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "updatechecker.h"
 #include "optionsdialog.h"
 #include "medialoader.h"
+#include "trayicon.h"
 
 namespace Ui
 {
@@ -58,6 +59,7 @@ public:
 
     void closeEvent(QCloseEvent*);
 
+
 private:
     Ui::MainWindow *ui;
     void connectSignals();
@@ -72,7 +74,7 @@ private:
     OptionsDialog* options;
     void checkUpdatesSilently();
     QSharedPointer<MediaLoader> loader;
-
+    QSharedPointer<TrayIcon> icon;
 
 private slots:
     void mediasReseted();
@@ -89,6 +91,7 @@ private slots:
     void showOptions();
 public slots:
     void commandLineAddFile(const QString&);
+    void addFiles(QStringList);
 
 signals:
     void addLoadFiles(QStringList);

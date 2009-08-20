@@ -94,6 +94,9 @@ MainWindow::MainWindow(QWidget *parent)
     about = new AboutWindow(this);
     options = new OptionsDialog(this);
     reswindow = new ResultsWindow(this);
+
+    icon = QSharedPointer<TrayIcon>(new TrayIcon(this));
+    icon.data()->show();
 }
 
 
@@ -257,7 +260,11 @@ void MainWindow::changeEvent(QEvent *e)
 void MainWindow::commandLineAddFile(const QString& filenames)
 {
     QStringList files = filenames.split("\r\n");
+    addFiles(files);
+}
 
+void MainWindow::addFiles(QStringList files)
+{
     if (!loader.isNull() && loader.data()->isRunning()) emit addLoadFiles(files);
     else
     {
