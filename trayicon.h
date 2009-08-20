@@ -13,11 +13,13 @@ public:
     TrayIcon(QMainWindow *w = 0);
     void show();
     void hide();
+    bool isHidden();
 
 private:
     QSystemTrayIcon icon;
     QMenu menu;
     QMainWindow *parent;
+    bool hidden;
 
 public slots:
     void quit();

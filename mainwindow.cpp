@@ -47,6 +47,9 @@ MainWindow::MainWindow(QWidget *parent)
     tr("LANGUAGE_NAME"); //for translation file
     setWindowTitle(tr("ImageShack Uploader %1").arg(QApplication::applicationVersion()));
     ui->tagWidget->setMediaList(ui->mediaList->getModel());
+
+    QApplication::setQuitOnLastWindowClosed(false);
+
     connect(ui->mediaList,
             SIGNAL(mediaSelected(QSharedPointer<Media>)),
             this,
@@ -284,7 +287,9 @@ void MainWindow::addFiles(QStringList files)
     this->activateWindow();
 }
 
-void MainWindow::closeEvent(QCloseEvent*)
+void MainWindow::closeEvent(QCloseEvent* ev)
 {
-    QApplication::quit();
+    if (!icon.data()->isHidden())
+        QApplication::quit();
+    else ev->ignore();
 }

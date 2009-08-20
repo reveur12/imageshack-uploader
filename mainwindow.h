@@ -31,6 +31,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <QtGui/QMainWindow>
 #include <QItemSelection>
+#include <QCloseEvent>
 #include "medialistmodel.h"
 #include "uploadrequest.h"
 #include "fileuploader.h"
