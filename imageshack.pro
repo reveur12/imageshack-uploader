@@ -110,26 +110,23 @@ FORMS += mainwindow.ui \
     twitterwindow.ui \
     advancedcheckbox.ui
 RESOURCES += images_rc.qrc
-TRANSLATIONS += translations/ru_RU.ts \
-    translations/en_US.ts
+unix:TRANSLATIONS = $$system("ls translations/*.ts")
+win32:TRANSLATIONS = $$system("dir translations\\*.ts /B")
+#TRANSLATIONS += translations/ru_RU.ts \
+#    translations/en_US.ts
 win32:RC_FILE = windowsicon.rc
 macx:ICON = macicon.icns
 target.path = $$[QT_INSTALL_BINS]
 win32:target.path = release
+
 trans.path = $$UNIX_TRANSLATIONS_DIR
 win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
-trans.files += translations/*qm
-win32:trans.commands = lrelease \
-    translations\\ru_RU.ts \
-    translations\\en_US.ts
-unix:trans.commands = lrelease \
-    translations/*ts
+trans.files += translations/*.qm
+trans.commands = lrelease $$TRANSLATIONS
 mactrans.target = mactrans
-mactrans.files += translations/en_US.qm \
-    translations/ru_RU.qm
-mactrans.commands = lrelease \
-    translations/*ts
+mactrans.files += translations/*.qm
+mactrans.commands = lrelease translations/*ts
 mactrans.path = Contents/Resources
 menuitem.target = menuicon
 menuitem.files = imageshackuploader.desktop
