@@ -284,6 +284,7 @@ void MainWindow::addFiles(QStringList files)
                 loader.data(), SLOT(addFiles(QStringList)));
         loader.data()->start();
     }
+    icon.data()->showUploader();
     this->activateWindow();
 }
 

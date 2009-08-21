@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QSystemTrayIcon>
 #include <QMainWindow>
+#include <QRect>
 
 class TrayIcon : public QObject
 {
@@ -20,6 +21,7 @@ private:
     QMenu menu;
     QMainWindow *parent;
     bool hidden;
+    QRect lastPos;
 
 public slots:
     void quit();

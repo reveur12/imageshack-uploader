@@ -80,6 +80,7 @@ void TrayIcon::showUploader()
 {
     if (!parent->isVisible())
     {
+        parent->setGeometry(lastPos);
         parent->show();
         parent->raise();
         parent->activateWindow();
@@ -87,6 +88,7 @@ void TrayIcon::showUploader()
     }
     else
     {
+        lastPos = parent->geometry();
         parent->hide();
         hidden = true;
     }
