@@ -50,7 +50,8 @@ void TrayIcon::addFile()
     if (mime->hasImage())
     {
         QImage im = qvariant_cast<QImage>(mime->imageData());
-        QTemporaryFile tmp("XXXXXX_image.png");
+        QTemporaryFile tmp;
+        tmp.setFileTemplate(tmp.fileTemplate() + ".png");
         tmp.open();
         tmp.setAutoRemove(false);
         im.save(&tmp, "PNG");
