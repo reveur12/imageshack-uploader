@@ -33,6 +33,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QDesktopServices>
 #include <QMessageBox>
 #include <QDebug>
+#include "defines.h"
 
 MediaListWidget::MediaListWidget(QWidget *parent) :
     QWidget(parent),
@@ -151,6 +152,10 @@ void MediaListWidget::mediasReceiver(QVector<QSharedPointer<Media> > newmedias,
         text.append(tr("%n file(s) are too large for upload:", 0, toolarge.size()));
         foreach(QString filename, toolarge)
             text.append(filename);
+        text.append(tr("Maximum file size for logged in users is %n MB", 0,
+                       LOGGEDIN_IMAGE_SIZE_LIMIT/1024/1024));
+        text.append(tr("Maximum file size for anonymous users is %n MB", 0,
+                       NOT_LOGGEDIN_IMAGE_SIZE_LIMIT/1024/1024));
     }
     if (text.size())
         QMessageBox::warning(NULL, tr("Warning"), text.join("\n"));

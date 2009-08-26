@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="es_PE">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="es_PE">
 <context>
     <name>AboutWindow</name>
     <message>
+        <location filename="../aboutwindow.cpp" line="38"/>
         <location filename="../aboutwindow.cpp" line="52"/>
         <source>Version %1</source>
         <translation>Version %1</translation>
@@ -23,7 +24,7 @@
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
         <translation>El uploader de ImageShack es lo último en herramientas para subir archivos de imagen y vídeo a la web de ImageShack.</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <location filename="../aboutwindow.ui" line="111"/>
         <source>© 2009 ImageShack Corp.</source>
         <translation>© 2009 ImageShack Corp.</translation>
@@ -88,27 +89,27 @@ Tuvo mensajes de error del servidor:
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="120"/>
+        <location filename="../fileuploader.cpp" line="119"/>
         <source>3 attempts to upload file failed</source>
         <translation>3 intentos fallidos para cargar el archivo</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="142"/>
+        <location filename="../fileuploader.cpp" line="141"/>
         <source>Server returned no error text</source>
         <translation>El servidor no retorno texto de error</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="149"/>
+        <location filename="../fileuploader.cpp" line="148"/>
         <source>Wrong server response</source>
         <translation>Respuesta incorrecta del servidor</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="182"/>
+        <location filename="../fileuploader.cpp" line="181"/>
         <source>Server responce is not valid</source>
         <translation>La respuesta del servidor es inválida</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="228"/>
+        <location filename="../fileuploader.cpp" line="227"/>
         <source>Could not connect to server</source>
         <translation>No se puede conectar con el servidor</translation>
     </message>
@@ -116,6 +117,8 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>ImageInfoWidget</name>
     <message>
+        <location filename="../imageinfowidget.cpp" line="97"/>
+        <location filename="../imageinfowidget.cpp" line="116"/>
         <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
         <translation>Thumbnail</translation>
@@ -204,22 +207,24 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>LoginWidget</name>
     <message>
-        <location filename="../loginwidget.cpp" line="140"/>
+        <location filename="../loginwidget.cpp" line="83"/>
+        <location filename="../loginwidget.cpp" line="139"/>
         <source>You are logged in as %1</source>
         <translation>Estás logueado como %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="160"/>
+        <location filename="../loginwidget.cpp" line="151"/>
+        <location filename="../loginwidget.cpp" line="159"/>
         <source>Authentication failed</source>
         <translation>Autenticación fallida</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="149"/>
+        <location filename="../loginwidget.cpp" line="148"/>
         <source>Could not connect to ImageShack server.</source>
         <translation>No puedo conectar al servidor de ImageShack.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="161"/>
+        <location filename="../loginwidget.cpp" line="160"/>
         <source>Wrong credentials.</source>
         <translation>Credenciales equivocadas.</translation>
     </message>
@@ -262,22 +267,23 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../mainwindow.cpp" line="50"/>
         <location filename="../optionsdialog.cpp" line="144"/>
         <source>LANGUAGE_NAME</source>
         <translation>Español</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="48"/>
+        <location filename="../mainwindow.cpp" line="51"/>
         <source>ImageShack Uploader %1</source>
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../mainwindow.cpp" line="118"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="119"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Archivos Flash no pueden ser subidos sin loguearse. ¿Quieres intentar de todos modos?</translation>
     </message>
@@ -320,42 +326,42 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="313"/>
+        <location filename="../media.cpp" line="331"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="314"/>
+        <location filename="../media.cpp" line="332"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="315"/>
+        <location filename="../media.cpp" line="333"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="316"/>
+        <location filename="../media.cpp" line="334"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="324"/>
+        <location filename="../media.cpp" line="342"/>
         <source>%1B</source>
         <translation>%1B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="325"/>
+        <location filename="../media.cpp" line="343"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="326"/>
+        <location filename="../media.cpp" line="344"/>
         <source>%1M</source>
         <translation>%1M</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="327"/>
+        <location filename="../media.cpp" line="345"/>
         <source>%1G</source>
         <translation>%1G</translation>
     </message>
@@ -382,17 +388,17 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>MediaListWidget</name>
     <message>
-        <location filename="../medialistwidget.cpp" line="95"/>
+        <location filename="../medialistwidget.cpp" line="96"/>
         <source>Select one or more files to open</source>
         <translation>Seleccione uno o más archivos para abrir</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="98"/>
+        <location filename="../medialistwidget.cpp" line="99"/>
         <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</source>
         <translation>Formatos soportados (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="144"/>
+        <location filename="../medialistwidget.cpp" line="145"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
             <numerusform>No puedo añadir %n archivo, parece ser un formato no soportado actualmente:</numerusform>
@@ -400,20 +406,36 @@ Tuvo mensajes de error del servidor:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="151"/>
+        <location filename="../medialistwidget.cpp" line="152"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n archivo es demasiado grande para subir:</numerusform>
             <numerusform>%n archivos son demasiado grandes para subirlos:</numerusform>
         </translation>
     </message>
+    <message numerus="yes">
+        <location filename="../medialistwidget.cpp" line="155"/>
+        <source>Maximum file size for logged in users is %n MB</source>
+        <translation>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../medialistwidget.cpp" line="157"/>
+        <source>Maximum file size for anonymous users is %n MB</source>
+        <translation>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="156"/>
+        <location filename="../medialistwidget.cpp" line="161"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="246"/>
+        <location filename="../medialistwidget.cpp" line="251"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n archivo</numerusform>
@@ -467,6 +489,7 @@ Tuvo mensajes de error del servidor:
         <translation>OK</translation>
     </message>
     <message>
+        <location filename="../optionsdialog.cpp" line="42"/>
         <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>No ves tu idioma en esta lista?&lt;br&gt;Puedes ayudar a traducir este programa a tu idioma.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;AQUÍ&lt;/a&gt; para más información.</translation>
@@ -475,6 +498,7 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>ProgressWidget</name>
     <message>
+        <location filename="../progresswidget.ui" line="73"/>
         <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
         <translation>Cargar/Subir</translation>
@@ -485,7 +509,7 @@ Tuvo mensajes de error del servidor:
         <translation>Total: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="152"/>
+        <location filename="../progresswidget.cpp" line="151"/>
         <source>Time left: estimating...</source>
         <translation>Tiempo restante: estimando...</translation>
     </message>
@@ -495,32 +519,38 @@ Tuvo mensajes de error del servidor:
         <translation>Esperando por links...</translation>
     </message>
     <message>
+        <location filename="../progresswidget.cpp" line="84"/>
+        <location filename="../progresswidget.cpp" line="149"/>
+        <location filename="../progresswidget.cpp" line="163"/>
+        <location filename="../progresswidget.cpp" line="176"/>
         <location filename="../progresswidget.ui" line="198"/>
         <source>Pause</source>
         <translation>Pausa</translation>
     </message>
     <message>
+        <location filename="../progresswidget.cpp" line="96"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Actual: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="109"/>
+        <location filename="../progresswidget.cpp" line="108"/>
         <source>Loading files: %1 of %2</source>
         <translation>Cargando archivos: %1 of %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="132"/>
+        <location filename="../progresswidget.cpp" line="123"/>
+        <location filename="../progresswidget.cpp" line="131"/>
         <source>Time left:</source>
         <translation>Tiempo restante:</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="124"/>
+        <location filename="../progresswidget.cpp" line="123"/>
         <source>unknown...</source>
         <translation>desconocido...</translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="136"/>
+        <location filename="../progresswidget.cpp" line="135"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n hr.</numerusform>
@@ -528,7 +558,7 @@ Tuvo mensajes de error del servidor:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="137"/>
+        <location filename="../progresswidget.cpp" line="136"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n min.</numerusform>
@@ -536,32 +566,32 @@ Tuvo mensajes de error del servidor:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="139"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source> less than 1 min.</source>
         <translation> menos de 1 min.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="140"/>
+        <location filename="../progresswidget.cpp" line="139"/>
         <source> almost done...</source>
         <translation> casi terminado...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="161"/>
+        <location filename="../progresswidget.cpp" line="160"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="162"/>
+        <location filename="../progresswidget.cpp" line="161"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="163"/>
+        <location filename="../progresswidget.cpp" line="162"/>
         <source>Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?</source>
         <translation>La pausa dejará de cargar el archivo actual. Al continuar, comenzará a cargar desde el principio. ¿Está seguro que quiere hacer una pausa?</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="168"/>
+        <location filename="../progresswidget.cpp" line="167"/>
         <source>Resume</source>
         <translation>Continuar</translation>
     </message>
@@ -674,6 +704,8 @@ Tuvo mensajes de error del servidor:
         <translation>Miniatura</translation>
     </message>
     <message>
+        <location filename="../resultswindow.ui" line="57"/>
+        <location filename="../resultswindow.ui" line="60"/>
         <location filename="../resultswindow.ui" line="393"/>
         <source>Tweet this</source>
         <translation>Tweetea esto</translation>
@@ -727,6 +759,7 @@ Tuvo mensajes de error del servidor:
         <translation>Lote de privacidad &amp;&amp; etiquetas</translation>
     </message>
     <message>
+        <location filename="../tagwidget.cpp" line="40"/>
         <location filename="../tagwidget.cpp" line="98"/>
         <source>Log in to use this features</source>
         <translation>Logueate para usar esta característica</translation>
@@ -741,13 +774,38 @@ Tuvo mensajes de error del servidor:
     </message>
 </context>
 <context>
+    <name>TrayIcon</name>
+    <message>
+        <location filename="../trayicon.cpp" line="20"/>
+        <source>Show/Hide Uploader</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="23"/>
+        <source>Add file from clipboard</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="24"/>
+        <source>Quit</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
     <name>TwitterClient</name>
     <message>
+        <location filename="../twitterclient.cpp" line="56"/>
         <location filename="../twitterclient.cpp" line="69"/>
         <source>Posting to twitter...</source>
         <translation>Posteando a Twitter...</translation>
     </message>
     <message>
+        <location filename="../twitterclient.cpp" line="94"/>
+        <location filename="../twitterclient.cpp" line="127"/>
+        <location filename="../twitterclient.cpp" line="139"/>
+        <location filename="../twitterclient.cpp" line="160"/>
+        <location filename="../twitterclient.cpp" line="167"/>
+        <location filename="../twitterclient.cpp" line="173"/>
         <location filename="../twitterclient.cpp" line="180"/>
         <source>Error</source>
         <translation>Error</translation>
@@ -763,6 +821,7 @@ Tuvo mensajes de error del servidor:
         <translation>No se pudo enviar la url a Twitter</translation>
     </message>
     <message>
+        <location filename="../twitterclient.cpp" line="140"/>
         <location filename="../twitterclient.cpp" line="181"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>No se pudo postear a twitter. Respuesta equivocada del servidor.</translation>
@@ -796,12 +855,12 @@ Tuvo mensajes de error del servidor:
         <translation>Símbolos restantes: %1</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="104"/>
+        <location filename="../twitterwindow.cpp" line="107"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="104"/>
+        <location filename="../twitterwindow.cpp" line="108"/>
         <source>You have not entered username or password</source>
         <translation>No has ingresado tu username o password</translation>
     </message>
@@ -844,67 +903,71 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="119"/>
+        <location filename="../updatechecker.cpp" line="90"/>
+        <location filename="../updatechecker.cpp" line="105"/>
+        <location filename="../updatechecker.cpp" line="118"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="61"/>
+        <location filename="../updatechecker.cpp" line="60"/>
         <source>Please wait...</source>
         <translation>Por favor espere...</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="62"/>
+        <location filename="../updatechecker.cpp" line="61"/>
         <source>Update checkup is currently in progress.</source>
         <translation>El chequeo de actualizaciones esta actualmente en progreso.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="107"/>
+        <location filename="../updatechecker.cpp" line="106"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>No se puede chequear las actualizaciones. Respuesta equivocada del servidor.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="120"/>
+        <location filename="../updatechecker.cpp" line="119"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>No se puede chequear las actualizaciones. No se encontraron versiones.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="157"/>
+        <location filename="../updatechecker.cpp" line="159"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="158"/>
+        <location filename="../updatechecker.cpp" line="160"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="160"/>
+        <location filename="../updatechecker.cpp" line="162"/>
         <source>Update available</source>
         <translation>Actualización disponible</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="172"/>
+        <location filename="../updatechecker.cpp" line="150"/>
+        <location filename="../updatechecker.cpp" line="174"/>
         <source>You have the latest version of this application.</source>
         <translation>Tiene la última versión de esta aplicación.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="159"/>
+        <location filename="../updatechecker.cpp" line="161"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>La última versión es %1. ¿Quieres actualizar?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="92"/>
+        <location filename="../updatechecker.cpp" line="91"/>
         <source>Could not check for updates. Please try again later.</source>
         <translation>No se puede chequear las actualizaciones. Por favor intenta mas tarde.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="93"/>
+        <location filename="../updatechecker.cpp" line="92"/>
         <source>Error message is:</source>
         <translation>El mensaje de error es:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="171"/>
+        <location filename="../updatechecker.cpp" line="149"/>
+        <location filename="../updatechecker.cpp" line="173"/>
         <source>No updates available</source>
         <translation>No hay actualizaciones disponibles</translation>
     </message>
@@ -912,7 +975,7 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>WindowsExplorerIntegrator</name>
     <message>
-        <location filename="../windowsexplorerintegrator.cpp" line="53"/>
+        <location filename="../windowsexplorerintegrator.cpp" line="56"/>
         <source>Open with ImageShack Uploader</source>
         <translation>Abre con ImageShack Uploader</translation>
     </message>
