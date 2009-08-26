@@ -98,6 +98,8 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
 
         QString data = req.readAll();
 
+        qDebug() << data;
+
         xml.setContent(data);
         QDomElement productxml = xml.firstChildElement("product");
         if (productxml.isNull())
@@ -138,8 +140,9 @@ void UpdateChecker::resultReceiver(int reqid, bool error)
             QDomNode platformx = version.attributes().namedItem("platform");
             if (platformx.isNull()) continue;
             QString vpl = platformx.nodeValue();
-            if ((vpl != platform) && (vpl == "ALL")) continue;
+            if ((vpl != platform) && (vpl != "ALL")) continue;
             QString ver = version.attributes().namedItem("id").nodeValue();
+            versions.append(ver);
             QDomElement xurl = version.toElement().firstChildElement("url");
             urls[ver] = QUrl(xurl.text());
         }
