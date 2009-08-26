@@ -7,12 +7,12 @@
         <location filename="../aboutwindow.cpp" line="38"/>
         <location filename="../aboutwindow.cpp" line="52"/>
         <source>Version %1</source>
-        <translation type="unfinished">Versão %1</translation>
+        <translation>Versão %1</translation>
     </message>
     <message>
         <location filename="../aboutwindow.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished">Sobre</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../aboutwindow.ui" line="71"/>
@@ -20,19 +20,19 @@
         <translation>&lt;b&gt;ImageShack Uploader&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="85"/>
+        <location filename="../aboutwindow.ui" line="91"/>
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
-        <translation type="unfinished">ImageShack uploader é a mais moderna ferramenta para upload de imagens e videos para o serviço ImageShack.</translation>
+        <translation>ImageShack uploader é a mais moderna ferramenta para upload de imagens e videos para o serviço ImageShack.</translation>
     </message>
     <message utf8="true">
-        <location filename="../aboutwindow.ui" line="105"/>
+        <location filename="../aboutwindow.ui" line="111"/>
         <source>© 2009 ImageShack Corp.</source>
-        <translation type="unfinished">© 2009 ImageShack Corp.&lt;br&gt;&lt;br&gt;Tradução pt-br por zegames - &lt;a href=&quot;http://blog.ze-games.net/&quot;&gt;http://blog.ze-games.net&lt;/a&gt;</translation>
+        <translation>© 2009 ImageShack Corp.&lt;br&gt;&lt;br&gt;Tradução pt-br por zegames - &lt;a href=&quot;http://blog.ze-games.net/&quot;&gt;http://blog.ze-games.net&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="127"/>
+        <location filename="../aboutwindow.ui" line="146"/>
         <source>Close</source>
-        <translation type="unfinished">Fechar</translation>
+        <translation>Fechar</translation>
     </message>
 </context>
 <context>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../advancedcheckbox.ui" line="69"/>
         <source>Remove size/resolution bar from thumbnail</source>
-        <translation type="unfinished">Remover barra com tamanho/resolução das miniaturas</translation>
+        <translation>Remover barra com tamanho/resolução das miniaturas</translation>
     </message>
 </context>
 <context>
@@ -48,7 +48,7 @@
     <message>
         <location filename="../copyablelineedit.ui" line="84"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Copiar para área de transferência</translation>
+        <translation>Copiar para área de transferência</translation>
     </message>
 </context>
 <context>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../copyabletextedit.ui" line="87"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Copiar para área de transferência</translation>
+        <translation>Copiar para área de transferência</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../fileuploader.cpp" line="94"/>
         <source>Some files could not be uploaded.</source>
-        <translation type="unfinished">Alguns arquivos falharam nor envio.</translation>
+        <translation>Alguns arquivos falharam nor envio.</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileuploader.cpp" line="97"/>
@@ -72,7 +72,7 @@
 
 Got error messages from server:
 </source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>
 
 Recebeu um erro do servidor:
@@ -86,32 +86,32 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../fileuploader.cpp" line="100"/>
         <source>Warning</source>
-        <translation type="unfinished">Atenção</translation>
+        <translation>Atenção</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="120"/>
+        <location filename="../fileuploader.cpp" line="119"/>
         <source>3 attempts to upload file failed</source>
-        <translation type="unfinished">3 tentativas de envio falharam</translation>
+        <translation>3 tentativas de envio falharam</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="143"/>
+        <location filename="../fileuploader.cpp" line="141"/>
         <source>Server returned no error text</source>
-        <translation type="unfinished">Servidor não retornou a mensagem de erro</translation>
+        <translation>Servidor não retornou a mensagem de erro</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="150"/>
+        <location filename="../fileuploader.cpp" line="148"/>
         <source>Wrong server response</source>
-        <translation type="unfinished">Erro na resposta do servidor</translation>
+        <translation>Erro na resposta do servidor</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="183"/>
+        <location filename="../fileuploader.cpp" line="181"/>
         <source>Server responce is not valid</source>
-        <translation type="unfinished">Resposta inválida do servidor</translation>
+        <translation>Resposta inválida do servidor</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="229"/>
+        <location filename="../fileuploader.cpp" line="227"/>
         <source>Could not connect to server</source>
-        <translation type="unfinished">Não foi possível conectar ao servidor</translation>
+        <translation>Não foi possível conectar ao servidor</translation>
     </message>
 </context>
 <context>
@@ -121,22 +121,22 @@ Recebeu alguns erros do servidor:
         <location filename="../imageinfowidget.cpp" line="116"/>
         <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
-        <translation type="unfinished">Miniatura</translation>
+        <translation>Miniatura</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.cpp" line="250"/>
         <source>Log in to use this features</source>
-        <translation type="unfinished">Entre com seu login para usar este recurso</translation>
+        <translation>Entre com seu login para usar este recurso</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="113"/>
         <source>Image resize:</source>
-        <translation type="unfinished">Redimensionar imagem</translation>
+        <translation>Redimensionar imagem</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="124"/>
         <source>Do not resize</source>
-        <translation type="unfinished">Não redimensionar</translation>
+        <translation>Não redimensionar</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="129"/>
@@ -146,47 +146,47 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../imageinfowidget.ui" line="134"/>
         <source>150x150 (thumbnail)</source>
-        <translation type="unfinished">150x150 (miniatura)</translation>
+        <translation>150x150 (miniatura)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="139"/>
         <source>320x320 (for websites and email)</source>
-        <translation type="unfinished">320x320 (para websites e emaill)</translation>
+        <translation>320x320 (para websites e emaill)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="144"/>
         <source>640x640 (for message boards)</source>
-        <translation type="unfinished">640x640 (para fóruns)</translation>
+        <translation>640x640 (para fóruns)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="149"/>
         <source>800x800 (12-inch monitor)</source>
-        <translation type="unfinished">800x800 (monitor de 12 polegadas)</translation>
+        <translation>800x800 (monitor de 12 polegadas)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="154"/>
         <source>1024x1024 (15-inch monitor)</source>
-        <translation type="unfinished">1024x1024 (monitor de 15 polegadas)</translation>
+        <translation>1024x1024 (monitor de 15 polegadas)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="159"/>
         <source>1280x1280 (19-inch monitor)</source>
-        <translation type="unfinished">1280x1280 (monitor de 19 polegadas)</translation>
+        <translation>1280x1280 (monitor de 19 polegadas)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="164"/>
         <source>1600x1600 (21-inch monitor)</source>
-        <translation type="unfinished">1600x1600 (monitor de 21 polegadas)</translation>
+        <translation>1600x1600 (monitor de 21 polegadas)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="169"/>
         <source>Optimize only</source>
-        <translation type="unfinished">Otimizar apenas</translation>
+        <translation>Otimizar apenas</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="221"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Privacidade:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Privacidade:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="231"/>
@@ -196,173 +196,173 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../imageinfowidget.ui" line="249"/>
         <source>Public</source>
-        <translation type="unfinished">Público</translation>
+        <translation>Público</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="268"/>
         <source>Private</source>
-        <translation type="unfinished">Privado</translation>
+        <translation>Privado</translation>
     </message>
 </context>
 <context>
     <name>LoginWidget</name>
     <message>
-        <location filename="../loginwidget.cpp" line="84"/>
-        <location filename="../loginwidget.cpp" line="140"/>
+        <location filename="../loginwidget.cpp" line="83"/>
+        <location filename="../loginwidget.cpp" line="139"/>
         <source>You are logged in as %1</source>
-        <translation type="unfinished">Você está logado como %1</translation>
+        <translation>Você está logado como %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="152"/>
-        <location filename="../loginwidget.cpp" line="160"/>
+        <location filename="../loginwidget.cpp" line="151"/>
+        <location filename="../loginwidget.cpp" line="159"/>
         <source>Authentication failed</source>
-        <translation type="unfinished">Autenticação falhou</translation>
+        <translation>Autenticação falhou</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="149"/>
+        <location filename="../loginwidget.cpp" line="148"/>
         <source>Could not connect to ImageShack server.</source>
-        <translation type="unfinished">Não foi possível conectar ao servidor do ImageShack.</translation>
+        <translation>Não foi possível conectar ao servidor do ImageShack.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="161"/>
+        <location filename="../loginwidget.cpp" line="160"/>
         <source>Wrong credentials.</source>
-        <translation type="unfinished">Credenciais inválidas.</translation>
+        <translation>Credenciais inválidas.</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="42"/>
         <source>Login name / E-mail:</source>
-        <translation type="unfinished">Nome de usuário / E-mail:</translation>
+        <translation>Nome de usuário / E-mail:</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="65"/>
         <source>Password:</source>
-        <translation type="unfinished">Senha</translation>
+        <translation>Senha</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="91"/>
         <source>Remember password</source>
-        <translation type="unfinished">Lembrar senha</translation>
+        <translation>Lembrar senha</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="113"/>
         <source>Login</source>
-        <translation type="unfinished">Entrar</translation>
+        <translation>Entrar</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="166"/>
         <source>Logging in...</source>
-        <translation type="unfinished">Entrando...</translation>
+        <translation>Entrando...</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="201"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="260"/>
         <source>Logout</source>
-        <translation type="unfinished">Sair</translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="47"/>
+        <location filename="../mainwindow.cpp" line="50"/>
         <location filename="../optionsdialog.cpp" line="144"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
-        <translation type="unfinished">Português BR</translation>
+        <translation>Português BR</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="48"/>
+        <location filename="../mainwindow.cpp" line="51"/>
         <source>ImageShack Uploader %1</source>
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../mainwindow.cpp" line="118"/>
         <source>Warning</source>
-        <translation type="unfinished">Atenção</translation>
+        <translation>Atenção</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="119"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
-        <translation type="unfinished">Arquivos flash não podem ser enviador sem estar logado. Você quer tentar mesmo assim?</translation>
+        <translation>Arquivos flash não podem ser enviador sem estar logado. Você quer tentar mesmo assim?</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
         <source>File</source>
-        <translation type="unfinished">Arquivo</translation>
+        <translation>Arquivo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="154"/>
         <source>Help</source>
-        <translation type="unfinished">Ajuda</translation>
+        <translation>Ajuda</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="165"/>
         <source>About</source>
-        <translation type="unfinished">Sobre</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="173"/>
         <source>Support</source>
-        <translation type="unfinished">Suporte</translation>
+        <translation>Suporte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="181"/>
         <source>Options</source>
-        <translation type="unfinished">Opções</translation>
+        <translation>Opções</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="189"/>
         <source>Check for updates</source>
-        <translation type="unfinished">Checar por atualizações</translation>
+        <translation>Checar por atualizações</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
         <source>Exit</source>
-        <translation type="unfinished">Sair</translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="313"/>
+        <location filename="../media.cpp" line="331"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="314"/>
+        <location filename="../media.cpp" line="332"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="315"/>
+        <location filename="../media.cpp" line="333"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="316"/>
+        <location filename="../media.cpp" line="334"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="324"/>
+        <location filename="../media.cpp" line="342"/>
         <source>%1B</source>
         <translation>%1B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="325"/>
+        <location filename="../media.cpp" line="343"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="326"/>
+        <location filename="../media.cpp" line="344"/>
         <source>%1M</source>
         <translation>%1M</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="327"/>
+        <location filename="../media.cpp" line="345"/>
         <source>%1G</source>
         <translation>%1G</translation>
     </message>
@@ -389,40 +389,56 @@ Recebeu alguns erros do servidor:
 <context>
     <name>MediaListWidget</name>
     <message>
-        <location filename="../medialistwidget.cpp" line="95"/>
+        <location filename="../medialistwidget.cpp" line="96"/>
         <source>Select one or more files to open</source>
-        <translation type="unfinished">Selecione um ou mais arquivos para abrir</translation>
+        <translation>Selecione um ou mais arquivos para abrir</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="98"/>
+        <location filename="../medialistwidget.cpp" line="99"/>
         <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</source>
-        <translation type="unfinished">Formatos suportados (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
+        <translation>Formatos suportados (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="144"/>
+        <location filename="../medialistwidget.cpp" line="145"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Arquivo %n rejeitado, é um formato que nós não suportamos no momento:</numerusform>
             <numerusform>Arquivos %n rejeitados, estão em um formato que nós não suportamos no momento:</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="151"/>
+        <location filename="../medialistwidget.cpp" line="152"/>
         <source>%n file(s) are too large for upload:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n arquivo é muito grande para envio:</numerusform>
             <numerusform>%n arquivos são muito grandes para envio:</numerusform>
         </translation>
     </message>
-    <message>
-        <location filename="../medialistwidget.cpp" line="156"/>
-        <source>Warning</source>
-        <translation type="unfinished">Atenção</translation>
+    <message numerus="yes">
+        <location filename="../medialistwidget.cpp" line="155"/>
+        <source>Maximum file size for logged in users is %n MB</source>
+        <translation>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="246"/>
+        <location filename="../medialistwidget.cpp" line="157"/>
+        <source>Maximum file size for anonymous users is %n MB</source>
+        <translation>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../medialistwidget.cpp" line="161"/>
+        <source>Warning</source>
+        <translation>Atenção</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../medialistwidget.cpp" line="251"/>
         <source>%n files</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n arquivo</numerusform>
             <numerusform>%n arquivos</numerusform>
         </translation>
@@ -430,17 +446,17 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../medialistwidget.ui" line="111"/>
         <source>Add</source>
-        <translation type="unfinished">Adicionar</translation>
+        <translation>Adicionar</translation>
     </message>
     <message>
         <location filename="../medialistwidget.ui" line="125"/>
         <source>Remove</source>
-        <translation type="unfinished">Remover</translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <location filename="../medialistwidget.ui" line="139"/>
         <source>Clear</source>
-        <translation type="unfinished">Limpar</translation>
+        <translation>Limpar</translation>
     </message>
 </context>
 <context>
@@ -448,7 +464,7 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../mediawidget.ui" line="14"/>
         <source>Preview</source>
-        <translation type="unfinished">Prévia</translation>
+        <translation>Prévia</translation>
     </message>
 </context>
 <context>
@@ -456,17 +472,17 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../optionsdialog.ui" line="20"/>
         <source>Options</source>
-        <translation type="unfinished">Opções</translation>
+        <translation>Opções</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="30"/>
         <source>Check for updates automatically</source>
-        <translation type="unfinished">Checar por atualizações automaticamente</translation>
+        <translation>Checar por atualizações automaticamente</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="51"/>
         <source>Language:</source>
-        <translation type="unfinished">Língua:</translation>
+        <translation>Língua:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="123"/>
@@ -477,16 +493,16 @@ Recebeu alguns erros do servidor:
         <location filename="../optionsdialog.cpp" line="42"/>
         <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
-        <translation type="unfinished">Não encontrou sua língua na lista?&lt;br&gt;Você pode ajudar a traduzir o programa para sua língua.&lt;br&gt;Clique &lt;a href=&quot;%1&quot;&gt;AQUI&lt;/a&gt; para mais informações.</translation>
+        <translation>Não encontrou sua língua na lista?&lt;br&gt;Você pode ajudar a traduzir o programa para sua língua.&lt;br&gt;Clique &lt;a href=&quot;%1&quot;&gt;AQUI&lt;/a&gt; para mais informações.</translation>
     </message>
 </context>
 <context>
     <name>ProgressWidget</name>
     <message>
         <location filename="../progresswidget.ui" line="73"/>
-        <location filename="../progresswidget.ui" line="318"/>
+        <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
-        <translation type="unfinished">Enviar</translation>
+        <translation>Enviar</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="137"/>
@@ -494,33 +510,48 @@ Recebeu alguns erros do servidor:
         <translation>Total: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="127"/>
+        <location filename="../progresswidget.cpp" line="151"/>
         <source>Time left: estimating...</source>
-        <translation type="unfinished">Tempo restante: estimado...</translation>
+        <translation>Tempo restante: estimado...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="80"/>
+        <location filename="../progresswidget.cpp" line="92"/>
         <source>Waiting for links...</source>
-        <translation type="unfinished">Aguardando por links...</translation>
+        <translation>Aguardando por links...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="84"/>
+        <location filename="../progresswidget.cpp" line="149"/>
+        <location filename="../progresswidget.cpp" line="163"/>
+        <location filename="../progresswidget.cpp" line="176"/>
+        <location filename="../progresswidget.ui" line="198"/>
+        <source>Pause</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="96"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
-        <translation type="unfinished">Atual: %p%</translation>
+        <translation>Atual: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="97"/>
+        <location filename="../progresswidget.cpp" line="108"/>
         <source>Loading files: %1 of %2</source>
-        <translation type="unfinished">Carregando arquivos: %1 de %2</translation>
+        <translation>Carregando arquivos: %1 de %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="115"/>
+        <location filename="../progresswidget.cpp" line="123"/>
+        <location filename="../progresswidget.cpp" line="131"/>
         <source>Time left:</source>
-        <translation type="unfinished">Tempo restante:</translation>
+        <translation>Tempo restante:</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="123"/>
+        <source>unknown...</source>
+        <translation></translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="116"/>
+        <location filename="../progresswidget.cpp" line="135"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n hr.</numerusform>
@@ -528,7 +559,7 @@ Recebeu alguns erros do servidor:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="117"/>
+        <location filename="../progresswidget.cpp" line="136"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n min.</numerusform>
@@ -536,19 +567,39 @@ Recebeu alguns erros do servidor:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="119"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source> less than 1 min.</source>
-        <translation type="unfinished">menos que 1 min.</translation>
+        <translation>menos que 1 min.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="120"/>
+        <location filename="../progresswidget.cpp" line="139"/>
         <source> almost done...</source>
-        <translation type="unfinished">quase pronto...</translation>
+        <translation>quase pronto...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="199"/>
+        <location filename="../progresswidget.cpp" line="160"/>
+        <source>Yes</source>
+        <translation>Sim</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="161"/>
+        <source>No</source>
+        <translation>Não</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="162"/>
+        <source>Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="167"/>
+        <source>Resume</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.ui" line="230"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -556,129 +607,129 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../resultswindow.cpp" line="108"/>
         <source>Direct links</source>
-        <translation type="unfinished">Links diretos</translation>
+        <translation>Links diretos</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="109"/>
         <source>Short links</source>
-        <translation type="unfinished">Links curtos</translation>
+        <translation>Links curtos</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="110"/>
         <source>Hotlinks for web</source>
-        <translation type="unfinished">Hotlinks para web</translation>
+        <translation>Hotlinks para web</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="111"/>
         <source>Thumbnails for web</source>
-        <translation type="unfinished">Miniaturas para web</translation>
+        <translation>Miniaturas para web</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="112"/>
         <source>Thumbnails for forums 1</source>
-        <translation type="unfinished">Miniaturas para fóruns 1</translation>
+        <translation>Miniaturas para fóruns 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="113"/>
         <source>Thumbnails for forums 2</source>
-        <translation type="unfinished">Miniaturas para fóruns 2</translation>
+        <translation>Miniaturas para fóruns 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="114"/>
         <source>Hotlinks for forums 1</source>
-        <translation type="unfinished">BBcodes para fóruns 1</translation>
+        <translation>BBcodes para fóruns 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="115"/>
         <source>Hotlinks for forums 2</source>
-        <translation type="unfinished">BBcodes para fóruns 2</translation>
+        <translation>BBcodes para fóruns 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="120"/>
         <source>Direct link</source>
-        <translation type="unfinished">Link direto</translation>
+        <translation>Link direto</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="121"/>
         <source>Short link</source>
-        <translation type="unfinished">Link curto</translation>
+        <translation>Link curto</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="122"/>
         <source>Hotlink for web</source>
-        <translation type="unfinished">Hotlink para web</translation>
+        <translation>Hotlink para web</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="123"/>
         <source>Thumbnail for web</source>
-        <translation type="unfinished">Miniatura para web</translation>
+        <translation>Miniatura para web</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="124"/>
         <source>Thumbnail for forums 1</source>
-        <translation type="unfinished">Miniatura para fóruns 1</translation>
+        <translation>Miniatura para fóruns 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="125"/>
         <source>Thumbnail for forums 2</source>
-        <translation type="unfinished">Miniatura para fóruns 2</translation>
+        <translation>Miniatura para fóruns 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="126"/>
         <source>Hotlink for forums 1</source>
-        <translation type="unfinished">BBcode para fóruns 1</translation>
+        <translation>BBcode para fóruns 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="127"/>
         <source>Hotlink for forums 2</source>
-        <translation type="unfinished">BBcode para fóruns 2</translation>
+        <translation>BBcode para fóruns 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="132"/>
         <source>File %1 of %2</source>
-        <translation type="unfinished">Arquivo %1 de %2</translation>
+        <translation>Arquivo %1 de %2</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="20"/>
         <source>Uploaded files</source>
-        <translation type="unfinished">Arquivos enviados</translation>
+        <translation>Arquivos enviados</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="30"/>
         <source>One by one</source>
-        <translation type="unfinished">Um por um</translation>
+        <translation>Um por um</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="115"/>
         <source>Thumbnail</source>
-        <translation type="unfinished">Miniatura</translation>
+        <translation>Miniatura</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
         <location filename="../resultswindow.ui" line="393"/>
         <source>Tweet this</source>
-        <translation type="unfinished">Tweet isto</translation>
+        <translation>Tweet isto</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="149"/>
         <source>File 1 of 1</source>
-        <translation type="unfinished">Arquivo 1 de 1</translation>
+        <translation>Arquivo 1 de 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="336"/>
         <source>All images and video files</source>
-        <translation type="unfinished">Todas imagens e vídeos</translation>
+        <translation>Todas imagens e vídeos</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="390"/>
         <source>Create gallery and post to twitter</source>
-        <translation type="unfinished">Criar galeria e postar no twitter</translation>
+        <translation>Criar galeria e postar no twitter</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="450"/>
         <source>Close</source>
-        <translation type="unfinished">Fechar</translation>
+        <translation>Fechar</translation>
     </message>
 </context>
 <context>
@@ -686,17 +737,17 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../tagwidget.ui" line="41"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Privacidade:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Privacidade:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="56"/>
         <source>Public</source>
-        <translation type="unfinished">Público</translation>
+        <translation>Público</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="72"/>
         <source>Private</source>
-        <translation type="unfinished">Privado</translation>
+        <translation>Privado</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="97"/>
@@ -706,13 +757,13 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../tagwidget.ui" line="29"/>
         <source>Batch privacy &amp;&amp; tags</source>
-        <translation type="unfinished">Privacidade &amp;&amp; tags em lote</translation>
+        <translation>Privacidade &amp;&amp; tags em lote</translation>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
         <location filename="../tagwidget.cpp" line="98"/>
         <source>Log in to use this features</source>
-        <translation type="unfinished">Entre com seu login para usar estes recursos</translation>
+        <translation>Entre com seu login para usar estes recursos</translation>
     </message>
 </context>
 <context>
@@ -720,105 +771,124 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../talkingtreeview.cpp" line="51"/>
         <source>Drag and drop one or more image\n or video files here</source>
-        <translation type="unfinished">Arraste e solte um ou mais arquivos de imagem \n ou vídeo aqui</translation>
+        <translation>Arraste e solte um ou mais arquivos de imagem \n ou vídeo aqui</translation>
+    </message>
+</context>
+<context>
+    <name>TrayIcon</name>
+    <message>
+        <location filename="../trayicon.cpp" line="20"/>
+        <source>Show/Hide Uploader</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="23"/>
+        <source>Add file from clipboard</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="24"/>
+        <source>Quit</source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>TwitterClient</name>
     <message>
         <location filename="../twitterclient.cpp" line="56"/>
+        <location filename="../twitterclient.cpp" line="69"/>
         <source>Posting to twitter...</source>
-        <translation type="unfinished">Postando no Twitter...</translation>
+        <translation>Postando no Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="86"/>
-        <location filename="../twitterclient.cpp" line="120"/>
-        <location filename="../twitterclient.cpp" line="132"/>
-        <location filename="../twitterclient.cpp" line="153"/>
+        <location filename="../twitterclient.cpp" line="94"/>
+        <location filename="../twitterclient.cpp" line="127"/>
+        <location filename="../twitterclient.cpp" line="139"/>
         <location filename="../twitterclient.cpp" line="160"/>
-        <location filename="../twitterclient.cpp" line="166"/>
+        <location filename="../twitterclient.cpp" line="167"/>
         <location filename="../twitterclient.cpp" line="173"/>
+        <location filename="../twitterclient.cpp" line="180"/>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="87"/>
+        <location filename="../twitterclient.cpp" line="95"/>
         <source>First set twitter username and password in options</source>
         <translation>First set Twitter username and password in options</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="121"/>
+        <location filename="../twitterclient.cpp" line="128"/>
         <source>Could not send url to Twitter</source>
-        <translation type="unfinished">Não foi possível enviar url para o Twitter</translation>
+        <translation>Não foi possível enviar url para o Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="133"/>
-        <location filename="../twitterclient.cpp" line="174"/>
+        <location filename="../twitterclient.cpp" line="140"/>
+        <location filename="../twitterclient.cpp" line="181"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Could not post to twitter. Wrong server response.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="154"/>
+        <location filename="../twitterclient.cpp" line="161"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Could not post to twitter. Wrong credentials.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="161"/>
+        <location filename="../twitterclient.cpp" line="168"/>
         <source>Failed to update twitter status.</source>
-        <translation type="unfinished">Falha em atualizar o status do twitter.</translation>
+        <translation>Falha em atualizar o status do twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="167"/>
+        <location filename="../twitterclient.cpp" line="174"/>
         <source>Could not post to twitter. Internal error.</source>
-        <translation type="unfinished">Não foi possível postar no twitter. Erro interno.</translation>
+        <translation>Não foi possível postar no twitter. Erro interno.</translation>
     </message>
 </context>
 <context>
     <name>TwitterWindow</name>
     <message>
-        <location filename="../twitterwindow.cpp" line="66"/>
+        <location filename="../twitterwindow.cpp" line="68"/>
         <source>Posting to twitter...</source>
-        <translation type="unfinished">Postando no Twitter...</translation>
+        <translation>Postando no Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="76"/>
+        <location filename="../twitterwindow.cpp" line="78"/>
         <source>Symbols left: %1</source>
-        <translation type="unfinished">Caracteres restando: %1</translation>
+        <translation>Caracteres restando: %1</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="102"/>
+        <location filename="../twitterwindow.cpp" line="107"/>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="102"/>
+        <location filename="../twitterwindow.cpp" line="108"/>
         <source>You have not entered username or password</source>
-        <translation type="unfinished">Você esqueceu do seu nome de usuário ou senha</translation>
+        <translation>Você esqueceu do seu nome de usuário ou senha</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="20"/>
         <source>Comment text:</source>
-        <translation type="unfinished">Texto do comentário:</translation>
+        <translation>Texto do comentário:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="14"/>
         <source>Tweet this</source>
-        <translation type="unfinished">Tweet isto</translation>
+        <translation>Tweet isto</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="43"/>
         <source>Twitter username:</source>
-        <translation type="unfinished">Twitter usuário:</translation>
+        <translation>Twitter usuário:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="50"/>
         <source>Twitter password:</source>
-        <translation type="unfinished">Twitter senha:</translation>
+        <translation>Twitter senha:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="82"/>
         <source>Remember me</source>
-        <translation type="unfinished">Manter logado</translation>
+        <translation>Manter logado</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="110"/>
@@ -828,87 +898,87 @@ Recebeu alguns erros do servidor:
     <message>
         <location filename="../twitterwindow.ui" line="123"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="91"/>
-        <location filename="../updatechecker.cpp" line="106"/>
-        <location filename="../updatechecker.cpp" line="119"/>
+        <location filename="../updatechecker.cpp" line="90"/>
+        <location filename="../updatechecker.cpp" line="105"/>
+        <location filename="../updatechecker.cpp" line="118"/>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="60"/>
+        <source>Please wait...</source>
+        <translation>Por favor aguarde...</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="61"/>
-        <source>Please wait...</source>
-        <translation type="unfinished">Por favor aguarde...</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="62"/>
         <source>Update checkup is currently in progress.</source>
-        <translation type="unfinished">Checagem por atualizações está em progresso.</translation>
+        <translation>Checagem por atualizações está em progresso.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="107"/>
+        <location filename="../updatechecker.cpp" line="106"/>
         <source>Could not check for updates. Wrong server response.</source>
-        <translation type="unfinished">Não foi possível checar por atualizações. Erro retornado do servidor.</translation>
+        <translation>Não foi possível checar por atualizações. Erro retornado do servidor.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="120"/>
+        <location filename="../updatechecker.cpp" line="119"/>
         <source>Could not check for updates. No versions found.</source>
-        <translation type="unfinished">Não foi possível checar por atualizações. Nenhuma versão encontrada.</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="157"/>
-        <source>Yes</source>
-        <translation type="unfinished">Sim</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="158"/>
-        <source>No</source>
-        <translation type="unfinished">Não</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="160"/>
-        <source>Update available</source>
-        <translation type="unfinished">Atualização disponível</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="148"/>
-        <location filename="../updatechecker.cpp" line="172"/>
-        <source>You have the latest version of this application.</source>
-        <translation type="unfinished">Você tem a última versão do aplicativo.</translation>
+        <translation>Não foi possível checar por atualizações. Nenhuma versão encontrada.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="159"/>
+        <source>Yes</source>
+        <translation>Sim</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="160"/>
+        <source>No</source>
+        <translation>Não</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="162"/>
+        <source>Update available</source>
+        <translation>Atualização disponível</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="150"/>
+        <location filename="../updatechecker.cpp" line="174"/>
+        <source>You have the latest version of this application.</source>
+        <translation>Você tem a última versão do aplicativo.</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="161"/>
         <source>Lastest version is %1. Do you want to update?</source>
-        <translation type="unfinished">Última versão é %1. Você quer atualizar?</translation>
+        <translation>Última versão é %1. Você quer atualizar?</translation>
+    </message>
+    <message>
+        <location filename="../updatechecker.cpp" line="91"/>
+        <source>Could not check for updates. Please try again later.</source>
+        <translation>Não foi possível checar por atualizações. Por favor tente mais tarde.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="92"/>
-        <source>Could not check for updates. Please try again later.</source>
-        <translation type="unfinished">Não foi possível checar por atualizações. Por favor tente mais tarde.</translation>
-    </message>
-    <message>
-        <location filename="../updatechecker.cpp" line="93"/>
         <source>Error message is:</source>
-        <translation type="unfinished">A mensagem de erro é:</translation>
+        <translation>A mensagem de erro é:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="147"/>
-        <location filename="../updatechecker.cpp" line="171"/>
+        <location filename="../updatechecker.cpp" line="149"/>
+        <location filename="../updatechecker.cpp" line="173"/>
         <source>No updates available</source>
-        <translation type="unfinished">Nenhuma atualização disponível</translation>
+        <translation>Nenhuma atualização disponível</translation>
     </message>
 </context>
 <context>
     <name>WindowsExplorerIntegrator</name>
     <message>
-        <location filename="../windowsexplorerintegrator.cpp" line="53"/>
+        <location filename="../windowsexplorerintegrator.cpp" line="56"/>
         <source>Open with ImageShack Uploader</source>
-        <translation type="unfinished">Abrir com ImageShack Uploader</translation>
+        <translation>Abrir com ImageShack Uploader</translation>
     </message>
 </context>
 </TS>

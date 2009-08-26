@@ -20,17 +20,17 @@
         <translation>&lt;b&gt;ImageShack Uploader&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="85"/>
+        <location filename="../aboutwindow.ui" line="91"/>
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
         <translation>Το ImageShack Uploader είνα έναι άριστο πρόγραμμα για να ανεβάζετε εικόνες και video στις δυκτιακές υπηρεσίες του ImageShack.</translation>
     </message>
     <message utf8="true">
-        <location filename="../aboutwindow.ui" line="105"/>
+        <location filename="../aboutwindow.ui" line="111"/>
         <source>© 2009 ImageShack Corp.</source>
         <translation>© 2009 ImageShack Corp.</translation>
     </message>
     <message>
-        <location filename="../aboutwindow.ui" line="127"/>
+        <location filename="../aboutwindow.ui" line="146"/>
         <source>Close</source>
         <translation>Κλείσιμο</translation>
     </message>
@@ -89,27 +89,27 @@ Mηνύματα λάθους από τον server:
         <translation>Προσοχή</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="120"/>
+        <location filename="../fileuploader.cpp" line="119"/>
         <source>3 attempts to upload file failed</source>
         <translation>3 προσπάθιες να ανεβαστεί το αρχείο απέτυχαν</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="143"/>
+        <location filename="../fileuploader.cpp" line="141"/>
         <source>Server returned no error text</source>
         <translation>Ο Server δεν έστηλε μήνυμα λάθους</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="150"/>
+        <location filename="../fileuploader.cpp" line="148"/>
         <source>Wrong server response</source>
         <translation>Λάθος απάντηση από τον Server</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="183"/>
+        <location filename="../fileuploader.cpp" line="181"/>
         <source>Server responce is not valid</source>
         <translation>Η απάντηση του Server δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="229"/>
+        <location filename="../fileuploader.cpp" line="227"/>
         <source>Could not connect to server</source>
         <translation>Δεν ήταν δυνατή η σύνδεση με τον Server</translation>
     </message>
@@ -207,24 +207,24 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>LoginWidget</name>
     <message>
-        <location filename="../loginwidget.cpp" line="84"/>
-        <location filename="../loginwidget.cpp" line="140"/>
+        <location filename="../loginwidget.cpp" line="83"/>
+        <location filename="../loginwidget.cpp" line="139"/>
         <source>You are logged in as %1</source>
         <translation>Συνδεθήκατε ως %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="152"/>
-        <location filename="../loginwidget.cpp" line="160"/>
+        <location filename="../loginwidget.cpp" line="151"/>
+        <location filename="../loginwidget.cpp" line="159"/>
         <source>Authentication failed</source>
         <translation>Η πιστοποίηση απέτυχε</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="149"/>
+        <location filename="../loginwidget.cpp" line="148"/>
         <source>Could not connect to ImageShack server.</source>
         <translation>Δεν ήταν δυνατή η σύνδεση με τον server του ImageShack.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="161"/>
+        <location filename="../loginwidget.cpp" line="160"/>
         <source>Wrong credentials.</source>
         <translation>Λάθος δεδομένα.</translation>
     </message>
@@ -267,24 +267,24 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="47"/>
+        <location filename="../mainwindow.cpp" line="50"/>
         <location filename="../optionsdialog.cpp" line="144"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
         <translation>Ελληνικά</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="48"/>
+        <location filename="../mainwindow.cpp" line="51"/>
         <source>ImageShack Uploader %1</source>
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../mainwindow.cpp" line="118"/>
         <source>Warning</source>
         <translation>Προσοχή</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="119"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Αρχεία Flash δε γίνεται να ανεβαστούν αν δεν έχετε συνδεθεί. Θέλετε όμως να προσπαθήσετε?</translation>
     </message>
@@ -327,42 +327,42 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="313"/>
+        <location filename="../media.cpp" line="331"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="314"/>
+        <location filename="../media.cpp" line="332"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="315"/>
+        <location filename="../media.cpp" line="333"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="316"/>
+        <location filename="../media.cpp" line="334"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="324"/>
+        <location filename="../media.cpp" line="342"/>
         <source>%1B</source>
         <translation>%1B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="325"/>
+        <location filename="../media.cpp" line="343"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="326"/>
+        <location filename="../media.cpp" line="344"/>
         <source>%1M</source>
         <translation>%1M</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="327"/>
+        <location filename="../media.cpp" line="345"/>
         <source>%1G</source>
         <translation>%1G</translation>
     </message>
@@ -389,17 +389,17 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>MediaListWidget</name>
     <message>
-        <location filename="../medialistwidget.cpp" line="95"/>
+        <location filename="../medialistwidget.cpp" line="96"/>
         <source>Select one or more files to open</source>
         <translation>Επιλέξτε ένα ή περισσότερα αρχεία να ανοίξετε</translation>
     </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="98"/>
+        <location filename="../medialistwidget.cpp" line="99"/>
         <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</source>
         <translation>Υποστηριζόμενοι τύποι αρχείων (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="144"/>
+        <location filename="../medialistwidget.cpp" line="145"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
             <numerusform>Δεν ήταν δυνατή η προσθήκη %n αρχείου, επειδή είναιι μη υποστηριζόμενος  τύπος αρχείου:</numerusform>
@@ -407,20 +407,36 @@ Mηνύματα λάθους από τον server:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="151"/>
+        <location filename="../medialistwidget.cpp" line="152"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
             <numerusform>%n αρχείο είναι πολύ μεγάλο για ανέβασμα:</numerusform>
             <numerusform>%n αρχεία είναι πολύ μεγάλα για ανέβασμα:</numerusform>
         </translation>
     </message>
+    <message numerus="yes">
+        <location filename="../medialistwidget.cpp" line="155"/>
+        <source>Maximum file size for logged in users is %n MB</source>
+        <translation>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../medialistwidget.cpp" line="157"/>
+        <source>Maximum file size for anonymous users is %n MB</source>
+        <translation>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../medialistwidget.cpp" line="156"/>
+        <location filename="../medialistwidget.cpp" line="161"/>
         <source>Warning</source>
         <translation>Προσοχή</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistwidget.cpp" line="246"/>
+        <location filename="../medialistwidget.cpp" line="251"/>
         <source>%n files</source>
         <translation>
             <numerusform>%n αρχείο</numerusform>
@@ -484,7 +500,7 @@ Mηνύματα λάθους από τον server:
     <name>ProgressWidget</name>
     <message>
         <location filename="../progresswidget.ui" line="73"/>
-        <location filename="../progresswidget.ui" line="318"/>
+        <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
         <translation>Ανέβασμα</translation>
     </message>
@@ -494,33 +510,48 @@ Mηνύματα λάθους από τον server:
         <translation>Συνολικά: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="127"/>
+        <location filename="../progresswidget.cpp" line="151"/>
         <source>Time left: estimating...</source>
         <translation>Υπολειπόμενος χρόνος: υπολογισμός...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="80"/>
+        <location filename="../progresswidget.cpp" line="92"/>
         <source>Waiting for links...</source>
         <translation>Αναμονή για τα links...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="84"/>
+        <location filename="../progresswidget.cpp" line="149"/>
+        <location filename="../progresswidget.cpp" line="163"/>
+        <location filename="../progresswidget.cpp" line="176"/>
+        <location filename="../progresswidget.ui" line="198"/>
+        <source>Pause</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="96"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Τωρινό: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="97"/>
+        <location filename="../progresswidget.cpp" line="108"/>
         <source>Loading files: %1 of %2</source>
         <translation>Φόρτωση αρχείων: %1 από %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="115"/>
+        <location filename="../progresswidget.cpp" line="123"/>
+        <location filename="../progresswidget.cpp" line="131"/>
         <source>Time left:</source>
         <translation>Υπολειπόμενος χρόνος:</translation>
     </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="123"/>
+        <source>unknown...</source>
+        <translation></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="116"/>
+        <location filename="../progresswidget.cpp" line="135"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n ώρα</numerusform>
@@ -528,7 +559,7 @@ Mηνύματα λάθους από τον server:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="117"/>
+        <location filename="../progresswidget.cpp" line="136"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n λεπτό</numerusform>
@@ -536,17 +567,37 @@ Mηνύματα λάθους από τον server:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="119"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source> less than 1 min.</source>
         <translation> λιγότερο από 1 λεπτό.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="120"/>
+        <location filename="../progresswidget.cpp" line="139"/>
         <source> almost done...</source>
         <translation>σχεδόν έτοιμο...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.ui" line="199"/>
+        <location filename="../progresswidget.cpp" line="160"/>
+        <source>Yes</source>
+        <translation>Ναι</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="161"/>
+        <source>No</source>
+        <translation>Όχι</translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="162"/>
+        <source>Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.cpp" line="167"/>
+        <source>Resume</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../progresswidget.ui" line="230"/>
         <source>Cancel</source>
         <translation>Άκυρο</translation>
     </message>
@@ -724,51 +775,70 @@ Mηνύματα λάθους από τον server:
     </message>
 </context>
 <context>
+    <name>TrayIcon</name>
+    <message>
+        <location filename="../trayicon.cpp" line="20"/>
+        <source>Show/Hide Uploader</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="23"/>
+        <source>Add file from clipboard</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../trayicon.cpp" line="24"/>
+        <source>Quit</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
     <name>TwitterClient</name>
     <message>
         <location filename="../twitterclient.cpp" line="56"/>
+        <location filename="../twitterclient.cpp" line="69"/>
         <source>Posting to twitter...</source>
         <translation>Γίνεται δημοσίευση στο Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="86"/>
-        <location filename="../twitterclient.cpp" line="120"/>
-        <location filename="../twitterclient.cpp" line="132"/>
-        <location filename="../twitterclient.cpp" line="153"/>
+        <location filename="../twitterclient.cpp" line="94"/>
+        <location filename="../twitterclient.cpp" line="127"/>
+        <location filename="../twitterclient.cpp" line="139"/>
         <location filename="../twitterclient.cpp" line="160"/>
-        <location filename="../twitterclient.cpp" line="166"/>
+        <location filename="../twitterclient.cpp" line="167"/>
         <location filename="../twitterclient.cpp" line="173"/>
+        <location filename="../twitterclient.cpp" line="180"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="87"/>
+        <location filename="../twitterclient.cpp" line="95"/>
         <source>First set twitter username and password in options</source>
         <translation>Πρώτα βάλτε το όνομα χρήστη και κωδικό σας του Twitter στις επιλογές</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="121"/>
+        <location filename="../twitterclient.cpp" line="128"/>
         <source>Could not send url to Twitter</source>
         <translation>Δεν ήταν δυνατή η αποστολή του url στο Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="133"/>
-        <location filename="../twitterclient.cpp" line="174"/>
+        <location filename="../twitterclient.cpp" line="140"/>
+        <location filename="../twitterclient.cpp" line="181"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Δεν ήταν δυνατή η δημοσίευση στο Twitter. Λάθος απάντηση από τον server.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="154"/>
+        <location filename="../twitterclient.cpp" line="161"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Δεν ήταν δυνατή η δημοσίευση στο Twitter. Λάθος δεδομένα.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="161"/>
+        <location filename="../twitterclient.cpp" line="168"/>
         <source>Failed to update twitter status.</source>
         <translation>Απέτυχε η ενημέρωση της κατάστασης του Twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="167"/>
+        <location filename="../twitterclient.cpp" line="174"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Δεν ήταν δυνατή η δημοσίευση στο Twitter. Εσωτερικό σφάλμα.</translation>
     </message>
@@ -776,22 +846,22 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>TwitterWindow</name>
     <message>
-        <location filename="../twitterwindow.cpp" line="66"/>
+        <location filename="../twitterwindow.cpp" line="68"/>
         <source>Posting to twitter...</source>
         <translation>Γίνεται δημοσίευση στο Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="76"/>
+        <location filename="../twitterwindow.cpp" line="78"/>
         <source>Symbols left: %1</source>
         <translation>Υπολειπόμενα σύμβολα: %1</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="102"/>
+        <location filename="../twitterwindow.cpp" line="107"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../twitterwindow.cpp" line="102"/>
+        <location filename="../twitterwindow.cpp" line="108"/>
         <source>You have not entered username or password</source>
         <translation>Δεν έχετε βάλει όνομα χρήστη και κωδικό</translation>
     </message>
@@ -834,71 +904,71 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="91"/>
-        <location filename="../updatechecker.cpp" line="106"/>
-        <location filename="../updatechecker.cpp" line="119"/>
+        <location filename="../updatechecker.cpp" line="90"/>
+        <location filename="../updatechecker.cpp" line="105"/>
+        <location filename="../updatechecker.cpp" line="118"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="61"/>
+        <location filename="../updatechecker.cpp" line="60"/>
         <source>Please wait...</source>
         <translation>Παρακαλώ περιμένετε...</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="62"/>
+        <location filename="../updatechecker.cpp" line="61"/>
         <source>Update checkup is currently in progress.</source>
         <translation>Ο έλεγχος για ενημερώσεις λειτουργεί αυτή τη στιγμή.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="107"/>
+        <location filename="../updatechecker.cpp" line="106"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Λάθος απάντηση από τον server.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="120"/>
+        <location filename="../updatechecker.cpp" line="119"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Δε βρέθηκαν εκδόσεις.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="157"/>
+        <location filename="../updatechecker.cpp" line="159"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="158"/>
+        <location filename="../updatechecker.cpp" line="160"/>
         <source>No</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="160"/>
+        <location filename="../updatechecker.cpp" line="162"/>
         <source>Update available</source>
         <translation>Υπάρχει διαθέσιμη ενημέρωση</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="148"/>
-        <location filename="../updatechecker.cpp" line="172"/>
+        <location filename="../updatechecker.cpp" line="150"/>
+        <location filename="../updatechecker.cpp" line="174"/>
         <source>You have the latest version of this application.</source>
         <translation>Έχετε την τελευταία έκδοση της εφαρμογής αυτής.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="159"/>
+        <location filename="../updatechecker.cpp" line="161"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Η τελευταία έκδοση είναι η %1. Θέλετε να κάνετε ενημέρωση?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="92"/>
+        <location filename="../updatechecker.cpp" line="91"/>
         <source>Could not check for updates. Please try again later.</source>
         <translation>Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Παρακαλώ προσπαθήστε ξανά αργότερα.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="93"/>
+        <location filename="../updatechecker.cpp" line="92"/>
         <source>Error message is:</source>
         <translation>Το μύνημα λάθους είναι:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="147"/>
-        <location filename="../updatechecker.cpp" line="171"/>
+        <location filename="../updatechecker.cpp" line="149"/>
+        <location filename="../updatechecker.cpp" line="173"/>
         <source>No updates available</source>
         <translation>Δεν υπάρχουν διαθέσιμες ενημερώσεις</translation>
     </message>
@@ -906,7 +976,7 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>WindowsExplorerIntegrator</name>
     <message>
-        <location filename="../windowsexplorerintegrator.cpp" line="53"/>
+        <location filename="../windowsexplorerintegrator.cpp" line="56"/>
         <source>Open with ImageShack Uploader</source>
         <translation>Άνοιγμα με τον ImageShack Uploader</translation>
     </message>
