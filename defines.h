@@ -33,6 +33,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // pipeline
 #undef YUV_TEST
 
+#define NOT_LOGGEDIN_IMAGE_SIZE_LIMIT 5*1024*1024 //5 MB
+#define LOGGEDIN_IMAGE_SIZE_LIMIT 10*1024*1024 // 10 MB
+
 #define UPDATE_HOSTNAME "toolbar.imageshack.us"
 #define UPDATE_PATH "/windows-uploader/update.xml"
 

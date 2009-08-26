@@ -43,6 +43,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
+    QSettings sets;
+    sets.setValue("loggedin", QVariant(false));
+
     ui->setupUi(this);
     tr("LANGUAGE_NAME"); //for translation file
     setWindowTitle(tr("ImageShack Uploader %1").arg(QApplication::applicationVersion()));
@@ -90,7 +93,7 @@ MainWindow::MainWindow(QWidget *parent)
             SLOT(batchPrivacy(bool)));
     controlsDisabled = false;
 
-    QSettings sets;
+
     if (sets.value("autoupdate", QVariant(true)).toBool())
         checkUpdatesSilently();
 

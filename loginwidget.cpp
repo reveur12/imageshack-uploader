@@ -66,8 +66,7 @@ LoginWidget::LoginWidget(QWidget *parent) :
             SIGNAL(wrongPassword()),
             this,
             SLOT(wrongPasswordReceiver()));
-    loggedIn = false;
-
+    setLoggedIn(false);
 }
 
 LoginWidget::~LoginWidget()
@@ -127,7 +126,7 @@ void LoginWidget::logIn()
 void LoginWidget::logOut()
 {
     cookie.clear();
-    loggedIn = false;
+    setLoggedIn(false);
     setCurrentIndex(0);
     emit loginStatus(1);
 }
@@ -138,7 +137,7 @@ void LoginWidget::successReceiver(QString value, QString name)
     username = name;
     setCurrentIndex(2);
     m_ui->username->setText(tr("You are logged in as %1").arg(name));
-    loggedIn = true;
+    setLoggedIn(true);
     emit loginStatus(0);
 }
 
@@ -150,7 +149,7 @@ void LoginWidget::failReceiver()
     if (error != "Unknown error")
         text += "\n" + error;
     QMessageBox::critical(this, tr("Authentication failed"), text);
-    loggedIn = false;
+    setLoggedIn(false);
     emit loginStatus(1);
 }
 
@@ -159,7 +158,7 @@ void LoginWidget::wrongPasswordReceiver()
     setCurrentIndex(0);
     QMessageBox::critical(this, tr("Authentication failed"),
                        tr("Wrong credentials."));
-    loggedIn = false;
+    setLoggedIn(false);
     emit loginStatus(1);
 }
 
@@ -168,8 +167,15 @@ void LoginWidget::cancel()
     request.abort();
     setCurrentIndex(0);
     cookie.clear();
-    loggedIn = false;
+    setLoggedIn(false);
     emit loginStatus(1);
+}
+
+void LoginWidget::setLoggedIn(bool value)
+{
+    QSettings sets;
+    sets.setValue("loggedin", QVariant(value));
+    loggedIn = value;
 }
 
 void LoginWidget::rememberChange()

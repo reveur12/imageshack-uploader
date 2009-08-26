@@ -160,12 +160,8 @@ deb.commands = rm \
     deb/usr/bin/imageshack-uploader \
     && \
     cp \
-    translations/ru_RU.qm \
-    deb$$UNIX_TRANSLATIONS_DIR/ru_RU.qm \
-    && \
-    cp \
-    translations/en_US.qm \
-    deb$$UNIX_TRANSLATIONS_DIR/en_US.qm \
+    translations/*.qm \
+    deb$$UNIX_TRANSLATIONS_DIR/ \
     && \
     mkdir \
     -p \

@@ -32,6 +32,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
+#include <QSettings>
+#include "defines.h"
 
 Media::Media()
 {
@@ -39,15 +41,7 @@ Media::Media()
 
 Media::Media(QString filename)
 {
-    valid = true;
     QFile readfile(filename);
-    /*if (readfile.size() > 104857600)
-    {
-        toolarge = true;
-        valid = false;       // File size limit. Not used right now.
-        return;
-    }*/
-    toolarge = false;
     valid = readfile.open(QFile::ReadOnly);
     if (!valid) return;
     readfile.close();
@@ -88,6 +82,32 @@ Media::Media(QString filename)
     mediaClass = mimetype.first;
     mediaType = mimetype.second;
     removeSize = false;
+
+    // File size check
+    if (mediaClass == "image") // There is not size limit for video files
+    {
+        QSettings sets;
+        if (sets.value("loggedin", QVariant(false)).toBool()) // this is set by loginwidget
+        {
+            if (filesize > LOGGEDIN_IMAGE_SIZE_LIMIT)
+            {
+                toolarge = true;
+                valid = false;
+                return;
+            }
+        }
+        else
+        {
+            if (filesize > NOT_LOGGEDIN_IMAGE_SIZE_LIMIT)
+            {
+                toolarge = true;
+                valid = false;
+                return;
+            }
+        }
+    }
+    toolarge = false; // if it is too large, this should not happen
+
     if (mediaClass == "image")
     {
         QImage image;
