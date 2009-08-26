@@ -44,6 +44,7 @@ public:
     virtual ~LoginWidget();
     bool isLoggedIn();
     QString getCookie();
+    void setLoggedIn(bool value);
 
 protected:
     virtual void changeEvent(QEvent *e);
