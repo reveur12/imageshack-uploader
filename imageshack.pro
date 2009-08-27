@@ -128,10 +128,9 @@ macx:trans.path = Contents/Resources
 trans.files += translations/*.qm
 trans.commands = lrelease \
     $$TRANSLATIONS
-mactrans.target = mactrans
-mactrans.files += $$system("ls translations/*.qm")
-mactrans.commands = lrelease \
-    translations/*ts
+macx:mactrans.target = mactrans
+macx:mactrans.files += $$system("ls translations/*.qm")
+macx:mactrans.commands = lrelease translations/*ts
 mactrans.path = Contents/Resources
 menuitem.target = menuicon
 menuitem.files = imageshackuploader.desktop
