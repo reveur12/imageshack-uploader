@@ -105,6 +105,7 @@ void TwitterClient::post(QString url, QString text, QString user, QString pass, 
 
     int id = http.request(header, postdata);
     ids.append(id);
+    users[id] = user;
 
     if (showProgressbar) showProgressBar(pos);
 }
@@ -181,9 +182,11 @@ void TwitterClient::requestFinished(int id, bool failed)
                       tr("Could not post to twitter. Wrong server response."));
                 return;
             }
-            QSettings sets;
-            QByteArray encu = sets.value("twitteruser", QVariant("")).toByteArray();
-            QString user = QByteArray::fromBase64(encu);
+            //QSettings sets;
+            //QByteArray encu = sets.value("twitteruser", QVariant("")).toByteArray();
+            //QString user = QByteArray::fromBase64(encu);
+            QString user = users[id];
+            users.remove(id);
             QString addr("http://twitter.com/%1/status/%2");
             addr = addr.arg(user, statusid.text());
             QDesktopServices().openUrl(QUrl(addr));
