@@ -52,6 +52,7 @@ private:
     GalleryCreator gallery;
     QList<int>  ids;
     void showProgressBar(QPoint);
+    QMap<int, QString> users;
 
 
 
