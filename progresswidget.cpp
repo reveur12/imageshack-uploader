@@ -31,7 +31,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QPlastiqueStyle>
 #include <QMessageBox>
 #include <QMainWindow>
+#include <QSettings>
 #include <QDebug>
+#include "pausedialog.h"
 
 ProgressWidget::ProgressWidget(QWidget *parent) :
     QStackedWidget(parent),
@@ -156,14 +158,14 @@ void ProgressWidget::pauseClicked()
 {
     if (!paused)
     {
-        QMessageBox msg;
-        msg.addButton(tr("Yes"), QMessageBox::YesRole);
-        msg.addButton(tr("No"), QMessageBox::NoRole);
-        msg.setText(tr("Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?"));
-        msg.setWindowTitle(tr("Pause"));
-        msg.exec();
-        if (msg.buttonRole(msg.clickedButton()) != QMessageBox::YesRole)
-            return;
+        QSettings sets;
+        bool skip = sets.value("hidePauseWarning", QVariant(false)).toBool();
+        if (!skip)
+        {
+            QDialog *ask = new PauseDialog(this);
+            int code = ask->exec();
+            if (code != QDialog::Accepted) return;
+        }
         m_ui->pause->setText(tr("Resume"));
         m_ui->pause->setIcon(QIcon(":/images/images/resume.png"));
         paused = true;
