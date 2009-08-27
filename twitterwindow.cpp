@@ -133,6 +133,11 @@ void TwitterWindow::submit()
         twitter.data()->post(link, m_ui->text->toPlainText(),
                              m_ui->username->text(), m_ui->password->text(),
                              true, barpos);
+    if (!m_ui->remember->isChecked())
+    {
+        m_ui->password->clear();
+        m_ui->username->clear();
+    }
     hide();
 }
 
