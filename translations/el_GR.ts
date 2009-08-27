@@ -497,6 +497,24 @@ Mηνύματα λάθους από τον server:
     </message>
 </context>
 <context>
+    <name>PauseDialog</name>
+    <message>
+        <location filename="../pausedialog.ui" line="14"/>
+        <source>Warning</source>
+        <translation type="unfinished">Προσοχή</translation>
+    </message>
+    <message>
+        <location filename="../pausedialog.ui" line="20"/>
+        <source>The current file will resume from it&apos;s beginning. Continue pausing?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pausedialog.ui" line="30"/>
+        <source>Hide this warning for future uploads</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ProgressWidget</name>
     <message>
         <location filename="../progresswidget.ui" line="73"/>
@@ -510,48 +528,47 @@ Mηνύματα λάθους από τον server:
         <translation>Συνολικά: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="151"/>
+        <location filename="../progresswidget.cpp" line="153"/>
         <source>Time left: estimating...</source>
         <translation>Υπολειπόμενος χρόνος: υπολογισμός...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="92"/>
+        <location filename="../progresswidget.cpp" line="94"/>
         <source>Waiting for links...</source>
         <translation>Αναμονή για τα links...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="84"/>
-        <location filename="../progresswidget.cpp" line="149"/>
-        <location filename="../progresswidget.cpp" line="163"/>
-        <location filename="../progresswidget.cpp" line="176"/>
+        <location filename="../progresswidget.cpp" line="86"/>
+        <location filename="../progresswidget.cpp" line="151"/>
+        <location filename="../progresswidget.cpp" line="178"/>
         <location filename="../progresswidget.ui" line="198"/>
         <source>Pause</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="96"/>
+        <location filename="../progresswidget.cpp" line="98"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Τωρινό: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="108"/>
+        <location filename="../progresswidget.cpp" line="110"/>
         <source>Loading files: %1 of %2</source>
         <translation>Φόρτωση αρχείων: %1 από %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="123"/>
-        <location filename="../progresswidget.cpp" line="131"/>
+        <location filename="../progresswidget.cpp" line="125"/>
+        <location filename="../progresswidget.cpp" line="133"/>
         <source>Time left:</source>
         <translation>Υπολειπόμενος χρόνος:</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="123"/>
+        <location filename="../progresswidget.cpp" line="125"/>
         <source>unknown...</source>
         <translation></translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="135"/>
+        <location filename="../progresswidget.cpp" line="137"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n ώρα</numerusform>
@@ -559,7 +576,7 @@ Mηνύματα λάθους από τον server:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="136"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n λεπτό</numerusform>
@@ -567,32 +584,17 @@ Mηνύματα λάθους από τον server:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="138"/>
+        <location filename="../progresswidget.cpp" line="140"/>
         <source> less than 1 min.</source>
         <translation> λιγότερο από 1 λεπτό.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="139"/>
+        <location filename="../progresswidget.cpp" line="141"/>
         <source> almost done...</source>
         <translation>σχεδόν έτοιμο...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="160"/>
-        <source>Yes</source>
-        <translation>Ναι</translation>
-    </message>
-    <message>
-        <location filename="../progresswidget.cpp" line="161"/>
-        <source>No</source>
-        <translation>Όχι</translation>
-    </message>
-    <message>
-        <location filename="../progresswidget.cpp" line="162"/>
-        <source>Pause will stop current file upload. On resume it will start uploading from begining. Are you sure want to pause?</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../progresswidget.cpp" line="167"/>
+        <location filename="../progresswidget.cpp" line="169"/>
         <source>Resume</source>
         <translation></translation>
     </message>
@@ -802,12 +804,12 @@ Mηνύματα λάθους από τον server:
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="94"/>
-        <location filename="../twitterclient.cpp" line="127"/>
-        <location filename="../twitterclient.cpp" line="139"/>
-        <location filename="../twitterclient.cpp" line="160"/>
-        <location filename="../twitterclient.cpp" line="167"/>
-        <location filename="../twitterclient.cpp" line="173"/>
-        <location filename="../twitterclient.cpp" line="180"/>
+        <location filename="../twitterclient.cpp" line="128"/>
+        <location filename="../twitterclient.cpp" line="140"/>
+        <location filename="../twitterclient.cpp" line="161"/>
+        <location filename="../twitterclient.cpp" line="168"/>
+        <location filename="../twitterclient.cpp" line="174"/>
+        <location filename="../twitterclient.cpp" line="181"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
@@ -817,28 +819,28 @@ Mηνύματα λάθους από τον server:
         <translation>Πρώτα βάλτε το όνομα χρήστη και κωδικό σας του Twitter στις επιλογές</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="128"/>
+        <location filename="../twitterclient.cpp" line="129"/>
         <source>Could not send url to Twitter</source>
         <translation>Δεν ήταν δυνατή η αποστολή του url στο Twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="140"/>
-        <location filename="../twitterclient.cpp" line="181"/>
+        <location filename="../twitterclient.cpp" line="141"/>
+        <location filename="../twitterclient.cpp" line="182"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Δεν ήταν δυνατή η δημοσίευση στο Twitter. Λάθος απάντηση από τον server.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="161"/>
+        <location filename="../twitterclient.cpp" line="162"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Δεν ήταν δυνατή η δημοσίευση στο Twitter. Λάθος δεδομένα.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="168"/>
+        <location filename="../twitterclient.cpp" line="169"/>
         <source>Failed to update twitter status.</source>
         <translation>Απέτυχε η ενημέρωση της κατάστασης του Twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="174"/>
+        <location filename="../twitterclient.cpp" line="175"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Δεν ήταν δυνατή η δημοσίευση στο Twitter. Εσωτερικό σφάλμα.</translation>
     </message>
@@ -905,8 +907,8 @@ Mηνύματα λάθους από τον server:
     <name>UpdateChecker</name>
     <message>
         <location filename="../updatechecker.cpp" line="90"/>
-        <location filename="../updatechecker.cpp" line="105"/>
-        <location filename="../updatechecker.cpp" line="118"/>
+        <location filename="../updatechecker.cpp" line="107"/>
+        <location filename="../updatechecker.cpp" line="120"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
@@ -921,38 +923,38 @@ Mηνύματα λάθους από τον server:
         <translation>Ο έλεγχος για ενημερώσεις λειτουργεί αυτή τη στιγμή.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="106"/>
+        <location filename="../updatechecker.cpp" line="108"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Λάθος απάντηση από τον server.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="119"/>
+        <location filename="../updatechecker.cpp" line="121"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Δε βρέθηκαν εκδόσεις.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="159"/>
+        <location filename="../updatechecker.cpp" line="162"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="160"/>
+        <location filename="../updatechecker.cpp" line="163"/>
         <source>No</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="162"/>
+        <location filename="../updatechecker.cpp" line="165"/>
         <source>Update available</source>
         <translation>Υπάρχει διαθέσιμη ενημέρωση</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="150"/>
-        <location filename="../updatechecker.cpp" line="174"/>
+        <location filename="../updatechecker.cpp" line="153"/>
+        <location filename="../updatechecker.cpp" line="177"/>
         <source>You have the latest version of this application.</source>
         <translation>Έχετε την τελευταία έκδοση της εφαρμογής αυτής.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="161"/>
+        <location filename="../updatechecker.cpp" line="164"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Η τελευταία έκδοση είναι η %1. Θέλετε να κάνετε ενημέρωση?</translation>
     </message>
@@ -967,8 +969,8 @@ Mηνύματα λάθους από τον server:
         <translation>Το μύνημα λάθους είναι:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="149"/>
-        <location filename="../updatechecker.cpp" line="173"/>
+        <location filename="../updatechecker.cpp" line="152"/>
+        <location filename="../updatechecker.cpp" line="176"/>
         <source>No updates available</source>
         <translation>Δεν υπάρχουν διαθέσιμες ενημερώσεις</translation>
     </message>
