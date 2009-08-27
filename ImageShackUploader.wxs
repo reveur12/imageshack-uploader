@@ -51,6 +51,7 @@
                             <File Id="nl" Name="nl_NL.qm" DiskId="1" Source="translations/nl_NL.qm" />
                             <File Id="es" Name="es_ES.qm" DiskId="1" Source="translations/es_ES.qm" />
                             <File Id="ge" Name="ge_GE.qm" DiskId="1" Source="translations/ge_GE.qm" />
+                            <File Id="br" Name="br_PT.qm" DiskId="1" Source="translations/br_PT.qm" />
                             <File Id="example" Name="en_US.ts" DiskId="1" Source="translations/en_US.ts" />
                         </Component>
                     </Directory>
