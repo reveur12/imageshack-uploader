@@ -4,7 +4,7 @@ QT += network \
     xml
 TARGET = ImageShackUploader
 unix:!macx:TARGET = imageshack-uploader
-unix {
+unix { 
     LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
     LIBS += $$LIBRARIES
@@ -58,7 +58,8 @@ SOURCES += main.cpp \
     ffmpeg_fas.c \
     seek_indices.c \
     advancedcheckbox.cpp \
-    trayicon.cpp
+    trayicon.cpp \
+    pausedialog.cpp
 HEADERS += mainwindow.h \
     uploadrequest.h \
     media.h \
@@ -94,7 +95,8 @@ HEADERS += mainwindow.h \
     seek_indices.h \
     defines.h \
     advancedcheckbox.h \
-    trayicon.h
+    trayicon.h \
+    pausedialog.h
 FORMS += mainwindow.ui \
     medialistwidget.ui \
     loginwidget.ui \
@@ -108,26 +110,28 @@ FORMS += mainwindow.ui \
     optionsdialog.ui \
     copyabletextedit.ui \
     twitterwindow.ui \
-    advancedcheckbox.ui
+    advancedcheckbox.ui \
+    pausedialog.ui
 RESOURCES += images_rc.qrc
 unix:TRANSLATIONS = $$system("ls translations/*.ts")
-win32 {
-LIST = $$system("dir translations\\*.ts /B")
-for(a, LIST): TRANSLATIONS += translations\\$${a}
+win32 { 
+    LIST = $$system("dir translations\\*.ts /B")
+    for(a, LIST):TRANSLATIONS += translations\\$${a}
 }
 win32:RC_FILE = windowsicon.rc
 macx:ICON = macicon.icns
 target.path = $$[QT_INSTALL_BINS]
 win32:target.path = release
-
 trans.path = $$UNIX_TRANSLATIONS_DIR
 win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
 trans.files += translations/*.qm
-trans.commands = lrelease $$TRANSLATIONS
+trans.commands = lrelease \
+    $$TRANSLATIONS
 mactrans.target = mactrans
 mactrans.files += $$system("ls translations/*.qm")
-mactrans.commands = lrelease translations/*ts
+mactrans.commands = lrelease \
+    translations/*ts
 mactrans.path = Contents/Resources
 menuitem.target = menuicon
 menuitem.files = imageshackuploader.desktop
