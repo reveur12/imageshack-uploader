@@ -87,10 +87,10 @@ MainWindow::MainWindow(QWidget *parent)
             SLOT(loginStatusReceiver(int)));
     connect(ui->loginWidget, SIGNAL(loginStatus(int)),
             ui->imageInfo, SLOT(loginStatusReceiver(int)));
-    connect(ui->tagWidget,
-            SIGNAL(batchPrivacy(bool)),
-            ui->imageInfo,
-            SLOT(batchPrivacy(bool)));
+    connect(ui->tagWidget, SIGNAL(batchPrivacy(bool)),
+            ui->imageInfo, SLOT(batchPrivacy(bool)));
+    connect(ui->imageInfo, SIGNAL(resizeAllImagesTo(QString)),
+            ui->mediaList, SLOT(resizeAllImagesTo(QString)));
     controlsDisabled = false;
 
 

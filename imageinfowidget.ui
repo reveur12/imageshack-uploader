@@ -115,61 +115,72 @@
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="resize">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <property name="text">
-              <string>Do not resize</string>
-             </property>
+             <widget class="QComboBox" name="resize">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Do not resize</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100x100 (avatar)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>150x150 (thumbnail)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>320x320 (for websites and email)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>640x640 (for message boards)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>800x800 (12-inch monitor)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1024x1024 (15-inch monitor)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1280x1280 (19-inch monitor)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1600x1600 (21-inch monitor)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Optimize only</string>
+               </property>
+              </item>
+             </widget>
             </item>
             <item>
-             <property name="text">
-              <string>100x100 (avatar)</string>
-             </property>
+             <widget class="QToolButton" name="resizeAll">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>150x150 (thumbnail)</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>320x320 (for websites and email)</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>640x640 (for message boards)</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>800x800 (12-inch monitor)</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1024x1024 (15-inch monitor)</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1280x1280 (19-inch monitor)</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1600x1600 (21-inch monitor)</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Optimize only</string>
-             </property>
-            </item>
-           </widget>
+           </layout>
           </item>
           <item>
            <widget class="AdvancedCheckBox" name="removeSize" native="true">
@@ -329,8 +340,8 @@
    <slot>setResize(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>385</x>
-     <y>94</y>
+     <x>378</x>
+     <y>104</y>
     </hint>
     <hint type="destinationlabel">
      <x>60</x>
@@ -393,12 +404,28 @@
    <slot>setRemoveSize(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>267</x>
-     <y>102</y>
+     <x>409</x>
+     <y>119</y>
     </hint>
     <hint type="destinationlabel">
      <x>403</x>
      <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resizeAll</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageInfoWidget</receiver>
+   <slot>resizeAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>393</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>145</y>
     </hint>
    </hints>
   </connection>
@@ -409,5 +436,6 @@
   <slot>thumbnailClicked()</slot>
   <slot>privacyUpdated()</slot>
   <slot>tagsUpdated()</slot>
+  <slot>resizeAll()</slot>
  </slots>
 </ui>

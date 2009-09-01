@@ -251,3 +251,8 @@ void ImageInfoWidget::loginStatusReceiver(int state)
     }
 
 }
+
+void ImageInfoWidget::resizeAll()
+{
+    emit resizeAllImagesTo(items.key(m_ui->resize->currentIndex()));
+}

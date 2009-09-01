@@ -67,6 +67,10 @@ private slots:
     void privacyUpdated();
     void batchPrivacy(bool);
     void loginStatusReceiver(int);
+    void resizeAll();
+
+signals:
+    void resizeAllImagesTo(QString);
 };
 
 #endif // IMAGEINFOWIDGET_H
