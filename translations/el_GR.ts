@@ -117,14 +117,14 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>ImageInfoWidget</name>
     <message>
-        <location filename="../imageinfowidget.cpp" line="97"/>
-        <location filename="../imageinfowidget.cpp" line="116"/>
+        <location filename="../imageinfowidget.cpp" line="98"/>
+        <location filename="../imageinfowidget.cpp" line="118"/>
         <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
         <translation>Εικόνα</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.cpp" line="250"/>
+        <location filename="../imageinfowidget.cpp" line="254"/>
         <source>Log in to use this features</source>
         <translation>Συνδεθείτε για να χρησιμοποιήσετε αυτές τις επιλογές</translation>
     </message>
@@ -134,72 +134,77 @@ Mηνύματα λάθους από τον server:
         <translation>Αλλαγή μεγέθους εικόνας:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="124"/>
+        <location filename="../imageinfowidget.ui" line="126"/>
         <source>Do not resize</source>
         <translation>Να μην αλλαχτεί το μέγεθος</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="129"/>
+        <location filename="../imageinfowidget.ui" line="131"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (Avatar)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="134"/>
+        <location filename="../imageinfowidget.ui" line="136"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (μικρή εικόνα)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="139"/>
+        <location filename="../imageinfowidget.ui" line="141"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (για ιστοσελίδες και email)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="144"/>
+        <location filename="../imageinfowidget.ui" line="146"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (για forums)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="149"/>
+        <location filename="../imageinfowidget.ui" line="151"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (12-inch οθόνη)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="154"/>
+        <location filename="../imageinfowidget.ui" line="156"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (15-inch οθόνη)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="159"/>
+        <location filename="../imageinfowidget.ui" line="161"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (19-inch οθόνη)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="164"/>
+        <location filename="../imageinfowidget.ui" line="166"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (21-inch οθόνη)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="169"/>
+        <location filename="../imageinfowidget.ui" line="171"/>
         <source>Optimize only</source>
         <translation>Μόνο βελτιστοποίηση</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="221"/>
+        <location filename="../imageinfowidget.ui" line="182"/>
+        <source>Resize all images to this size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="242"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Μυστικότητα:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="231"/>
+        <location filename="../imageinfowidget.ui" line="252"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Ετικέτες:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="249"/>
+        <location filename="../imageinfowidget.ui" line="270"/>
         <source>Public</source>
         <translation>Δημόσια</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="268"/>
+        <location filename="../imageinfowidget.ui" line="289"/>
         <source>Private</source>
         <translation>Ιδιωτική</translation>
     </message>
@@ -207,24 +212,24 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>LoginWidget</name>
     <message>
-        <location filename="../loginwidget.cpp" line="83"/>
-        <location filename="../loginwidget.cpp" line="139"/>
+        <location filename="../loginwidget.cpp" line="84"/>
+        <location filename="../loginwidget.cpp" line="140"/>
         <source>You are logged in as %1</source>
         <translation>Συνδεθήκατε ως %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="151"/>
-        <location filename="../loginwidget.cpp" line="159"/>
+        <location filename="../loginwidget.cpp" line="152"/>
+        <location filename="../loginwidget.cpp" line="160"/>
         <source>Authentication failed</source>
         <translation>Η πιστοποίηση απέτυχε</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="148"/>
+        <location filename="../loginwidget.cpp" line="149"/>
         <source>Could not connect to ImageShack server.</source>
         <translation>Δεν ήταν δυνατή η σύνδεση με τον server του ImageShack.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="160"/>
+        <location filename="../loginwidget.cpp" line="161"/>
         <source>Wrong credentials.</source>
         <translation>Λάθος δεδομένα.</translation>
     </message>
@@ -607,87 +612,92 @@ Mηνύματα λάθους από τον server:
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="108"/>
+        <location filename="../resultswindow.cpp" line="112"/>
         <source>Direct links</source>
         <translation>Απευθείας links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="109"/>
+        <location filename="../resultswindow.cpp" line="113"/>
         <source>Short links</source>
         <translation>Μικρά links</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="110"/>
+        <location filename="../resultswindow.cpp" line="114"/>
         <source>Hotlinks for web</source>
         <translation>Hotlinks για ιστοσελίδες</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="111"/>
+        <location filename="../resultswindow.cpp" line="115"/>
         <source>Thumbnails for web</source>
         <translation>Μικρές Εικόνες για ιστοσελίδες</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="116"/>
         <source>Thumbnails for forums 1</source>
         <translation>Μικρές Εικόνες για forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="117"/>
         <source>Thumbnails for forums 2</source>
         <translation>Μικρές Εικόνες για forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="118"/>
         <source>Hotlinks for forums 1</source>
         <translation>Hotlinks για forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Hotlinks for forums 2</source>
         <translation>Hotlinks για forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="120"/>
+        <location filename="../resultswindow.cpp" line="124"/>
+        <source>Gallery will be link: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../resultswindow.cpp" line="130"/>
         <source>Direct link</source>
         <translation>Απευθείας link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="121"/>
+        <location filename="../resultswindow.cpp" line="131"/>
         <source>Short link</source>
         <translation>Μικρό link</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="122"/>
+        <location filename="../resultswindow.cpp" line="132"/>
         <source>Hotlink for web</source>
         <translation>Hotlink για ιστοσελίδα</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="123"/>
+        <location filename="../resultswindow.cpp" line="133"/>
         <source>Thumbnail for web</source>
         <translation>Μικρή Εικόνα για ιστοσελίδα</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="124"/>
+        <location filename="../resultswindow.cpp" line="134"/>
         <source>Thumbnail for forums 1</source>
         <translation>Μικρή Εικόνα για forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="125"/>
+        <location filename="../resultswindow.cpp" line="135"/>
         <source>Thumbnail for forums 2</source>
         <translation>Μικρή Εικόνα για forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="126"/>
+        <location filename="../resultswindow.cpp" line="136"/>
         <source>Hotlink for forums 1</source>
         <translation>Hotlink για forums 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="127"/>
+        <location filename="../resultswindow.cpp" line="137"/>
         <source>Hotlink for forums 2</source>
         <translation>Hotlink για forums 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="142"/>
         <source>File %1 of %2</source>
         <translation>Αρχείο %1 από %2</translation>
     </message>
@@ -709,7 +719,7 @@ Mηνύματα λάθους από τον server:
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
-        <location filename="../resultswindow.ui" line="393"/>
+        <location filename="../resultswindow.ui" line="385"/>
         <source>Tweet this</source>
         <translation>Δείτε το στο Tweeter</translation>
     </message>
@@ -724,12 +734,12 @@ Mηνύματα λάθους από τον server:
         <translation>Όλες οι εικόνες και αρχεία video</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="390"/>
+        <location filename="../resultswindow.ui" line="382"/>
         <source>Create gallery and post to twitter</source>
         <translation>Δημιουργήστε μία συλλογή και δημοσιεύστε την στο twitter</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="450"/>
+        <location filename="../resultswindow.ui" line="457"/>
         <source>Close</source>
         <translation>Κλείσιμο</translation>
     </message>
