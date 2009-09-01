@@ -67,6 +67,7 @@ LoginWidget::LoginWidget(QWidget *parent) :
             this,
             SLOT(wrongPasswordReceiver()));
     setLoggedIn(false);
+    wasLoggedIn = false;
 }
 
 LoginWidget::~LoginWidget()
@@ -176,6 +177,7 @@ void LoginWidget::setLoggedIn(bool value)
     QSettings sets;
     sets.setValue("loggedin", QVariant(value));
     loggedIn = value;
+    if (value) wasLoggedIn = true;
 }
 
 void LoginWidget::rememberChange()
@@ -185,5 +187,10 @@ void LoginWidget::rememberChange()
         QSettings sets;
         QByteArray lbytes, pbytes;
         sets.setValue("password", QVariant(""));
+        if(wasLoggedIn)
+        {
+            m_ui->username->clear();
+            m_ui->password->clear();
+        }
     }
 }
