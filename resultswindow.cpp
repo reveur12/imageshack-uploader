@@ -101,6 +101,10 @@ void ResultsWindow::setResults(QSharedPointer<QVector<QPair<QSharedPointer<Media
     m_ui->all7->setText(box7.join("\n"));
     m_ui->all8->setText(box8.join("\n"));
 
+
+    m_ui->tabWidget->setCurrentIndex(0);
+    m_ui->tabWidget->setTabEnabled(1, res.data()->size() != 1);
+
 }
 
 void ResultsWindow::translate2ndTab()
