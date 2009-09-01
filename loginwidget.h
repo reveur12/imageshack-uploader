@@ -58,6 +58,7 @@ private:
     bool loadCookie();
     bool forgetCookie();
     QString username;
+    bool wasLoggedIn;
 
 private slots:
     void logIn();
