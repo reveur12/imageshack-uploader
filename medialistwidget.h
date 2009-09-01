@@ -72,6 +72,7 @@ private slots:
     void mediasReceiver(QVector<QSharedPointer<Media> >, QStringList, QStringList);
     void progressReceiver(int current, int total);
     void scrollbarUpdate(int, int);
+    void resizeAllImagesTo(QString);
 
 signals:
     void mediaSelected(QSharedPointer<Media>);

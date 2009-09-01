@@ -298,3 +298,9 @@ void MediaListWidget::selectFirst()
     model->select(index, QItemSelectionModel::SelectCurrent | QItemSelectionModel::Rows);
     m_ui->mediaList->setFocus(Qt::MouseFocusReason);
 }
+
+void MediaListWidget::resizeAllImagesTo(QString value)
+{
+    for (int i=0; i<mediaList->rowCount(); i++)
+        mediaList->getMedia(i).data()->setResize(value);
+}
