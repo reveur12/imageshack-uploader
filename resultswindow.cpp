@@ -117,6 +117,12 @@ void ResultsWindow::translate2ndTab()
     m_ui->all6->setTitle(tr("Thumbnails for forums 2"));
     m_ui->all7->setTitle(tr("Hotlinks for forums 1"));
     m_ui->all8->setTitle(tr("Hotlinks for forums 2"));
+    if (!results.isNull() && results.data()->size()>1)
+    {
+        QString url = results.data()->at(0).second.at(4)+"x";
+        QString text = QString("<a href=\"%1\">%2</a>").arg(url).arg(url);
+        m_ui->gallink->setText(tr("Gallery will be link: %1").arg(text));
+    }
 }
 
 void ResultsWindow::translate1stTab()
