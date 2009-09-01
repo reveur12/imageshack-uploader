@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>497</width>
-    <height>533</height>
+    <height>553</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,7 +23,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -335,32 +335,8 @@
       <attribute name="title">
        <string>All images and video files</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="5" column="1">
-        <widget class="CopyableTextEdit" name="all6" native="true"/>
-       </item>
-       <item row="3" column="1">
-        <widget class="CopyableTextEdit" name="all4" native="true"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="CopyableTextEdit" name="all2" native="true"/>
-       </item>
-       <item row="7" column="1">
-        <widget class="CopyableTextEdit" name="all8" native="true"/>
-       </item>
-       <item row="5" column="0">
-        <widget class="CopyableTextEdit" name="all5" native="true"/>
-       </item>
-       <item row="7" column="0">
-        <widget class="CopyableTextEdit" name="all7" native="true"/>
-       </item>
-       <item row="3" column="0">
-        <widget class="CopyableTextEdit" name="all3" native="true"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="CopyableTextEdit" name="all1" native="true"/>
-       </item>
-       <item row="0" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <spacer name="horizontalSpacer_9">
@@ -368,15 +344,31 @@
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Expanding</enum>
+            <enum>QSizePolicy::Minimum</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
              <width>40</width>
-             <height>20</height>
+             <height>1</height>
             </size>
            </property>
           </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="gallink">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string notr="true">Gallery link: unknown</string>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="gallery">
@@ -400,21 +392,36 @@
          </item>
         </layout>
        </item>
-       <item row="0" column="0">
-        <spacer name="horizontalSpacer_10">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="CopyableTextEdit" name="all1" native="true">
+           <zorder>all2</zorder>
+           <zorder>all2</zorder>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="CopyableTextEdit" name="all2" native="true"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="CopyableTextEdit" name="all8" native="true"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="CopyableTextEdit" name="all3" native="true"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="CopyableTextEdit" name="all5" native="true"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="CopyableTextEdit" name="all6" native="true"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="CopyableTextEdit" name="all7" native="true"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="CopyableTextEdit" name="all4" native="true"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
