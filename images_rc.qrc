@@ -18,5 +18,6 @@
         <file>images/tiff.png</file>
         <file>images/resume.png</file>
         <file>images/pause.png</file>
+        <file>images/all.gif</file>
     </qresource>
 </RCC>

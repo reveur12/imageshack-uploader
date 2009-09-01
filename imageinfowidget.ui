@@ -175,8 +175,15 @@
             </item>
             <item>
              <widget class="QToolButton" name="resizeAll">
+              <property name="toolTip">
+               <string>Resize all images to this size</string>
+              </property>
               <property name="text">
-               <string/>
+               <string notr="true"/>
+              </property>
+              <property name="icon">
+               <iconset resource="images_rc.qrc">
+                <normaloff>:/images/images/all.gif</normaloff>:/images/images/all.gif</iconset>
               </property>
              </widget>
             </item>
@@ -331,7 +338,9 @@
    </slots>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="images_rc.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>resize</sender>
