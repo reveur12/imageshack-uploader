@@ -302,5 +302,6 @@ void MediaListWidget::selectFirst()
 void MediaListWidget::resizeAllImagesTo(QString value)
 {
     for (int i=0; i<mediaList->rowCount(); i++)
-        mediaList->getMedia(i).data()->setResize(value);
+        if (mediaList->getMedia(i).data()->getClass() == "image")
+            mediaList->getMedia(i).data()->setResize(value);
 }

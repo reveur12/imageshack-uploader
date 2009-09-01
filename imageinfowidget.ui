@@ -175,6 +175,9 @@
             </item>
             <item>
              <widget class="QToolButton" name="resizeAll">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="toolTip">
                <string>Resize all images to this size</string>
               </property>
