@@ -59,7 +59,8 @@ SOURCES += main.cpp \
     seek_indices.c \
     advancedcheckbox.cpp \
     trayicon.cpp \
-    pausedialog.cpp
+    pausedialog.cpp \
+    httprequest.cpp
 HEADERS += mainwindow.h \
     uploadrequest.h \
     media.h \
@@ -96,7 +97,8 @@ HEADERS += mainwindow.h \
     defines.h \
     advancedcheckbox.h \
     trayicon.h \
-    pausedialog.h
+    pausedialog.h \
+    httprequest.h
 FORMS += mainwindow.ui \
     medialistwidget.ui \
     loginwidget.ui \
@@ -130,7 +132,8 @@ trans.commands = lrelease \
     $$TRANSLATIONS
 macx:mactrans.target = mactrans
 macx:mactrans.files += $$system("ls translations/*.qm")
-macx:mactrans.commands = lrelease translations/*ts
+macx:mactrans.commands = lrelease \
+    translations/*ts
 mactrans.path = Contents/Resources
 menuitem.target = menuicon
 menuitem.files = imageshackuploader.desktop
