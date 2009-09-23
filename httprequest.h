@@ -12,6 +12,7 @@ class HTTPRequest : public QObject
 public:
     HTTPRequest();
     void put(QString url, QMap<QString, QString> fields);
+    bool putFile(QSharedPointer<Media> media, QMap<QString, QString> fields);
     void get(QString url, QMap<QString, QString> params);
     void postFile(QString url, QMap<QString, QString> fiels, QString filename);
     void pause();
@@ -23,7 +24,17 @@ public:
 private:
     QNetworkAccessManager qnam;
     QSharedPointer<QNetworkReply> reply;
+    bool inProgress;
+    bool failed;
+    qint64 doneSize;
+    QString url;
+    QSharedPointer<Media> media;
+    QMap<QString, QString> fields;
+
 private slots:
+    void putFile2(QString uploadUrl = "");
+    void putFile3();
+    void putFile4();
     void progressReceiver(qint64, qint64);
     void statusReceiver(int);
 signals:
