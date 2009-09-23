@@ -50,6 +50,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # define VIDEO_UPLOAD_PATH "/upload_api.php"
 #endif
 
+#define CHUNKED_VIDEO_UPLOAD_HOSTNAME "render.imageshack.us"
+#define CHUNKED_VIDEO_UPLOAD_PATH "/renderapi"
+
 #define LOGIN_HOSTNAME "www.imageshack.us"
 #define LOGIN_PATH "/auth.php"
 
