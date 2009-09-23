@@ -68,7 +68,6 @@ void FileUploader::process()
         uploadedTotal += uploadedCurrent;
         uploadedCurrent = 0;
         current = medias->getMedia(skip);
-
         request = QSharedPointer<UploadRequest>(new UploadRequest(current, http.data()));
         tmp.append(request);
         connect(request.data(), SIGNAL(progress(int)),
@@ -124,6 +123,7 @@ void FileUploader::statusReceiver(int value)
 
 void FileUploader::resultReceiver(QString value)
 {
+    qDebug() << value;
     QDomDocument xml;
     xml.setContent(value);
     QDomElement doc = xml.documentElement();

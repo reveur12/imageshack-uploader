@@ -1,6 +1,9 @@
 #ifndef HTTPREQUEST_H
 #define HTTPREQUEST_H
 
+#include "media.h"
+#include "defines.h"
+
 #include <QObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -9,12 +12,14 @@
 
 class HTTPRequest : public QObject
 {
+    Q_OBJECT
 public:
     HTTPRequest();
-    void put(QString url, QMap<QString, QString> fields);
-    bool putFile(QSharedPointer<Media> media, QMap<QString, QString> fields);
-    void get(QString url, QMap<QString, QString> params);
-    void postFile(QString url, QMap<QString, QString> fiels, QString filename);
+    void put(QString url, QVector<QPair<QString, QString> > fields);
+    bool putFile(QSharedPointer<Media> media, QVector<QPair<QString, QString> > fields);
+    void get(QString url, QVector<QPair<QString, QString> > params);
+    void post(QString url, QVector<QPair<QString, QString> > fields);
+    void postFile(QSharedPointer<Media> media, QVector<QPair<QString, QString> > fields);
     void pause();
     void resume();
     int progress();
@@ -23,23 +28,36 @@ public:
     enum state { START, END, ERROR, RESUME, PAUSE };
 private:
     QNetworkAccessManager qnam;
-    QSharedPointer<QNetworkReply> reply;
+    QNetworkReply* reply;
     bool inProgress;
     bool failed;
+    void connectReply(const char*);
     qint64 doneSize;
-    QString url;
+    QString url, getlenurl;
     QSharedPointer<Media> media;
-    QMap<QString, QString> fields;
+    QVector<QPair<QString, QString> > fields;
+    QByteArray formStartPostData(QSharedPointer<Media>, QVector<QPair<QString, QString> >);
+
+
+    void getReceiver();
+    void postReceiver();
+    void postFileReceiver();
+
 
 private slots:
-    void putFile2(QString uploadUrl = "");
+    void putFile2(QString uploadUrl = "", QString lenUrl = "");
     void putFile3();
     void putFile4();
-    void progressReceiver(qint64, qint64);
-    void statusReceiver(int);
+    void fail(QString msg);
+    void fail(QNetworkReply::NetworkError code);
+    void putFileProgressReceiver(qint64 done, qint64 total);
+    //void progressReceiver(qint64, qint64);
+    //void statusReceiver(int);
 signals:
     void progress(int);
     void status(state);
+    void result(QString);
+    void error(QString);
 };
 
 #endif // HTTPREQUEST_H
