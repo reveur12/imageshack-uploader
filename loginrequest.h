@@ -30,7 +30,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define LOGINREQUEST_H
 
 #include <QObject>
-#include <QHttp>
+//#include <QHttp>
+#include "httprequest.h"
 
 class LoginRequest : public QObject
 {
@@ -40,7 +41,7 @@ public:
     ~LoginRequest();
     void login(QString, QString);
     void abort();
-    QHttp http;
+    HTTPRequest http;
 
 private:
     QString username;
@@ -49,7 +50,8 @@ private:
     bool aborted;
 
 private slots:
-    void requestFinished (int, bool);
+    void errorReceiver(QString);
+    void resultReceiver(QString);
 
 signals:
     void failed();

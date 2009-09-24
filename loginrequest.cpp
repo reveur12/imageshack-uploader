@@ -38,14 +38,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 LoginRequest::LoginRequest()
 {
-    connect(&http, SIGNAL(requestFinished(int, bool)),
-             this, SLOT(requestFinished(int, bool)));
+    http.connectError(this, SLOT(errorReceiver(QString)));
+    http.connectResult(this, SLOT(resultReceiver(QString)));
 }
 
 LoginRequest::~LoginRequest()
 {
-    http.disconnect(this, SLOT(requestFinished(int, bool)));
-    http.abort();
+    http.stop();
 }
 
 void LoginRequest::login(QString login, QString pass)
@@ -53,49 +52,41 @@ void LoginRequest::login(QString login, QString pass)
     aborted = false;
     username = login;
     password = pass;
-    QHttpRequestHeader header("POST", LOGIN_PATH, 1, 1);
-    header.addValue("Content-Type","application/x-www-form-urlencoded");
-    header.addValue("Cache-Control", "no-cache");
-    header.addValue("Host", LOGIN_HOSTNAME);
-    header.addValue("Accept","*/*");
-
-    QByteArray data = "username=";
-    data.append(QUrl::toPercentEncoding(username));
-    data.append("&password=");
-    data.append(QUrl::toPercentEncoding(password));
-    data.append("&nocookie=1&format=xml");
-
-    http.setHost(LOGIN_HOSTNAME);
-    requestId = http.request(header,data);
+    QVector<QPair<QString, QString> > fields;
+    fields.append(qMakePair(QString("username"), login));
+    fields.append(qMakePair(QString("password"), pass));
+    fields.append(qMakePair(QString("nocookie"), QString("1")));
+    fields.append(qMakePair(QString("format"), QString("xml")));
+    QString url = "http://";
+    url += LOGIN_HOSTNAME;
+    url += LOGIN_PATH;
+    http.post(url, fields);
 }
 
-void LoginRequest::requestFinished(int id, bool error)
+void LoginRequest::errorReceiver(QString msg)
 {
-    if (requestId == id)
-    {
-        if (aborted) return;
-        if (error) { emit failed(); return; }
-        else
-        {
-            QDomDocument xml;
-            QString data = http.readAll();
-            xml.setContent(data);
+    qDebug() << http.errorString();
+    emit failed();
+}
 
-            QDomElement doc = xml.documentElement();
-            QDomElement error = doc.firstChildElement("error");
-            if (!error.isNull()) { emit wrongPassword(); return; }
-            QDomElement cookie = doc.firstChildElement("cookie");
-            QDomElement name = doc.firstChildElement("username");
-            if (!cookie.text().isNull() && !name.text().isNull())
-                emit success(cookie.text(), name.text());
-            else emit failed();
-        }
-    }
+void LoginRequest::resultReceiver(QString data)
+{
+    if (aborted) return;
+    QDomDocument xml;
+    xml.setContent(data);
+    QDomElement doc = xml.documentElement();
+    QDomElement error = doc.firstChildElement("error");
+    if (!error.isNull()) { emit wrongPassword(); return; }
+    QDomElement cookie = doc.firstChildElement("cookie");
+    QDomElement name = doc.firstChildElement("username");
+    if (!cookie.text().isNull() && !name.text().isNull())
+        emit success(cookie.text(), name.text());
+    else emit failed();
 }
 
 
 void LoginRequest::abort()
 {
     aborted = true;
-    http.abort();
+    http.stop();
 }
