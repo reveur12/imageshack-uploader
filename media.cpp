@@ -263,6 +263,11 @@ QStringList Media::getTags()
     return tags;
 }
 
+QString Media::getAllTags()
+{
+    return (tags + batchTags).join(",");
+}
+
 QString Media::getResize()
 {
     return resize;
