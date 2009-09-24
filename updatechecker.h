@@ -29,8 +29,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef UPDATECHECKER_H
 #define UPDATECHECKER_H
 
+#include "httprequest.h"
+
 #include <QObject>
-#include <QHttp>
+//#include <QHttp>
 
 class UpdateChecker : public QObject
 {
@@ -42,12 +44,15 @@ public:
 
 private:
     bool inProgress;
-    QHttp req;
+    //QHttp req;
+    HTTPRequest req;
     int id;
     bool workSilent;
 
 private slots:
-    void resultReceiver(int reqid, bool error);
+    void errorReceiver(QString msg);
+    void resultReceiver(QString data);
+
 };
 
 #endif // UPDATECHECKER_H

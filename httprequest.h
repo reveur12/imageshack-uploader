@@ -20,7 +20,7 @@ public:
     void uploadFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
 
     void put(QString url, QVector<QPair<QString, QString> > fields);
-    void get(QString url, QVector<QPair<QString, QString> > params);
+    void get(QString url, QVector<QPair<QString, QString> > params = QVector<QPair<QString, QString> >());
     void post(QString url, QVector<QPair<QString, QString> > fields);
     void postFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
     bool putFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");

@@ -36,22 +36,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "windowsexplorerintegrator.h"
 #endif
 
-#include "httprequest.h"
-#include <QVector>
-#include <QPair>
-#include <QSharedPointer>
-
 int main(int argc, char **argv)
 {
     QtSingleApplication a(argc, argv);
-
-    HTTPRequest r;
-    QSharedPointer<Media> m(new Media("/home/a2k/Sample.mov"));
-    QVector<QPair<QString, QString> > v;
-    v.append(qMakePair(QString("public"), QString("yes")));
-
-
-
 
     a.setApplicationName("ImageShack Uploader");
     a.setOrganizationName("ImageShack");
@@ -91,6 +78,5 @@ int main(int argc, char **argv)
 
     w.show();
 
-    r.postFile(m);
     return a.exec();
 }

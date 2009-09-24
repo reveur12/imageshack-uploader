@@ -43,14 +43,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 UpdateChecker::UpdateChecker()
 {
     inProgress = false;
-    connect(&req, SIGNAL(requestFinished(int, bool)),
-            this, SLOT(resultReceiver(int, bool)));
+    req.connectError(this, SLOT(errorReceiver(QString)));
+    req.connectResult(this, SLOT(resultReceiver(QString)));
 }
 
 UpdateChecker::~UpdateChecker()
 {
-    req.disconnect(this, SLOT(resultReceiver(int, bool)));
-    req.abort();
+    req.stop();
 }
 
 void UpdateChecker::check(bool silent)
@@ -61,8 +60,7 @@ void UpdateChecker::check(bool silent)
                   tr("Update checkup is currently in progress."));
     inProgress = true;
 
-    req.setHost(UPDATE_HOSTNAME);
-    id = req.get(UPDATE_PATH);
+    req.get(QString("http://") + UPDATE_HOSTNAME + UPDATE_PATH);
 }
 
 bool versionCompare(QString one, QString two)
@@ -81,102 +79,97 @@ bool versionCompare(QString one, QString two)
     return false;
 }
 
-void UpdateChecker::resultReceiver(int reqid, bool error)
+void UpdateChecker::errorReceiver(QString msg)
 {
-    if (reqid == id)
+    QMessageBox::critical(NULL, tr("Error"),
+              tr("Could not check for updates. Please try again later.") +
+              "\n" + tr("Error message is:") + req.errorString());
+    inProgress = false;
+    return;
+}
+
+void UpdateChecker::resultReceiver(QString data)
+{
+    QDomDocument xml;
+
+    qDebug() << data;
+
+    xml.setContent(data);
+    QDomElement productxml = xml.firstChildElement("product");
+    if (productxml.isNull())
     {
-        if (error)
-        {
-            QMessageBox::critical(NULL, tr("Error"),
-                  tr("Could not check for updates. Please try again later.") +
-                  "\n" + tr("Error message is:") + req.errorString());
-            inProgress = false;
-            return;
-        }
+        QMessageBox::critical(NULL, tr("Error"),
+              tr("Could not check for updates. Wrong server response."));
+        inProgress = false;
+        return;
+    }
 
-        QDomDocument xml;
+    QDomElement urlxml = productxml.firstChildElement("url");
 
-        QString data = req.readAll();
+    QString url = urlxml.text();
 
-        qDebug() << data;
+    QDomNodeList versionsx = xml.elementsByTagName("version");
+    if (versionsx.length()==0)
+    {
+        QMessageBox::critical(NULL, tr("Error"),
+              tr("Could not check for updates. No versions found."));
+        inProgress = false;
+        return;
+    }
 
-        xml.setContent(data);
-        QDomElement productxml = xml.firstChildElement("product");
-        if (productxml.isNull())
-        {
-            QMessageBox::critical(NULL, tr("Error"),
-                  tr("Could not check for updates. Wrong server response."));
-            inProgress = false;
-            return;
-        }
-
-        QDomElement urlxml = productxml.firstChildElement("url");
-
-        QString url = urlxml.text();
-
-        QDomNodeList versionsx = xml.elementsByTagName("version");
-        if (versionsx.length()==0)
-        {
-            QMessageBox::critical(NULL, tr("Error"),
-                  tr("Could not check for updates. No versions found."));
-            inProgress = false;
-            return;
-        }
-
-        QString platform;
+    QString platform;
 
 #ifdef Q_OS_WIN
-        platform = "WIN";
+    platform = "WIN";
 #endif
 #ifdef Q_OS_MAC
-        platform = "MAC";
+    platform = "MAC";
 #endif
-        if (platform.isEmpty()) platform = "UNIX";
-        QStringList versions;
-        QMap<QString, QUrl> urls;
-        for(unsigned int i=0; i<versionsx.length(); i++)
-        {
-            QDomNode version = versionsx.at(i);
-            QDomNode platformx = version.attributes().namedItem("platform");
-            if (platformx.isNull()) continue;
-            QString vpl = platformx.nodeValue();
-            if ((vpl != platform) && (vpl != "ALL")) continue;
-            QString ver = version.attributes().namedItem("id").nodeValue();
-            versions.append(ver);
-            QDomElement xurl = version.toElement().firstChildElement("url");
-            urls[ver] = QUrl(xurl.text());
-        }
-        if (!versions.size())
-        {
-            if (!workSilent)
-            QMessageBox::information(NULL, tr("No updates available"),
-             tr("You have the latest version of this application."));
-            inProgress = false;
-            return;
-        }
-        qSort( versions.begin(), versions.end(), versionCompare); // I should write Version class with right compare
-        QString version = versions.first();                       // operator and use QMap's auto sorting.
-        if (versionCompare(version, QApplication::applicationVersion()))
-        {
-            QMessageBox msg;
-            msg.addButton(tr("Yes"), QMessageBox::YesRole);
-            msg.addButton(tr("No"), QMessageBox::NoRole);
-            msg.setText(tr("Lastest version is %1. Do you want to update?").arg(version));
-            msg.setWindowTitle(tr("Update available"));
-            msg.exec();
-            if (msg.buttonRole(msg.clickedButton()) == QMessageBox::YesRole)
-            {
-                QDesktopServices().openUrl(urls[version]);
-            }
-        }
-        else
-        {
-            if (!workSilent)
-            {
-            QMessageBox::information(NULL, tr("No updates available"),
-             tr("You have the latest version of this application."));
-            }
-        }
-        inProgress = false;
+    if (platform.isEmpty()) platform = "UNIX";
+    QStringList versions;
+    QMap<QString, QUrl> urls;
+    for(unsigned int i=0; i<versionsx.length(); i++)
+    {
+        QDomNode version = versionsx.at(i);
+        QDomNode platformx = version.attributes().namedItem("platform");
+        if (platformx.isNull()) continue;
+        QString vpl = platformx.nodeValue();
+        if ((vpl != platform) && (vpl != "ALL")) continue;
+        QString ver = version.attributes().namedItem("id").nodeValue();
+        versions.append(ver);
+        QDomElement xurl = version.toElement().firstChildElement("url");
+        urls[ver] = QUrl(xurl.text());
     }
+    if (!versions.size())
+    {
+        if (!workSilent)
+        QMessageBox::information(NULL, tr("No updates available"),
+         tr("You have the latest version of this application."));
+        inProgress = false;
+        return;
+    }
+    qSort( versions.begin(), versions.end(), versionCompare); // I should write Version class with right compare
+    QString version = versions.first();                       // operator and use QMap's auto sorting.
+    if (versionCompare(version, QApplication::applicationVersion()))
+    {
+        QMessageBox msg;
+        msg.addButton(tr("Yes"), QMessageBox::YesRole);
+        msg.addButton(tr("No"), QMessageBox::NoRole);
+        msg.setText(tr("Lastest version is %1. Do you want to update?").arg(version));
+        msg.setWindowTitle(tr("Update available"));
+        msg.exec();
+        if (msg.buttonRole(msg.clickedButton()) == QMessageBox::YesRole)
+        {
+            QDesktopServices().openUrl(urls[version]);
+        }
+    }
+    else
+    {
+        if (!workSilent)
+        {
+            QMessageBox::information(NULL, tr("No updates available"),
+                       tr("You have the latest version of this application."));
+        }
+    }
+    inProgress = false;
 }
