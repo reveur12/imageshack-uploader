@@ -91,6 +91,6 @@ int main(int argc, char **argv)
 
     w.show();
 
-    r.putFile(m, v);
+    r.putFile(m);
     return a.exec();
 }

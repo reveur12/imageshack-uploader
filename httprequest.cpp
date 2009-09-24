@@ -1,5 +1,6 @@
 #include "httprequest.h"
 #include "filesource.h"
+#include <QApplication>
 #include <QDomElement>
 #include <QDomDocument>
 #include <QDebug>
@@ -8,6 +9,49 @@ HTTPRequest::HTTPRequest()
 {
     failed = false;
     inProgress = false;
+}
+
+QByteArray HTTPRequest::userAgent()
+{
+    QByteArray userAgent;
+    userAgent += "ImageShack Uploader";
+    userAgent += " " + QApplication::applicationVersion() + " ";
+
+#ifdef Q_OS_WIN
+    userAgent += "(Windows)";
+#endif
+#ifdef Q_WS_X11
+#ifndef Q_OS_MACX
+    userAgent += "(Unix)";
+#endif
+#endif
+#ifdef Q_OS_MACX
+    userAgent += "(MacOS)";
+#endif
+    return userAgent;
+}
+
+QVector<QPair<QString, QString> > HTTPRequest::formDataFields(QSharedPointer<Media> media, QString cookie, QString username, QString password)
+{
+    QVector<QPair<QString,QString> > fields;
+    QString tags = media.data()->getAllTags();
+    bool isPublic = !(media.data()->getPrivate());
+    fields << qMakePair(QString("public"), QString(isPublic?"yes":"no"));
+    if (!cookie.isEmpty()) fields << qMakePair(QString("cookie"), cookie);
+    if (!username.isEmpty()) fields << qMakePair(QString("username"), username);
+    if (!password.isEmpty()) fields << qMakePair(QString("password"), password);
+    if (!tags.isEmpty()) fields << qMakePair(QString("tags"), tags);
+    if ((media.data()->getClass() == "image") || (media.data()->getClass() == "application"))
+        {
+        if (!media.data()->getResize().isNull())
+        {
+            fields << qMakePair(QString("optimage"), QString("1"));
+            fields << qMakePair(QString("optsize"), media.data()->getResize());
+        }
+        if (media.data()->getRemoveSize()) fields << qMakePair(QString("rembar"), QString("1"));
+    }
+    fields << qMakePair(QString("key"), QString(DEVELOPER_KEY));
+    return fields;
 }
 
 void HTTPRequest::put(QString url, QVector<QPair<QString, QString> > fields)
@@ -21,12 +65,19 @@ void HTTPRequest::connectReply(const char* func)
             this, SLOT(fail(QNetworkReply::NetworkError)));
 }
 
-QByteArray HTTPRequest::formStartPostData(QSharedPointer<Media> media, QVector<QPair<QString, QString> > fields)
+QByteArray HTTPRequest::formStartPostData(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
-    return QByteArray("key=0369BIKP4dc39f5f287a680e200ac4c2bc821f3a");
+    QByteArray res;
+    QVector<QPair<QString, QString> > fields = formDataFields(media, cookie, username, password);
+    for(int i=0; i<fields.size(); i++)
+    {
+        if (res.size() && !res.endsWith('&')) res.append('&');
+        res.append(fields.at(i).first + fields.at(i).second);
+    }
+    return res;
 }
 
-bool HTTPRequest::putFile(QSharedPointer<Media> media, QVector<QPair<QString, QString> > fields)
+bool HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
     if (inProgress) return false;
     failed = false;
@@ -35,12 +86,7 @@ bool HTTPRequest::putFile(QSharedPointer<Media> media, QVector<QPair<QString, QS
     this->media = media;
     this->fields = fields;
     QNetworkRequest req("http://" + QString(CHUNKED_VIDEO_UPLOAD_HOSTNAME) + CHUNKED_VIDEO_UPLOAD_PATH + "/start");
-    qDebug() << "putFile making request...";
-
-    reply = qnam.post(req, formStartPostData(media, fields));
-    //reply = r;
-    //connect(reply, SIGNAL(finished()), this, SLOT(putFile2()));
-    //connect(reply, SIGNAL(finished()), this, SLOT(putFile2()));
+    reply = qnam.post(req, formStartPostData(media, cookie, username, password));
     connectReply(SLOT(putFile2()));
     return true;
 }
@@ -84,21 +130,15 @@ void HTTPRequest::putFile3()
     bool isok = true;
     doneSize = reply->readAll().toInt(&isok);
     if (!isok) doneSize = 0;
-    //qint64 doneSize = reply->header(QNetworkRequest::ContentLengthHeader).toInt();
-    qDebug() << "opening filesource";
-    //FileSource *fs = new FileSource(media, fields);
     QFile *fs = new QFile(media.data()->filepath());
     fs->open(QFile::ReadOnly);
     fs->seek(doneSize);
-    qDebug() << "created filesource";
-    //fs->open(FileSource::ReadOnly);
-    //fs->seek(doneSize);
-    qDebug() << "opened filesource";
-    qDebug() << "puting to url" << url;
     QNetworkRequest req(url);
     QByteArray header;
     header.append("bytes " + QString::number(doneSize) + '-' + QString::number(fs->size()) + '/' + QString::number(fs->size()));
     req.setRawHeader(QByteArray("Content-Range"), header);
+    req.setRawHeader(QByteArray("Content-Length"), QByteArray().append(QString::number(fs->size() - doneSize)));
+    req.setRawHeader(QByteArray("Content-Type"), QByteArray("application/octet-stream"));
     reply = qnam.put(req, fs);
     connectReply(SLOT(putFile4()));
     connect(reply, SIGNAL(uploadProgress(qint64, qint64)), this,
@@ -217,10 +257,17 @@ void HTTPRequest::resume()
     this->putFile2(url);
 }
 
-void connectProgress(const char* to, const char* func)
+void HTTPRequest::connectResult(QObject* obj, const char* func)
 {
+    connect(this, SIGNAL(result(QString)), obj, func);
 }
 
-void connectStatus(const char* to, const char* func)
+void HTTPRequest::connectProgress(QObject* obj, const char* func)
 {
+    connect(this, SIGNAL(progress(int)), obj, func);
+}
+
+void HTTPRequest::connectError(QObject* obj, const char* func)
+{
+    connect(this, SIGNAL(error(QString)), obj, func);
 }

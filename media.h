@@ -59,6 +59,7 @@ public:
     bool getPrivate();
 
     void setTags(QStringList);
+    QString getAllTags();
     void setPrivacy(bool);
     void setResize(QString);
     void setRemoveSize(bool);
@@ -78,6 +79,7 @@ private:
     QString mediaType;
     QString mediaClass;
     QStringList tags;
+    QStringList batchTags;
     bool privacy;
     QString resize;
     bool removeSize;

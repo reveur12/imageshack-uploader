@@ -16,16 +16,18 @@ class HTTPRequest : public QObject
 public:
     HTTPRequest();
     void put(QString url, QVector<QPair<QString, QString> > fields);
-    bool putFile(QSharedPointer<Media> media, QVector<QPair<QString, QString> > fields);
     void get(QString url, QVector<QPair<QString, QString> > params);
     void post(QString url, QVector<QPair<QString, QString> > fields);
     void postFile(QSharedPointer<Media> media, QVector<QPair<QString, QString> > fields);
+    bool putFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
     void pause();
     void resume();
     int progress();
-    void connectProgress(const char* to, const char* func);
-    void connectStatus(const char* to, const char* func);
+    void connectProgress(QObject* obj, const char* func);
+    void connectResult(QObject* obj, const char* func);
+    void connectError(QObject* obj, const char* func);
     enum state { START, END, ERROR, RESUME, PAUSE };
+    QByteArray userAgent();
 private:
     QNetworkAccessManager qnam;
     QNetworkReply* reply;
@@ -36,7 +38,8 @@ private:
     QString url, getlenurl;
     QSharedPointer<Media> media;
     QVector<QPair<QString, QString> > fields;
-    QByteArray formStartPostData(QSharedPointer<Media>, QVector<QPair<QString, QString> >);
+    QVector<QPair<QString, QString> > formDataFields(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
+    QByteArray formStartPostData(QSharedPointer<Media> media, QString cookie, QString username, QString password);
 
 
     void getReceiver();
