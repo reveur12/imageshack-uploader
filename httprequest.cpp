@@ -11,6 +11,18 @@ HTTPRequest::HTTPRequest()
     inProgress = false;
 }
 
+void HTTPRequest::uploadFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
+{
+    if (media.data()->getClass() == "video")
+    {
+        this->putFile(media, cookie, username, password);
+    }
+    else
+    {
+        this->postFile(media, cookie, username, password);
+    }
+}
+
 QByteArray HTTPRequest::userAgent()
 {
     QByteArray userAgent;
@@ -72,7 +84,7 @@ QByteArray HTTPRequest::formStartPostData(QSharedPointer<Media> media, QString c
     for(int i=0; i<fields.size(); i++)
     {
         if (res.size() && !res.endsWith('&')) res.append('&');
-        res.append(fields.at(i).first + fields.at(i).second);
+        res.append(fields.at(i).first + "=" + fields.at(i).second);
     }
     return res;
 }
@@ -85,9 +97,18 @@ bool HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString u
     emit progress(0);
     this->media = media;
     this->fields = fields;
+    if (!media.data()->sizeURL.isEmpty() && !media.data()->uploadURL.isEmpty())
+    {
+        putFile2(media.data()->uploadURL, media.data()->sizeURL);
+        return true;
+    }
     QNetworkRequest req("http://" + QString(CHUNKED_VIDEO_UPLOAD_HOSTNAME) + CHUNKED_VIDEO_UPLOAD_PATH + "/start");
+    qDebug() << formStartPostData(media, cookie, username, password);
     reply = qnam.post(req, formStartPostData(media, cookie, username, password));
-    connectReply(SLOT(putFile2()));
+    //connectReply(SLOT(putFile2()));
+    connect(reply, SIGNAL(finished()), this, SLOT(putFile2()));
+    connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
+            this, SLOT(specialFail(QNetworkReply::NetworkError)));
     return true;
 }
 
@@ -117,6 +138,8 @@ void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
 
     }
     else { url = uploadUrl; getlenurl = lenUrl; }
+    media.data()->sizeURL = getlenurl;
+    media.data()->uploadURL = uploadUrl;
     QNetworkRequest req(getlenurl);
     reply = qnam.get(req);
     connectReply(SLOT(putFile3()));
@@ -151,6 +174,11 @@ void HTTPRequest::putFileProgressReceiver(qint64 done, qint64 total)
     emit progress(2 + (doneSize+done)*98/(doneSize+total));
 }
 
+void HTTPRequest::postFileProgressReceiver(qint64 done, qint64 total)
+{
+    emit progress(done*100/total);
+}
+
 void HTTPRequest::putFile4()
 {
     qDebug() << "putFile4 got response";
@@ -177,6 +205,15 @@ void HTTPRequest::fail(QNetworkReply::NetworkError code)
     qDebug() << reply->readAll();
     fail("Error #" + QString::number(code));
 }
+
+void HTTPRequest::specialFail(QNetworkReply::NetworkError code)
+{
+    qDebug() << "Special fail";
+    qDebug() << reply->readAll();
+    reply->blockSignals(true);
+    this->postFile(media, cookie, username, password);
+}
+
 
 void HTTPRequest::get(QString url, QVector<QPair<QString, QString> > params)
 {/*
@@ -229,20 +266,61 @@ void HTTPRequest::postReceiver()
     inProgress = false;
 }
 
-void HTTPRequest::postFile(QSharedPointer<Media> media, QVector<QPair<QString, QString> > fields)
+QPair<QString, QString> HTTPRequest::getUploadHost(QSharedPointer<Media> media)
+{
+    QString host, path;
+    if ((media.data()->getClass() == "image") || (media.data()->getClass() == "application"))
+    {
+        host = "load"+QString::number((qrand()%9)+1)+"." + UPLOAD_HOSTNAME;
+        path = UPLOAD_PATH;
+    } else
+    {
+        host = VIDEO_UPLOAD_HOSTNAME;
+        path = VIDEO_UPLOAD_PATH;
+    }
+    return qMakePair(host, path);
+}
+
+void HTTPRequest::postFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
     failed = false;
     inProgress = true;
-    FileSource fs(media, fields);
 
-    //reply = QSharedPointer<QNetworkReply>(qnam.post(req, fs));
+    QString host, path;
+    QPair<QString, QString> destination = getUploadHost(media);
+    host = destination.first;
+    path = destination.second;
+
+    QString boundary(BOUNDARY);
+
+    data = QSharedPointer<FileSource>(new FileSource(media, fields));
+    data.data()->open(QIODevice::ReadOnly);
+
+    QNetworkRequest req(QUrl("http://" + QString(host) + path));
+    req.setHeader(QNetworkRequest::ContentTypeHeader,
+                  "multipart/form-data, boundary=" + boundary);
+
+    req.setRawHeader("User-Agent", userAgent());
+
+    reply = qnam.post(req, data.data());
+
+    connectReply(SLOT(postFileReceiver()));
+    connect(reply, SIGNAL(uploadProgress(qint64, qint64)),
+            this, SLOT(postFileProgressReceiver(qint64,qint64)));
 }
 
 void HTTPRequest::postFileReceiver()
 {
     if (failed) return;
-    emit result(reply->readAll());
+    QString data = reply->readAll();
+    qDebug() << data;
+    emit result(data);
     inProgress = false;
+}
+
+void HTTPRequest::stop()
+{
+    pause();
 }
 
 void HTTPRequest::pause()
@@ -270,4 +348,10 @@ void HTTPRequest::connectProgress(QObject* obj, const char* func)
 void HTTPRequest::connectError(QObject* obj, const char* func)
 {
     connect(this, SIGNAL(error(QString)), obj, func);
+}
+
+QString HTTPRequest::errorString()
+{
+    if (reply == NULL) return QString("No error");
+    return reply->errorString();
 }

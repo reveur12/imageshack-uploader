@@ -253,6 +253,11 @@ void Media::setTags(QStringList taglist)
     tags = taglist;
 }
 
+void Media::setBatchTags(QStringList taglist)
+{
+    batchTags = taglist;
+}
+
 void Media::setPrivacy(bool value)
 {
     privacy = value;

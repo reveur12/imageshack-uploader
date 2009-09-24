@@ -59,6 +59,7 @@ public:
     bool getPrivate();
 
     void setTags(QStringList);
+    void setBatchTags(QStringList);
     QString getAllTags();
     void setPrivacy(bool);
     void setResize(QString);
@@ -69,6 +70,8 @@ public:
     bool isTooLarge();
     QByteArray data();
     bool hasPreview();
+    QString sizeURL;
+    QString uploadURL;
 
 private:
     int image_width;
@@ -87,6 +90,7 @@ private:
 
     bool valid;
     bool toolarge;
+
 
 };
 
