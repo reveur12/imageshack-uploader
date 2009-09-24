@@ -38,7 +38,7 @@ FileUploader::FileUploader(ProgressWidget *prog, MediaListModel* list)
     donecount = 0;
     filecount = list->rowCount();
     failed = false;
-    http = QSharedPointer<QHttp>(new QHttp);
+    //http = QSharedPointer<QHttp>(new QHttp);
     res = QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > >
           ( new QVector<QPair<QSharedPointer<Media>,QStringList> >);
     connect(&seconds, SIGNAL(timeout()),
@@ -68,8 +68,14 @@ void FileUploader::process()
         uploadedTotal += uploadedCurrent;
         uploadedCurrent = 0;
         current = medias->getMedia(skip);
-        request = QSharedPointer<UploadRequest>(new UploadRequest(current, http.data()));
+        //request = QSharedPointer<UploadRequest>(new UploadRequest(current, http.data()));
+        request = QSharedPointer<HTTPRequest>(new HTTPRequest());
         tmp.append(request);
+        request.data()->connectProgress(this, SLOT(progressReceiver(int)));
+        request.data()->connectError(this, SLOT(uploadErrorReceiver(QString)));
+        request.data()->connectResult(this, SLOT(resultReceiver(QString)));
+        request.data()->uploadFile(current, cookie);
+        /*
         connect(request.data(), SIGNAL(progress(int)),
                 this, SLOT(progressReceiver(int)));
         connect(request.data(), SIGNAL(status(int)),
@@ -82,7 +88,7 @@ void FileUploader::process()
         tags.removeDuplicates();
         if (!tags.isEmpty())
             request.data()->setTags(tags);
-        request.data()->post();
+        request.data()->post();*/
     }
     else
     {
@@ -119,6 +125,14 @@ void FileUploader::statusReceiver(int value)
         }
         process();
     }
+}
+
+void FileUploader::uploadErrorReceiver(QString msg)
+{
+    failcount++;
+    errors.append(current.data()->filename() + ":" + msg);
+    if (failcount>3) fail(tr("3 attempts to upload file failed"));
+    process();
 }
 
 void FileUploader::resultReceiver(QString value)
@@ -219,7 +233,7 @@ void FileUploader::fail(QString message)
     }
     else
     {
-        QString errorString = request.data()->rep->errorString();
+        QString errorString = request.data()->errorString();
         if (errorString != "Unknown error")
                 errors.append(filename + ": " + errorString);
         else

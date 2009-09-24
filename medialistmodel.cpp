@@ -218,6 +218,8 @@ QString MediaListModel::formattedTotalSize()
 void MediaListModel::setTags(QStringList taglist)
 {
     tags = taglist;
+    for(int i=0; i<medias.size(); i++)
+        medias.at(i).data()->setBatchTags(tags);
 }
 
 QStringList MediaListModel::getTags()

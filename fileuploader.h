@@ -30,9 +30,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define FILEUPLOADER_H
 
 #include <QObject>
-#include "uploadrequest.h"
+//#include "uploadrequest.h"
+#include "httprequest.h"
 #include "progresswidget.h"
 #include "medialistmodel.h"
+#include <QTimer>
 
 class FileUploader : public QObject
 {
@@ -45,7 +47,8 @@ public:
 private:
     ProgressWidget *progress;
     MediaListModel *medias;
-    QSharedPointer<UploadRequest> request;
+    //QSharedPointer<UploadRequest> request;
+    QSharedPointer<HTTPRequest> request;
     int donecount;
     int filecount;
     int failcount;
@@ -55,8 +58,9 @@ private:
     bool failed;
     void process();
     QString cookie;
-    QVector<QSharedPointer<UploadRequest> > tmp ;
-    QSharedPointer<QHttp> http;
+    //QVector<QSharedPointer<UploadRequest> > tmp ;
+    QVector<QSharedPointer<HTTPRequest> > tmp ;
+    //QSharedPointer<QHttp> http;
     void fail(QString reason = NULL);
     QStringList errors;
 
@@ -74,6 +78,7 @@ private slots:
     void cancel();
     void updateETA();
     void pause(bool);
+    void uploadErrorReceiver(QString msg);
 
 
 
