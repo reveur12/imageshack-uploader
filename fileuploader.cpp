@@ -68,27 +68,12 @@ void FileUploader::process()
         uploadedTotal += uploadedCurrent;
         uploadedCurrent = 0;
         current = medias->getMedia(skip);
-        //request = QSharedPointer<UploadRequest>(new UploadRequest(current, http.data()));
         request = QSharedPointer<HTTPRequest>(new HTTPRequest());
         tmp.append(request);
         request.data()->connectProgress(this, SLOT(progressReceiver(int)));
         request.data()->connectError(this, SLOT(uploadErrorReceiver(QString)));
         request.data()->connectResult(this, SLOT(resultReceiver(QString)));
         request.data()->uploadFile(current, cookie);
-        /*
-        connect(request.data(), SIGNAL(progress(int)),
-                this, SLOT(progressReceiver(int)));
-        connect(request.data(), SIGNAL(status(int)),
-                this, SLOT(statusReceiver(int)));
-        connect(request.data(), SIGNAL(result(QString)),
-                this, SLOT(resultReceiver(QString)));
-        if (!cookie.isEmpty())
-            request.data()->setAuth(cookie);
-        QStringList tags = current->getTags() + medias->getTags();
-        tags.removeDuplicates();
-        if (!tags.isEmpty())
-            request.data()->setTags(tags);
-        request.data()->post();*/
     }
     else
     {

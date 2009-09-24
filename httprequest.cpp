@@ -216,22 +216,21 @@ void HTTPRequest::specialFail(QNetworkReply::NetworkError code)
 
 
 void HTTPRequest::get(QString url, QVector<QPair<QString, QString> > params)
-{/*
+{
     failed = false;
     inProgress = true;
     if (!url.endsWith('?')) url += '?';
-    foreach(QString key, params.keys())
+    for (int i=0; i<params.size(); i++)
     {
+        QString key = params.at(i).first;
+        QString arg = params.at(i).second;
         if (!url.endsWith('?') && !url.endsWith('&'))
             url += '&';
-        url += QUrl::toPercentEncoding(key) + '=' + QUrl::toPercentEncoding(params[key]);
+        url += QUrl::toPercentEncoding(key) + '=' + QUrl::toPercentEncoding(arg);
     }
     QNetworkRequest req(url);
-    reply = QSharedPointer<QNetworkReply>(qnam.get(req));
-    reply->connect(SIGNAL(finished()), this,
-                 SLOT(getReceiver()));
-    reply->connect(SIGNAL(error(QNetworkReply::NetworkError)), this,
-                 SLOT(fail(QNetworkReply::NetworkError)));*/
+    reply = qnam.get(req);
+    connectReply(SLOT(getReceiver()));
 }
 
 void HTTPRequest::getReceiver()
@@ -242,21 +241,20 @@ void HTTPRequest::getReceiver()
 }
 
 void HTTPRequest::post(QString url, QVector<QPair<QString, QString> > fields)
-{/*
+{
     failed = false;
     inProgress = true;
     QByteArray data;
-    foreach(QString key, fields.keys())
+    for(int i=0; i<fields.size(); i++)
     {
+        QString key = fields.at(i).first;
+        QString value = fields.at(i).second;
         if (data.size() && !data.endsWith('&')) data.append('&');
-        data.append(key + '=' + fields[key]);
+        data.append(key + '=' + value);
     }
     QNetworkRequest req(url);
-    reply = QSharedPointer<QNetworkReply>(qnam.post(req, data));
-    reply->connect(SIGNAL(finished()), this,
-                          SLOT(postReceiver()));
-    reply->connect(SIGNAL(error(QNetworkReply::NetworkError)), this,
-                 SLOT(fail(QNetworkReply::NetworkError)));*/
+    reply = qnam.post(req, data);
+    connectReply(SLOT(postReceiver()));
 }
 
 void HTTPRequest::postReceiver()
