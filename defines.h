@@ -59,7 +59,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define LOGIN_PATH "/auth.php"
 
 #define GALLERY_HOSTNAME "imageshack.us"
-#define GALLERY_PATH "/gal.php"
+#define GALLERY_PATH "/gallery_api.php"
 
 #define TWITTER_HOST "yfrog.com"
 #define TWITTER_PATH "/api/uploadAndPost"

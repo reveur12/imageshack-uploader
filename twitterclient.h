@@ -36,6 +36,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QProgressBar>
 
 #include "gallerycreator.h"
+#include "httprequest.h"
 
 class TwitterClient : public QObject
 {
@@ -48,17 +49,16 @@ public:
     QProgressBar pbar;
 
 private:
-    QHttp http;
+    HTTPRequest http;
     GalleryCreator gallery;
-    QList<int>  ids;
     void showProgressBar(QPoint);
     QMap<int, QString> users;
-
-
+    QString user;
 
 public slots:
     void post(QString, QString, QString, QString, bool showProgressbar = false, QPoint pos = QPoint());
-    void requestFinished(int, bool);
+    void resultReceiver(QString);
+    void errorReceiver(QString);
 
 signals:
     void errorHappened();

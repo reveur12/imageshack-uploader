@@ -28,69 +28,41 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <QDebug>
 #include <QUrl>
+#include <QDomDocument>
+#include <QDomElement>
 #include "gallerycreator.h"
 #include "defines.h"
 
 GalleryCreator::GalleryCreator()
 {
-    http.setHost(GALLERY_HOSTNAME);
-    connect(&http,
-            SIGNAL(requestFinished(int, bool)),
-            this,
-            SLOT(resultsReceiver(int,bool)));
+    http.connectResult(this, SLOT(resultReceiver(QString)));
+    http.connectError(this, SLOT(errorReceiver(QString)));
 }
 
-void GalleryCreator::create(QStringList urls, QString text, QString user, QString pass, QString shortlink)
+void GalleryCreator::create(QStringList urls, QString t, QString u, QString p)
 {
-    QStringList images;
+    text = t; user = u; pass = p;
+    QVector<QPair<QString, QString> > data;
+    data.append(qMakePair(QString("action"), QString("create")));
     foreach(QString url, urls)
     {
         QString image = url.split("imageshack.us/").at(1);
-        images.append(image);
+        data.append(qMakePair(QString("image[]="), image));
     }
-    QStringList postlist;
-    for(int i=0; i<images.size(); i++)
-    {
-        postlist.append("imgfile"+QString::number(i+1)+"=" + images.at(i));
-    }
-    QString post = postlist.join("&");
 
-    qDebug () << post;
-
-    QString first = images.at(0);
-    QStringList parts = first.split("/");
-
-    QString path = QString(GALLERY_PATH);
-    qDebug() << path;
-    QHttpRequestHeader header("POST", path, 1, 1);
-
-    header.addValue("Content-Type","application/x-www-form-urlencoded");
-    header.addValue("Cache-Control", "no-cache");
-    QString host = parts.first() + "." + GALLERY_HOSTNAME;
-    qDebug() << host;
-    http.setHost(host);
-    header.addValue("Host", host);
-
-    header.addValue("Accept","*/*");
-    QByteArray postdata;
-    postdata.append(post);
-    int id = http.request(header, postdata);
-    qDebug() << "sent gallery creation request";
-    ids.append(id);
-    QStringList d;
-    d << text << user << pass << shortlink;
-    data[id] = d;
+    http.post(QString("http://") + GALLERY_HOSTNAME + GALLERY_PATH, data);
 }
 
 
-void GalleryCreator::resultsReceiver(int id, bool failed)
+void GalleryCreator::resultReceiver(QString data)
 {
-    if (ids.contains(id) && !failed)
-    {
-        qDebug() << "gallery created";
-        ids.removeAll(id);
-        emit creationFinished(data[id].at(3), data[id].at(0), data[id].at(1),
-                              data[id].at(2));
-        data.remove(id);
-    }
+    QDomDocument xml;
+    xml.setContent(data);
+    QString url = xml.firstChildElement("yfrog_url").text();
+    emit result(url, text, user, pass);
+}
+
+void GalleryCreator::errorReceiver(QString message)
+{
+    emit error();
 }
