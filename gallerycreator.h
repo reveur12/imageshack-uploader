@@ -29,22 +29,23 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define GALLERYCREATOR_H
 
 #include <QObject>
-#include <QHttp>
+#include "httprequest.h"
 
 class GalleryCreator : public QObject
 {
     Q_OBJECT
 public:
     GalleryCreator();
-    void create(QStringList urls, QString, QString, QString, QString);
+    void create(QStringList urls, QString, QString, QString);
 private:
-    QHttp http;
-    QList<int> ids;
-    QMap<int, QStringList> data;
+    HTTPRequest http;
+    QString text, user, pass;
 private slots:
-    void resultsReceiver(int, bool);
+    void resultReceiver(QString result);
+    void errorReceiver(QString message);
 signals:
-    void creationFinished(QString, QString, QString, QString);
+    void result(QString, QString, QString, QString);
+    void error();
 };
 
 #endif // GALLERYCREATOR_H

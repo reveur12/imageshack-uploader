@@ -42,13 +42,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 TwitterClient::TwitterClient(QDialog *parent)
 {
-    http.setHost(TWITTER_HOST);
-    connect(&http,
-            SIGNAL(requestFinished(int, bool)),
-            this,
-            SLOT(requestFinished(int, bool)));
+    http.connectResult(this, SLOT(resultReceiver(QString)));
+    http.connectError(this, SLOT(errorReceiver(QString)));
     connect(&gallery,
-            SIGNAL(creationFinished(QString, QString, QString, QString)),
+            SIGNAL(result(QString, QString, QString, QString)),
             this,
             SLOT(post(QString, QString, QString, QString)));
 
@@ -73,39 +70,19 @@ TwitterClient::TwitterClient(QDialog *parent)
 
 TwitterClient::~TwitterClient()
 {
-    http.disconnect(this, SLOT(requestFinished(int, bool)));
-    http.abort();
+    http.stop();
 }
 
 void TwitterClient::post(QString url, QString text, QString user, QString pass, bool showProgressbar, QPoint pos)
 {
-    QHttpRequestHeader header("POST", TWITTER_PATH, 1, 1);
-    header.addValue("Content-Type","application/x-www-form-urlencoded");
-    header.addValue("Cache-Control", "no-cache");
-    header.addValue("Host",TWITTER_HOST);
-    header.addValue("Accept","*/*");
-
-    QByteArray postdata;
-    postdata.append(QString("url="));
-    postdata.append(QUrl::toPercentEncoding(url));
-
-    if (user.isEmpty() || pass.isEmpty())
-    {
-        QMessageBox::critical(NULL, tr("Error"),
-                              tr("First set twitter username and password in options"));
-        return;
-    }
-    postdata.append(QString("&username="));
-    postdata.append(QUrl::toPercentEncoding(user));
-    postdata.append(QString("&password="));
-    postdata.append(QUrl::toPercentEncoding(pass));
-    postdata.append(QString("&message="));
-    postdata.append(QUrl::toPercentEncoding(text));
-    postdata.append(QString("&key=") + QString(DEVELOPER_KEY));
-
-    int id = http.request(header, postdata);
-    ids.append(id);
-    users[id] = user;
+    this->user = user;
+    QVector<QPair<QString, QString> > data;
+    data.append(qMakePair(QString("username"), user));
+    data.append(qMakePair(QString("password"), pass));
+    data.append(qMakePair(QString("message"), text));
+    data.append(qMakePair(QString("url"), url));
+    data.append(qMakePair(QString("key"), QString(DEVELOPER_KEY)));
+    http.post(QString("http://") + TWITTER_HOST + TWITTER_PATH, data);
 
     if (showProgressbar) showProgressBar(pos);
 }
@@ -113,85 +90,69 @@ void TwitterClient::post(QString url, QString text, QString user, QString pass, 
 void TwitterClient::post(QStringList urls, QString text, QString user, QString pass, QString shortlink, bool showProgressbar, QPoint pos)
 {
     if (showProgressbar) showProgressBar(pos);
-    gallery.create(urls, text, user, pass, shortlink);
+    gallery.create(urls, text, user, pass);
 }
 
-void TwitterClient::requestFinished(int id, bool failed)
+void TwitterClient::errorReceiver(QString msg)
 {
-    qDebug() << id << failed;
-    if (ids.contains(id))
+    bar.hide();
+}
+
+void TwitterClient::resultReceiver(QString data)
+{
+    QDomDocument xml;
+    xml.setContent(data);
+    QDomElement rsp = xml.firstChildElement("rsp");
+    if (rsp.isNull())
     {
-        bar.hide();
-        ids.removeAll(id);
-        if (failed)
+        QMessageBox::critical(NULL, tr("Error"),
+              tr("Could not post to twitter. Wrong server response."));
+        emit errorHappened();
+        return;
+    }
+    QDomElement error = rsp.firstChildElement("err");
+    if (!error.isNull())
+    {/*
+        1002 media not found
+        2005 media is too big
+        2001 invalid action specified
+        2004 invalid developer key
+        1001 empty/invalid username/password
+        2002 failed to upload media
+        2003 failed to update status*/
+        QDomNode codex = error.attributes().namedItem("code");
+        if (!codex.isNull())
         {
-            QMessageBox::critical(NULL, tr("Error"),
-                                  tr("Could not send url to Twitter"));
-            emit errorHappened();
-        }
-        else
-        {
-            QDomDocument xml;
-            QString data = http.readAll();
-            xml.setContent(data);
-            QDomElement rsp = xml.firstChildElement("rsp");
-            if (rsp.isNull())
+            QString code = codex.nodeValue();
+            if (code == "1001")
             {
                 QMessageBox::critical(NULL, tr("Error"),
-                      tr("Could not post to twitter. Wrong server response."));
+                  tr("Could not post to twitter. Wrong credentials."));
                 emit errorHappened();
                 return;
             }
-            QDomElement error = rsp.firstChildElement("err");
-            if (!error.isNull())
-            {/*
-                1002 media not found
-                2005 media is too big
-                2001 invalid action specified
-                2004 invalid developer key
-                1001 empty/invalid username/password
-                2002 failed to upload media
-                2003 failed to update status*/
-                QDomNode codex = error.attributes().namedItem("code");
-                if (!codex.isNull())
-                {
-                    QString code = codex.nodeValue();
-                    if (code == "1001")
-                    {
-                        QMessageBox::critical(NULL, tr("Error"),
-                          tr("Could not post to twitter. Wrong credentials."));
-                        emit errorHappened();
-                        return;
-                    }
-                    else if (code == "2003")
-                    {
-                        QMessageBox::critical(NULL, tr("Error"),
-                          tr("Failed to update twitter status."));
-                        emit errorHappened();
-                        return;
-                    }
-                }
-                QMessageBox::critical(NULL, tr("Error"),
-                          tr("Could not post to twitter. Internal error."));
-                return;
-            }
-            QDomElement statusid = rsp.firstChildElement("statusid");
-            if (statusid.isNull())
+            else if (code == "2003")
             {
                 QMessageBox::critical(NULL, tr("Error"),
-                      tr("Could not post to twitter. Wrong server response."));
+                  tr("Failed to update twitter status."));
+                emit errorHappened();
                 return;
             }
-            //QSettings sets;
-            //QByteArray encu = sets.value("twitteruser", QVariant("")).toByteArray();
-            //QString user = QByteArray::fromBase64(encu);
-            QString user = users[id];
-            users.remove(id);
-            QString addr("http://twitter.com/%1/status/%2");
-            addr = addr.arg(user, statusid.text());
-            QDesktopServices().openUrl(QUrl(addr));
         }
+        QMessageBox::critical(NULL, tr("Error"),
+                  tr("Could not post to twitter. Internal error."));
+        return;
     }
+    QDomElement statusid = rsp.firstChildElement("statusid");
+    if (statusid.isNull())
+    {
+        QMessageBox::critical(NULL, tr("Error"),
+              tr("Could not post to twitter. Wrong server response."));
+        return;
+    }
+    QString addr("http://twitter.com/%1/status/%2");
+    addr = addr.arg(user, statusid.text());
+    QDesktopServices().openUrl(QUrl(addr));
 }
 
 void TwitterClient::showProgressBar(QPoint pos)
