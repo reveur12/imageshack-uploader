@@ -15,7 +15,16 @@ void HTTPRequest::uploadFile(QSharedPointer<Media> media, QString cookie, QStrin
 {
     if (media.data()->getClass() == "video")
     {
-        this->putFile(media, cookie, username, password);
+        qDebug() << media.data()->uploadURL << media.data()->sizeURL;
+        if (!media.data()->uploadURL.isEmpty() && !media.data()->sizeURL.isEmpty())
+        {
+            inProgress = true;
+            failed = false;
+            this->media = media;
+            this->putFile2(media.data()->uploadURL, media.data()->sizeURL);
+        }
+        else
+            this->putFile(media, cookie, username, password);
     }
     else
     {
@@ -96,7 +105,6 @@ bool HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString u
     inProgress = true;
     emit progress(0);
     this->media = media;
-    this->fields = fields;
     if (!media.data()->sizeURL.isEmpty() && !media.data()->uploadURL.isEmpty())
     {
         putFile2(media.data()->uploadURL, media.data()->sizeURL);
@@ -136,10 +144,13 @@ void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
             return;
         }
 
+        media.data()->sizeURL = getlenurl;
+        media.data()->uploadURL = url;
+
     }
     else { url = uploadUrl; getlenurl = lenUrl; }
-    media.data()->sizeURL = getlenurl;
-    media.data()->uploadURL = uploadUrl;
+    qDebug() << "resuming upload...";
+
     QNetworkRequest req(getlenurl);
     reply = qnam.get(req);
     connectReply(SLOT(putFile3()));
