@@ -35,6 +35,7 @@ public:
     QByteArray userAgent();
     int uploaded;
     QString errorString();
+    qint64 uploadedTotal, uploadedCurrent, doneSize;
 
 private:
     QNetworkAccessManager qnam;
@@ -42,7 +43,6 @@ private:
     bool inProgress;
     bool failed;
     void connectReply(const char*);
-    qint64 doneSize;
     QString url, getlenurl;
     QString cookie, username, password;
     QSharedPointer<Media> media;

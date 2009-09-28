@@ -182,11 +182,15 @@ void HTTPRequest::putFile3()
 
 void HTTPRequest::putFileProgressReceiver(qint64 done, qint64 total)
 {
+    this->uploadedCurrent = done;
+    this->uploadedTotal = total;
     emit progress(2 + (doneSize+done)*98/(doneSize+total));
 }
 
 void HTTPRequest::postFileProgressReceiver(qint64 done, qint64 total)
 {
+    this->uploadedCurrent = done;
+    this->uploadedTotal = total;
     emit progress(done*100/total);
 }
 
