@@ -249,7 +249,6 @@ void FileUploader::pause(bool st)
         int total = (int)((100.0/filecount)*donecount);
         progress->setProgress(total, 0);
         emit ETA(-100);
-        time = 0;             // I think, ETA should be reseted too
         uploadedTotal = 0;
         uploadedCurrent = 0;
     }
