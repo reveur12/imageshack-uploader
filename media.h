@@ -31,6 +31,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <QObject>
 #include <QImage>
+#include <QMap>
+#include <QPair>
 #include <QStringList>
 
 class Media : public QObject
@@ -73,6 +75,7 @@ public:
     QString sizeURL;
     QString uploadURL;
     qint64 uploadedSize;
+    QMap<QString, QPair<QString, QString> > types;
 
 private:
     int image_width;
@@ -91,6 +94,7 @@ private:
 
     bool valid;
     bool toolarge;
+    void createTypeList();
 
 
 };
