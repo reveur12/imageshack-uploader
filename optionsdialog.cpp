@@ -85,6 +85,14 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
         }
     }
     if (!lang.isEmpty()) translateToLanguage(lang);
+
+    //proxy
+    m_ui->proxyUse->setChecked(sets.value("proxy/use", QVariant(false)).toBool());
+    m_ui->proxyHost->setText(sets.value("proxy/host", QVariant("")).toString());
+    m_ui->proxyPort->setText(sets.value("proxy/port", QVariant("")).toString());
+    m_ui->proxyAuth->setChecked(sets.value("proxy/auth", QVariant(false)).toBool());
+    m_ui->proxyUser->setText(sets.value("proxy/user", QVariant("")).toString());
+    m_ui->proxyPass->setText(sets.value("proxy/pass", QVariant("")).toString());
 }
 
 QDir OptionsDialog::translationsDir()
@@ -164,5 +172,11 @@ void OptionsDialog::accept()
 {
     QSettings sets;
     sets.setValue("autoupdate", QVariant(m_ui->autoupdate->isChecked()));
+    sets.setValue("proxy/use", QVariant(m_ui->proxyUse->isChecked()));
+    sets.setValue("proxy/host", QVariant(m_ui->proxyHost->text()));
+    sets.setValue("proxy/port", QVariant(m_ui->proxyPort->text()));
+    sets.setValue("proxy/auth", QVariant(m_ui->proxyAuth->isChecked()));
+    sets.setValue("proxy/user", QVariant(m_ui->proxyUser->text()));
+    sets.setValue("proxy/pass", QVariant(m_ui->proxyPass->text()));
     QDialog::accept();
 }
