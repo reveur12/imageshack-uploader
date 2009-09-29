@@ -3,16 +3,51 @@
 #include <QApplication>
 #include <QDomElement>
 #include <QDomDocument>
+#include <QNetworkProxy>
+#include <QSettings>
 #include <QDebug>
 
 HTTPRequest::HTTPRequest()
 {
     failed = false;
     inProgress = false;
+    //qnam.setProxy(
+    getProxy();
+}
+
+void HTTPRequest::setProxy()
+{
+    qnam.setProxy(getProxy());
+}
+
+QNetworkProxy& HTTPRequest::getProxy()
+{
+    QNetworkProxy p;
+    //p.setType(QNetworkProxy::HttpProxy);
+    QSettings sets;
+    if (sets.value("proxy/use", QVariant(false)).toBool())
+    {
+        int type = sets.value("proxy/type", QVariant(0)).toInt();
+        if (type == 0) p.setType(QNetworkProxy::HttpProxy);
+        else p.setType(QNetworkProxy::Socks5Proxy);
+        qint64 port = sets.value("proxy/port", QVariant("")).toInt();
+        if (port == 0) return p;
+        p.setHostName(sets.value("proxy/host", QVariant("")).toString());
+        p.setPort(sets.value("proxy/port", QVariant("")).toInt());
+        if (sets.value("proxy/auth", QVariant(false)).toBool())
+        {
+            p.setUser(sets.value("proxy/user", QVariant("")).toString());
+            p.setPassword(sets.value("proxy/pass", QVariant("")).toString());
+            qDebug() << "set username and password";
+        }
+    }
+    proxy = p;
+    return proxy;
 }
 
 void HTTPRequest::uploadFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
+    setProxy();
     if (media.data()->getClass() == "video")
     {
         uploaded = 0;
@@ -232,6 +267,7 @@ void HTTPRequest::specialFail(QNetworkReply::NetworkError code)
 
 void HTTPRequest::get(QString url, QVector<QPair<QString, QString> > params)
 {
+    setProxy();
     failed = false;
     inProgress = true;
     if (!url.endsWith('?')) url += '?';
@@ -257,6 +293,7 @@ void HTTPRequest::getReceiver()
 
 void HTTPRequest::post(QString url, QVector<QPair<QString, QString> > fields)
 {
+    setProxy();
     failed = false;
     inProgress = true;
     QByteArray data;
@@ -296,6 +333,7 @@ QPair<QString, QString> HTTPRequest::getUploadHost(QSharedPointer<Media> media)
 
 void HTTPRequest::postFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
+    setProxy();
     failed = false;
     inProgress = true;
 

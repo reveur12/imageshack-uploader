@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QNetworkProxy>
 #include <QSharedPointer>
 #include <QMap>
 
@@ -35,6 +36,7 @@ public:
     QByteArray userAgent();
     qint64 uploaded, doneSize, headerSize;
     QString errorString();
+    QNetworkProxy& getProxy();
 
 private:
     QNetworkAccessManager qnam;
@@ -50,6 +52,8 @@ private:
     QByteArray formStartPostData(QSharedPointer<Media> media, QString cookie, QString username, QString password);
     QPair<QString, QString> getUploadHost(QSharedPointer<Media> media);
     QSharedPointer<FileSource> data;
+    void setProxy();
+    QNetworkProxy proxy;
 
 
 
