@@ -56,7 +56,6 @@ void GalleryCreator::create(QStringList urls, QString t, QString u, QString p)
 
 void GalleryCreator::resultReceiver(QString data)
 {
-    qDebug() << data;
     QDomDocument xml;
     xml.setContent(data);
     QDomElement doc = xml.documentElement();

@@ -100,3 +100,8 @@ bool FileSource::isSequential() const
 {
     return false;
 }
+
+qint64 FileSource::headerSize()
+{
+    return header.size() + footer.size();
+}

@@ -23,6 +23,7 @@ public:
     qint64 writeData ( const char * data, qint64 maxSize );
     qint64 bytesAvailable() const;
     bool isSequential() const;
+    qint64 headerSize();
 
 private:
     QByteArray header, footer;
