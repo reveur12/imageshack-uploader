@@ -31,6 +31,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QStringListModel>
 #include <QMimeData>
 #include <QUrl>
+#include <QFileInfo>
+#include <QDir>
 #include <QSet>
 #include <QSharedPointer>
 #include <QMessageBox>
@@ -265,11 +267,17 @@ bool MediaListModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     if (!data->hasFormat("text/uri-list"))
         return false;
     QStringList filelist;
+    QStringList filters;
+    foreach(QString type, Media().types.keys())
+        filters.append(QString("*.") + type);
     foreach (QUrl filename, data->urls())
     {
         QString localfilename = filename.toLocalFile();
-        if (!localfilename.isEmpty()) // Accept only local files
-            filelist.append(filename.toLocalFile());
+        if (localfilename.isEmpty()) continue;
+        if (QFileInfo(localfilename).isDir())
+            foreach(QString file, QDir(localfilename).entryList(filters))
+                filelist.append(QDir(localfilename).absoluteFilePath(file));
+        else filelist.append(filename.toLocalFile());
     }
     if (filelist.isEmpty()) return false;
     if (!loader.isNull() && loader.data()->isRunning()) emit addLoadFiles(filelist);

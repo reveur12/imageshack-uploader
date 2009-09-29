@@ -37,18 +37,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Media::Media()
 {
+    valid = false;
+    createTypeList();
 }
 
-Media::Media(QString filename)
+void Media::createTypeList()
 {
-    uploadedSize = 0;
-    QFile readfile(filename);
-    valid = readfile.open(QFile::ReadOnly);
-    if (!valid) return;
-    readfile.close();
-    file = filename;
-    filesize = QFile(filename).size();
-    QMap<QString, QPair<QString, QString> > types;
     types["jpg"] = qMakePair(QString("image"), QString("jpeg"));
     types["jpeg"] = qMakePair(QString("image"), QString("jpeg"));
     types["png"] = qMakePair(QString("image"), QString("png"));
@@ -66,6 +60,18 @@ Media::Media(QString filename)
     types["avi"] = qMakePair(QString("video"), QString("avi"));
     types["mov"] = qMakePair(QString("video"), QString("quicktime"));
     types["mkv"] = qMakePair(QString("video"), QString("x-matroska"));
+}
+
+Media::Media(QString filename)
+{
+    uploadedSize = 0;
+    QFile readfile(filename);
+    valid = readfile.open(QFile::ReadOnly);
+    if (!valid) return;
+    readfile.close();
+    file = filename;
+    filesize = QFile(filename).size();
+    createTypeList();
     if (filename.split(".").length() < 2)
     {
         valid = false;
