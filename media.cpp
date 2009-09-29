@@ -41,6 +41,7 @@ Media::Media()
 
 Media::Media(QString filename)
 {
+    uploadedSize = 0;
     QFile readfile(filename);
     valid = readfile.open(QFile::ReadOnly);
     if (!valid) return;

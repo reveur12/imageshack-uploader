@@ -123,11 +123,12 @@ bool HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString u
 void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
 {
     qDebug() << "putFile2 got response";
-    emit progress(1);
+    if (uploadUrl.isEmpty()) emit progress(1);
     if (uploadUrl.isEmpty())
     {
         if (failed) return;
         QString data = reply->readAll();
+        qDebug() << data;
         QDomDocument xml;
         xml.setContent(data);
         QDomElement doc = xml.documentElement();
@@ -158,12 +159,13 @@ void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
 
 void HTTPRequest::putFile3()
 {
-    emit progress(2);
+    if (doneSize == 0) emit progress(2);
     qDebug() << "putFile3 got response";
     if (failed) return;
     bool isok = true;
     doneSize = reply->readAll().toInt(&isok);
     if (!isok) doneSize = 0;
+    media.data()->uploadedSize = doneSize;
     QFile *fs = new QFile(media.data()->filepath());
     fs->open(QFile::ReadOnly);
     fs->seek(doneSize);
@@ -182,15 +184,14 @@ void HTTPRequest::putFile3()
 
 void HTTPRequest::putFileProgressReceiver(qint64 done, qint64 total)
 {
-    this->uploadedCurrent = done;
-    this->uploadedTotal = total;
+    this->uploaded = done;
     emit progress(2 + (doneSize+done)*98/(doneSize+total));
 }
 
 void HTTPRequest::postFileProgressReceiver(qint64 done, qint64 total)
 {
-    this->uploadedCurrent = done;
-    this->uploadedTotal = total;
+    this->uploaded = done;
+    //this->uploadedTotal = total;
     emit progress(done*100/total);
 }
 
