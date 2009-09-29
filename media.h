@@ -72,6 +72,7 @@ public:
     bool hasPreview();
     QString sizeURL;
     QString uploadURL;
+    qint64 uploadedSize;
 
 private:
     int image_width;

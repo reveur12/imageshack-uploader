@@ -52,6 +52,7 @@ public:
     void removeAllMedias();
     QVector<QSharedPointer<Media> > getAllMedias();
     qint64 totalSize();
+    qint64 totalUploadSize();
     QString formattedTotalSize();
     void addMedia(QSharedPointer<Media>);
     void addMedia(QVector<QSharedPointer<Media> >);

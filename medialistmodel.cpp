@@ -210,6 +210,17 @@ qint64 MediaListModel::totalSize()
     return total;
 }
 
+qint64 MediaListModel::totalUploadSize()
+{
+    qint64 total = 0;
+    foreach(QSharedPointer<Media> media, medias)
+    {
+        total += media.data()->size();
+        total -= media.data()->uploadedSize;
+    }
+    return total;
+}
+
 QString MediaListModel::formattedTotalSize()
 {
     return Media().formatSize(totalSize(), true);

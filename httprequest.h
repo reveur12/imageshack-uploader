@@ -33,9 +33,8 @@ public:
     void connectError(QObject* obj, const char* func);
     enum state { START, END, ERROR, RESUME, PAUSE };
     QByteArray userAgent();
-    int uploaded;
+    qint64 uploaded, doneSize;
     QString errorString();
-    qint64 uploadedTotal, uploadedCurrent, doneSize;
 
 private:
     QNetworkAccessManager qnam;

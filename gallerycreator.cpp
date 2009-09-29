@@ -56,13 +56,17 @@ void GalleryCreator::create(QStringList urls, QString t, QString u, QString p)
 
 void GalleryCreator::resultReceiver(QString data)
 {
+    qDebug() << data;
     QDomDocument xml;
     xml.setContent(data);
-    QString url = xml.firstChildElement("yfrog_url").text();
+    QDomElement doc = xml.documentElement();
+    QDomElement links = doc.firstChildElement("links");
+    QString url = links.firstChildElement("yfrog_url").text();
     emit result(url, text, user, pass);
 }
 
 void GalleryCreator::errorReceiver(QString message)
 {
+    qDebug() << "got error:" << message;
     emit error();
 }
