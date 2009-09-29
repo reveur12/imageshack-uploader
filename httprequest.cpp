@@ -15,6 +15,7 @@ void HTTPRequest::uploadFile(QSharedPointer<Media> media, QString cookie, QStrin
 {
     if (media.data()->getClass() == "video")
     {
+        uploaded = 0;
         qDebug() << media.data()->uploadURL << media.data()->sizeURL;
         if (!media.data()->uploadURL.isEmpty() && !media.data()->sizeURL.isEmpty())
         {
@@ -123,7 +124,6 @@ bool HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString u
 void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
 {
     qDebug() << "putFile2 got response";
-    if (uploadUrl.isEmpty()) emit progress(1);
     if (uploadUrl.isEmpty())
     {
         if (failed) return;
@@ -159,7 +159,6 @@ void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
 
 void HTTPRequest::putFile3()
 {
-    if (doneSize == 0) emit progress(2);
     qDebug() << "putFile3 got response";
     if (failed) return;
     bool isok = true;
@@ -184,14 +183,14 @@ void HTTPRequest::putFile3()
 
 void HTTPRequest::putFileProgressReceiver(qint64 done, qint64 total)
 {
-    this->uploaded = done;
-    emit progress(2 + (doneSize+done)*98/(doneSize+total));
+    qDebug() << "Progress:" << done << total;
+    this->uploaded = media.data()->size() * done / total;
+    emit progress((done)*100/(total));
 }
 
 void HTTPRequest::postFileProgressReceiver(qint64 done, qint64 total)
 {
     this->uploaded = done;
-    //this->uploadedTotal = total;
     emit progress(done*100/total);
 }
 

@@ -33,7 +33,7 @@ public:
     void connectError(QObject* obj, const char* func);
     enum state { START, END, ERROR, RESUME, PAUSE };
     QByteArray userAgent();
-    qint64 uploaded, doneSize;
+    qint64 uploaded, doneSize, headerSize;
     QString errorString();
 
 private:

@@ -232,11 +232,19 @@ void FileUploader::fail(QString message)
 void FileUploader::updateETA()
 {
     time++;
-    qint64 uploaded = uploadedTotal + request.data()->uploaded;
+    qint64 uploaded = uploadedTotal + request.data()->uploaded;// - request.data()->doneSize;
     if (!time) return;
     qint64 speed = (uploaded) / time;
     if (!speed) return;
     int left = (totalsize - (uploaded))/speed;
+
+    qDebug() << "time:" << time;
+    qDebug() << "request.data()->uploaded:" << request.data()->uploaded;
+    qDebug() << "request.data()->doneSize:" << request.data()->doneSize;
+    qDebug() << "uploaded:" <<uploaded;
+    qDebug() << "totalsize:" << totalsize;
+    qDebug() << "speed:" << speed;
+    qDebug() << "left" << left;
     emit ETA(left);
 }
 
@@ -250,6 +258,7 @@ void FileUploader::pause(bool st)
 
         //emit ETA(-100);
         //uploadedTotal = 0;
+        //time = 0;
         if (current.data()->getClass() != "video")
         {
             emit ETA(-100);
