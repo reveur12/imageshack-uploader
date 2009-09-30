@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B938686F" Name="ImageShack Uploader 2.1.0"
-             Language="1033" Version="2.1.0" Manufacturer="ImageShack Corp."
+    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B9386870" Name="ImageShack Uploader 2.2.0"
+             Language="1033" Version="2.2.0" Manufacturer="ImageShack Corp."
              UpgradeCode="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
 
         <Package Description="ImageShack bulk uploader"
@@ -12,8 +12,8 @@
 
         <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
         <Upgrade Id="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
-            <UpgradeVersion Minimum="1.0.0" Maximum="2.0.1" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
-            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.1.0' IncludeMinimum='no' />
+            <UpgradeVersion Minimum="1.0.0" Maximum="2.1.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
+            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.2.0' IncludeMinimum='no' />
         </Upgrade>
 
         <Directory Id="TARGETDIR" Name="SourceDir">
