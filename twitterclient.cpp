@@ -153,6 +153,7 @@ void TwitterClient::resultReceiver(QString data)
     QString addr("http://twitter.com/%1/status/%2");
     addr = addr.arg(user, statusid.text());
     QDesktopServices().openUrl(QUrl(addr));
+    bar.hide();
 }
 
 void TwitterClient::showProgressBar(QPoint pos)
