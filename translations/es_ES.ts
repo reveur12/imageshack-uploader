@@ -62,12 +62,12 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="94"/>
+        <location filename="../fileuploader.cpp" line="84"/>
         <source>Some files could not be uploaded.</source>
         <translation>Algunos archivos no pudieron ser cargados.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileuploader.cpp" line="97"/>
+        <location filename="../fileuploader.cpp" line="87"/>
         <source>
 
 Got error messages from server:
@@ -84,12 +84,13 @@ Tuvo mensajes de error del servidor:
         </translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="100"/>
+        <location filename="../fileuploader.cpp" line="90"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="119"/>
+        <location filename="../fileuploader.cpp" line="110"/>
+        <location filename="../fileuploader.cpp" line="120"/>
         <source>3 attempts to upload file failed</source>
         <translation>3 intentos fallidos para cargar el archivo</translation>
     </message>
@@ -112,6 +113,14 @@ Tuvo mensajes de error del servidor:
         <location filename="../fileuploader.cpp" line="227"/>
         <source>Could not connect to server</source>
         <translation>No se puede conectar con el servidor</translation>
+    </message>
+</context>
+<context>
+    <name>HTTPRequest</name>
+    <message>
+        <location filename="../httprequest.cpp" line="62"/>
+        <source>Local file does not exist</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -273,7 +282,7 @@ Tuvo mensajes de error del servidor:
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="50"/>
-        <location filename="../optionsdialog.cpp" line="144"/>
+        <location filename="../optionsdialog.cpp" line="153"/>
         <source>LANGUAGE_NAME</source>
         <translation>Español</translation>
     </message>
@@ -331,42 +340,42 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="331"/>
+        <location filename="../media.cpp" line="350"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="332"/>
+        <location filename="../media.cpp" line="351"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="333"/>
+        <location filename="../media.cpp" line="352"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="334"/>
+        <location filename="../media.cpp" line="353"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="342"/>
+        <location filename="../media.cpp" line="361"/>
         <source>%1B</source>
         <translation>%1B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="343"/>
+        <location filename="../media.cpp" line="362"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="344"/>
+        <location filename="../media.cpp" line="363"/>
         <source>%1M</source>
         <translation>%1M</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="345"/>
+        <location filename="../media.cpp" line="364"/>
         <source>%1G</source>
         <translation>%1G</translation>
     </message>
@@ -374,12 +383,12 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>MediaListModel</name>
     <message>
-        <location filename="../medialistmodel.cpp" line="163"/>
+        <location filename="../medialistmodel.cpp" line="165"/>
         <source>Files not added</source>
         <translation>Archivos no añadidos</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistmodel.cpp" line="164"/>
+        <location filename="../medialistmodel.cpp" line="166"/>
         <source>This files are already in list, they were not added again:
 </source>
         <translation>
@@ -489,13 +498,63 @@ Tuvo mensajes de error del servidor:
         <translation>Lenguaje:</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.ui" line="123"/>
+        <location filename="../optionsdialog.ui" line="95"/>
+        <source>Use proxy server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="105"/>
+        <source>Proxy settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="113"/>
+        <source>Host:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="130"/>
+        <source>Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="169"/>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="183"/>
+        <source>HTTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="188"/>
+        <source>SOCKS 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="211"/>
+        <source>Authentication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="233"/>
+        <source>Username:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="243"/>
+        <source>Password:</source>
+        <translation type="unfinished">Password:</translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="290"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="42"/>
-        <location filename="../optionsdialog.cpp" line="119"/>
+        <location filename="../optionsdialog.cpp" line="128"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>No ves tu idioma en esta lista?&lt;br&gt;Puedes ayudar a traducir este programa a tu idioma.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;AQUÍ&lt;/a&gt; para más información.</translation>
     </message>
@@ -568,8 +627,8 @@ Tuvo mensajes de error del servidor:
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="125"/>
-        <source>unknown...</source>
-        <translation>desconocido...</translation>
+        <source>paused...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../progresswidget.cpp" line="137"/>
@@ -806,50 +865,38 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="56"/>
-        <location filename="../twitterclient.cpp" line="69"/>
+        <location filename="../twitterclient.cpp" line="53"/>
+        <location filename="../twitterclient.cpp" line="66"/>
         <source>Posting to twitter...</source>
         <translation>Posteando a Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="94"/>
-        <location filename="../twitterclient.cpp" line="128"/>
-        <location filename="../twitterclient.cpp" line="140"/>
-        <location filename="../twitterclient.cpp" line="161"/>
-        <location filename="../twitterclient.cpp" line="168"/>
-        <location filename="../twitterclient.cpp" line="174"/>
-        <location filename="../twitterclient.cpp" line="181"/>
+        <location filename="../twitterclient.cpp" line="108"/>
+        <location filename="../twitterclient.cpp" line="129"/>
+        <location filename="../twitterclient.cpp" line="136"/>
+        <location filename="../twitterclient.cpp" line="142"/>
+        <location filename="../twitterclient.cpp" line="149"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="95"/>
-        <source>First set twitter username and password in options</source>
-        <translation>Primero configura tu username y password en las opciones</translation>
-    </message>
-    <message>
-        <location filename="../twitterclient.cpp" line="129"/>
-        <source>Could not send url to Twitter</source>
-        <translation>No se pudo enviar la url a Twitter</translation>
-    </message>
-    <message>
-        <location filename="../twitterclient.cpp" line="141"/>
-        <location filename="../twitterclient.cpp" line="182"/>
+        <location filename="../twitterclient.cpp" line="109"/>
+        <location filename="../twitterclient.cpp" line="150"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>No se pudo postear a twitter. Respuesta equivocada del servidor.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="162"/>
+        <location filename="../twitterclient.cpp" line="130"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>No se pudo postear a twitter. Credenciales equivocadas.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="169"/>
+        <location filename="../twitterclient.cpp" line="137"/>
         <source>Failed to update twitter status.</source>
         <translation>Actualización de estado en Twitter fallida.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="175"/>
+        <location filename="../twitterclient.cpp" line="143"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>No se pudo postear a Twitter. Error interno.</translation>
     </message>
@@ -915,71 +962,71 @@ Tuvo mensajes de error del servidor:
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="90"/>
-        <location filename="../updatechecker.cpp" line="107"/>
-        <location filename="../updatechecker.cpp" line="120"/>
+        <location filename="../updatechecker.cpp" line="84"/>
+        <location filename="../updatechecker.cpp" line="101"/>
+        <location filename="../updatechecker.cpp" line="114"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="60"/>
+        <location filename="../updatechecker.cpp" line="59"/>
         <source>Please wait...</source>
         <translation>Por favor espere...</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="61"/>
+        <location filename="../updatechecker.cpp" line="60"/>
         <source>Update checkup is currently in progress.</source>
         <translation>El chequeo de actualizaciones esta actualmente en progreso.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="108"/>
+        <location filename="../updatechecker.cpp" line="102"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>No se puede chequear las actualizaciones. Respuesta equivocada del servidor.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="121"/>
+        <location filename="../updatechecker.cpp" line="115"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>No se puede chequear las actualizaciones. No se encontraron versiones.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="162"/>
+        <location filename="../updatechecker.cpp" line="156"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="163"/>
+        <location filename="../updatechecker.cpp" line="157"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="165"/>
+        <location filename="../updatechecker.cpp" line="159"/>
         <source>Update available</source>
         <translation>Actualización disponible</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="153"/>
-        <location filename="../updatechecker.cpp" line="177"/>
+        <location filename="../updatechecker.cpp" line="147"/>
+        <location filename="../updatechecker.cpp" line="171"/>
         <source>You have the latest version of this application.</source>
         <translation>Tiene la última versión de esta aplicación.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="164"/>
+        <location filename="../updatechecker.cpp" line="158"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>La última versión es %1. ¿Quieres actualizar?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="91"/>
+        <location filename="../updatechecker.cpp" line="85"/>
         <source>Could not check for updates. Please try again later.</source>
         <translation>No se puede chequear las actualizaciones. Por favor intenta mas tarde.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="92"/>
+        <location filename="../updatechecker.cpp" line="86"/>
         <source>Error message is:</source>
         <translation>El mensaje de error es:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="152"/>
-        <location filename="../updatechecker.cpp" line="176"/>
+        <location filename="../updatechecker.cpp" line="146"/>
+        <location filename="../updatechecker.cpp" line="170"/>
         <source>No updates available</source>
         <translation>No hay actualizaciones disponibles</translation>
     </message>
