@@ -167,6 +167,8 @@ Media::Media(QString filename)
         ic = thumb.scaledToWidth(25, Qt::SmoothTransformation);
     }
     privacy = false;
+
+    lastModified = QFileInfo(this->file).lastModified();
 }
 
 QString Media::getClass()
@@ -371,4 +373,15 @@ bool Media::hasPreview()
         return !videoPreview.isNull();
     }
     else return true;
+}
+
+void Media::prepareForUpload()
+{
+    QFileInfo info(this->file);
+    if (!info.exists() || info.lastModified() != this->lastModified)
+    {
+        this->uploadedSize = 0;
+        this->uploadURL.clear();
+        this->sizeURL.clear();
+    }
 }

@@ -5,19 +5,29 @@
 #include <QDomDocument>
 #include <QNetworkProxy>
 #include <QSettings>
+#include <QFileInfo>
 #include <QDebug>
 
 HTTPRequest::HTTPRequest()
 {
     failed = false;
     inProgress = false;
-    //qnam.setProxy(
-    getProxy();
 }
 
 void HTTPRequest::setProxy()
 {
     qnam.setProxy(getProxy());
+}
+
+bool HTTPRequest::startRequest(bool emitprogress)
+{
+    if (inProgress) return false;
+    inProgress = true;
+    failed = false;
+    aborted = false;
+    setProxy();
+    if (emitprogress) emit progress(0);
+    return true;
 }
 
 QNetworkProxy& HTTPRequest::getProxy()
@@ -48,14 +58,19 @@ QNetworkProxy& HTTPRequest::getProxy()
 void HTTPRequest::uploadFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
     setProxy();
+    if (!QFileInfo(media.data()->filepath()).exists())
+        emit error(tr("Local file does not exist"));
     if (media.data()->getClass() == "video")
     {
         uploaded = 0;
         qDebug() << media.data()->uploadURL << media.data()->sizeURL;
         if (!media.data()->uploadURL.isEmpty() && !media.data()->sizeURL.isEmpty())
         {
-            inProgress = true;
-            failed = false;
+            if (!startRequest(false))
+            {
+                emit error(QString("Other request in progress"));
+                return;
+            }
             this->media = media;
             this->putFile2(media.data()->uploadURL, media.data()->sizeURL);
         }
@@ -134,17 +149,19 @@ QByteArray HTTPRequest::formStartPostData(QSharedPointer<Media> media, QString c
     return res;
 }
 
-bool HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
+void HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
-    if (inProgress) return false;
-    failed = false;
-    inProgress = true;
-    emit progress(0);
+    if (!startRequest())
+    {
+        emit error(QString("Other request in progress"));
+        return;
+    }
     this->media = media;
+    this->media.data()->prepareForUpload();
     if (!media.data()->sizeURL.isEmpty() && !media.data()->uploadURL.isEmpty())
     {
         putFile2(media.data()->uploadURL, media.data()->sizeURL);
-        return true;
+        return;
     }
     QNetworkRequest req("http://" + QString(CHUNKED_VIDEO_UPLOAD_HOSTNAME) + CHUNKED_VIDEO_UPLOAD_PATH + "/start");
     qDebug() << formStartPostData(media, cookie, username, password);
@@ -153,7 +170,6 @@ bool HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString u
     connect(reply, SIGNAL(finished()), this, SLOT(putFile2()));
     connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
             this, SLOT(specialFail(QNetworkReply::NetworkError)));
-    return true;
 }
 
 void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
@@ -199,6 +215,7 @@ void HTTPRequest::putFile3()
     bool isok = true;
     doneSize = reply->readAll().toInt(&isok);
     if (!isok) doneSize = 0;
+    qDebug() << "got done size" << doneSize;
     media.data()->uploadedSize = doneSize;
     QFile *fs = new QFile(media.data()->filepath());
     fs->open(QFile::ReadOnly);
@@ -219,8 +236,8 @@ void HTTPRequest::putFile3()
 void HTTPRequest::putFileProgressReceiver(qint64 done, qint64 total)
 {
     qDebug() << "Progress:" << done << total;
-    this->uploaded = media.data()->size() * done / total;
-    emit progress((done)*100/(total));
+    this->uploaded = done;
+    emit progress((done+doneSize)*100/(total+doneSize));
 }
 
 void HTTPRequest::postFileProgressReceiver(qint64 done, qint64 total)
@@ -267,7 +284,12 @@ void HTTPRequest::specialFail(QNetworkReply::NetworkError code)
 
 void HTTPRequest::get(QString url, QVector<QPair<QString, QString> > params)
 {
-    setProxy();
+    if (!startRequest())
+    {
+        emit error(QString("Other request in progress"));
+        return;
+    }
+
     failed = false;
     inProgress = true;
     if (!url.endsWith('?')) url += '?';
@@ -293,9 +315,11 @@ void HTTPRequest::getReceiver()
 
 void HTTPRequest::post(QString url, QVector<QPair<QString, QString> > fields)
 {
-    setProxy();
-    failed = false;
-    inProgress = true;
+    if (!startRequest())
+    {
+        emit error(QString("Other request in progress"));
+        return;
+    }
     QByteArray data;
     for(int i=0; i<fields.size(); i++)
     {
@@ -333,10 +357,12 @@ QPair<QString, QString> HTTPRequest::getUploadHost(QSharedPointer<Media> media)
 
 void HTTPRequest::postFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
-    setProxy();
-    failed = false;
-    inProgress = true;
-
+    if (!startRequest())
+    {
+        emit error(QString("Other request in progress"));
+        return;
+    }
+    doneSize = 0;
     QString host, path;
     QPair<QString, QString> destination = getUploadHost(media);
     host = destination.first;
@@ -378,6 +404,7 @@ void HTTPRequest::pause()
 {
     reply->blockSignals(true);
     reply->abort();
+    aborted = true;
 }
 
 void HTTPRequest::resume()

@@ -54,7 +54,7 @@ void FileUploader::begin()
     progress->setCurrentIndex(1);
     failcount = 0;
     skip = 0;
-    totalsize = medias->totalUploadSize();
+    totalsize = medias->totalSize();
     time = 0;
     seconds.start(1000);
     process();
@@ -65,8 +65,8 @@ void FileUploader::process()
     if (failed) { failed = true; emit status(2); return;}
     if (medias->rowCount() && (skip < medias->rowCount()))
     {
-        if (!current.isNull() && !request.isNull())
-            uploadedTotal += current.data()->size() - request.data()->doneSize;
+        if (!current.isNull() && !request.isNull() && !request.data()->aborted)
+            uploadedTotal += current.data()->size();
         current = medias->getMedia(skip);
         request = QSharedPointer<HTTPRequest>(new HTTPRequest());
         tmp.append(request);
@@ -97,6 +97,7 @@ void FileUploader::progressReceiver(int value)
 {
     int total = (int)(((100.0/filecount)*donecount)+((100.0/filecount)/100*value));
     progress->setProgress(total, value);
+    if (value == 100) seconds.stop();
 }
 
 void FileUploader::statusReceiver(int value)
@@ -239,6 +240,7 @@ void FileUploader::updateETA()
     int left = (totalsize - (uploaded))/speed;
 
     qDebug() << "time:" << time;
+    qDebug() << "uploadedTotal:" << uploadedTotal;
     qDebug() << "request.data()->uploaded:" << request.data()->uploaded;
     qDebug() << "request.data()->doneSize:" << request.data()->doneSize;
     qDebug() << "uploaded:" <<uploaded;
@@ -256,9 +258,9 @@ void FileUploader::pause(bool st)
         seconds.stop();
         int total = (int)((100.0/filecount)*donecount);
 
-        //emit ETA(-100);
-        //uploadedTotal = 0;
-        //time = 0;
+        emit ETA(-100);
+        uploadedTotal = 0;
+        time = 0;
         if (current.data()->getClass() != "video")
         {
             emit ETA(-100);
