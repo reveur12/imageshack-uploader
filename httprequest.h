@@ -21,7 +21,12 @@ public:
     void uploadFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
 
     void put(QString url, QVector<QPair<QString, QString> > fields);
+#ifdef Q_OS_WIN
+    // yes, windows sucks here too
+    void get(QString url, QVector<QPair<QString, QString> > params = 0);
+#else
     void get(QString url, QVector<QPair<QString, QString> > params = QVector<QPair<QString, QString> >());
+#endif
     void post(QString url, QVector<QPair<QString, QString> > fields);
     void postFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
     void putFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
