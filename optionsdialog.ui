@@ -240,7 +240,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Password</string>
+           <string>Password:</string>
           </property>
          </widget>
         </item>
