@@ -122,7 +122,7 @@ void ProgressWidget::updateETA(int secs)
 {
     if (secs == -100)
     {
-        m_ui->ETA->setText(tr("Time left:")+" "+ tr("unknown..."));
+        m_ui->ETA->setText(tr("Time left:")+" "+ tr("paused..."));
         return;
     }
     int hours = secs/60/60;

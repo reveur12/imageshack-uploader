@@ -34,6 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QMap>
 #include <QPair>
 #include <QStringList>
+#include <QDateTime>
 
 class Media : public QObject
 {
@@ -76,6 +77,7 @@ public:
     QString uploadURL;
     qint64 uploadedSize;
     QMap<QString, QPair<QString, QString> > types;
+    void prepareForUpload();
 
 private:
     int image_width;
@@ -91,6 +93,7 @@ private:
     QString resize;
     bool removeSize;
     QImage videoPreview;
+    QDateTime lastModified;
 
     bool valid;
     bool toolarge;

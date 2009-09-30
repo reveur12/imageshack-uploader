@@ -18,7 +18,7 @@ INCLUDEPATH += qtsingleapplication
 macx:INCLUDEPATH += $$system(pkg-config --cflags-only-I libavcodec libavformat libswscale libavutil | sed s/-I//g)
 UNIX_TRANSLATIONS_DIR = "/usr/share/imageshack-uploader/translations"
 DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
-VERSION = 2.1.0
+VERSION = 2.2.0
 DEFINES += VERSION="\\\"$$VERSION\\\""
 DEVKEY = $$(IMAGESHACK_DEVELOPER_KEY)
 isEmpty(DEVKEY):error(IMAGESHACK_DEVELOPER_KEY variable should be set for building)

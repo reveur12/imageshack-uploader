@@ -24,7 +24,7 @@ public:
     void get(QString url, QVector<QPair<QString, QString> > params = QVector<QPair<QString, QString> >());
     void post(QString url, QVector<QPair<QString, QString> > fields);
     void postFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
-    bool putFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
+    void putFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
     void pause();
     void resume();
     void stop();
@@ -37,6 +37,7 @@ public:
     qint64 uploaded, doneSize, headerSize;
     QString errorString();
     QNetworkProxy& getProxy();
+    bool aborted;
 
 private:
     QNetworkAccessManager qnam;
@@ -54,6 +55,7 @@ private:
     QSharedPointer<FileSource> data;
     void setProxy();
     QNetworkProxy proxy;
+    bool startRequest(bool emitprogress = true);
 
 
 
