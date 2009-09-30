@@ -275,7 +275,7 @@ packages.target = packages
 packages.depends = deb \
     rpm
 clean.target = clean
-clean.commands = rm \
+unix:clean.commands = rm \
     -f \
     moc_*.cpp \
     && \
@@ -308,6 +308,14 @@ clean.commands = rm \
     rm \
     -rf \
     deb
+win32:clean.commands = del moc_*.cpp; \
+    del qrc_*_rc.cpp; \
+    del *~; \
+    del ui_*.h; \
+    del *.o; \
+    del $$TARGET; \
+    del dist; \
+    del deb
 macx:clean.commands = rm \
     -f \
     moc_*.cpp \
