@@ -629,7 +629,7 @@ Got error messages from server:
     <message>
         <location filename="../progresswidget.cpp" line="125"/>
         <source>paused...</source>
-        <translation>пауза...</translation>
+        <translation>paused...</translation>
     </message>
     <message numerus="yes">
         <location filename="../progresswidget.cpp" line="137"/>
