@@ -124,6 +124,7 @@ void FileUploader::uploadErrorReceiver(QString msg)
 void FileUploader::resultReceiver(QString value)
 {
     qDebug() << value;
+    seconds.stop();
     QDomDocument xml;
     xml.setContent(value);
     QDomElement doc = xml.documentElement();

@@ -60,6 +60,7 @@ void HTTPRequest::uploadFile(QSharedPointer<Media> media, QString cookie, QStrin
     setProxy();
     if (!QFileInfo(media.data()->filepath()).exists())
         emit error(tr("Local file does not exist"));
+    fields = formDataFields(media, cookie, username, password);
     if (media.data()->getClass() == "video")
     {
         uploaded = 0;
@@ -114,7 +115,7 @@ QVector<QPair<QString, QString> > HTTPRequest::formDataFields(QSharedPointer<Med
     if (!password.isEmpty()) fields << qMakePair(QString("password"), password);
     if (!tags.isEmpty()) fields << qMakePair(QString("tags"), tags);
     if ((media.data()->getClass() == "image") || (media.data()->getClass() == "application"))
-        {
+    {
         if (!media.data()->getResize().isNull())
         {
             fields << qMakePair(QString("optimage"), QString("1"));
@@ -123,6 +124,7 @@ QVector<QPair<QString, QString> > HTTPRequest::formDataFields(QSharedPointer<Med
         if (media.data()->getRemoveSize()) fields << qMakePair(QString("rembar"), QString("1"));
     }
     fields << qMakePair(QString("key"), QString(DEVELOPER_KEY));
+    qDebug() << fields;
     return fields;
 }
 
@@ -146,6 +148,7 @@ QByteArray HTTPRequest::formStartPostData(QSharedPointer<Media> media, QString c
         if (res.size() && !res.endsWith('&')) res.append('&');
         res.append(fields.at(i).first + "=" + fields.at(i).second);
     }
+    qDebug() << res;
     return res;
 }
 

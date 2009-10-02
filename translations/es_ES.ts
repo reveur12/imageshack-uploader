@@ -583,7 +583,7 @@ Tuvo mensajes de error del servidor:
         <location filename="../progresswidget.ui" line="73"/>
         <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
-        <translation>Cargar/Subir</translation>
+        <translation>Cargar</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="137"/>
@@ -628,7 +628,7 @@ Tuvo mensajes de error del servidor:
     <message>
         <location filename="../progresswidget.cpp" line="125"/>
         <source>paused...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message numerus="yes">
         <location filename="../progresswidget.cpp" line="137"/>

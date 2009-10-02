@@ -640,7 +640,7 @@ Got error messages from server:
     <message>
         <location filename="../progresswidget.cpp" line="125"/>
         <source>paused...</source>
-        <translation>paused...</translation>
+        <translation>пауза...</translation>
     </message>
     <message numerus="yes">
         <location filename="../progresswidget.cpp" line="137"/>
