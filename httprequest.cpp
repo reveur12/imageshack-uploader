@@ -12,6 +12,7 @@ HTTPRequest::HTTPRequest()
 {
     failed = false;
     inProgress = false;
+    reply = NULL;
 }
 
 void HTTPRequest::setProxy()
@@ -400,7 +401,9 @@ void HTTPRequest::postFileReceiver()
 
 void HTTPRequest::stop()
 {
-    pause();
+    return;
+    if (this->reply != NULL)
+        pause();
 }
 
 void HTTPRequest::pause()

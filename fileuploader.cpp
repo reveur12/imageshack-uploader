@@ -203,6 +203,7 @@ void FileUploader::setCookie(QString value)
 void FileUploader::cancel()
 {
     request.data()->stop();
+    seconds.stop();
     emit status(3);
     progress->setCurrentIndex(0);
 }
