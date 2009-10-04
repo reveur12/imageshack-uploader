@@ -53,7 +53,6 @@ void GalleryCreator::create(QStringList urls, QString t, QString u, QString p)
     http.post(QString("http://") + GALLERY_HOSTNAME + GALLERY_PATH, data);
 }
 
-
 void GalleryCreator::resultReceiver(QString data)
 {
     QDomDocument xml;

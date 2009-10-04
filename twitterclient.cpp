@@ -96,10 +96,14 @@ void TwitterClient::post(QStringList urls, QString text, QString user, QString p
 void TwitterClient::errorReceiver(QString msg)
 {
     bar.hide();
+    QMessageBox::critical(NULL, tr("Error"),
+                          tr("Failed to update twitter status."));
 }
 
 void TwitterClient::resultReceiver(QString data)
 {
+    bar.hide();
+    qDebug() << data;
     QDomDocument xml;
     xml.setContent(data);
     QDomElement rsp = xml.firstChildElement("rsp");
@@ -153,11 +157,11 @@ void TwitterClient::resultReceiver(QString data)
     QString addr("http://twitter.com/%1/status/%2");
     addr = addr.arg(user, statusid.text());
     QDesktopServices().openUrl(QUrl(addr));
-    bar.hide();
 }
 
 void TwitterClient::showProgressBar(QPoint pos)
 {
+    qDebug() << pos;
     int x = pos.x() - bar.width()/2;
     int y = pos.y() - bar.height()/2;
     bar.move(x, y);

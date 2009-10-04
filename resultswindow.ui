@@ -344,7 +344,7 @@
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Minimum</enum>
+            <enum>QSizePolicy::MinimumExpanding</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -355,15 +355,31 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="gallink">
+          <widget class="QLabel" name="label">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="text">
-            <string notr="true">Gallery link: unknown</string>
+            <string>Gallery:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ClickableLabel" name="gallink">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string notr="true">&lt;i&gt;creating...&lt;/i&gt;</string>
            </property>
            <property name="openExternalLinks">
             <bool>true</bool>
@@ -395,10 +411,7 @@
        <item>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">
-          <widget class="CopyableTextEdit" name="all1" native="true">
-           <zorder>all2</zorder>
-           <zorder>all2</zorder>
-          </widget>
+          <widget class="CopyableTextEdit" name="all1" native="true"/>
          </item>
          <item row="0" column="1">
           <widget class="CopyableTextEdit" name="all2" native="true"/>
@@ -528,7 +541,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>246</x>
-     <y>245</y>
+     <y>270</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -588,11 +601,11 @@
    <sender>gallery</sender>
    <signal>clicked()</signal>
    <receiver>ResultsWindow</receiver>
-   <slot>galleryCreate()</slot>
+   <slot>tweetGallery()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>368</x>
-     <y>90</y>
+     <x>483</x>
+     <y>164</y>
     </hint>
     <hint type="destinationlabel">
      <x>248</x>
@@ -606,6 +619,7 @@
   <slot>next()</slot>
   <slot>done()</slot>
   <slot>tweet()</slot>
-  <slot>galleryCreate()</slot>
+  <slot>tweetGallery()</slot>
+  <slot>createGallery()</slot>
  </slots>
 </ui>

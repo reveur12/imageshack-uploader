@@ -30,7 +30,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define LOGINREQUEST_H
 
 #include <QObject>
-//#include <QHttp>
 #include "httprequest.h"
 
 class LoginRequest : public QObject
