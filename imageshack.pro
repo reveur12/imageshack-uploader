@@ -25,7 +25,6 @@ isEmpty(DEVKEY):error(IMAGESHACK_DEVELOPER_KEY variable should be set for buildi
 DEFINES += DEVELOPER_KEY="\\\"$$DEVKEY\\\""
 SOURCES += main.cpp \
     mainwindow.cpp \
-    uploadrequest.cpp \
     media.cpp \
     medialistmodel.cpp \
     medialistwidget.cpp \
@@ -50,7 +49,6 @@ SOURCES += main.cpp \
     twitterclient.cpp \
     windowsexplorerintegrator.cpp \
     twitterwindow.cpp \
-    videoframereader.cpp \
     gallerycreator.cpp \
     limitedplaintextedit.cpp \
     videopreviewcreator.cpp \
@@ -62,7 +60,6 @@ SOURCES += main.cpp \
     pausedialog.cpp \
     httprequest.cpp
 HEADERS += mainwindow.h \
-    uploadrequest.h \
     media.h \
     medialistmodel.h \
     medialistwidget.h \
@@ -87,7 +84,6 @@ HEADERS += mainwindow.h \
     twitterclient.h \
     windowsexplorerintegrator.h \
     twitterwindow.h \
-    videoframereader.h \
     gallerycreator.h \
     limitedplaintextedit.h \
     filesource.h \

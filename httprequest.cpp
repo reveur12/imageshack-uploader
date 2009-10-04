@@ -273,7 +273,8 @@ void HTTPRequest::fail(QString msg)
 void HTTPRequest::fail(QNetworkReply::NetworkError code)
 {
     qDebug() << "GOT ERROR!!!";
-    qDebug() << reply->readAll();
+    //qDebug() << reply->readAll();
+    reply->blockSignals(true);
     fail("Error #" + QString::number(code));
 }
 

@@ -39,6 +39,10 @@ ResultsWindow::ResultsWindow(QWidget *parent) :
     m_ui->setupUi(this);
     current = 0;
     setWindowFlags(Qt::Dialog | Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint);
+    connect(&gallery, SIGNAL(result(QString, QString, QString, QString)),
+            this, SLOT(galleryReceiver(QString, QString, QString, QString)));
+    connect(&gallery, SIGNAL(error()),
+            this, SLOT(galleryErrorReceiver()));
 }
 
 ResultsWindow::~ResultsWindow()
@@ -105,6 +109,7 @@ void ResultsWindow::setResults(QSharedPointer<QVector<QPair<QSharedPointer<Media
     m_ui->tabWidget->setCurrentIndex(0);
     m_ui->tabWidget->setTabEnabled(1, res.data()->size() != 1);
 
+    createGallery();
 }
 
 void ResultsWindow::translate2ndTab()
@@ -119,9 +124,7 @@ void ResultsWindow::translate2ndTab()
     m_ui->all8->setTitle(tr("Hotlinks for forums 2"));
     if (!results.isNull() && results.data()->size()>1)
     {
-        QString url = results.data()->at(0).second.at(4)+"x";
-        QString text = QString("<a href=\"%1\">%2</a>").arg(url).arg(url);
-        m_ui->gallink->setText(tr("Gallery will be link: %1").arg(text));
+        m_ui->gallink->setText(tr("<i>click here to create...</i>"));
     }
 }
 
@@ -176,12 +179,30 @@ void ResultsWindow::tweet()
     twitter.post(results.data()->at(current).second.at(0));
 }
 
-void ResultsWindow::galleryCreate()
+void ResultsWindow::tweetGallery()
 {
     QStringList urls;
     for(int i=0; i<results.data()->size(); i++)
-    {
         urls.append(results.data()->at(i).second.at(0));
-    }
-    twitter.post(urls, results.data()->at(0).second.at(4)+"x");
+    twitter.post(urls, galleryLink);
+}
+
+void ResultsWindow::createGallery()
+{
+    this->m_ui->gallink->setText(QString("<i>creating...</i>"));
+    QStringList urls;
+    for(int i=0; i<results.data()->size(); i++)
+        urls.append(results.data()->at(i).second.at(0));    
+    gallery.create(urls);
+}
+
+void ResultsWindow::galleryReceiver(QString url, QString, QString, QString)
+{
+    this->galleryLink = url;
+    this->m_ui->gallink->setText(QString("<a href=%1>%2<a>").arg(url).arg(url));
+}
+
+void ResultsWindow::galleryErrorReceiver(QString, QString, QString, QString)
+{
+    this->m_ui->gallink->setText(QString("<i>error, try again later...</i>"));
 }

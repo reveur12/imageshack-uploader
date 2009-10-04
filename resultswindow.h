@@ -60,13 +60,18 @@ private:
     GalleryCreator gallery;
     void translate2ndTab();
     void translate1stTab();
+    QString galleryLink;
 
 private slots:
     void prev();
     void next();
     void done();
     void tweet();
-    void galleryCreate();
+    void tweetGallery();
+    void createGallery();
+    void galleryReceiver(QString, QString, QString, QString);
+    void galleryErrorReceiver(QString, QString, QString, QString);
 };
 
 #endif // RESULTSWINDOW_H
+
