@@ -12,6 +12,9 @@
 #include <QSharedPointer>
 #include <QMap>
 
+typedef QPair<QString, QString> QStringPair;
+
+
 class HTTPRequest : public QObject
 {
     Q_OBJECT
@@ -21,12 +24,7 @@ public:
     void uploadFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
 
     void put(QString url, QVector<QPair<QString, QString> > fields);
-#ifdef Q_OS_WIN
-    // yes, windows sucks here too
-    void get(QString url, QVector<QPair<QString, QString> > params = 0);
-#else
-    void get(QString url, QVector<QPair<QString, QString> > params = QVector<QPair<QString, QString> >());
-#endif
+    void get(QString url, QVector<QStringPair> params = QVector<QStringPair>());
     void post(QString url, QVector<QPair<QString, QString> > fields);
     void postFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
     void putFile(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
@@ -43,12 +41,12 @@ public:
     QString errorString();
     QNetworkProxy& getProxy();
     bool aborted;
+    bool failed;
 
 private:
     QNetworkAccessManager qnam;
     QNetworkReply* reply;
     bool inProgress;
-    bool failed;
     void connectReply(const char*);
     QString url, getlenurl;
     QString cookie, username, password;

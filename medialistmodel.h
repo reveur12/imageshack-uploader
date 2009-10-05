@@ -57,6 +57,7 @@ public:
     void addMedia(QSharedPointer<Media>);
     void addMedia(QVector<QSharedPointer<Media> >);
     void setTags(QStringList);
+    bool hasVideo();
     QStringList getTags();
     QVector<QSharedPointer<Media> > medias;
 
@@ -66,6 +67,7 @@ public:
     bool dropMimeData(const QMimeData *data,
                       Qt::DropAction action, int row,
                       int column, const QModelIndex &parent);
+    int skipped;
 
 private:
 

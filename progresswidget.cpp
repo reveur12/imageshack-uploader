@@ -57,6 +57,11 @@ ProgressWidget::ProgressWidget(QWidget *parent) :
     paused = false;
 }
 
+void ProgressWidget::setMedias(MediaListModel* model)
+{
+    medias = model;
+}
+
 ProgressWidget::~ProgressWidget()
 {
     delete m_ui;
@@ -160,6 +165,7 @@ void ProgressWidget::pauseClicked()
     {
         QSettings sets;
         bool skip = sets.value("hidePauseWarning", QVariant(false)).toBool();
+        if (!skip) if (medias->hasVideo()) skip = true;
         if (!skip)
         {
             QDialog *ask = new PauseDialog(this);

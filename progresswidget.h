@@ -30,6 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define PROGRESSWIDGET_H
 
 #include <QtGui/QStackedWidget>
+#include "medialistmodel.h"
 
 namespace Ui {
     class ProgressWidget;
@@ -39,12 +40,13 @@ class ProgressWidget : public QStackedWidget {
     Q_OBJECT
     Q_DISABLE_COPY(ProgressWidget)
 public:
-    explicit ProgressWidget(QWidget *parent = 0);
+    ProgressWidget(QWidget *parent = 0);
     virtual ~ProgressWidget();
     void setProgress(int, int);
     void setMediaLoadProgress(int, int);
     void setUploadEnabled(bool);
     void setCurrentIndex(int);
+    void setMedias(MediaListModel*);
 
 protected:
     virtual void changeEvent(QEvent *e);
@@ -52,6 +54,7 @@ protected:
 private:
     Ui::ProgressWidget *m_ui;
     bool paused;
+    MediaListModel *medias;
 
 private slots:
     void uploadClicked();
