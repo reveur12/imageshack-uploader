@@ -62,10 +62,11 @@ void FileUploader::begin()
 
 void FileUploader::process()
 {
+    medias->skipped = this->skip;
     if (failed) { failed = true; emit status(2); return;}
     if (medias->rowCount() && (skip < medias->rowCount()))
     {
-        if (!current.isNull() && !request.isNull() && !request.data()->aborted)
+        if (!current.isNull() && !request.isNull() && !request.data()->aborted && !request.data()->failed)
             uploadedTotal += current.data()->size();
         current = medias->getMedia(skip);
         request = QSharedPointer<HTTPRequest>(new HTTPRequest());
@@ -77,6 +78,7 @@ void FileUploader::process()
     }
     else
     {
+        seconds.stop();
         progress->setCurrentIndex(0);
         emit status(1);
         if (skip)

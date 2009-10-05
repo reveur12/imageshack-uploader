@@ -297,3 +297,9 @@ bool MediaListModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     return true;
 }
 
+
+bool MediaListModel::hasVideo()
+{
+    if (medias.size() < (skipped+1)) return false;
+    return medias.at(skipped).data()->getClass() == "video";
+}

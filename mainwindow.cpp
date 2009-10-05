@@ -103,6 +103,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     icon = QSharedPointer<TrayIcon>(new TrayIcon(this));
     icon.data()->show();
+    ui->progressWidget->setMedias(ui->mediaList->getModel());
 }
 
 

@@ -27,6 +27,7 @@ bool HTTPRequest::startRequest(bool emitprogress)
     failed = false;
     aborted = false;
     setProxy();
+    uploaded = 0;
     if (emitprogress) emit progress(0);
     return true;
 }
@@ -402,7 +403,6 @@ void HTTPRequest::postFileReceiver()
 
 void HTTPRequest::stop()
 {
-    return;
     if (this->reply != NULL)
         pause();
 }
