@@ -241,6 +241,7 @@ void FileUploader::updateETA()
     if (!time) return;
     qint64 speed = (uploaded) / time;
     if (!speed) return;
+    if (totalsize < uploaded) return;
     int left = (totalsize - (uploaded))/speed;
 
     qDebug() << "time:" << time;
