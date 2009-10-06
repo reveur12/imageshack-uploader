@@ -23,6 +23,7 @@ DEFINES += VERSION="\\\"$$VERSION\\\""
 DEVKEY = $$(IMAGESHACK_DEVELOPER_KEY)
 isEmpty(DEVKEY):error(IMAGESHACK_DEVELOPER_KEY variable should be set for building)
 DEFINES += DEVELOPER_KEY="\\\"$$DEVKEY\\\""
+QMAKE_INFO_PLIST = imageshack.plist
 SOURCES += main.cpp \
     mainwindow.cpp \
     media.cpp \
