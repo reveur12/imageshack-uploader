@@ -70,7 +70,7 @@ private slots:
     void tweetGallery();
     void createGallery();
     void galleryReceiver(QString, QString, QString, QString);
-    void galleryErrorReceiver(QString, QString, QString, QString);
+    void galleryErrorReceiver();
 };
 
 #endif // RESULTSWINDOW_H

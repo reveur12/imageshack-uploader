@@ -60,6 +60,9 @@ QNetworkProxy& HTTPRequest::getProxy()
 void HTTPRequest::uploadFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
     setProxy();
+    lastcookie = cookie;
+    lastuser = username;
+    lastpass = password;
     if (!QFileInfo(media.data()->filepath()).exists())
         emit error(tr("Local file does not exist"));
     fields = formDataFields(media, cookie, username, password);
@@ -156,6 +159,9 @@ QByteArray HTTPRequest::formStartPostData(QSharedPointer<Media> media, QString c
 
 void HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString username, QString password)
 {
+    lastcookie = cookie;
+    lastuser = username;
+    lastpass = password;
     if (!startRequest())
     {
         emit error(QString("Other request in progress"));
@@ -210,7 +216,9 @@ void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
 
     QNetworkRequest req(getlenurl);
     reply = qnam.get(req);
-    connectReply(SLOT(putFile3()));
+    connect(reply, SIGNAL(finished()), this, SLOT(putFile3()));
+    connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
+            this, SLOT(specialFail2(QNetworkReply::NetworkError)));
 }
 
 void HTTPRequest::putFile3()
@@ -287,6 +295,20 @@ void HTTPRequest::specialFail(QNetworkReply::NetworkError code)
     this->postFile(media, cookie, username, password);
 }
 
+void HTTPRequest::specialFail2(QNetworkReply::NetworkError ecode)
+{
+    if (failed) return;
+    int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    if (code == 404 || code == 400)
+    {
+        media.data()->uploadedSize = 0;
+        media.data()->uploadURL.clear();
+        media.data()->sizeURL.clear();
+        uploadFile(media, lastcookie, lastuser, lastpass);
+        return;
+    }
+    fail(ecode);
+}
 
 void HTTPRequest::get(QString url, QVector<QPair<QString, QString> > params)
 {

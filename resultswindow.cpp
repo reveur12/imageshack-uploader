@@ -202,7 +202,7 @@ void ResultsWindow::galleryReceiver(QString url, QString, QString, QString)
     this->m_ui->gallink->setText(QString("<a href=%1>%2<a>").arg(url).arg(url));
 }
 
-void ResultsWindow::galleryErrorReceiver(QString, QString, QString, QString)
+void ResultsWindow::galleryErrorReceiver()
 {
     this->m_ui->gallink->setText(QString("<i>error, try again later...</i>"));
 }
