@@ -161,7 +161,7 @@
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
-				<string>video/auicktime</string>
+				<string>video/quicktime</string>
 			</array>
 		</dict>
 		<dict>
