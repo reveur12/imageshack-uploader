@@ -10,6 +10,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>png</string>
+				<string>PNG</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -20,16 +21,9 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>jpg</string>
-			</array>
-			<key>CFBundleTypeMIMETypes</key>
-			<array>
-				<string>image/jpeg</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
+				<string>JPG</string>
 				<string>jpeg</string>
+				<string>JPEG</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -40,6 +34,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>gif</string>
+				<string>GIF</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -50,6 +45,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>bmp</string>
+				<string>BMP</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -60,16 +56,9 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>tiff</string>
-			</array>
-			<key>CFBundleTypeMIMETypes</key>
-			<array>
-				<string>image/tiff</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
+				<string>TIFF</string>
 				<string>tif</string>
+				<string>TIF</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -80,6 +69,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>swf</string>
+				<string>SWF</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -90,6 +80,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>pdf</string>
+				<string>PDF</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -100,6 +91,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>flv</string>
+				<string>FLV</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -110,6 +102,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>mp4</string>
+				<string>MP4</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -120,6 +113,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>m4v</string>
+				<string>M4V</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -130,6 +124,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>wmv</string>
+				<string>WMV</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -140,6 +135,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>3gp</string>
+				<string>3GP</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -150,6 +146,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>avi</string>
+				<string>AVI</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -160,6 +157,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>mov</string>
+				<string>MOV</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
@@ -170,6 +168,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>mkv</string>
+				<string>MKV</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
