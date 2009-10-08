@@ -89,6 +89,11 @@ public:
     void initialize(bool dummy = true)
         { isRunning(); Q_UNUSED(dummy) }
 
+protected:
+#ifdef Q_OS_MAC
+    bool event(QEvent *);
+#endif
+
 public Q_SLOTS:
     bool sendMessage(const QString &message, int timeout = 5000);
     void activateWindow();

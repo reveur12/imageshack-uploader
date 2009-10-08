@@ -48,6 +48,7 @@
 #include "qtsingleapplication.h"
 #include "qtlocalpeer.h"
 #include <QtGui/QWidget>
+#include <QtGui/QFileOpenEvent>
 
 
 /*!
@@ -188,6 +189,18 @@ QtSingleApplication::QtSingleApplication(int &argc, char **argv, Type type)
     sysInit();
 }
 
+#ifdef Q_OS_MAC
+bool QtSingleApplication::event(QEvent *event)
+{
+    if (event->type() == QEvent::FileOpen) {
+        QFileOpenEvent *foe = static_cast<QFileOpenEvent*>(event);
+        emit messageReceived(foe->file());
+
+        return true;
+    }
+    return QApplication::event(event);
+}
+#endif
 
 #if defined(Q_WS_X11)
 /*!
