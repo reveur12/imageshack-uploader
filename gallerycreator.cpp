@@ -65,6 +65,7 @@ void GalleryCreator::resultReceiver(QString data)
 
 void GalleryCreator::errorReceiver(QString message)
 {
-    qDebug() << "got error:" << message;
+    qDebug() << "Gallery creator got error:" << message;
+    //qDebug() << "Response text:" << http.reply->readAll();
     emit error();
 }

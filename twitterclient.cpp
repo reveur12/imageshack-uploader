@@ -75,6 +75,7 @@ TwitterClient::~TwitterClient()
 
 void TwitterClient::post(QString url, QString text, QString user, QString pass, bool showProgressbar, QPoint pos)
 {
+    qDebug() << "posting url" << url << "and txt" << text;
     this->user = user;
     QVector<QPair<QString, QString> > data;
     data.append(qMakePair(QString("username"), user));
@@ -82,6 +83,7 @@ void TwitterClient::post(QString url, QString text, QString user, QString pass, 
     data.append(qMakePair(QString("message"), text));
     data.append(qMakePair(QString("url"), url));
     data.append(qMakePair(QString("key"), QString(DEVELOPER_KEY)));
+    qDebug() << data;
     http.post(QString("http://") + TWITTER_HOST + TWITTER_PATH, data);
 
     if (showProgressbar) showProgressBar(pos);

@@ -59,6 +59,7 @@ private:
     void setProxy();
     QNetworkProxy proxy;
     bool startRequest(bool emitprogress = true);
+    QString lastuser, lastcookie, lastpass;
 
 
 
@@ -69,6 +70,7 @@ private slots:
     void fail(QString msg);
     void fail(QNetworkReply::NetworkError code);
     void specialFail(QNetworkReply::NetworkError code);
+    void specialFail2(QNetworkReply::NetworkError ecode);
     void putFileProgressReceiver(qint64 done, qint64 total);
     void postFileProgressReceiver(qint64 done, qint64 total);
     //void progressReceiver(qint64, qint64);
