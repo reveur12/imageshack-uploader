@@ -803,7 +803,7 @@ Got error messages from server:
     <message>
         <location filename="../resultswindow.ui" line="366"/>
         <source>Gallery:</source>
-        <translation>Галлерея:</translation>
+        <translation>Галерея:</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="389"/>
