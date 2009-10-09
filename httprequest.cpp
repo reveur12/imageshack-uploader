@@ -300,7 +300,7 @@ void HTTPRequest::specialFail2(QNetworkReply::NetworkError ecode)
     if (failed) return;
     int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     QString text = reply->readAll();
-    if (code == 404 || text.startsWith("<error code=\"CODE\">"))
+    if (code == 404 || text.startsWith("<error code=\"not_found\">"))
     {
         media.data()->uploadedSize = 0;
         media.data()->uploadURL.clear();
