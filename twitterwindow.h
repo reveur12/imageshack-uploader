@@ -43,7 +43,7 @@ public:
     TwitterWindow(QDialog *parent = 0);
     ~TwitterWindow();
     void post(QString);
-    void post(QStringList, QString);
+    void post(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > >, QString);
 
 protected:
     void changeEvent(QEvent *e);
@@ -52,7 +52,7 @@ private:
     Ui::TwitterWindow *m_ui;
     QSharedPointer<TwitterClient> twitter;
     QString link;
-    QStringList links;
+    QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > > links;
     QString shortlink;
     bool gallery;
 

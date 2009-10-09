@@ -89,10 +89,10 @@ void TwitterClient::post(QString url, QString text, QString user, QString pass, 
     if (showProgressbar) showProgressBar(pos);
 }
 
-void TwitterClient::post(QStringList urls, QString text, QString user, QString pass, QString shortlink, bool showProgressbar, QPoint pos)
+void TwitterClient::post(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > > medias, QString text, QString user, QString pass, QString shortlink, bool showProgressbar, QPoint pos)
 {
     if (showProgressbar) showProgressBar(pos);
-    gallery.create(urls, text, user, pass);
+    gallery.create(medias, text, user, pass);
 }
 
 void TwitterClient::errorReceiver(QString msg)

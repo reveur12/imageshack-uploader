@@ -181,19 +181,13 @@ void ResultsWindow::tweet()
 
 void ResultsWindow::tweetGallery()
 {
-    QStringList urls;
-    for(int i=0; i<results.data()->size(); i++)
-        urls.append(results.data()->at(i).second.at(0));
-    twitter.post(urls, galleryLink);
+    twitter.post(results, galleryLink);
 }
 
 void ResultsWindow::createGallery()
 {
     this->m_ui->gallink->setText(QString("<i>creating...</i>"));
-    QStringList urls;
-    for(int i=0; i<results.data()->size(); i++)
-        urls.append(results.data()->at(i).second.at(0));    
-    gallery.create(urls);
+    gallery.create(results);
 }
 
 void ResultsWindow::galleryReceiver(QString url, QString, QString, QString)
