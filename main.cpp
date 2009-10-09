@@ -47,8 +47,7 @@ int main(int argc, char **argv)
 
     QStringList filelist;
     for (int i=1; i< argc; i++)
-        filelist << QString(argv[i]);
-    qDebug() << argc << argv[1];
+        filelist << QString::fromLocal8Bit(argv[i]);
     if ((argc==2) && (QString(argv[1]) == "-unregister"))
     {
         qDebug() << "unregistering...";
