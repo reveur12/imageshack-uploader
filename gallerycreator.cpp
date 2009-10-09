@@ -53,7 +53,7 @@ void GalleryCreator::create(QSharedPointer<QVector<QPair<QSharedPointer<Media>,Q
         int height = medias.data()->at(i).first.data()->height();
         QString thumb;
         if (width > 200 || height > 200) thumb = "y"; else thumb = "n";
-        data.append(qMakePair(QString("image[]="), image + ";" + QString::number(width) + ";" + QString::number(height) + ";" + thumb));
+        data.append(qMakePair(QString("image[]"), image + ";" + QString::number(width) + ";" + QString::number(height) + ";" + thumb));
     }
     qDebug() << data;
     http.post(QString("http://") + GALLERY_HOSTNAME + GALLERY_PATH, data);
