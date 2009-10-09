@@ -348,7 +348,7 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
+             <width>10</width>
              <height>1</height>
             </size>
            </property>
@@ -368,21 +368,12 @@
           </widget>
          </item>
          <item>
-          <widget class="ClickableLabel" name="gallink">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="text">
-            <string notr="true">&lt;i&gt;creating...&lt;/i&gt;</string>
-           </property>
-           <property name="openExternalLinks">
-            <bool>true</bool>
+          <widget class="CopyableLineEdit" name="gallink" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>30</width>
+             <height>0</height>
+            </size>
            </property>
           </widget>
          </item>
@@ -540,8 +531,8 @@
    <slot>prev()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>246</x>
-     <y>270</y>
+     <x>111</x>
+     <y>271</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -556,8 +547,8 @@
    <slot>next()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>278</x>
-     <y>246</y>
+     <x>111</x>
+     <y>271</y>
     </hint>
     <hint type="destinationlabel">
      <x>420</x>
@@ -588,8 +579,8 @@
    <slot>tweet()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>370</x>
-     <y>51</y>
+     <x>111</x>
+     <y>64</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>

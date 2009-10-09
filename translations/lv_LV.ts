@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="en">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="en">
 <context>
     <name>AboutWindow</name>
     <message>
+        <location filename="../aboutwindow.cpp" line="38"/>
         <location filename="../aboutwindow.cpp" line="52"/>
         <source>Version %1</source>
         <translation>Versija %1</translation>
@@ -23,7 +24,7 @@
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
         <translation>ImageShack uploader ir lielisks rīks attēlu un video failu augšuplādei uz ImageShack tīmekļa pakalpojumiem.</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <location filename="../aboutwindow.ui" line="111"/>
         <source>© 2009 ImageShack Corp.</source>
         <translation>© 2009 ImageShack Corp.</translation>
@@ -61,12 +62,12 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="94"/>
+        <location filename="../fileuploader.cpp" line="86"/>
         <source>Some files could not be uploaded.</source>
         <translation>Vairākus failus neizdevās augšuplādēt.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileuploader.cpp" line="97"/>
+        <location filename="../fileuploader.cpp" line="89"/>
         <source>
 
 Got error messages from server:
@@ -83,45 +84,56 @@ Saņemts kļūdas ziņojums no servera:
         </translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="100"/>
+        <location filename="../fileuploader.cpp" line="92"/>
         <source>Warning</source>
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="119"/>
+        <location filename="../fileuploader.cpp" line="112"/>
+        <location filename="../fileuploader.cpp" line="122"/>
         <source>3 attempts to upload file failed</source>
         <translation>3 mēģinājumi augšuplādēt failu beigušies neveiksmigi.</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="141"/>
+        <location filename="../fileuploader.cpp" line="144"/>
         <source>Server returned no error text</source>
         <translation>Serveris neatgrieza kļūdas aprakstu</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="148"/>
+        <location filename="../fileuploader.cpp" line="151"/>
         <source>Wrong server response</source>
         <translation>Kļūdaina servera atbilde</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="181"/>
+        <location filename="../fileuploader.cpp" line="184"/>
         <source>Server responce is not valid</source>
         <translation>Servera atbilde nav derīga</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="227"/>
+        <location filename="../fileuploader.cpp" line="231"/>
         <source>Could not connect to server</source>
         <translation>Nevar pievienoties serverim</translation>
     </message>
 </context>
 <context>
+    <name>HTTPRequest</name>
+    <message>
+        <location filename="../httprequest.cpp" line="67"/>
+        <source>Local file does not exist</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ImageInfoWidget</name>
     <message>
+        <location filename="../imageinfowidget.cpp" line="98"/>
+        <location filename="../imageinfowidget.cpp" line="118"/>
         <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
         <translation>Sīktēls</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.cpp" line="250"/>
+        <location filename="../imageinfowidget.cpp" line="254"/>
         <source>Log in to use this features</source>
         <translation>Jāveic autorizācija, lai lietotu šīs iespējas</translation>
     </message>
@@ -131,72 +143,77 @@ Saņemts kļūdas ziņojums no servera:
         <translation>Mainīt attēla izmēru:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="124"/>
+        <location filename="../imageinfowidget.ui" line="126"/>
         <source>Do not resize</source>
         <translation>Nemainīt attēla izmēru</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="129"/>
+        <location filename="../imageinfowidget.ui" line="131"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (profilattēls[avatar])</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="134"/>
+        <location filename="../imageinfowidget.ui" line="136"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (sīktēls)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="139"/>
+        <location filename="../imageinfowidget.ui" line="141"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (tīmekļa lapām un e-pastam)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="144"/>
+        <location filename="../imageinfowidget.ui" line="146"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (ziņojumdēļiem[message boards])</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="149"/>
+        <location filename="../imageinfowidget.ui" line="151"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (12-collu monitors)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="154"/>
+        <location filename="../imageinfowidget.ui" line="156"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (15-collu monitors)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="159"/>
+        <location filename="../imageinfowidget.ui" line="161"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (19-collu monitors)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="164"/>
+        <location filename="../imageinfowidget.ui" line="166"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (21-collu monitors)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="169"/>
+        <location filename="../imageinfowidget.ui" line="171"/>
         <source>Optimize only</source>
         <translation>Tikai optimizēt</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="221"/>
+        <location filename="../imageinfowidget.ui" line="182"/>
+        <source>Resize all images to this size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="242"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Privātums:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="231"/>
+        <location filename="../imageinfowidget.ui" line="252"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Birkas[Tags]:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="249"/>
+        <location filename="../imageinfowidget.ui" line="270"/>
         <source>Public</source>
         <translation>Publisks</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="268"/>
+        <location filename="../imageinfowidget.ui" line="289"/>
         <source>Private</source>
         <translation>Privāts</translation>
     </message>
@@ -204,22 +221,24 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>LoginWidget</name>
     <message>
-        <location filename="../loginwidget.cpp" line="139"/>
+        <location filename="../loginwidget.cpp" line="84"/>
+        <location filename="../loginwidget.cpp" line="140"/>
         <source>You are logged in as %1</source>
         <translation>Tu esi autorizējies kā %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="159"/>
+        <location filename="../loginwidget.cpp" line="152"/>
+        <location filename="../loginwidget.cpp" line="160"/>
         <source>Authentication failed</source>
         <translation>Autorizācija neveiksmīga</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="148"/>
+        <location filename="../loginwidget.cpp" line="149"/>
         <source>Could not connect to ImageShack server.</source>
         <translation>Nevaru pievienoties ImageShack serverim.</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="160"/>
+        <location filename="../loginwidget.cpp" line="161"/>
         <source>Wrong credentials.</source>
         <translation>Nepareizi autorizācijas dati.</translation>
     </message>
@@ -262,7 +281,8 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../optionsdialog.cpp" line="144"/>
+        <location filename="../mainwindow.cpp" line="50"/>
+        <location filename="../optionsdialog.cpp" line="147"/>
         <source>LANGUAGE_NAME</source>
         <translation>Latviešu</translation>
     </message>
@@ -272,12 +292,12 @@ Saņemts kļūdas ziņojums no servera:
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
+        <location filename="../mainwindow.cpp" line="119"/>
         <source>Warning</source>
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="119"/>
+        <location filename="../mainwindow.cpp" line="120"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Flash failus nevar augšuplādēt ja neesi veicis autorizāciju. Vēlies mēģināt tā pat?</translation>
     </message>
@@ -320,42 +340,42 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="331"/>
+        <location filename="../media.cpp" line="350"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="332"/>
+        <location filename="../media.cpp" line="351"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="333"/>
+        <location filename="../media.cpp" line="352"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="334"/>
+        <location filename="../media.cpp" line="353"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="342"/>
+        <location filename="../media.cpp" line="361"/>
         <source>%1B</source>
         <translation>%1B</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="343"/>
+        <location filename="../media.cpp" line="362"/>
         <source>%1K</source>
         <translation>%1K</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="344"/>
+        <location filename="../media.cpp" line="363"/>
         <source>%1M</source>
         <translation>%1M</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="345"/>
+        <location filename="../media.cpp" line="364"/>
         <source>%1G</source>
         <translation>%1G</translation>
     </message>
@@ -363,12 +383,12 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>MediaListModel</name>
     <message>
-        <location filename="../medialistmodel.cpp" line="163"/>
+        <location filename="../medialistmodel.cpp" line="165"/>
         <source>Files not added</source>
         <translation>Faili nav pievienoti</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistmodel.cpp" line="164"/>
+        <location filename="../medialistmodel.cpp" line="166"/>
         <source>This files are already in list, they were not added again:
 </source>
         <translation>
@@ -478,11 +498,62 @@ Saņemts kļūdas ziņojums no servera:
         <translation>Valoda:</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.ui" line="123"/>
+        <location filename="../optionsdialog.ui" line="95"/>
+        <source>Use proxy server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="105"/>
+        <source>Proxy settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="113"/>
+        <source>Host:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="130"/>
+        <source>Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="169"/>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="183"/>
+        <source>HTTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="188"/>
+        <source>SOCKS 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="211"/>
+        <source>Authentication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="233"/>
+        <source>Username:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="243"/>
+        <source>Password:</source>
+        <translation type="unfinished">Parole:</translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="290"/>
         <source>OK</source>
         <translation>Labi</translation>
     </message>
     <message>
+        <location filename="../optionsdialog.cpp" line="42"/>
         <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>Neredzi savu valodu sarakstā?&lt;br&gt;Tu vari palīdzēt pārtulkot programmu savā valodā.&lt;br&gt;Spied &lt;a href=&quot;%1&quot;&gt;ŠEIT&lt;/a&gt;, lai uzzinātu vairāk.</translation>
@@ -509,6 +580,7 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>ProgressWidget</name>
     <message>
+        <location filename="../progresswidget.ui" line="73"/>
         <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
         <translation>Augšuplādēt</translation>
@@ -519,42 +591,47 @@ Saņemts kļūdas ziņojums no servera:
         <translation>Vispārēji: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="153"/>
+        <location filename="../progresswidget.cpp" line="158"/>
         <source>Time left: estimating...</source>
         <translation>Atlicis laiks: apmēram...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="94"/>
+        <location filename="../progresswidget.cpp" line="99"/>
         <source>Waiting for links...</source>
         <translation>Gaidu saites...</translation>
     </message>
     <message>
+        <location filename="../progresswidget.cpp" line="91"/>
+        <location filename="../progresswidget.cpp" line="156"/>
+        <location filename="../progresswidget.cpp" line="184"/>
         <location filename="../progresswidget.ui" line="198"/>
         <source>Pause</source>
         <translation>Pauze</translation>
     </message>
     <message>
+        <location filename="../progresswidget.cpp" line="103"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Pašlaik: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="110"/>
+        <location filename="../progresswidget.cpp" line="115"/>
         <source>Loading files: %1 of %2</source>
         <translation>Augšuplādēju failu: %1 no %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="133"/>
+        <location filename="../progresswidget.cpp" line="130"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source>Time left:</source>
         <translation>Atlicis laiks:</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="125"/>
-        <source>unknown...</source>
-        <translation>nezināms...</translation>
+        <location filename="../progresswidget.cpp" line="130"/>
+        <source>paused...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="137"/>
+        <location filename="../progresswidget.cpp" line="142"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n stunda.</numerusform>
@@ -562,7 +639,7 @@ Saņemts kļūdas ziņojums no servera:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="138"/>
+        <location filename="../progresswidget.cpp" line="143"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n min.</numerusform>
@@ -570,17 +647,17 @@ Saņemts kļūdas ziņojums no servera:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="140"/>
+        <location filename="../progresswidget.cpp" line="145"/>
         <source> less than 1 min.</source>
         <translation>mazāk par 1 min.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="141"/>
+        <location filename="../progresswidget.cpp" line="146"/>
         <source> almost done...</source>
         <translation>gandrīz pabeigts...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="169"/>
+        <location filename="../progresswidget.cpp" line="175"/>
         <source>Resume</source>
         <translation>Turpināt</translation>
     </message>
@@ -593,87 +670,87 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="108"/>
+        <location filename="../resultswindow.cpp" line="118"/>
         <source>Direct links</source>
         <translation>Tiešsaites [Direct links]</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="109"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Short links</source>
         <translation>Īssaites [Short links]</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="110"/>
+        <location filename="../resultswindow.cpp" line="120"/>
         <source>Hotlinks for web</source>
         <translation>Karstās saites tīmeklim</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="111"/>
+        <location filename="../resultswindow.cpp" line="121"/>
         <source>Thumbnails for web</source>
         <translation>Sīktēli tīmeklim</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="122"/>
         <source>Thumbnails for forums 1</source>
         <translation>Sīktēli forumiem 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="123"/>
         <source>Thumbnails for forums 2</source>
         <translation>Sīktēli forumiem 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="124"/>
         <source>Hotlinks for forums 1</source>
         <translation>Karstās saites forumiem 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="125"/>
         <source>Hotlinks for forums 2</source>
         <translation>Karstās saites forumiem 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="120"/>
+        <location filename="../resultswindow.cpp" line="134"/>
         <source>Direct link</source>
         <translation>Tiešsaite [Direct link]</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="121"/>
+        <location filename="../resultswindow.cpp" line="135"/>
         <source>Short link</source>
         <translation>Īssaite [Short link]</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="122"/>
+        <location filename="../resultswindow.cpp" line="136"/>
         <source>Hotlink for web</source>
         <translation>Karstā saite tīmeklim</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="123"/>
+        <location filename="../resultswindow.cpp" line="137"/>
         <source>Thumbnail for web</source>
         <translation>Sīktēls tīmeklim</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="124"/>
+        <location filename="../resultswindow.cpp" line="138"/>
         <source>Thumbnail for forums 1</source>
         <translation>Sīktēls forumiem 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="125"/>
+        <location filename="../resultswindow.cpp" line="139"/>
         <source>Thumbnail for forums 2</source>
         <translation>Sīktēls forumiem 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="126"/>
+        <location filename="../resultswindow.cpp" line="140"/>
         <source>Hotlink for forums 1</source>
         <translation>Karstā saite forumiem 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="127"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for forums 2</source>
         <translation>Karstā saite forumiem 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>File %1 of %2</source>
         <translation>Fails %1 no %2</translation>
     </message>
@@ -693,7 +770,9 @@ Saņemts kļūdas ziņojums no servera:
         <translation>Sīktēls</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="393"/>
+        <location filename="../resultswindow.ui" line="57"/>
+        <location filename="../resultswindow.ui" line="60"/>
+        <location filename="../resultswindow.ui" line="392"/>
         <source>Tweet this</source>
         <translation>Tweet šo</translation>
     </message>
@@ -708,12 +787,17 @@ Saņemts kļūdas ziņojums no servera:
         <translation>Visi attēlu un video faili</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="390"/>
+        <location filename="../resultswindow.ui" line="366"/>
+        <source>Gallery:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../resultswindow.ui" line="389"/>
         <source>Create gallery and post to twitter</source>
         <translation>Izveidot galeriju un ievietot twitter</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="450"/>
+        <location filename="../resultswindow.ui" line="461"/>
         <source>Close</source>
         <translation>Aizvērt</translation>
     </message>
@@ -746,6 +830,7 @@ Saņemts kļūdas ziņojums no servera:
         <translation>Automatizēt privātumu un birkas[tags]</translation>
     </message>
     <message>
+        <location filename="../tagwidget.cpp" line="40"/>
         <location filename="../tagwidget.cpp" line="98"/>
         <source>Log in to use this features</source>
         <translation>Jāveic autorizācija, lai lietotu šīs iespējas</translation>
@@ -780,42 +865,40 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="69"/>
+        <location filename="../twitterclient.cpp" line="53"/>
+        <location filename="../twitterclient.cpp" line="66"/>
         <source>Posting to twitter...</source>
         <translation>Ievietoju Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="181"/>
+        <location filename="../twitterclient.cpp" line="101"/>
+        <location filename="../twitterclient.cpp" line="114"/>
+        <location filename="../twitterclient.cpp" line="135"/>
+        <location filename="../twitterclient.cpp" line="142"/>
+        <location filename="../twitterclient.cpp" line="148"/>
+        <location filename="../twitterclient.cpp" line="155"/>
         <source>Error</source>
         <translation>Kļūda</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="95"/>
-        <source>First set twitter username and password in options</source>
-        <translation>Vispirms opcijās jāuzstāda twitter lietotājvārds un parole </translation>
-    </message>
-    <message>
-        <location filename="../twitterclient.cpp" line="129"/>
-        <source>Could not send url to Twitter</source>
-        <translation>Nevaru aizsūtīt saites adresi uz Twitter</translation>
-    </message>
-    <message>
-        <location filename="../twitterclient.cpp" line="182"/>
+        <location filename="../twitterclient.cpp" line="115"/>
+        <location filename="../twitterclient.cpp" line="156"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Nevaru ievietot twitter. Kļūdaina servera atbilde.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="162"/>
+        <location filename="../twitterclient.cpp" line="136"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Nevaru ievietot twitter. Kļūdaini lietotāja dati.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="169"/>
+        <location filename="../twitterclient.cpp" line="102"/>
+        <location filename="../twitterclient.cpp" line="143"/>
         <source>Failed to update twitter status.</source>
         <translation>Neizdevās atjaunot twitter statusu.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="175"/>
+        <location filename="../twitterclient.cpp" line="149"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Nevaru ievietot twitter. Iekšēja kļūda.</translation>
     </message>
@@ -881,67 +964,71 @@ Saņemts kļūdas ziņojums no servera:
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="120"/>
+        <location filename="../updatechecker.cpp" line="84"/>
+        <location filename="../updatechecker.cpp" line="101"/>
+        <location filename="../updatechecker.cpp" line="114"/>
         <source>Error</source>
         <translation>Kļūda</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="60"/>
+        <location filename="../updatechecker.cpp" line="59"/>
         <source>Please wait...</source>
         <translation>Lūdzu uzgaidiet...</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="61"/>
+        <location filename="../updatechecker.cpp" line="60"/>
         <source>Update checkup is currently in progress.</source>
         <translation>Pārbaudu programmas atjauninājumu pieejamību.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="108"/>
+        <location filename="../updatechecker.cpp" line="102"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>Nevaru pārbaudīt atjauninājumus. Nepareiza servera atbilde.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="121"/>
+        <location filename="../updatechecker.cpp" line="115"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>Nevaru pārbaudīt atjauninājumus. Nav pieejams versiju saraksts.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="162"/>
+        <location filename="../updatechecker.cpp" line="156"/>
         <source>Yes</source>
         <translation>Jā</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="163"/>
+        <location filename="../updatechecker.cpp" line="157"/>
         <source>No</source>
         <translation>Nē</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="165"/>
+        <location filename="../updatechecker.cpp" line="159"/>
         <source>Update available</source>
         <translation>Pieejami programmas atjauninājumi</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="177"/>
+        <location filename="../updatechecker.cpp" line="147"/>
+        <location filename="../updatechecker.cpp" line="171"/>
         <source>You have the latest version of this application.</source>
         <translation>Šī ir pēdējā pieejamā programmas versija.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="164"/>
+        <location filename="../updatechecker.cpp" line="158"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>Programmas pēdējā versija ir %1. Vēlies atjaunināt?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="91"/>
+        <location filename="../updatechecker.cpp" line="85"/>
         <source>Could not check for updates. Please try again later.</source>
         <translation>Nevaru pārbaudīt atjauninājumus. Lūdzu mēģini vēlāk.</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="92"/>
+        <location filename="../updatechecker.cpp" line="86"/>
         <source>Error message is:</source>
         <translation>Kļūdas ziņojums ir:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="176"/>
+        <location filename="../updatechecker.cpp" line="146"/>
+        <location filename="../updatechecker.cpp" line="170"/>
         <source>No updates available</source>
         <translation>Programmas atjauninājumi nav pieejami</translation>
     </message>

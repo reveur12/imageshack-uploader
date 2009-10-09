@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="th_TH">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="th_TH">
 <context>
     <name>AboutWindow</name>
     <message>
+        <location filename="../aboutwindow.cpp" line="38"/>
         <location filename="../aboutwindow.cpp" line="52"/>
         <source>Version %1</source>
         <translation>รุ่น %1</translation>
@@ -23,7 +24,7 @@
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
         <translation>ImageShack uploader คือโปรแกรมสุดยอดสำหรับอัปโหลดรูปภาพและไฟล์วิดีโอไปยังเว็บผู้ให้บริการของ ImageShack</translation>
     </message>
-    <message encoding="UTF-8">
+    <message utf8="true">
         <location filename="../aboutwindow.ui" line="111"/>
         <source>© 2009 ImageShack Corp.</source>
         <translation>© 2552 บริษัทอิมเมจแช็คคอร์ปอเรชั่น</translation>
@@ -61,12 +62,12 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="94"/>
+        <location filename="../fileuploader.cpp" line="86"/>
         <source>Some files could not be uploaded.</source>
         <translation>บางไฟล์ไม่สามารถอัปโหลดได้</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileuploader.cpp" line="97"/>
+        <location filename="../fileuploader.cpp" line="89"/>
         <source>
 
 Got error messages from server:
@@ -79,45 +80,56 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="100"/>
+        <location filename="../fileuploader.cpp" line="92"/>
         <source>Warning</source>
         <translation>ประกาศ</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="119"/>
+        <location filename="../fileuploader.cpp" line="112"/>
+        <location filename="../fileuploader.cpp" line="122"/>
         <source>3 attempts to upload file failed</source>
         <translation>3 วิธีเพื่ออัปโหลดให้ไฟล์ล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="141"/>
+        <location filename="../fileuploader.cpp" line="144"/>
         <source>Server returned no error text</source>
         <translation>เซิร์ฟเวอร์บอกว่าไม่มีข้อแสดงความผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="148"/>
+        <location filename="../fileuploader.cpp" line="151"/>
         <source>Wrong server response</source>
         <translation>การตอบกลับจากเซิร์ฟเวอร์ผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="181"/>
+        <location filename="../fileuploader.cpp" line="184"/>
         <source>Server responce is not valid</source>
         <translation>การตอบสนองของเซิร์ฟเวอร์ไม่ถูกต้อง</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="227"/>
+        <location filename="../fileuploader.cpp" line="231"/>
         <source>Could not connect to server</source>
         <translation>ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้</translation>
     </message>
 </context>
 <context>
+    <name>HTTPRequest</name>
+    <message>
+        <location filename="../httprequest.cpp" line="67"/>
+        <source>Local file does not exist</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ImageInfoWidget</name>
     <message>
+        <location filename="../imageinfowidget.cpp" line="98"/>
+        <location filename="../imageinfowidget.cpp" line="118"/>
         <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
         <translation>รูปขนาดย่อ</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.cpp" line="250"/>
+        <location filename="../imageinfowidget.cpp" line="254"/>
         <source>Log in to use this features</source>
         <translation>เข้าสู่ระบบเพื่อใช้คุณสมบัตินี้</translation>
     </message>
@@ -127,72 +139,77 @@ Got error messages from server:
         <translation>ปรับขนาดรูปภาพ:</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="124"/>
+        <location filename="../imageinfowidget.ui" line="126"/>
         <source>Do not resize</source>
         <translation>ห้ามปรับขนาด</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="129"/>
+        <location filename="../imageinfowidget.ui" line="131"/>
         <source>100x100 (avatar)</source>
         <translation>100x100 (รูปขนาดเล็กมาก)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="134"/>
+        <location filename="../imageinfowidget.ui" line="136"/>
         <source>150x150 (thumbnail)</source>
         <translation>150x150 (รูปขนาดย่อ)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="139"/>
+        <location filename="../imageinfowidget.ui" line="141"/>
         <source>320x320 (for websites and email)</source>
         <translation>320x320 (สำหรับเว็บไซต์และอีเมล)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="144"/>
+        <location filename="../imageinfowidget.ui" line="146"/>
         <source>640x640 (for message boards)</source>
         <translation>640x640 (สำหรับบอร์ดข้อความ)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="149"/>
+        <location filename="../imageinfowidget.ui" line="151"/>
         <source>800x800 (12-inch monitor)</source>
         <translation>800x800 (สำหรับจอขนาด 12 นิ้วขึ้นไป)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="154"/>
+        <location filename="../imageinfowidget.ui" line="156"/>
         <source>1024x1024 (15-inch monitor)</source>
         <translation>1024x1024 (สำหรับจอขนาด 15 นิ้วขึ้นไป)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="159"/>
+        <location filename="../imageinfowidget.ui" line="161"/>
         <source>1280x1280 (19-inch monitor)</source>
         <translation>1280x1280 (สำหรับจอขนาด 19 นิ้วขึ้นไป)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="164"/>
+        <location filename="../imageinfowidget.ui" line="166"/>
         <source>1600x1600 (21-inch monitor)</source>
         <translation>1600x1600 (สำหรับจอขนาด 21 นิ้วขึ้นไป)</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="169"/>
+        <location filename="../imageinfowidget.ui" line="171"/>
         <source>Optimize only</source>
         <translation>เพิ่มประสิทธิภาพเท่านั้น</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="221"/>
+        <location filename="../imageinfowidget.ui" line="182"/>
+        <source>Resize all images to this size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../imageinfowidget.ui" line="242"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
         <translation>&lt;b&gt;ความเป็นส่วนตัว:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="231"/>
+        <location filename="../imageinfowidget.ui" line="252"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
         <translation>&lt;b&gt;ป้ายชื่อ:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="249"/>
+        <location filename="../imageinfowidget.ui" line="270"/>
         <source>Public</source>
         <translation>สาธารณะ</translation>
     </message>
     <message>
-        <location filename="../imageinfowidget.ui" line="268"/>
+        <location filename="../imageinfowidget.ui" line="289"/>
         <source>Private</source>
         <translation>ส่วนตัว</translation>
     </message>
@@ -200,22 +217,24 @@ Got error messages from server:
 <context>
     <name>LoginWidget</name>
     <message>
-        <location filename="../loginwidget.cpp" line="139"/>
+        <location filename="../loginwidget.cpp" line="84"/>
+        <location filename="../loginwidget.cpp" line="140"/>
         <source>You are logged in as %1</source>
         <translation>คุณกำลังเข้าสู่ระบบในฐานะ %1</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="159"/>
+        <location filename="../loginwidget.cpp" line="152"/>
+        <location filename="../loginwidget.cpp" line="160"/>
         <source>Authentication failed</source>
         <translation>การตรวจสอบล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="148"/>
+        <location filename="../loginwidget.cpp" line="149"/>
         <source>Could not connect to ImageShack server.</source>
         <translation>ไม่สามารถเชื่อมต่อไปยังเซิร์ฟเวอร์ของ ImageShack</translation>
     </message>
     <message>
-        <location filename="../loginwidget.cpp" line="160"/>
+        <location filename="../loginwidget.cpp" line="161"/>
         <source>Wrong credentials.</source>
         <translation>ข้อมูลผิดพลาด</translation>
     </message>
@@ -258,7 +277,8 @@ Got error messages from server:
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../optionsdialog.cpp" line="144"/>
+        <location filename="../mainwindow.cpp" line="50"/>
+        <location filename="../optionsdialog.cpp" line="147"/>
         <source>LANGUAGE_NAME</source>
         <translation>ไทย</translation>
     </message>
@@ -268,12 +288,12 @@ Got error messages from server:
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
+        <location filename="../mainwindow.cpp" line="119"/>
         <source>Warning</source>
         <translation>ประกาศ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="119"/>
+        <location filename="../mainwindow.cpp" line="120"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>ไฟล์แฟลชไม่สามารถอัปโหลดได้ถ้าคุณยังไม่ได้เข้าสู่ระบบ คุณต้องการพยายามต่อไปหรือไม่?</translation>
     </message>
@@ -316,42 +336,42 @@ Got error messages from server:
 <context>
     <name>Media</name>
     <message>
-        <location filename="../media.cpp" line="331"/>
+        <location filename="../media.cpp" line="350"/>
         <source>%1 B</source>
         <translation>%1 ไบต์</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="332"/>
+        <location filename="../media.cpp" line="351"/>
         <source>%1 KB</source>
         <translation>%1 กิโลไบต์</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="333"/>
+        <location filename="../media.cpp" line="352"/>
         <source>%1 MB</source>
         <translation>%1 เมกะไบต์</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="334"/>
+        <location filename="../media.cpp" line="353"/>
         <source>%1 GB</source>
         <translation>%1 กิกะไบต์</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="342"/>
+        <location filename="../media.cpp" line="361"/>
         <source>%1B</source>
         <translation>%1ไบต์</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="343"/>
+        <location filename="../media.cpp" line="362"/>
         <source>%1K</source>
         <translation>%1กิโลไบต์</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="344"/>
+        <location filename="../media.cpp" line="363"/>
         <source>%1M</source>
         <translation>%1เมกะไบต์</translation>
     </message>
     <message>
-        <location filename="../media.cpp" line="345"/>
+        <location filename="../media.cpp" line="364"/>
         <source>%1G</source>
         <translation>%1กิกะไบต์</translation>
     </message>
@@ -359,12 +379,12 @@ Got error messages from server:
 <context>
     <name>MediaListModel</name>
     <message>
-        <location filename="../medialistmodel.cpp" line="163"/>
+        <location filename="../medialistmodel.cpp" line="165"/>
         <source>Files not added</source>
         <translation>ไฟล์นี้ยังไม่ได้ถูกเพิ่ม</translation>
     </message>
     <message numerus="yes">
-        <location filename="../medialistmodel.cpp" line="164"/>
+        <location filename="../medialistmodel.cpp" line="166"/>
         <source>This files are already in list, they were not added again:
 </source>
         <translation>
@@ -467,11 +487,62 @@ Got error messages from server:
         <translation>ภาษา:</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.ui" line="123"/>
+        <location filename="../optionsdialog.ui" line="95"/>
+        <source>Use proxy server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="105"/>
+        <source>Proxy settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="113"/>
+        <source>Host:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="130"/>
+        <source>Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="169"/>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="183"/>
+        <source>HTTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="188"/>
+        <source>SOCKS 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="211"/>
+        <source>Authentication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="233"/>
+        <source>Username:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="243"/>
+        <source>Password:</source>
+        <translation type="unfinished">รหัสผ่าน:</translation>
+    </message>
+    <message>
+        <location filename="../optionsdialog.ui" line="290"/>
         <source>OK</source>
         <translation>ตกลง</translation>
     </message>
     <message>
+        <location filename="../optionsdialog.cpp" line="42"/>
         <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation type="unfinished">คุณไม่เจอภาษาที่คุณต้องการในรายการใช่หรือไม่?&lt;br&gt;คุณสามารถช่วยแปลภาษาโปรแกรมเป็นภาษาของคุณได้&lt;br&gt;คลิก &lt;a href=&quot;%1&quot;&gt;ที่นี่&lt;/a&gt;สำหรับข้อมูลเพิ่มเติม</translation>
@@ -498,6 +569,7 @@ Got error messages from server:
 <context>
     <name>ProgressWidget</name>
     <message>
+        <location filename="../progresswidget.ui" line="73"/>
         <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
         <translation>อัปโหลด</translation>
@@ -508,66 +580,71 @@ Got error messages from server:
         <translation>รวมทั้งสิ้น: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="153"/>
+        <location filename="../progresswidget.cpp" line="158"/>
         <source>Time left: estimating...</source>
         <translation>เวลาที่เหลือ: กำลังคำนวณ...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="94"/>
+        <location filename="../progresswidget.cpp" line="99"/>
         <source>Waiting for links...</source>
         <translation>รอลิงค์สักครู่...</translation>
     </message>
     <message>
+        <location filename="../progresswidget.cpp" line="91"/>
+        <location filename="../progresswidget.cpp" line="156"/>
+        <location filename="../progresswidget.cpp" line="184"/>
         <location filename="../progresswidget.ui" line="198"/>
         <source>Pause</source>
         <translation>Pause</translation>
     </message>
     <message>
+        <location filename="../progresswidget.cpp" line="103"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>ปัจจุบัน: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="110"/>
+        <location filename="../progresswidget.cpp" line="115"/>
         <source>Loading files: %1 of %2</source>
         <translation>ไฟล์ที่กำลังโหลด: %1 จากทั้งหมด %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="133"/>
+        <location filename="../progresswidget.cpp" line="130"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source>Time left:</source>
         <translation>เวลาที่เหลือ:</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="125"/>
-        <source>unknown...</source>
-        <translation>ไม่ทราบ...</translation>
+        <location filename="../progresswidget.cpp" line="130"/>
+        <source>paused...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="137"/>
+        <location filename="../progresswidget.cpp" line="142"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n ชั่วโมง</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="138"/>
+        <location filename="../progresswidget.cpp" line="143"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n นาที</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="140"/>
+        <location filename="../progresswidget.cpp" line="145"/>
         <source> less than 1 min.</source>
         <translation>น้อยกว่า 1 นาที</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="141"/>
+        <location filename="../progresswidget.cpp" line="146"/>
         <source> almost done...</source>
         <translation>ใกล้จะเสร็จแล้ว...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="169"/>
+        <location filename="../progresswidget.cpp" line="175"/>
         <source>Resume</source>
         <translation>กลับคืนสู่การอัปโหลด</translation>
     </message>
@@ -580,87 +657,87 @@ Got error messages from server:
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="108"/>
+        <location filename="../resultswindow.cpp" line="118"/>
         <source>Direct links</source>
         <translation>ลิงค์ตรง</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="109"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Short links</source>
         <translation>ลิงค์สั้น</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="110"/>
+        <location filename="../resultswindow.cpp" line="120"/>
         <source>Hotlinks for web</source>
         <translation>ฮอทลิงค์สำหรับเว็บ</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="111"/>
+        <location filename="../resultswindow.cpp" line="121"/>
         <source>Thumbnails for web</source>
         <translation>รูปขนาดย่อสำหรับเว็บ</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="122"/>
         <source>Thumbnails for forums 1</source>
         <translation>รูปขนาดย่อสำหรับฟอรั่ม 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="123"/>
         <source>Thumbnails for forums 2</source>
         <translation>รูปขนาดย่อสำหรับฟอรั่ม 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="124"/>
         <source>Hotlinks for forums 1</source>
         <translation>ฮอทลิงค์สำหรับฟอรั่ม 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="125"/>
         <source>Hotlinks for forums 2</source>
         <translation>ฮอทลิงค์สำหรับฟอรั่ม 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="120"/>
+        <location filename="../resultswindow.cpp" line="134"/>
         <source>Direct link</source>
         <translation>ลิงค์ตรง</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="121"/>
+        <location filename="../resultswindow.cpp" line="135"/>
         <source>Short link</source>
         <translation>ลิงค์สั้น</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="122"/>
+        <location filename="../resultswindow.cpp" line="136"/>
         <source>Hotlink for web</source>
         <translation>ฮอทลิงค์สำหรับเว็บ</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="123"/>
+        <location filename="../resultswindow.cpp" line="137"/>
         <source>Thumbnail for web</source>
         <translation>รูปขนาดย่อสำหรับเว็บ</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="124"/>
+        <location filename="../resultswindow.cpp" line="138"/>
         <source>Thumbnail for forums 1</source>
         <translation>รูปขนาดย่อสำหรับฟอรั่ม 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="125"/>
+        <location filename="../resultswindow.cpp" line="139"/>
         <source>Thumbnail for forums 2</source>
         <translation>รูปขนาดย่อสำหรับฟอรั่ม 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="126"/>
+        <location filename="../resultswindow.cpp" line="140"/>
         <source>Hotlink for forums 1</source>
         <translation>ฮอทลิงค์สำหรับฟอรั่ม 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="127"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for forums 2</source>
         <translation>ฮอทลิงค์สำหรับฟอรั่ม 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>File %1 of %2</source>
         <translation>ไฟล์ %1 จากทั้งหมด %2</translation>
     </message>
@@ -680,7 +757,9 @@ Got error messages from server:
         <translation>รูปขนาดย่อ</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="393"/>
+        <location filename="../resultswindow.ui" line="57"/>
+        <location filename="../resultswindow.ui" line="60"/>
+        <location filename="../resultswindow.ui" line="392"/>
         <source>Tweet this</source>
         <translation>แบ่งปันไฟล์นี้ทางเว็บ twitter</translation>
     </message>
@@ -695,12 +774,17 @@ Got error messages from server:
         <translation>รูปภาพและไฟล์วิดีโอทั้งหมด</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="390"/>
+        <location filename="../resultswindow.ui" line="366"/>
+        <source>Gallery:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../resultswindow.ui" line="389"/>
         <source>Create gallery and post to twitter</source>
         <translation>สร้างแกลเลอรี่และโพสต์ไปยังเว็บ twitter</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="450"/>
+        <location filename="../resultswindow.ui" line="461"/>
         <source>Close</source>
         <translation>ปิด</translation>
     </message>
@@ -733,6 +817,7 @@ Got error messages from server:
         <translation>ชุดความเป็นส่วนตัวและป้ายชื่อ</translation>
     </message>
     <message>
+        <location filename="../tagwidget.cpp" line="40"/>
         <location filename="../tagwidget.cpp" line="98"/>
         <source>Log in to use this features</source>
         <translation>เข้าสู่ระบบเพื่อใช้คุณสมบัตินี้</translation>
@@ -767,42 +852,40 @@ Got error messages from server:
 <context>
     <name>TwitterClient</name>
     <message>
-        <location filename="../twitterclient.cpp" line="69"/>
+        <location filename="../twitterclient.cpp" line="53"/>
+        <location filename="../twitterclient.cpp" line="66"/>
         <source>Posting to twitter...</source>
         <translation>กำลังโพสต์ไปยังเว็บ twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="181"/>
+        <location filename="../twitterclient.cpp" line="101"/>
+        <location filename="../twitterclient.cpp" line="114"/>
+        <location filename="../twitterclient.cpp" line="135"/>
+        <location filename="../twitterclient.cpp" line="142"/>
+        <location filename="../twitterclient.cpp" line="148"/>
+        <location filename="../twitterclient.cpp" line="155"/>
         <source>Error</source>
         <translation>เกิดความผิดพลาด!</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="95"/>
-        <source>First set twitter username and password in options</source>
-        <translation>ขั้นแรก คุณต้องตั้งชื่อผู้ใช้งาน twitter และรหัสผ่านในตัวเลือก</translation>
-    </message>
-    <message>
-        <location filename="../twitterclient.cpp" line="129"/>
-        <source>Could not send url to Twitter</source>
-        <translation>ไม่สามารถส่งที่อยู่ถึง Twitter ได้</translation>
-    </message>
-    <message>
-        <location filename="../twitterclient.cpp" line="182"/>
+        <location filename="../twitterclient.cpp" line="115"/>
+        <location filename="../twitterclient.cpp" line="156"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>ไม่สามารถโพสต์ไปยัง twitter ได้ การตอบกลับจากเซิร์ฟเวอร์ผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="162"/>
+        <location filename="../twitterclient.cpp" line="136"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>ไม่สามารถโพสต์ไปยัง twitter ได้ ข้อมูลผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="169"/>
+        <location filename="../twitterclient.cpp" line="102"/>
+        <location filename="../twitterclient.cpp" line="143"/>
         <source>Failed to update twitter status.</source>
         <translation>เกิดความล้มเหลวในการปรับปรุงสถานะของ twitter</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="175"/>
+        <location filename="../twitterclient.cpp" line="149"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>ไม่สามารถโพสต์ไปยัง twitter ได้ เกิดข้อผิดพลาดภายใน</translation>
     </message>
@@ -868,67 +951,71 @@ Got error messages from server:
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="120"/>
+        <location filename="../updatechecker.cpp" line="84"/>
+        <location filename="../updatechecker.cpp" line="101"/>
+        <location filename="../updatechecker.cpp" line="114"/>
         <source>Error</source>
         <translation>เกิดความผิดพลาด!</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="60"/>
+        <location filename="../updatechecker.cpp" line="59"/>
         <source>Please wait...</source>
         <translation>กรุณารอสักครู่...</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="61"/>
+        <location filename="../updatechecker.cpp" line="60"/>
         <source>Update checkup is currently in progress.</source>
         <translation>การตรวจสอบการปรับปรุงกำลังอยู่ในความคืบหน้า</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="108"/>
+        <location filename="../updatechecker.cpp" line="102"/>
         <source>Could not check for updates. Wrong server response.</source>
         <translation>ไม่สามารถตรวจสอบการปรับปรุงได้ การตอบกลับจากเซิร์ฟเวอร์ผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="121"/>
+        <location filename="../updatechecker.cpp" line="115"/>
         <source>Could not check for updates. No versions found.</source>
         <translation>ไม่สามารถตรวจสอบการปรับปรุงได้ ไม่พบเวอร์ชั่นไหม่</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="162"/>
+        <location filename="../updatechecker.cpp" line="156"/>
         <source>Yes</source>
         <translation>ใช่</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="163"/>
+        <location filename="../updatechecker.cpp" line="157"/>
         <source>No</source>
         <translation>ไม่ใช่</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="165"/>
+        <location filename="../updatechecker.cpp" line="159"/>
         <source>Update available</source>
         <translation>ตอนนี้สามารถปรับปรุงได้แล้ว</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="177"/>
+        <location filename="../updatechecker.cpp" line="147"/>
+        <location filename="../updatechecker.cpp" line="171"/>
         <source>You have the latest version of this application.</source>
         <translation>คุณมีรุ่นล่าสุดของโปรแกรมนี้แล้ว</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="164"/>
+        <location filename="../updatechecker.cpp" line="158"/>
         <source>Lastest version is %1. Do you want to update?</source>
         <translation>รุ่นล่าสุดตอนนี้คือ %1. คุณต้องการปรับปรุงไหม?</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="91"/>
+        <location filename="../updatechecker.cpp" line="85"/>
         <source>Could not check for updates. Please try again later.</source>
         <translation>ไม่สามารถตรวจสอบการปรับปรุงได้ โปรดลองอีกครั้งในภายหลัง</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="92"/>
+        <location filename="../updatechecker.cpp" line="86"/>
         <source>Error message is:</source>
         <translation>ข้อความผิดพลาดคือ:</translation>
     </message>
     <message>
-        <location filename="../updatechecker.cpp" line="176"/>
+        <location filename="../updatechecker.cpp" line="146"/>
+        <location filename="../updatechecker.cpp" line="170"/>
         <source>No updates available</source>
         <translation>ตอนนี้ไม่สามารถปรับปรุงได้</translation>
     </message>

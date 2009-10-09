@@ -43,6 +43,7 @@ public:
     virtual ~CopyableLineEdit();
     void setTitle(QString);
     void setText(QString);
+    void setLabelVisible(bool);
 
 protected:
     virtual void changeEvent(QEvent *e);

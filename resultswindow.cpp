@@ -43,6 +43,7 @@ ResultsWindow::ResultsWindow(QWidget *parent) :
             this, SLOT(galleryReceiver(QString, QString, QString, QString)));
     connect(&gallery, SIGNAL(error()),
             this, SLOT(galleryErrorReceiver()));
+    m_ui->gallink->setLabelVisible(false);
 }
 
 ResultsWindow::~ResultsWindow()
@@ -122,10 +123,10 @@ void ResultsWindow::translate2ndTab()
     m_ui->all6->setTitle(tr("Thumbnails for forums 2"));
     m_ui->all7->setTitle(tr("Hotlinks for forums 1"));
     m_ui->all8->setTitle(tr("Hotlinks for forums 2"));
-    if (!results.isNull() && results.data()->size()>1)
+    /*if (!results.isNull() && results.data()->size()>1)
     {
         m_ui->gallink->setText(tr("<i>click here to create...</i>"));
-    }
+    }*/
 }
 
 void ResultsWindow::translate1stTab()
@@ -186,17 +187,21 @@ void ResultsWindow::tweetGallery()
 
 void ResultsWindow::createGallery()
 {
-    this->m_ui->gallink->setText(QString("<i>creating...</i>"));
+    this->m_ui->gallink->setText(QString("creating..."));
+    this->m_ui->gallink->setEnabled(false);
     gallery.create(results);
 }
 
 void ResultsWindow::galleryReceiver(QString url, QString, QString, QString)
 {
     this->galleryLink = url;
-    this->m_ui->gallink->setText(QString("<a href=%1>%2<a>").arg(url).arg(url));
+    this->m_ui->gallink->setText(url);
+    this->m_ui->gallink->setEnabled(true);
+    //QString("<a href=%1>%2<a>").arg(url).arg(url));
 }
 
 void ResultsWindow::galleryErrorReceiver()
 {
-    this->m_ui->gallink->setText(QString("<i>error, try again later...</i>"));
+    this->m_ui->gallink->setText(QString("error, try again later..."));
+    this->m_ui->gallink->setEnabled(false);
 }
