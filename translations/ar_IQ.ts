@@ -66,12 +66,12 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="84"/>
+        <location filename="../fileuploader.cpp" line="86"/>
         <source>Some files could not be uploaded.</source>
         <translation>بعض الملفات لا يمكن أن يتم رفعها.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileuploader.cpp" line="87"/>
+        <location filename="../fileuploader.cpp" line="89"/>
         <source>
 
 Got error messages from server:
@@ -88,33 +88,33 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="90"/>
+        <location filename="../fileuploader.cpp" line="92"/>
         <source>Warning</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="110"/>
-        <location filename="../fileuploader.cpp" line="120"/>
+        <location filename="../fileuploader.cpp" line="112"/>
+        <location filename="../fileuploader.cpp" line="122"/>
         <source>3 attempts to upload file failed</source>
         <translation>فشلت 3 محاولات للرفع</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="141"/>
+        <location filename="../fileuploader.cpp" line="144"/>
         <source>Server returned no error text</source>
         <translation>أرجع مزود الخدمة نصاً بعدم وجود أخطاء</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="148"/>
+        <location filename="../fileuploader.cpp" line="151"/>
         <source>Wrong server response</source>
         <translation>إستجابة خاطئة من مزود الخدمة</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="181"/>
+        <location filename="../fileuploader.cpp" line="184"/>
         <source>Server responce is not valid</source>
         <translation>إستجابة مزود الخدمة غير صالحة</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="227"/>
+        <location filename="../fileuploader.cpp" line="231"/>
         <source>Could not connect to server</source>
         <translation>لا يمكن الإتصال بمزود الخدمة</translation>
     </message>
@@ -122,7 +122,7 @@ Got error messages from server:
 <context>
     <name>HTTPRequest</name>
     <message>
-        <location filename="../httprequest.cpp" line="62"/>
+        <location filename="../httprequest.cpp" line="67"/>
         <source>Local file does not exist</source>
         <translation type="unfinished"></translation>
     </message>
@@ -286,7 +286,7 @@ Got error messages from server:
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="50"/>
-        <location filename="../optionsdialog.cpp" line="153"/>
+        <location filename="../optionsdialog.cpp" line="147"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>هام: قم بتغيير هذه إلى إسم اللغة التي تقو بالترجمة إليها</translatorcomment>
         <translation>العربية</translation>
@@ -297,12 +297,12 @@ Got error messages from server:
         <translation>ImageShack Uploader %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
+        <location filename="../mainwindow.cpp" line="119"/>
         <source>Warning</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="119"/>
+        <location filename="../mainwindow.cpp" line="120"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>لا يمكن رفع ملفات الفلاش بدون تسجيل الدخول. هل ترغب بالمحاولة على أي حال؟</translation>
     </message>
@@ -559,7 +559,7 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="42"/>
-        <location filename="../optionsdialog.cpp" line="128"/>
+        <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>ألا ترى لغتك في هذه القائمة؟&lt;br&gt;يمكنك المساعدة لترجمة البرنامج إلى لغتك.&lt;br&gt;أنقر &lt;a href=&quot;%1&quot;&gt;هنا&lt;/a&gt; للمزيد من المعلومات.</translation>
     </message>
@@ -596,47 +596,47 @@ Got error messages from server:
         <translation>الإجمالي: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="153"/>
+        <location filename="../progresswidget.cpp" line="158"/>
         <source>Time left: estimating...</source>
         <translation>الوقت المتبقي: جاري التقدير...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="94"/>
+        <location filename="../progresswidget.cpp" line="99"/>
         <source>Waiting for links...</source>
         <translation>إنتظار الروابط...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="86"/>
-        <location filename="../progresswidget.cpp" line="151"/>
-        <location filename="../progresswidget.cpp" line="178"/>
+        <location filename="../progresswidget.cpp" line="91"/>
+        <location filename="../progresswidget.cpp" line="156"/>
+        <location filename="../progresswidget.cpp" line="184"/>
         <location filename="../progresswidget.ui" line="198"/>
         <source>Pause</source>
         <translation>توقف مؤقت</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="98"/>
+        <location filename="../progresswidget.cpp" line="103"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>الحالي: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="110"/>
+        <location filename="../progresswidget.cpp" line="115"/>
         <source>Loading files: %1 of %2</source>
         <translation>تحميل الملفات: %1 من أصل %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="125"/>
-        <location filename="../progresswidget.cpp" line="133"/>
+        <location filename="../progresswidget.cpp" line="130"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source>Time left:</source>
         <translation>الوقت المتبقي:</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="125"/>
+        <location filename="../progresswidget.cpp" line="130"/>
         <source>paused...</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="137"/>
+        <location filename="../progresswidget.cpp" line="142"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n ساعة.</numerusform>
@@ -644,7 +644,7 @@ Got error messages from server:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="138"/>
+        <location filename="../progresswidget.cpp" line="143"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n دقيقة.</numerusform>
@@ -652,17 +652,17 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="140"/>
+        <location filename="../progresswidget.cpp" line="145"/>
         <source> less than 1 min.</source>
         <translation>أقل من دقيقة واحدة.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="141"/>
+        <location filename="../progresswidget.cpp" line="146"/>
         <source> almost done...</source>
         <translation>إنتهى على الأغلب...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="169"/>
+        <location filename="../progresswidget.cpp" line="175"/>
         <source>Resume</source>
         <translation>إستئناف</translation>
     </message>
@@ -675,92 +675,87 @@ Got error messages from server:
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="118"/>
         <source>Direct links</source>
         <translation>روابط مباشرة</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Short links</source>
         <translation>روابط قصيرة</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="120"/>
         <source>Hotlinks for web</source>
         <translation>روابط ساخنة للمواقع</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="121"/>
         <source>Thumbnails for web</source>
         <translation>مصغّرات للمواقع</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="116"/>
+        <location filename="../resultswindow.cpp" line="122"/>
         <source>Thumbnails for forums 1</source>
         <translation>مصغّرات للمنتديات 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="117"/>
+        <location filename="../resultswindow.cpp" line="123"/>
         <source>Thumbnails for forums 2</source>
         <translation>مصغّرات للمنتديات 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="118"/>
+        <location filename="../resultswindow.cpp" line="124"/>
         <source>Hotlinks for forums 1</source>
         <translation>روابط ساخنة للمنتديات 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="119"/>
+        <location filename="../resultswindow.cpp" line="125"/>
         <source>Hotlinks for forums 2</source>
         <translation>روابط ساخنة للمنتديات 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="124"/>
-        <source>Gallery will be link: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../resultswindow.cpp" line="130"/>
+        <location filename="../resultswindow.cpp" line="134"/>
         <source>Direct link</source>
         <translation>رابط مباشر</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="131"/>
+        <location filename="../resultswindow.cpp" line="135"/>
         <source>Short link</source>
         <translation>رابط قصير</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="136"/>
         <source>Hotlink for web</source>
         <translation>رابط ساخن للمواقع</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="133"/>
+        <location filename="../resultswindow.cpp" line="137"/>
         <source>Thumbnail for web</source>
         <translation>مصغّر للمواقع</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="134"/>
+        <location filename="../resultswindow.cpp" line="138"/>
         <source>Thumbnail for forums 1</source>
         <translation>مصغّر للمنتديات 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="135"/>
+        <location filename="../resultswindow.cpp" line="139"/>
         <source>Thumbnail for forums 2</source>
         <translation>مصغّر للمنتديات 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="136"/>
+        <location filename="../resultswindow.cpp" line="140"/>
         <source>Hotlink for forums 1</source>
         <translation>رابط ساخن للمنتديات 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="137"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for forums 2</source>
         <translation>رابط ساخن للمنتديات 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="142"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>File %1 of %2</source>
         <translation>ملف %1 من أصل %2</translation>
     </message>
@@ -782,7 +777,7 @@ Got error messages from server:
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
-        <location filename="../resultswindow.ui" line="385"/>
+        <location filename="../resultswindow.ui" line="392"/>
         <source>Tweet this</source>
         <translation>أنشرها على تويتر</translation>
     </message>
@@ -797,12 +792,17 @@ Got error messages from server:
         <translation>جميع ملفات الصور و الفيديوهات</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="382"/>
+        <location filename="../resultswindow.ui" line="366"/>
+        <source>Gallery:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../resultswindow.ui" line="389"/>
         <source>Create gallery and post to twitter</source>
         <translation>قم بإنشاء معرضاً و أرسله إلى تويتر</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="457"/>
+        <location filename="../resultswindow.ui" line="461"/>
         <source>Close</source>
         <translation>إغلاق</translation>
     </message>
@@ -876,32 +876,34 @@ Got error messages from server:
         <translation>إرسال إلى تويتر...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="108"/>
-        <location filename="../twitterclient.cpp" line="129"/>
-        <location filename="../twitterclient.cpp" line="136"/>
+        <location filename="../twitterclient.cpp" line="101"/>
+        <location filename="../twitterclient.cpp" line="114"/>
+        <location filename="../twitterclient.cpp" line="135"/>
         <location filename="../twitterclient.cpp" line="142"/>
-        <location filename="../twitterclient.cpp" line="149"/>
+        <location filename="../twitterclient.cpp" line="148"/>
+        <location filename="../twitterclient.cpp" line="155"/>
         <source>Error</source>
         <translation>خطأ</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="109"/>
-        <location filename="../twitterclient.cpp" line="150"/>
+        <location filename="../twitterclient.cpp" line="115"/>
+        <location filename="../twitterclient.cpp" line="156"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>لا يمكن الإرسال إلى تويتر.إستجابة خاطئة من مزود الخدمة.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="130"/>
+        <location filename="../twitterclient.cpp" line="136"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>لا يمكن الإرسال إلى تويتر. بيانات إعتماد خاطئة.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="137"/>
+        <location filename="../twitterclient.cpp" line="102"/>
+        <location filename="../twitterclient.cpp" line="143"/>
         <source>Failed to update twitter status.</source>
         <translation>فشل في تحديث حالة تويتر.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="143"/>
+        <location filename="../twitterclient.cpp" line="149"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>لا يمكن الإرسال إلى تويتر. خطأ داخلي.</translation>
     </message>

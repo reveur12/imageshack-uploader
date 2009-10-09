@@ -74,3 +74,8 @@ void CopyableLineEdit::setText(QString value)
 {
     m_ui->text->setText(value);
 }
+
+void CopyableLineEdit::setLabelVisible(bool st)
+{
+    m_ui->title->setVisible(st);
+}

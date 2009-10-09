@@ -62,12 +62,12 @@
 <context>
     <name>FileUploader</name>
     <message>
-        <location filename="../fileuploader.cpp" line="84"/>
+        <location filename="../fileuploader.cpp" line="86"/>
         <source>Some files could not be uploaded.</source>
         <translation>Не удалось загрузить некоторые файлы.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileuploader.cpp" line="87"/>
+        <location filename="../fileuploader.cpp" line="89"/>
         <source>
 
 Got error messages from server:
@@ -88,33 +88,33 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="90"/>
+        <location filename="../fileuploader.cpp" line="92"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="110"/>
-        <location filename="../fileuploader.cpp" line="120"/>
+        <location filename="../fileuploader.cpp" line="112"/>
+        <location filename="../fileuploader.cpp" line="122"/>
         <source>3 attempts to upload file failed</source>
         <translation>Не удалось загрузить файл с трех попыток</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="141"/>
+        <location filename="../fileuploader.cpp" line="144"/>
         <source>Server returned no error text</source>
         <translation>Сервер вернул пустой текст ошибки</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="148"/>
+        <location filename="../fileuploader.cpp" line="151"/>
         <source>Wrong server response</source>
         <translation>Неправильный ответ сервера</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="181"/>
+        <location filename="../fileuploader.cpp" line="184"/>
         <source>Server responce is not valid</source>
         <translation>Неправильный ответ сервера</translation>
     </message>
     <message>
-        <location filename="../fileuploader.cpp" line="227"/>
+        <location filename="../fileuploader.cpp" line="231"/>
         <source>Could not connect to server</source>
         <translation>Не удалось подключиться к серверу</translation>
     </message>
@@ -122,7 +122,7 @@ Got error messages from server:
 <context>
     <name>HTTPRequest</name>
     <message>
-        <location filename="../httprequest.cpp" line="62"/>
+        <location filename="../httprequest.cpp" line="67"/>
         <source>Local file does not exist</source>
         <translation>Локальный файл не существует</translation>
     </message>
@@ -321,7 +321,7 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="50"/>
-        <location filename="../optionsdialog.cpp" line="153"/>
+        <location filename="../optionsdialog.cpp" line="147"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
         <translation>Русский</translation>
@@ -332,12 +332,12 @@ Got error messages from server:
         <translation>Загрузчик ImageShack %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
+        <location filename="../mainwindow.cpp" line="119"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="119"/>
+        <location filename="../mainwindow.cpp" line="120"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
         <translation>Нельзя загружать Flash файлы, не совершив вход. Хотите попробовать все-равно?</translation>
     </message>
@@ -566,7 +566,7 @@ Got error messages from server:
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="42"/>
-        <location filename="../optionsdialog.cpp" line="128"/>
+        <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
         <translation>Не видите своего языка в списке?&lt;br&gt;Вы можете помочь перевести программу на ваш язык.&lt;br&gt;Нажмите &lt;a href=&quot;%1&quot;&gt;СЮДА&lt;/a&gt; для получения информации.</translation>
     </message>
@@ -603,47 +603,47 @@ Got error messages from server:
         <translation>Всего: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="153"/>
+        <location filename="../progresswidget.cpp" line="158"/>
         <source>Time left: estimating...</source>
         <translation>Осталось времени: замеряем...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="94"/>
+        <location filename="../progresswidget.cpp" line="99"/>
         <source>Waiting for links...</source>
         <translation>Ожидаем результатов...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="86"/>
-        <location filename="../progresswidget.cpp" line="151"/>
-        <location filename="../progresswidget.cpp" line="178"/>
+        <location filename="../progresswidget.cpp" line="91"/>
+        <location filename="../progresswidget.cpp" line="156"/>
+        <location filename="../progresswidget.cpp" line="184"/>
         <location filename="../progresswidget.ui" line="198"/>
         <source>Pause</source>
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="98"/>
+        <location filename="../progresswidget.cpp" line="103"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
         <translation>Текущий: %p%</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="110"/>
+        <location filename="../progresswidget.cpp" line="115"/>
         <source>Loading files: %1 of %2</source>
         <translation>Загрузка файлов: %1 из %2</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="125"/>
-        <location filename="../progresswidget.cpp" line="133"/>
+        <location filename="../progresswidget.cpp" line="130"/>
+        <location filename="../progresswidget.cpp" line="138"/>
         <source>Time left:</source>
         <translation>Осталось времени:</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="125"/>
+        <location filename="../progresswidget.cpp" line="130"/>
         <source>paused...</source>
         <translation>пауза...</translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="137"/>
+        <location filename="../progresswidget.cpp" line="142"/>
         <source> %n hrs.</source>
         <translation>
             <numerusform> %n час.</numerusform>
@@ -652,7 +652,7 @@ Got error messages from server:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../progresswidget.cpp" line="138"/>
+        <location filename="../progresswidget.cpp" line="143"/>
         <source> %n min.</source>
         <translation>
             <numerusform> %n мин.</numerusform>
@@ -661,17 +661,17 @@ Got error messages from server:
         </translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="140"/>
+        <location filename="../progresswidget.cpp" line="145"/>
         <source> less than 1 min.</source>
         <translation> меньше 1 мин.</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="141"/>
+        <location filename="../progresswidget.cpp" line="146"/>
         <source> almost done...</source>
         <translation> почти готово...</translation>
     </message>
     <message>
-        <location filename="../progresswidget.cpp" line="169"/>
+        <location filename="../progresswidget.cpp" line="175"/>
         <source>Resume</source>
         <translation>Продолжить</translation>
     </message>
@@ -684,92 +684,87 @@ Got error messages from server:
 <context>
     <name>ResultsWindow</name>
     <message>
-        <location filename="../resultswindow.cpp" line="112"/>
+        <location filename="../resultswindow.cpp" line="118"/>
         <source>Direct links</source>
         <translation>Прямые ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="113"/>
+        <location filename="../resultswindow.cpp" line="119"/>
         <source>Short links</source>
         <translation>Короткие ссылки</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="114"/>
+        <location filename="../resultswindow.cpp" line="120"/>
         <source>Hotlinks for web</source>
         <translation>Горячие ссылки для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="115"/>
+        <location filename="../resultswindow.cpp" line="121"/>
         <source>Thumbnails for web</source>
         <translation>Миниатюры для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="116"/>
+        <location filename="../resultswindow.cpp" line="122"/>
         <source>Thumbnails for forums 1</source>
         <translation>Миниатюры для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="117"/>
+        <location filename="../resultswindow.cpp" line="123"/>
         <source>Thumbnails for forums 2</source>
         <translation>Миниатюры для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="118"/>
+        <location filename="../resultswindow.cpp" line="124"/>
         <source>Hotlinks for forums 1</source>
         <translation>Горячие ссылки для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="119"/>
+        <location filename="../resultswindow.cpp" line="125"/>
         <source>Hotlinks for forums 2</source>
         <translation>Горячие ссылки для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="124"/>
-        <source>Gallery will be link: %1</source>
-        <translation>Ссылка на галерею будет: %1</translation>
-    </message>
-    <message>
-        <location filename="../resultswindow.cpp" line="130"/>
+        <location filename="../resultswindow.cpp" line="134"/>
         <source>Direct link</source>
         <translation>Прямая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="131"/>
+        <location filename="../resultswindow.cpp" line="135"/>
         <source>Short link</source>
         <translation>Короткая ссылка</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="132"/>
+        <location filename="../resultswindow.cpp" line="136"/>
         <source>Hotlink for web</source>
         <translation>Горячая ссылка для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="133"/>
+        <location filename="../resultswindow.cpp" line="137"/>
         <source>Thumbnail for web</source>
         <translation>Миниатюра для веб</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="134"/>
+        <location filename="../resultswindow.cpp" line="138"/>
         <source>Thumbnail for forums 1</source>
         <translation>Миниатюра для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="135"/>
+        <location filename="../resultswindow.cpp" line="139"/>
         <source>Thumbnail for forums 2</source>
         <translation>Миниатюра для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="136"/>
+        <location filename="../resultswindow.cpp" line="140"/>
         <source>Hotlink for forums 1</source>
         <translation>Горячая ссылка для форумов 1</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="137"/>
+        <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for forums 2</source>
         <translation>Горячая ссылка для форумов 2</translation>
     </message>
     <message>
-        <location filename="../resultswindow.cpp" line="142"/>
+        <location filename="../resultswindow.cpp" line="146"/>
         <source>File %1 of %2</source>
         <translation>Файл %1 из %2</translation>
     </message>
@@ -791,7 +786,7 @@ Got error messages from server:
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
-        <location filename="../resultswindow.ui" line="385"/>
+        <location filename="../resultswindow.ui" line="392"/>
         <source>Tweet this</source>
         <translation>Отправить на Twitter</translation>
     </message>
@@ -806,12 +801,17 @@ Got error messages from server:
         <translation>Все изображения и видео</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="382"/>
+        <location filename="../resultswindow.ui" line="366"/>
+        <source>Gallery:</source>
+        <translation>Галлерея:</translation>
+    </message>
+    <message>
+        <location filename="../resultswindow.ui" line="389"/>
         <source>Create gallery and post to twitter</source>
         <translation>Создать галерею и отправить на Twitter</translation>
     </message>
     <message>
-        <location filename="../resultswindow.ui" line="457"/>
+        <location filename="../resultswindow.ui" line="461"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
@@ -885,32 +885,34 @@ Got error messages from server:
         <translation>Отправка на Twitter...</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="108"/>
-        <location filename="../twitterclient.cpp" line="129"/>
-        <location filename="../twitterclient.cpp" line="136"/>
+        <location filename="../twitterclient.cpp" line="101"/>
+        <location filename="../twitterclient.cpp" line="114"/>
+        <location filename="../twitterclient.cpp" line="135"/>
         <location filename="../twitterclient.cpp" line="142"/>
-        <location filename="../twitterclient.cpp" line="149"/>
+        <location filename="../twitterclient.cpp" line="148"/>
+        <location filename="../twitterclient.cpp" line="155"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="109"/>
-        <location filename="../twitterclient.cpp" line="150"/>
+        <location filename="../twitterclient.cpp" line="115"/>
+        <location filename="../twitterclient.cpp" line="156"/>
         <source>Could not post to twitter. Wrong server response.</source>
         <translation>Не удалось отправить на Twitter. Произошла ошибка.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="130"/>
+        <location filename="../twitterclient.cpp" line="136"/>
         <source>Could not post to twitter. Wrong credentials.</source>
         <translation>Не удалось отправить на Twitter. Неправильные логин или пароль.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="137"/>
+        <location filename="../twitterclient.cpp" line="102"/>
+        <location filename="../twitterclient.cpp" line="143"/>
         <source>Failed to update twitter status.</source>
         <translation>Не удалось обновить статус Twitter.</translation>
     </message>
     <message>
-        <location filename="../twitterclient.cpp" line="143"/>
+        <location filename="../twitterclient.cpp" line="149"/>
         <source>Could not post to twitter. Internal error.</source>
         <translation>Не удалось отправить на Twitter. Внутреняя ошибка.</translation>
     </message>
