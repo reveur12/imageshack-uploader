@@ -149,9 +149,9 @@ void TwitterWindow::post(QString data)
     show();
 }
 
-void TwitterWindow::post(QStringList data, QString slink)
+void TwitterWindow::post(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > > data, QString slink)
 {
-    if (data.size() == 1) return post(data.at(0));
+    //if (data.size() == 1) return post(data.at(0));
     m_ui->text->clear();
     links = data;
     shortlink = slink;

@@ -39,17 +39,23 @@ GalleryCreator::GalleryCreator()
     http.connectError(this, SLOT(errorReceiver(QString)));
 }
 
-void GalleryCreator::create(QStringList urls, QString t, QString u, QString p)
+void GalleryCreator::create(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > > medias, QString t, QString u, QString p)
 {
     text = t; user = u; pass = p;
     QVector<QPair<QString, QString> > data;
     data.append(qMakePair(QString("action"), QString("create")));
-    foreach(QString url, urls)
+    //foreach(QString url, urls)
+    for(int i=0; i < medias.data()->size(); i++)
     {
+        QString url = medias.data()->at(i).second.at(0);
         QString image = url.split("imageshack.us/").at(1);
-        data.append(qMakePair(QString("image[]="), image));
+        int width = medias.data()->at(i).first.data()->width();
+        int height = medias.data()->at(i).first.data()->height();
+        QString thumb;
+        if (width > 200 || height > 200) thumb = "y"; else thumb = "n";
+        data.append(qMakePair(QString("image[]="), image + ";" + QString::number(width) + ";" + QString::number(height) + ";" + thumb));
     }
-
+    qDebug() << data;
     http.post(QString("http://") + GALLERY_HOSTNAME + GALLERY_PATH, data);
 }
 

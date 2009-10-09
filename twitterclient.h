@@ -44,7 +44,7 @@ class TwitterClient : public QObject
 public:
     TwitterClient(QDialog *parent = 0);
     ~TwitterClient();
-    void post(QStringList, QString, QString, QString, QString, bool showProgressbar = false, QPoint pos = QPoint());
+    void post(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > >, QString, QString, QString, QString, bool showProgressbar = false, QPoint pos = QPoint());
     QDialog bar;
     QProgressBar pbar;
 

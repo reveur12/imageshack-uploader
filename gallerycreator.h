@@ -36,7 +36,7 @@ class GalleryCreator : public QObject
     Q_OBJECT
 public:
     GalleryCreator();
-    void create(QStringList urls, QString t = QString(),
+    void create(QSharedPointer<QVector<QPair<QSharedPointer<Media>,QStringList> > > medias, QString t = QString(),
                 QString u  = QString(), QString p  = QString());
 private:
     HTTPRequest http;
