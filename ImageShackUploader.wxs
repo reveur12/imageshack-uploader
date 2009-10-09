@@ -44,8 +44,7 @@
                     </Component>
                     <Directory Id="Translations" Name="translations">
                         <Component Id="Translations" Guid="54312363-1234-1234-1234-123456789014">
-                            <File Id="areg" Name="ar_EG.qm" DiskId="1" Source="translations/ar_EG.qm" />
-                            <File Id="ariq" Name="ar_IQ.qm" DiskId="1" Source="translations/ar_IQ.qm" />
+                            <File Id="ar" Name="ar_IQ.qm" DiskId="1" Source="translations/ar_IQ.qm" />
                             <File Id="el" Name="el_GR.qm" DiskId="1" Source="translations/el_GR.qm" />
                             <File Id="en" Name="en_US.qm" DiskId="1" Source="translations/en_US.qm" />
                             <File Id="es" Name="es_ES.qm" DiskId="1" Source="translations/es_ES.qm" />
