@@ -299,7 +299,8 @@ void HTTPRequest::specialFail2(QNetworkReply::NetworkError ecode)
 {
     if (failed) return;
     int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-    if (code == 404 || code == 400)
+    QString text = reply->readAll();
+    if (code == 404 || text.startsWith("<error code=\"CODE\">"))
     {
         media.data()->uploadedSize = 0;
         media.data()->uploadURL.clear();
