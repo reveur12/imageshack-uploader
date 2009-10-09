@@ -48,43 +48,15 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     {
         m_ui->language->addItem(languageName(file));
     }
-    QString lang = sets.value("translation", QVariant("")).toString();
+
+    QString lang = findSelectedFile();
+    if (lang.isEmpty())
+        lang = findEnglishFile();
     if (!lang.isEmpty())
     {
-        if (!findQmFiles().contains(lang))
-        {
-            if (findQmFiles().size())
-            {
-                lang = findQmFiles().first();
-            }
-        }
-        QDir appdir = translationsDir();
-        lang = appdir.absoluteFilePath(lang);
-        qDebug() << findQmFiles();
-        qDebug() << lang;
-        int idx = findQmFiles().indexOf(lang);
-        if (idx<0) idx = 0;
-        m_ui->language->setCurrentIndex(idx);
+        m_ui->language->setCurrentIndex(findQmFiles().indexOf(lang));
+        translateToLanguage(lang);
     }
-    else
-    {
-        QStringList files = findQmFiles();
-        if (files.size()>0)
-        {
-            int idx = 0;
-            foreach(QString file, files)
-            {
-                if (file.endsWith("en_US.qm"))
-                {
-                    idx = files.indexOf(file);
-                    break;
-                }
-            }
-            lang = files.at(idx);
-            m_ui->language->setCurrentIndex(idx);
-        }
-    }
-    if (!lang.isEmpty()) translateToLanguage(lang);
 
     //proxy
     m_ui->proxyUse->setChecked(sets.value("proxy/use", QVariant(false)).toBool());
@@ -94,6 +66,25 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     m_ui->proxyAuth->setChecked(sets.value("proxy/auth", QVariant(false)).toBool());
     m_ui->proxyUser->setText(sets.value("proxy/user", QVariant("")).toString());
     m_ui->proxyPass->setText(sets.value("proxy/pass", QVariant("")).toString());
+}
+
+QString OptionsDialog::findSelectedFile()
+{
+    QSettings sets;
+    QString lang = sets.value("translation", QVariant("")).toString();
+    qDebug() << "current lang:" << lang;
+    QStringList QmFiles = findQmFiles();
+    if (!QmFiles.contains(lang)) return QString();
+    return lang;
+}
+
+
+QString OptionsDialog::findEnglishFile()
+{
+    foreach(QString file, findQmFiles())
+        if (file.endsWith("en_US.qm"))
+            return file;
+    return QString();
 }
 
 QDir OptionsDialog::translationsDir()
@@ -136,13 +127,16 @@ QStringList OptionsDialog::findQmFiles()
 {
     QDir dir = translationsDir();
     qDebug() << dir.absolutePath();
+    qDebug() << dir.entryList();
     QStringList fileNames = dir.entryList(QStringList("*.qm"), QDir::Files,
                                           QDir::Name);
     QMutableStringListIterator i(fileNames);
+    qDebug() << fileNames;
     while (i.hasNext()) {
         i.next();
         i.setValue(dir.filePath(i.value()));
     }
+    qDebug() << fileNames;
     return fileNames;
 }
 

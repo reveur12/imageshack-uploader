@@ -53,6 +53,8 @@ private:
     QTranslator *trans;
     void translateToLanguage(QString filename);
     QDir translationsDir();
+    QString findSelectedFile();
+    QString findEnglishFile();
 
 private slots:
     void languageSelected(int);
