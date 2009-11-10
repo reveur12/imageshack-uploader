@@ -260,3 +260,8 @@ void ImageInfoWidget::resizeAll()
 {
     emit resizeAllImagesTo(items.key(m_ui->resize->currentIndex()));
 }
+
+void ImageInfoWidget::removeAll()
+{
+    emit removeAllImagesBar(this->m_ui->removeSize->isChecked());
+}

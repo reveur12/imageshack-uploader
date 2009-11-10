@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B9386870" Name="ImageShack Uploader 2.2.0"
-             Language="1033" Version="2.2.0" Manufacturer="ImageShack Corp."
+    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B9386871" Name="ImageShack Uploader 2.3.0"
+             Language="1033" Version="2.3.0" Manufacturer="ImageShack Corp."
              UpgradeCode="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
 
         <Package Description="ImageShack bulk uploader"
@@ -12,8 +12,8 @@
 
         <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
         <Upgrade Id="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
-            <UpgradeVersion Minimum="1.0.0" Maximum="2.1.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
-            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.2.0' IncludeMinimum='no' />
+            <UpgradeVersion Minimum="1.0.0" Maximum="2.2.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
+            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.3.0' IncludeMinimum='no' />
         </Upgrade>
 
         <Directory Id="TARGETDIR" Name="SourceDir">
@@ -47,12 +47,15 @@
                             <File Id="ar" Name="ar_IQ.qm" DiskId="1" Source="translations/ar_IQ.qm" />
                             <File Id="el" Name="el_GR.qm" DiskId="1" Source="translations/el_GR.qm" />
                             <File Id="en" Name="en_US.qm" DiskId="1" Source="translations/en_US.qm" />
+                            <File Id="de" Name="de_DE.qm" DiskId="1" Source="translations/de_DE.qm" />
                             <File Id="es" Name="es_ES.qm" DiskId="1" Source="translations/es_ES.qm" />
+                            <File Id="fi" Name="fi_FI.qm" DiskId="1" Source="translations/fi_FI.qm" />
                             <File Id="fr" Name="fr_FR.qm" DiskId="1" Source="translations/fr_FR.qm" />
                             <File Id="hu" Name="hu_HU.qm" DiskId="1" Source="translations/hu_HU.qm" />
                             <File Id="it" Name="it_IT.qm" DiskId="1" Source="translations/it_IT.qm" />
                             <File Id="lv" Name="lv_LV.qm" DiskId="1" Source="translations/lv_LV.qm" />
                             <File Id="nl" Name="nl_NL.qm" DiskId="1" Source="translations/nl_NL.qm" />
+                            <File Id="no" Name="nb_NO.qm" DiskId="1" Source="translations/nb_NO.qm" />
                             <File Id="pl" Name="pl_PL.qm" DiskId="1" Source="translations/pl_PL.qm" />
                             <File Id="pt" Name="pt_BR.qm" DiskId="1" Source="translations/pt_BR.qm" />
                             <File Id="ru" Name="ru_RU.qm" DiskId="1" Source="translations/ru_RU.qm" />

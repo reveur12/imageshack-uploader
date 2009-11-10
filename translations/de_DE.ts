@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en">
+<TS version="2.0" language="de_DE" sourcelanguage="en_US">
 <context>
     <name>AboutWindow</name>
     <message>
         <location filename="../aboutwindow.cpp" line="38"/>
         <location filename="../aboutwindow.cpp" line="52"/>
         <source>Version %1</source>
-        <translation>Verzió %1</translation>
+        <translation>Version %1</translation>
     </message>
     <message>
         <location filename="../aboutwindow.ui" line="14"/>
         <source>About</source>
-        <translation>Névjegy</translation>
+        <translation>Über</translation>
     </message>
     <message>
         <location filename="../aboutwindow.ui" line="71"/>
@@ -22,7 +22,7 @@
     <message>
         <location filename="../aboutwindow.ui" line="91"/>
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
-        <translation>Az ImageShack Uploader-rel könnyedén tölthetjük fel képeinket az ImageShack szerverére.</translation>
+        <translation>Der ImageShack Uploader ist das ultimative Tool zum hochladen von Bildern und Videos auf die ImageShack Web Services.</translation>
     </message>
     <message utf8="true">
         <location filename="../aboutwindow.ui" line="111"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../aboutwindow.ui" line="146"/>
         <source>Close</source>
-        <translation>Bezárás</translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../advancedcheckbox.ui" line="69"/>
         <source>Remove size/resolution bar from thumbnail</source>
-        <translation>Méret/felbontás eltávolítása a kis kép aljáról</translation>
+        <translation type="unfinished">Größen-/Auflösungsinformationen vom Thumbnail entfernen</translation>
     </message>
 </context>
 <context>
@@ -48,7 +48,7 @@
     <message>
         <location filename="../copyablelineedit.ui" line="84"/>
         <source>Copy to clipboard</source>
-        <translation>Másolás a vágólapra</translation>
+        <translation>In die Zwischenablage kopieren</translation>
     </message>
 </context>
 <context>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../copyabletextedit.ui" line="87"/>
         <source>Copy to clipboard</source>
-        <translation>Másolás a vágólapra</translation>
+        <translation>In die Zwischenablage kopieren</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../fileuploader.cpp" line="86"/>
         <source>Some files could not be uploaded.</source>
-        <translation>Néhány fájlt nem sikerült feltölteni.</translation>
+        <translation>Einige Dateien konnten nicht hochgeladen werden.</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileuploader.cpp" line="89"/>
@@ -75,44 +75,44 @@ Got error messages from server:
         <translation>
             <numerusform>
 
-Hibaüzenet a szervertől:
+Der Server sendete diese Fehlermeldungen:
 </numerusform>
             <numerusform>
 
-%nHibaüzenet a szervertől:
+Got error messages from server:
 </numerusform>
         </translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="92"/>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="112"/>
         <location filename="../fileuploader.cpp" line="122"/>
         <source>3 attempts to upload file failed</source>
-        <translation>3 próbálkozás a fájl feltöltésére sikertelen</translation>
+        <translation>Alle 3 Versuche beim Hochladen sind fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="144"/>
         <source>Server returned no error text</source>
-        <translation>A szerver nem küldött vissza hibaüzenetet</translation>
+        <translation>Der Server hat keine Fehlermeldung gesendet</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="151"/>
         <source>Wrong server response</source>
-        <translation>Hibás szerverválasz</translation>
+        <translation>Falsche Antwort vom Server</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="184"/>
         <source>Server responce is not valid</source>
-        <translation>Érvénytelen szerverválasz</translation>
+        <translation>Serverantwort ist nicht gültig</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="231"/>
         <source>Could not connect to server</source>
-        <translation>Csatlakozás a szerverhez sikertelen</translation>
+        <translation>Es konnte keine Verbindung zum Server aufgebaut werden</translation>
     </message>
 </context>
 <context>
@@ -120,7 +120,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../httprequest.cpp" line="67"/>
         <source>Local file does not exist</source>
-        <translation>A fájl nem létezik</translation>
+        <translation>Lokale Datei existiert nicht</translation>
     </message>
 </context>
 <context>
@@ -130,22 +130,22 @@ Hibaüzenet a szervertől:
         <location filename="../imageinfowidget.cpp" line="118"/>
         <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
-        <translation>Kis kép</translation>
+        <translation>Thumbnail</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.cpp" line="254"/>
         <source>Log in to use this features</source>
-        <translation>A funkció használatához jelentkezzen be</translation>
+        <translation>Um dieses Feature nutzen zu können, müssen Sie eingeloggt sein</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="113"/>
         <source>Image resize:</source>
-        <translation>Kép átméretezése:</translation>
+        <translation>Bildgröße ändern:</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="126"/>
         <source>Do not resize</source>
-        <translation>Ne méretezze át</translation>
+        <translation>Bildgröße nicht ändern</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="131"/>
@@ -155,67 +155,67 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../imageinfowidget.ui" line="136"/>
         <source>150x150 (thumbnail)</source>
-        <translation>150x150 (előnézeti kép)</translation>
+        <translation>150x150 (thumbnail)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="141"/>
         <source>320x320 (for websites and email)</source>
-        <translation>320x320 (honlapra, e-mailhez)</translation>
+        <translation>320x320 (für Webseiten und Email)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="146"/>
         <source>640x640 (for message boards)</source>
-        <translation>640x640 (üzenőfalakra)</translation>
+        <translation>640x640 (für Foren)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="151"/>
         <source>800x800 (12-inch monitor)</source>
-        <translation>800x800 (12&quot; monitor)</translation>
+        <translation>800x800 (12 Zoll Monitor)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="156"/>
         <source>1024x1024 (15-inch monitor)</source>
-        <translation>1024x1024 (15&quot; monitor)</translation>
+        <translation>1024x1024 (15-Zoll Monitor)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="161"/>
         <source>1280x1280 (19-inch monitor)</source>
-        <translation>1280x1280 (19&quot; monitor)</translation>
+        <translation>1280x1280 (19-Zoll Monitor)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="166"/>
         <source>1600x1600 (21-inch monitor)</source>
-        <translation>1600x1600 (21&quot; monitor)</translation>
+        <translation>1600x1600 (21-Zoll Monitor)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="171"/>
         <source>Optimize only</source>
-        <translation>Csak optimalizálja</translation>
+        <translation>nur optimieren</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="182"/>
         <source>Resize all images to this size</source>
-        <translation>Az összes kép átméretezése erre a méretre</translation>
+        <translation>Alle Bilder auf diese Größe ändern</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="242"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nyilvánosság:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Privatsphäre:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="252"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Kulcsszavak:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Tags:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="270"/>
         <source>Public</source>
-        <translation>Nyilvános</translation>
+        <translation>Öffentlich</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="289"/>
         <source>Private</source>
-        <translation>Személyes</translation>
+        <translation>Privat</translation>
     </message>
 </context>
 <context>
@@ -224,58 +224,58 @@ Hibaüzenet a szervertől:
         <location filename="../loginwidget.cpp" line="84"/>
         <location filename="../loginwidget.cpp" line="140"/>
         <source>You are logged in as %1</source>
-        <translation>Sikeresen bejelentkezett, %1</translation>
+        <translation type="unfinished">Angemeldet als: %1</translation>
     </message>
     <message>
         <location filename="../loginwidget.cpp" line="152"/>
         <location filename="../loginwidget.cpp" line="160"/>
         <source>Authentication failed</source>
-        <translation>Azonosítás sikertelen</translation>
+        <translation>Anmeldung gescheitert</translation>
     </message>
     <message>
         <location filename="../loginwidget.cpp" line="149"/>
         <source>Could not connect to ImageShack server.</source>
-        <translation>Nem sikerült csatlakozni az ImageShack szerveréhez.</translation>
+        <translation>Konnte nicht mit dem ImageShack Server verbinden.</translation>
     </message>
     <message>
         <location filename="../loginwidget.cpp" line="161"/>
         <source>Wrong credentials.</source>
-        <translation>Hibás adatok.</translation>
+        <translation>Falsche Anmeldedaten.</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="42"/>
         <source>Login name / E-mail:</source>
-        <translation>Felhasználónév / e-mail:</translation>
+        <translation>Anmeldename / Email:</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="65"/>
         <source>Password:</source>
-        <translation>Jelszó:</translation>
+        <translation>Passwort:</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="91"/>
         <source>Remember password</source>
-        <translation>Jelszó megjegyzése</translation>
+        <translation>Passwort speichern</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="113"/>
         <source>Login</source>
-        <translation>Bejelentkezés</translation>
+        <translation>Anmelden</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="166"/>
         <source>Logging in...</source>
-        <translation>Bejelentkezés folyamatban...</translation>
+        <translation>Melde an...</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="201"/>
         <source>Cancel</source>
-        <translation>Mégse</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="260"/>
         <source>Logout</source>
-        <translation>Kijelentkezés</translation>
+        <translation>Abmelden</translation>
     </message>
 </context>
 <context>
@@ -285,7 +285,7 @@ Hibaüzenet a szervertől:
         <location filename="../optionsdialog.cpp" line="147"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
-        <translation>Magyar</translation>
+        <translation>Deutsch</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="51"/>
@@ -295,47 +295,47 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../mainwindow.cpp" line="119"/>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="120"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
-        <translation>Flash fájlokat nem tölthet fel bejelentkezés nélkül. Mindenképpen megpróbálja?</translation>
+        <translation>Flash-Dateien können nicht ohne vorherige Anmeldung hochgeladen werden. Dennoch versuchen?</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
         <source>File</source>
-        <translation>Fájl</translation>
+        <translation>Datei</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="154"/>
         <source>Help</source>
-        <translation>Súgó</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="165"/>
         <source>About</source>
-        <translation>Névjegy</translation>
+        <translation>Über</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="173"/>
         <source>Support</source>
-        <translation>Támogatás</translation>
+        <translation>Support</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="181"/>
         <source>Options</source>
-        <translation>Beállítások</translation>
+        <translation>Optionen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="189"/>
         <source>Check for updates</source>
-        <translation>Frissítések keresése</translation>
+        <translation>Nach Updates suchen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
         <source>Exit</source>
-        <translation>Kilépés</translation>
+        <translation type="unfinished">Beenden</translation>
     </message>
 </context>
 <context>
@@ -348,7 +348,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../media.cpp" line="351"/>
         <source>%1 KB</source>
-        <translation>%1 kB</translation>
+        <translation>%1 KB</translation>
     </message>
     <message>
         <location filename="../media.cpp" line="352"/>
@@ -368,7 +368,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../media.cpp" line="362"/>
         <source>%1K</source>
-        <translation>%1k</translation>
+        <translation>%1K</translation>
     </message>
     <message>
         <location filename="../media.cpp" line="363"/>
@@ -386,16 +386,16 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../medialistmodel.cpp" line="165"/>
         <source>Files not added</source>
-        <translation>Fájlok hozzáadása sikertelen</translation>
+        <translation>Dateien nicht hinzugefügt</translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistmodel.cpp" line="166"/>
         <source>This files are already in list, they were not added again:
 </source>
         <translation>
-            <numerusform>Az alábbi fájl már a listán van, nem adtuk hozzá ismét:
+            <numerusform>Diese Datei war bereits in der Liste. Sie wurde nicht nocheinmal hinzugefügt:
 </numerusform>
-            <numerusform>Az alábbi fájlok (%n) már a listán vannak, nem adtuk hozzá ismét őket:
+            <numerusform>Diese Dateien waren bereits in der Liste Sie wurden nicht noch einmal hinzugefügt:
 </numerusform>
         </translation>
     </message>
@@ -405,72 +405,72 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../medialistwidget.cpp" line="96"/>
         <source>Select one or more files to open</source>
-        <translation>Válassza ki a feltölteni kívánt fájlt/fájlokat</translation>
+        <translation>Wählen Sie eine oder mehrere Dateien zum Öffnen</translation>
     </message>
     <message>
         <location filename="../medialistwidget.cpp" line="99"/>
         <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</source>
-        <translation>Támogatott formátumok (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
+        <translation>Unterstützte Formate (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="145"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
         <translation>
-            <numerusform>%n fájl hozzáadása nem sikerült, mert a formátum jelenleg még nem támogatott:</numerusform>
-            <numerusform>%n fájl hozzáadása nem sikerült, mert a formátumuk jelenleg még nem támogatott:</numerusform>
+            <numerusform>Diese %n Datei konnte nicht hinzugefügt werden. Es scheint ein Format zu sein, welches momentan nicht unterstützt wird:</numerusform>
+            <numerusform>Diese %n Dateien konnten nicht hinzugefügt werden. Es scheint sich dabei um ein Format zu handeln, welches momentan nicht unterstützt wird:</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="152"/>
         <source>%n file(s) are too large for upload:</source>
         <translation>
-            <numerusform>%n fájl mérete túl nagy:</numerusform>
-            <numerusform>%n fájl mérete túl nagy:</numerusform>
+            <numerusform>%n Datei ist zu groß für den Upload:</numerusform>
+            <numerusform>%n Dateien sind zu groß für den Upload:</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="155"/>
         <source>Maximum file size for logged in users is %n MB</source>
         <translation>
-            <numerusform>A maximális fájlméret bejelentkezett felhasználóknak %n MB</numerusform>
-            <numerusform>A maximális fájlméret bejelentkezett felhasználóknak %n MB</numerusform>
+            <numerusform>Maximale Dateigröße für Angemeldete Nutzer ist %n MB</numerusform>
+            <numerusform>Maximale Dateigröße für angemeldete Nutzer ist %n MB</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="157"/>
         <source>Maximum file size for anonymous users is %n MB</source>
         <translation>
-            <numerusform>A maximális fájlméret anonim felhasználóknak %n MB</numerusform>
-            <numerusform>A maximális fájlméret anonim felhasználóknak %n MB</numerusform>
+            <numerusform>Maximale Dateigröße for anonyme Nutzer ist %n MB</numerusform>
+            <numerusform>Maximale Dateigröße für anonyme Nutzer ist %n MB</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../medialistwidget.cpp" line="161"/>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation>Warnung</translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="251"/>
         <source>%n files</source>
         <translation>
-            <numerusform>%n fájl</numerusform>
-            <numerusform>%n fájl</numerusform>
+            <numerusform>%n Datei</numerusform>
+            <numerusform>%n Dateien</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../medialistwidget.ui" line="111"/>
         <source>Add</source>
-        <translation>Hozzáadás</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../medialistwidget.ui" line="125"/>
         <source>Remove</source>
-        <translation>Eltávolítás</translation>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <location filename="../medialistwidget.ui" line="139"/>
         <source>Clear</source>
-        <translation>Törlés</translation>
+        <translation type="unfinished">Alle entfernen</translation>
     </message>
 </context>
 <context>
@@ -478,7 +478,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../mediawidget.ui" line="14"/>
         <source>Preview</source>
-        <translation>Előnézet</translation>
+        <translation>Vorschau</translation>
     </message>
 </context>
 <context>
@@ -486,27 +486,27 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../optionsdialog.ui" line="20"/>
         <source>Options</source>
-        <translation>Beállítások</translation>
+        <translation>Optionen</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="30"/>
         <source>Check for updates automatically</source>
-        <translation>Frissítések automatikus keresése</translation>
+        <translation>Automatisch nach Updates suchen</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="51"/>
         <source>Language:</source>
-        <translation>Nyelv:</translation>
+        <translation>Sprache:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="95"/>
         <source>Use proxy server</source>
-        <translation>Proxy szerver használata</translation>
+        <translation>Proxy Server benutzen</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="105"/>
         <source>Proxy settings</source>
-        <translation>Proxy beállítások</translation>
+        <translation>Proxy Einstellungen</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="113"/>
@@ -521,7 +521,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../optionsdialog.ui" line="169"/>
         <source>Type:</source>
-        <translation>Típus:</translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="183"/>
@@ -536,17 +536,17 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../optionsdialog.ui" line="211"/>
         <source>Authentication</source>
-        <translation>Azonosítás</translation>
+        <translation type="unfinished">Anmeldung</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="233"/>
         <source>Username:</source>
-        <translation>Felhasználónév:</translation>
+        <translation>Benutzername:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="243"/>
         <source>Password:</source>
-        <translation>Jelszó:</translation>
+        <translation>Passwort:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="290"/>
@@ -557,7 +557,7 @@ Hibaüzenet a szervertől:
         <location filename="../optionsdialog.cpp" line="42"/>
         <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
-        <translation>Nem találja a saját nyelvezetét?&lt;br&gt;Segíthet a fordításban.&lt;br&gt;További információért kattintson &lt;a href=&quot;%1&quot;&gt;IDE&lt;/a&gt;. Fordította: Ndruu.</translation>
+        <translation>Ihre Sprache ist nicht in dieser liste?&lt;br&gt;Helfen Sie mit und übersetzen Sie das Programm.&lt;br&gt;Klicken Sie &lt;a href=&quot;%1&quot;&gt;HIER&lt;/a&gt; für weitere Iinformationen.</translation>
     </message>
 </context>
 <context>
@@ -565,17 +565,17 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../pausedialog.ui" line="14"/>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <location filename="../pausedialog.ui" line="20"/>
         <source>The current file will resume from it&apos;s beginning. Continue pausing?</source>
-        <translation>A jelenlegi fájl feltöltése újrakezdődik. Biztosan megállítja?</translation>
+        <translation>Die aktuelle Datei wird noch einmal von Vorne Hochgeladen. Pause fortsetzen?</translation>
     </message>
     <message>
         <location filename="../pausedialog.ui" line="30"/>
         <source>Hide this warning for future uploads</source>
-        <translation>A továbbiakban rejtse el ezt a hibaüzenetet</translation>
+        <translation>Diese Warnung für zukünftige Uploads vertecken</translation>
     </message>
 </context>
 <context>
@@ -584,22 +584,22 @@ Hibaüzenet a szervertől:
         <location filename="../progresswidget.ui" line="73"/>
         <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
-        <translation>Feltöltés</translation>
+        <translation>Upload</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="137"/>
         <source>Total: %p%</source>
-        <translation>Kész: %p%</translation>
+        <translation>Gesamt: %p%</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="158"/>
         <source>Time left: estimating...</source>
-        <translation>Hátralévő idő: becslés...</translation>
+        <translation>Zeit verbleibend: schätze...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="99"/>
         <source>Waiting for links...</source>
-        <translation>Várakozás a linkekre...</translation>
+        <translation>Warte auf die URLs...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="91"/>
@@ -607,65 +607,65 @@ Hibaüzenet a szervertől:
         <location filename="../progresswidget.cpp" line="184"/>
         <location filename="../progresswidget.ui" line="198"/>
         <source>Pause</source>
-        <translation>Megállítás</translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="103"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
-        <translation>Jelenlegi: %p%</translation>
+        <translation>Aktuell: %p%</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="115"/>
         <source>Loading files: %1 of %2</source>
-        <translation>Fájlok feltöltése: %1 / %2</translation>
+        <translation>Lade Dateien: %1 of %2</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="130"/>
         <location filename="../progresswidget.cpp" line="138"/>
         <source>Time left:</source>
-        <translation>Hátralévő idő:</translation>
+        <translation>Zeit verbleibend:</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="130"/>
         <source>paused...</source>
-        <translation>megállítva...</translation>
+        <translation>Pausiert...</translation>
     </message>
     <message numerus="yes">
         <location filename="../progresswidget.cpp" line="142"/>
         <source> %n hrs.</source>
         <translation>
-            <numerusform> %n óra.</numerusform>
-            <numerusform> %n óra.</numerusform>
+            <numerusform> %n h.</numerusform>
+            <numerusform> %n h.</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../progresswidget.cpp" line="143"/>
         <source> %n min.</source>
         <translation>
-            <numerusform> %n perc.</numerusform>
-            <numerusform> %n perc.</numerusform>
+            <numerusform> %n min.</numerusform>
+            <numerusform> %n min.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="145"/>
         <source> less than 1 min.</source>
-        <translation> kevesebb, mint 1 perc.</translation>
+        <translation>weniger als eine Minute.</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="146"/>
         <source> almost done...</source>
-        <translation> majdnem kész...</translation>
+        <translation>beinahe fertig...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="175"/>
         <source>Resume</source>
-        <translation>Folytatás</translation>
+        <translation>Fortsetzen</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="230"/>
         <source>Cancel</source>
-        <translation>Mégse</translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -673,134 +673,134 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../resultswindow.cpp" line="118"/>
         <source>Direct links</source>
-        <translation>Közvetlen linkek</translation>
+        <translation>Direkte URLs</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="119"/>
         <source>Short links</source>
-        <translation>Rövid linkek</translation>
+        <translation>Kurze URLs</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="120"/>
         <source>Hotlinks for web</source>
-        <translation>Gyorslink</translation>
+        <translation>Hotlinks für Webseiten</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="121"/>
         <source>Thumbnails for web</source>
-        <translation>Előnézeti kép link</translation>
+        <translation>Thumbnails für Webseiten</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="122"/>
         <source>Thumbnails for forums 1</source>
-        <translation>Előnézeti kép fórumokba 1</translation>
+        <translation>Thumbnails für Foren 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="123"/>
         <source>Thumbnails for forums 2</source>
-        <translation>Előnézeti kép fórumokba 2</translation>
+        <translation>Thumbnails für Foren 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="124"/>
         <source>Hotlinks for forums 1</source>
-        <translation>Gyorslink fórumokba 1</translation>
+        <translation>Hotlinks für Foren 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="125"/>
         <source>Hotlinks for forums 2</source>
-        <translation>Gyorslink fórumokba 2</translation>
+        <translation>Hotlinks für Foren 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="134"/>
         <source>Direct link</source>
-        <translation>Közvetlen link</translation>
+        <translation>Direkte URL</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="135"/>
         <source>Short link</source>
-        <translation>Rövid link</translation>
+        <translation>Kurz-URL</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="136"/>
         <source>Hotlink for web</source>
-        <translation>Gyorslink</translation>
+        <translation>Hotlink für Webseiten</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="137"/>
         <source>Thumbnail for web</source>
-        <translation>Előnézeti kép link</translation>
+        <translation>Thumbnail für Webseiten</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="138"/>
         <source>Thumbnail for forums 1</source>
-        <translation>Előnézeti kép fórumokba 1</translation>
+        <translation>Thumbnail für Foren 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="139"/>
         <source>Thumbnail for forums 2</source>
-        <translation>Előnézeti kép fórumokba 2</translation>
+        <translation>Thumbnail für Foren 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="140"/>
         <source>Hotlink for forums 1</source>
-        <translation>Gyorslink fórumokba 1</translation>
+        <translation>Hotlink für Foren 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for forums 2</source>
-        <translation>Gyorslink fórumokba 2</translation>
+        <translation>Hotlink für Foren 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="146"/>
         <source>File %1 of %2</source>
-        <translation>Fájl %1 / %2-</translation>
+        <translation>Datei %1 von %2</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="20"/>
         <source>Uploaded files</source>
-        <translation>Feltöltött fájlok</translation>
+        <translation>Hochgeladene Dateien</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="30"/>
         <source>One by one</source>
-        <translation>Egyenként</translation>
+        <translation>Eine nach der anderen</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="115"/>
         <source>Thumbnail</source>
-        <translation>Előnézeti kép</translation>
+        <translation>Thumbnail</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
         <location filename="../resultswindow.ui" line="392"/>
         <source>Tweet this</source>
-        <translation>Tweet-re vele</translation>
+        <translation>Twittern</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="149"/>
         <source>File 1 of 1</source>
-        <translation>Fájl 1/1</translation>
+        <translation>Datei 1 von 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="336"/>
         <source>All images and video files</source>
-        <translation>Minden kép és videófájl</translation>
+        <translation>Alle Bild- und Videodateien</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="366"/>
         <source>Gallery:</source>
-        <translation>Galéria:</translation>
+        <translation>Gallerie:</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="389"/>
         <source>Create gallery and post to twitter</source>
-        <translation>Galéria létrehozása és elküldés a twitter-re</translation>
+        <translation>Gallerie erstellen und twittern</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="461"/>
         <source>Close</source>
-        <translation>Bezárás</translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -808,33 +808,33 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../tagwidget.ui" line="41"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nyilvánosság:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Privatsphäre:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="56"/>
         <source>Public</source>
-        <translation>Nyilvános</translation>
+        <translation>Öffentlich</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="72"/>
         <source>Private</source>
-        <translation>Személyes</translation>
+        <translation>Privat</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="97"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Kulcsszavak:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Tags:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="29"/>
         <source>Batch privacy &amp;&amp; tags</source>
-        <translation>Nyilvánosság és kulcsszavak összesítve</translation>
+        <translation type="unfinished">Stepelverarbeitung Privatsphäre und Tags</translation>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
         <location filename="../tagwidget.cpp" line="98"/>
         <source>Log in to use this features</source>
-        <translation>A funkció használatához jelentkezzen be</translation>
+        <translation>Anmelden und diese Features nutzen</translation>
     </message>
 </context>
 <context>
@@ -842,7 +842,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../talkingtreeview.cpp" line="51"/>
         <source>Drag and drop one or more image\n or video files here</source>
-        <translation>Húzza ide a \n hozzáadni kívánt képeket, videókat</translation>
+        <translation>Eine oder mehrere Bild- und Videodateien per Drag und drop hier ablegen</translation>
     </message>
 </context>
 <context>
@@ -850,17 +850,17 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../trayicon.cpp" line="20"/>
         <source>Show/Hide Uploader</source>
-        <translation>Mutatás/elrejtés</translation>
+        <translation>Anzeigen/Verstecken des Uploaders</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="23"/>
         <source>Add file from clipboard</source>
-        <translation>Fájl hozzáadása a vágólapról</translation>
+        <translation>Datei aus der Zwischenablage hinzufügen</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="24"/>
         <source>Quit</source>
-        <translation>Kilépés</translation>
+        <translation>Beenden</translation>
     </message>
 </context>
 <context>
@@ -869,7 +869,7 @@ Hibaüzenet a szervertől:
         <location filename="../twitterclient.cpp" line="53"/>
         <location filename="../twitterclient.cpp" line="66"/>
         <source>Posting to twitter...</source>
-        <translation>Küldés Twitter-re...</translation>
+        <translation>Sende an Twitter...</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="101"/>
@@ -879,29 +879,29 @@ Hibaüzenet a szervertől:
         <location filename="../twitterclient.cpp" line="148"/>
         <location filename="../twitterclient.cpp" line="155"/>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="115"/>
         <location filename="../twitterclient.cpp" line="156"/>
         <source>Could not post to twitter. Wrong server response.</source>
-        <translation>Twitter-re küldés sikertelen. Hibás szerverválasz.</translation>
+        <translation>Konnte nicht an Twitter senden. Falsche Serverantwort.</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="136"/>
         <source>Could not post to twitter. Wrong credentials.</source>
-        <translation>Twitter-re küldés sikertelen. Hibás adatok.</translation>
+        <translation>Konnte nicht an Twitter senden. Falsche Anmeldedaten.</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="102"/>
         <location filename="../twitterclient.cpp" line="143"/>
         <source>Failed to update twitter status.</source>
-        <translation>Sikertelen frissítés a Twitter-en.</translation>
+        <translation>Konnte Twitterstatus nicht erneuern.</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="149"/>
         <source>Could not post to twitter. Internal error.</source>
-        <translation>Twitter-re küldés sikertelen. Belső hiba.</translation>
+        <translation>Konnte nicht an Twitter senden. Interner Fehler.</translation>
     </message>
 </context>
 <context>
@@ -909,47 +909,47 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../twitterwindow.cpp" line="68"/>
         <source>Posting to twitter...</source>
-        <translation>Küldés Twitter-re...</translation>
+        <translation>Sende an Twitter...</translation>
     </message>
     <message>
         <location filename="../twitterwindow.cpp" line="78"/>
         <source>Symbols left: %1</source>
-        <translation>Hátralévő karakterek: %1</translation>
+        <translation>Symbole übrig: %1</translation>
     </message>
     <message>
         <location filename="../twitterwindow.cpp" line="107"/>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../twitterwindow.cpp" line="108"/>
         <source>You have not entered username or password</source>
-        <translation>Nem adta meg Twitter-es felhasználónevét vagy jelszavát</translation>
+        <translation>Sie haben keinen Benutzernamen und/oder kein Passwort angegeben</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="20"/>
         <source>Comment text:</source>
-        <translation>Megjegyzés:</translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="14"/>
         <source>Tweet this</source>
-        <translation>Tweet-re vele</translation>
+        <translation>Twittern</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="43"/>
         <source>Twitter username:</source>
-        <translation>Twitter felhasználónév:</translation>
+        <translation>Twitter Anmeldename:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="50"/>
         <source>Twitter password:</source>
-        <translation>Twitter jelszó:</translation>
+        <translation>Twitter Passwort:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="82"/>
         <source>Remember me</source>
-        <translation>Emlékezzen rám</translation>
+        <translation>Anmeldedaten speichern</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="110"/>
@@ -959,7 +959,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../twitterwindow.ui" line="123"/>
         <source>Cancel</source>
-        <translation>Mégse</translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -969,69 +969,69 @@ Hibaüzenet a szervertől:
         <location filename="../updatechecker.cpp" line="101"/>
         <location filename="../updatechecker.cpp" line="114"/>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="59"/>
         <source>Please wait...</source>
-        <translation>Kérem várjon...</translation>
+        <translation>Bitte warten...</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="60"/>
         <source>Update checkup is currently in progress.</source>
-        <translation>Frissítések keresése folyamatban.</translation>
+        <translation>Es wird momentan nach updates gesucht.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="102"/>
         <source>Could not check for updates. Wrong server response.</source>
-        <translation>Nem sikerült a frissítések keresése. A kiszolgáló nem válaszol.</translation>
+        <translation>Konnte nicht nach updates suchen. Falsche Serverantwort.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="115"/>
         <source>Could not check for updates. No versions found.</source>
-        <translation>Nem sikerült a frissítések keresése. Nincs új verzió.</translation>
+        <translation>Konnte nicht nach updates suchen. Keine Versionen gefunden.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="156"/>
         <source>Yes</source>
-        <translation>Igen</translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="157"/>
         <source>No</source>
-        <translation>Nem</translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="159"/>
         <source>Update available</source>
-        <translation>Új frissítés elérhető</translation>
+        <translation>Update verfügbar</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="147"/>
         <location filename="../updatechecker.cpp" line="171"/>
         <source>You have the latest version of this application.</source>
-        <translation>Ön jelenleg a legfrissebb verziót használja.</translation>
+        <translation>Sie haben bereits die aktuelle Version.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="158"/>
         <source>Lastest version is %1. Do you want to update?</source>
-        <translation>A legfrissebb verzió a %1. Kívánja frissíteni?</translation>
+        <translation>Neueste Version ist %1. Wollen sie Updaten?</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="85"/>
         <source>Could not check for updates. Please try again later.</source>
-        <translation>Nem sikerült a frissítések keresése. Kérjük próbálja meg később.</translation>
+        <translation>Konnte nicht nach einem Update suchen. Versuchen Sie es später noch einmal.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="86"/>
         <source>Error message is:</source>
-        <translation>Hibaüzenet:</translation>
+        <translation>Die Fehlermeldung ist:</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="146"/>
         <location filename="../updatechecker.cpp" line="170"/>
         <source>No updates available</source>
-        <translation>Nincs újabb verzió</translation>
+        <translation>Keine neuere Version verfügbar</translation>
     </message>
 </context>
 <context>
@@ -1039,7 +1039,7 @@ Hibaüzenet a szervertől:
     <message>
         <location filename="../windowsexplorerintegrator.cpp" line="56"/>
         <source>Open with ImageShack Uploader</source>
-        <translation>Megnyitás az ImageShack Uploader-rel</translation>
+        <translation>Mit dem ImageShack Uploader öffnen</translation>
     </message>
 </context>
 </TS>
