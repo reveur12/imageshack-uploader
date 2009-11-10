@@ -73,6 +73,7 @@ private slots:
     void progressReceiver(int current, int total);
     void scrollbarUpdate(int, int);
     void resizeAllImagesTo(QString);
+    void removeAllImagesBar(bool);
 
 signals:
     void mediaSelected(QSharedPointer<Media>);

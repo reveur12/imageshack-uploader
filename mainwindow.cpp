@@ -91,6 +91,8 @@ MainWindow::MainWindow(QWidget *parent)
             ui->imageInfo, SLOT(batchPrivacy(bool)));
     connect(ui->imageInfo, SIGNAL(resizeAllImagesTo(QString)),
             ui->mediaList, SLOT(resizeAllImagesTo(QString)));
+    connect(ui->imageInfo, SIGNAL(removeAllImagesBar(bool)),
+            ui->mediaList, SLOT(removeAllImagesBar(bool)));
     controlsDisabled = false;
 
 

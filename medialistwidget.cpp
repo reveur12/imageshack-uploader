@@ -305,3 +305,10 @@ void MediaListWidget::resizeAllImagesTo(QString value)
         if (mediaList->getMedia(i).data()->getClass() == "image")
             mediaList->getMedia(i).data()->setResize(value);
 }
+
+void MediaListWidget::removeAllImagesBar(bool st)
+{
+    for (int i=0; i<mediaList->rowCount(); i++)
+        if (mediaList->getMedia(i).data()->getClass() == "image")
+            mediaList->getMedia(i).data()->setRemoveSize(st);
+}
