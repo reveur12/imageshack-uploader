@@ -78,6 +78,7 @@ void ImageInfoWidget::enable()
         m_ui->removeSize->setEnabled(true);
         m_ui->resize->setEnabled(true);
         m_ui->resizeAll->setEnabled(true);
+        m_ui->removeAll->setEnabled(true);
     }
     if (!media.isNull() && loggedIn)
     {
@@ -109,6 +110,7 @@ void ImageInfoWidget::disable()
     m_ui->tagsLabel->setEnabled(false);
     m_ui->resizeLabel->setEnabled(false);
     m_ui->resizeAll->setEnabled(false);
+    m_ui->removeAll->setEnabled(false);
 }
 
 void ImageInfoWidget::reset()
@@ -130,6 +132,7 @@ void ImageInfoWidget::reset()
     m_ui->tagsLabel->setEnabled(false);
     m_ui->resizeLabel->setEnabled(false);
     m_ui->resizeAll->setEnabled(false);
+    m_ui->removeAll->setEnabled(false);
 }
 
 void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
