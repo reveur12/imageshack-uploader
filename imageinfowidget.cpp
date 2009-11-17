@@ -144,6 +144,7 @@ void ImageInfoWidget::setMedia(QSharedPointer<Media> item)
     m_ui->thumbnail->setPixmap(QPixmap::fromImage(media->thumbnail()));
     bool isImage = (media.data()->getClass() == "image");
     m_ui->resize->setEnabled(isImage);
+    m_ui->removeAll->setEnabled(isImage);
     m_ui->resizeAll->setEnabled(isImage);
     m_ui->removeSize->setEnabled(isImage && items[media->getResize()]!=1 && items[media->getResize()]!=2);
     m_ui->resizeLabel->setEnabled(true);
