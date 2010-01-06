@@ -35,7 +35,6 @@ bool HTTPRequest::startRequest(bool emitprogress)
 QNetworkProxy& HTTPRequest::getProxy()
 {
     QNetworkProxy p;
-    //p.setType(QNetworkProxy::HttpProxy);
     QSettings sets;
     if (sets.value("proxy/use", QVariant(false)).toBool())
     {
@@ -292,6 +291,7 @@ void HTTPRequest::specialFail(QNetworkReply::NetworkError code)
     qDebug() << "Special fail";
     qDebug() << reply->readAll();
     reply->blockSignals(true);
+    inProgress = false;
     this->postFile(media, cookie, username, password);
 }
 
