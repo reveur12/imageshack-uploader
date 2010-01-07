@@ -44,7 +44,12 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     QSettings sets;
-    sets.setValue("loggedin", QVariant(false));
+    if ( sets.value("login", QVariant("")).toByteArray().isEmpty() ||
+         sets.value("password", QVariant("")).toByteArray().isEmpty() ||
+         !sets.value("rememberPass", QVariant(true)).toBool() )
+        sets.setValue("loggedin", QVariant(false));
+    else
+        sets.setValue("loggedin", QVariant(true));
 
     ui->setupUi(this);
     tr("LANGUAGE_NAME"); //for translation file

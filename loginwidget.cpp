@@ -66,7 +66,7 @@ LoginWidget::LoginWidget(QWidget *parent) :
             SIGNAL(wrongPassword()),
             this,
             SLOT(wrongPasswordReceiver()));
-    setLoggedIn(false);
+    //setLoggedIn(false);
     wasLoggedIn = false;
 }
 
