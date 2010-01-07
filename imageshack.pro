@@ -124,7 +124,7 @@ win32:target.path = release
 trans.path = $$UNIX_TRANSLATIONS_DIR
 win32:trans.path = release/translations
 macx:trans.path = Contents/Resources
-trans.files += translations/*.qm
+for(tsfile, TRANSLATIONS):trans.files += $$replace(tsfile, ".ts", ".qm")
 trans.commands = lrelease \
     $$TRANSLATIONS
 macx:mactrans.target = mactrans
