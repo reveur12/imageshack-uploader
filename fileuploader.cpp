@@ -69,6 +69,11 @@ void FileUploader::process()
         if (!current.isNull() && !request.isNull() && !request.data()->aborted && !request.data()->failed)
             uploadedTotal += current.data()->size();
         current = medias->getMedia(skip);
+        if (!QFile::exists(current.data()->filename()))
+        {
+            fail(tr("File does not exist"));
+            return process();
+        }
         request = QSharedPointer<HTTPRequest>(new HTTPRequest());
         tmp.append(request);
         request.data()->connectProgress(this, SLOT(progressReceiver(int)));
@@ -86,7 +91,7 @@ void FileUploader::process()
             QString text = tr("Some files could not be uploaded.");
             if (errors.size())
             {
-                text.append(tr("\n\nGot error messages from server:\n", 0, errors.size()));
+                text.append(tr("\n\nError messages:\n", 0, errors.size()));
                 text.append(errors.join("\n"));
             }
             QMessageBox::critical(progress, tr("Warning"), text);
