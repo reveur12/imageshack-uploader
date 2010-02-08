@@ -1,11 +1,13 @@
 TEMPLATE = app
+CONFIG += x86
+CONFIG -= x86_64
 include(qtsingleapplication/qtsingleapplication.pri)
 QT += network \
     xml
 TARGET = ImageShackUploader
 unix:!macx:TARGET = imageshack-uploader
 unix { 
-    LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libswscale libavutil)
+    LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libavutil)
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
     LIBS += $$LIBRARIES
 }
@@ -15,7 +17,7 @@ win32:LIBS += -L. \
     -lswscale \
     -lavutil
 INCLUDEPATH += qtsingleapplication
-macx:INCLUDEPATH += $$system(pkg-config --cflags-only-I libavcodec libavformat libswscale libavutil | sed s/-I//g)
+macx:INCLUDEPATH += $$system(pkg-config --cflags-only-I libavcodec libavformat libavutil | sed s/-I//g)
 UNIX_TRANSLATIONS_DIR = "/usr/share/imageshack-uploader/translations"
 DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
 VERSION = 2.3.0
@@ -24,6 +26,8 @@ DEVKEY = $$(IMAGESHACK_DEVELOPER_KEY)
 isEmpty(DEVKEY):error(IMAGESHACK_DEVELOPER_KEY variable should be set for building)
 DEFINES += DEVELOPER_KEY="\\\"$$DEVKEY\\\""
 QMAKE_INFO_PLIST = imageshack.plist
+macx:QMAKE_CXXFLAGS += -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5
+macx:LIBS += -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5
 SOURCES += main.cpp \
     mainwindow.cpp \
     media.cpp \
