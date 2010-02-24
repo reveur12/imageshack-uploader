@@ -7,7 +7,7 @@ QT += network \
 TARGET = ImageShackUploader
 unix:!macx:TARGET = imageshack-uploader
 unix { 
-    LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libavutil)
+    LIBRARIES = $$system(pkg-config --libs libavcodec libavformat libavutil libswscale)
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
     LIBS += $$LIBRARIES
 }
@@ -17,7 +17,7 @@ win32:LIBS += -L. \
     -lswscale \
     -lavutil
 INCLUDEPATH += qtsingleapplication
-macx:INCLUDEPATH += $$system(pkg-config --cflags-only-I libavcodec libavformat libavutil | sed s/-I//g)
+macx:INCLUDEPATH += $$system(pkg-config --cflags-only-I libavcodec libavformat libavutil libswscale | sed s/-I//g)
 UNIX_TRANSLATIONS_DIR = "/usr/share/imageshack-uploader/translations"
 DEFINES += UNIX_TRANSLATIONS_DIR="\\\"$$UNIX_TRANSLATIONS_DIR\\\""
 VERSION = 2.3.0
