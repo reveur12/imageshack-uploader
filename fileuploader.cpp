@@ -69,8 +69,9 @@ void FileUploader::process()
         if (!current.isNull() && !request.isNull() && !request.data()->aborted && !request.data()->failed)
             uploadedTotal += current.data()->size();
         current = medias->getMedia(skip);
-        if (!QFile::exists(current.data()->filename()))
+        if (!QFile::exists(current.data()->filepath()))
         {
+            qDebug() << current.data()->filename() << "does not exist";
             fail(tr("File does not exist"));
             return process();
         }

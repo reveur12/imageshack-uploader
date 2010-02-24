@@ -36,8 +36,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "windowsexplorerintegrator.h"
 #endif
 
+void debugMessagesFilter(QtMsgType type, const char *msg)
+{
+    return;
+}
+
 int main(int argc, char **argv)
 {
+#ifndef DEBUG
+    qInstallMsgHandler(debugMessagesFilter);
+#endif
     QtSingleApplication a(argc, argv);
 
     a.setApplicationName("ImageShack Uploader");
