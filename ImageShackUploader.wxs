@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="8BCD7AE7-F713-4D50-BAB9-7839B9386871" Name="ImageShack Uploader 2.3.0"
+             Language="1033" Version="2.3.0" Manufacturer="ImageShack Corp."
+             UpgradeCode="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
+
+        <Package Description="ImageShack bulk uploader"
+                 Comments="Tool to upload your images and videos to ImageShack"
+                 Manufacturer="ImageShack Corp." InstallerVersion="200" Compressed="yes"  InstallScope="perMachine"/>
+
+        <Media Id="1" Cabinet="product.cab" EmbedCab="yes" />
+
+        <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+        <Upgrade Id="8BCD7AE7-F713-4D50-BAB9-7839B938686D">
+            <UpgradeVersion Minimum="1.0.0" Maximum="2.2.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
+            <UpgradeVersion OnlyDetect='yes' Property='NEWERFOUND' Minimum='2.3.0' IncludeMinimum='no' />
+        </Upgrade>
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder" Name="PFiles">
+                <Directory Id="APPDIR" Name="ImageShack Uploader">
+                    <Component Id="Binary" Guid="54312363-1234-1234-1234-123456789013">
+                        <File Id="Uploader" Name="ImageShackUploader.exe" DiskId="1" Source="release/ImageShackUploader.exe" KeyPath="yes">
+                            <Shortcut Id="startmenuItem" Directory="ProgramMenuDir" Name="ImageShack Uploader"
+                                      WorkingDirectory="INSTALLDIR" Icon="ImageShackUploader.exe" IconIndex="0"
+                                      Advertise="yes"/>
+                            <Shortcut Id="desktopItem" Directory="DesktopFolder" Name="ImageShack Uploader"
+                                      WorkingDirectory="INSTALLDIR" Icon="ImageShackUploader.exe" IconIndex="0"
+                                      Advertise="yes"/>
+                        </File>
+                    </Component>
+                    <Component Id="FFmpeg" Guid="54312363-1234-1234-1234-123456789072">
+                        <File Id="avcodec" Name="avcodec-52.dll" DiskId="1" Source="dlls/avcodec.dll" />
+                        <File Id="avformat" Name="avformat-52.dll" DiskId="1" Source="dlls/avformat.dll" />
+                        <File Id="avutil" Name="avutil-49.dll" DiskId="1" Source="dlls/avutil.dll" />
+                        <File Id="swscale" Name="swscale-0.dll" DiskId="1" Source="dlls/swscale.dll" />
+                    </Component>
+                    <Component Id="Qt" Guid="54312363-1234-1234-1234-123456789032">
+                        <File Id="mingwm" Name="mingwm10.dll" DiskId="1" Source="dlls/mingwm10.dll" />
+                        <File Id="QtCore" Name="QtCore4.dll" DiskId="1" Source="dlls/QtCore4.dll" />
+                        <File Id="QtGui" Name="QtGui4.dll" DiskId="1" Source="dlls/QtGui4.dll" />
+                        <File Id="QtXml" Name="QtXml4.dll" DiskId="1" Source="dlls/QtXml4.dll" />
+                        <File Id="QtNetwork" Name="QtNetwork4.dll" DiskId="1" Source="dlls/QtNetwork4.dll" />
+                    </Component>
+                    <Directory Id="Translations" Name="translations">
+                        <Component Id="Translations" Guid="54312363-1234-1234-1234-123456789014">
+                            <File Id="ar" Name="ar_IQ.qm" DiskId="1" Source="translations/ar_IQ.qm" />
+                            <File Id="cz" Name="cz_CZ.qm" DiskId="1" Source="translations/cz_CZ.qm" />
+                            <File Id="el" Name="el_GR.qm" DiskId="1" Source="translations/el_GR.qm" />
+                            <File Id="en" Name="en_US.qm" DiskId="1" Source="translations/en_US.qm" />
+                            <File Id="de" Name="de_DE.qm" DiskId="1" Source="translations/de_DE.qm" />
+                            <File Id="es" Name="es_ES.qm" DiskId="1" Source="translations/es_ES.qm" />
+                            <File Id="fi" Name="fi_FI.qm" DiskId="1" Source="translations/fi_FI.qm" />
+                            <File Id="fr" Name="fr_FR.qm" DiskId="1" Source="translations/fr_FR.qm" />
+                            <File Id="hu" Name="hu_HU.qm" DiskId="1" Source="translations/hu_HU.qm" />
+                            <File Id="it" Name="it_IT.qm" DiskId="1" Source="translations/it_IT.qm" />
+                            <File Id="lv" Name="lv_LV.qm" DiskId="1" Source="translations/lv_LV.qm" />
+                            <File Id="nl" Name="nl_NL.qm" DiskId="1" Source="translations/nl_NL.qm" />
+                            <File Id="no" Name="nb_NO.qm" DiskId="1" Source="translations/nb_NO.qm" />
+                            <File Id="pl" Name="pl_PL.qm" DiskId="1" Source="translations/pl_PL.qm" />
+                            <File Id="pt" Name="pt_BR.qm" DiskId="1" Source="translations/pt_BR.qm" />
+                            <File Id="ru" Name="ru_RU.qm" DiskId="1" Source="translations/ru_RU.qm" />
+                            <File Id="th" Name="th_TH.qm" DiskId="1" Source="translations/th_TH.qm" />
+                            <File Id="tr" Name="tr_TR.qm" DiskId="1" Source="translations/tr_TR.qm" />
+                            <File Id="zh" Name="zh_CN.qm" DiskId="1" Source="translations/zh_CN.qm" />
+                            <File Id="sv" Name="sv_SE.qm" DiskId="1" Source="translations/sv_SE.qm" />
+                            <File Id="ro" Name="ro_RO.qm" DiskId="1" Source="translations/ro_RO.qm" />
+                            <File Id="example" Name="en_US.ts" DiskId="1" Source="translations/en_US.ts" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="ImagePlugins" Name="imageformats">
+                        <Component Id="ImageFormats" Guid="54312363-1234-1234-1234-123456789431">
+                            <File Id="gif" Name="qgif4.dll" DiskId="1" Source="dlls/imageformats/qgif4.dll" />
+                            <File Id="ico" Name="qico4.dll" DiskId="1" Source="dlls/imageformats/qico4.dll" />
+                            <File Id="jpeg" Name="qjpeg4.dll" DiskId="1" Source="dlls/imageformats/qjpeg4.dll" />
+                            <File Id="mng" Name="qmng4.dll" DiskId="1" Source="dlls/imageformats/qmng4.dll" />
+                            <File Id="svg" Name="qsvg4.dll" DiskId="1" Source="dlls/imageformats/qsvg4.dll" />
+                            <File Id="tiff" Name="qtiff4.dll" DiskId="1" Source="dlls/imageformats/qtiff4.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
+            <Directory Id="ProgramMenuFolder" Name="Programs">
+                <Directory Id="ProgramMenuDir" Name="ImageShack Uploader">
+                    <Component Id="ProgramMenuDir" Guid="54312363-1234-1234-1234-123456789043">
+                        <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+                        <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" KeyPath="yes" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="DesktopFolder" Name="Desktop" />
+        </Directory>
+
+
+
+        <Feature Id="Complete" Title="ImageShack Uploader" Level="1" ConfigurableDirectory="APPDIR">
+            <ComponentRef Id="Binary" />
+            <ComponentRef Id="FFmpeg" />
+            <ComponentRef Id="Qt" />
+            <ComponentRef Id="ImageFormats" />
+            <ComponentRef Id="Translations" />
+            <ComponentRef Id="ProgramMenuDir" />
+        </Feature>
+
+        <Property Id="WIXUI_INSTALLDIR" Value="APPDIR" />
+        <UIRef Id="WixUI_InstallDir" />
+        <UI>
+            <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">1</Publish>
+            <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">NOT Installed</Publish>
+        </UI>
+
+        <Icon Id="ImageShackUploader.exe" SourceFile="release/ImageShackUploader.exe" />
+        <InstallExecuteSequence>
+            <RemoveExistingProducts Before="InstallInitialize" />
+            <Custom Action="CleanRegistry" After="InstallFinalize">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+            <Custom Action="RemoveOld" After="InstallFinalize" />
+            <Custom Action='NoDowngrade' After='FindRelatedProducts'>NEWERFOUND</Custom>
+        </InstallExecuteSequence>
+
+        <CustomAction Id="CleanRegistry" BinaryKey="ImageShackUploader.exe" ExeCommand="-unregister" Return="asyncWait"  />
+        <CustomAction Id='RemoveOld' Directory='ProgramFilesFolder' ExeCommand='msiexec /uninstall {54312363-1234-1234-1234-123456789012} /quiet' Return='asyncNoWait' />
+        <CustomAction Id='NoDowngrade' Error='A later version of [ProductName] is already installed.' />
+        <Binary Id="ImageShackUploader.exe" SourceFile="release/ImageShackUploader.exe" />
+    </Product>
+</Wix>
