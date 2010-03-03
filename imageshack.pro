@@ -1,6 +1,4 @@
 TEMPLATE = app
-CONFIG += x86
-CONFIG -= x86_64
 include(qtsingleapplication/qtsingleapplication.pri)
 QT += network \
     xml
@@ -11,6 +9,7 @@ unix {
     isEmpty(LIBRARIES):error(Could not find ffmpeg libraries)
     LIBS += $$LIBRARIES
 }
+macx:LIBS += -lswscale
 win32:LIBS += -L. \
     -lavformat \
     -lavcodec \
@@ -26,8 +25,9 @@ DEVKEY = $$(IMAGESHACK_DEVELOPER_KEY)
 isEmpty(DEVKEY):error(IMAGESHACK_DEVELOPER_KEY variable should be set for building)
 DEFINES += DEVELOPER_KEY="\\\"$$DEVKEY\\\""
 QMAKE_INFO_PLIST = imageshack.plist
+win32:QMAKE_CXXFLAGS += -static -static-libgcc
 macx:QMAKE_CXXFLAGS += -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5
-macx:LIBS += -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5
+macx:QMAKE_LDFLAGS += -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5
 SOURCES += main.cpp \
     mainwindow.cpp \
     media.cpp \
