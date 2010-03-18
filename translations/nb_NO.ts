@@ -7,12 +7,12 @@
         <location filename="../aboutwindow.cpp" line="38"/>
         <location filename="../aboutwindow.cpp" line="52"/>
         <source>Version %1</source>
-        <translation type="unfinished">Versjon %1</translation>
+        <translation>Versjon %1</translation>
     </message>
     <message>
         <location filename="../aboutwindow.ui" line="14"/>
         <source>About</source>
-        <translation type="unfinished">Om</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../aboutwindow.ui" line="71"/>
@@ -22,7 +22,7 @@
     <message>
         <location filename="../aboutwindow.ui" line="91"/>
         <source>The ImageShack uploader is ultimate tool for uploading image and video files to ImageShack web services.</source>
-        <translation type="unfinished"> ImageShack uploader er det ultimate verktøyet for opplasting av bilde og video-filer til ImageShack nett-tjenester.</translation>
+        <translation> ImageShack uploader er det ultimate verktøyet for opplasting av bilde og video-filer til ImageShack nett-tjenester.</translation>
     </message>
     <message utf8="true">
         <location filename="../aboutwindow.ui" line="111"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../aboutwindow.ui" line="146"/>
         <source>Close</source>
-        <translation type="unfinished">Lukk</translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../advancedcheckbox.ui" line="69"/>
         <source>Remove size/resolution bar from thumbnail</source>
-        <translation type="unfinished">Fjern størrelse/oppløsning-visning fra forhåndsvisning</translation>
+        <translation>Fjern størrelse/oppløsning-visning fra forhåndsvisning</translation>
     </message>
 </context>
 <context>
@@ -48,7 +48,7 @@
     <message>
         <location filename="../copyablelineedit.ui" line="84"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopier til utklippstavle</translation>
+        <translation>Kopier til utklippstavle</translation>
     </message>
 </context>
 <context>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../copyabletextedit.ui" line="87"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopier til utklippstavle</translation>
+        <translation>Kopier til utklippstavle</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../fileuploader.cpp" line="86"/>
         <source>Some files could not be uploaded.</source>
-        <translation type="unfinished">Noen filer kunne ikke lastes opp.</translation>
+        <translation>Noen filer kunne ikke bli lastet opp.</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileuploader.cpp" line="89"/>
@@ -72,7 +72,7 @@
 
 Got error messages from server:
 </source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>
 
 Fikk feilmelding fra server:
@@ -86,33 +86,33 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../fileuploader.cpp" line="92"/>
         <source>Warning</source>
-        <translation type="unfinished">Advarsel</translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="112"/>
         <location filename="../fileuploader.cpp" line="122"/>
         <source>3 attempts to upload file failed</source>
-        <translation type="unfinished">3 forsøk for å laste opp fil feilet</translation>
+        <translation>3 forsøk for å laste opp fil feilet</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="144"/>
         <source>Server returned no error text</source>
-        <translation type="unfinished">Serveren returnerte no error tekst</translation>
+        <translation>Tjeneren returnerte no error tekst</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="151"/>
         <source>Wrong server response</source>
-        <translation type="unfinished">Feilaktig svar fra server</translation>
+        <translation>Feilaktig svar fra server</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="184"/>
         <source>Server responce is not valid</source>
-        <translation type="unfinished">Ikke godkjent svar fra server</translation>
+        <translation>Ikke godkjent svar fra server</translation>
     </message>
     <message>
         <location filename="../fileuploader.cpp" line="231"/>
         <source>Could not connect to server</source>
-        <translation type="unfinished">Kunne ikke koble til server</translation>
+        <translation>Kunne ikke koble til server</translation>
     </message>
 </context>
 <context>
@@ -120,7 +120,7 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../httprequest.cpp" line="67"/>
         <source>Local file does not exist</source>
-        <translation type="unfinished">Lokal fil eksisterer ikke</translation>
+        <translation>Lokal fil eksisterer ikke</translation>
     </message>
 </context>
 <context>
@@ -130,22 +130,22 @@ Fikk feilmeldinger fra server:
         <location filename="../imageinfowidget.cpp" line="118"/>
         <location filename="../imageinfowidget.ui" line="67"/>
         <source>Thumbnail</source>
-        <translation type="unfinished">Forhåndsvisning</translation>
+        <translation>Forhåndsvisning</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.cpp" line="254"/>
         <source>Log in to use this features</source>
-        <translation type="unfinished">Logg inn for å bruke denne muligheten</translation>
+        <translation>Logg inn for å bruke denne muligheten</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="113"/>
         <source>Image resize:</source>
-        <translation type="unfinished">Endre størrelse på bilde:</translation>
+        <translation>Endre størrelse på bilde:</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="126"/>
         <source>Do not resize</source>
-        <translation type="unfinished">Ingen størrelse-endring</translation>
+        <translation>Ingen størrelse-endring</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="131"/>
@@ -155,67 +155,67 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../imageinfowidget.ui" line="136"/>
         <source>150x150 (thumbnail)</source>
-        <translation type="unfinished">150x150 (forhåndsvisning)</translation>
+        <translation>150x150 (forhåndsvisning)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="141"/>
         <source>320x320 (for websites and email)</source>
-        <translation type="unfinished">320x320 (for hjemmesider og e-post)</translation>
+        <translation>320x320 (for hjemmesider og e-post)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="146"/>
         <source>640x640 (for message boards)</source>
-        <translation type="unfinished">640x640 (for forum)</translation>
+        <translation>640x640 (for forum)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="151"/>
         <source>800x800 (12-inch monitor)</source>
-        <translation type="unfinished">800x800 (12 tommer skjermer)</translation>
+        <translation>800x800 (12 tommer skjermer)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="156"/>
         <source>1024x1024 (15-inch monitor)</source>
-        <translation type="unfinished">1024x1024 (15 tommer skjerm)</translation>
+        <translation>1024x1024 (15 tommer skjerm)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="161"/>
         <source>1280x1280 (19-inch monitor)</source>
-        <translation type="unfinished">1280x1280 (19 tommer skjerm)</translation>
+        <translation>1280x1280 (19 tommer skjerm)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="166"/>
         <source>1600x1600 (21-inch monitor)</source>
-        <translation type="unfinished">1600x1600 (21 tommer skjerm)</translation>
+        <translation>1600x1600 (21 tommer skjerm)</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="171"/>
         <source>Optimize only</source>
-        <translation type="unfinished">Bare optimaliser</translation>
+        <translation>Bare optimaliser</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="182"/>
         <source>Resize all images to this size</source>
-        <translation type="unfinished">Endre størrelsen på alle bildene til denne størrelsen</translation>
+        <translation>Endre størrelsen på alle bildene til denne størrelsen</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="242"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Fortrolighet:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Privatliv:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="252"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Merknader:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Merknader:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="270"/>
         <source>Public</source>
-        <translation type="unfinished">Offentlig</translation>
+        <translation>Offentlig</translation>
     </message>
     <message>
         <location filename="../imageinfowidget.ui" line="289"/>
         <source>Private</source>
-        <translation type="unfinished">Privat</translation>
+        <translation>Privat</translation>
     </message>
 </context>
 <context>
@@ -224,58 +224,58 @@ Fikk feilmeldinger fra server:
         <location filename="../loginwidget.cpp" line="84"/>
         <location filename="../loginwidget.cpp" line="140"/>
         <source>You are logged in as %1</source>
-        <translation type="unfinished">Du er logget inn som %1</translation>
+        <translation>Du er logget inn som %1</translation>
     </message>
     <message>
         <location filename="../loginwidget.cpp" line="152"/>
         <location filename="../loginwidget.cpp" line="160"/>
         <source>Authentication failed</source>
-        <translation type="unfinished">Autentisering feilet</translation>
+        <translation>Verifisering feilet</translation>
     </message>
     <message>
         <location filename="../loginwidget.cpp" line="149"/>
         <source>Could not connect to ImageShack server.</source>
-        <translation type="unfinished">Kunne ikke koble til ImageShack server.</translation>
+        <translation>Kunne ikke koble til ImageShack tjener.</translation>
     </message>
     <message>
         <location filename="../loginwidget.cpp" line="161"/>
         <source>Wrong credentials.</source>
-        <translation type="unfinished">Feil informasjon.</translation>
+        <translation>Feil informasjon.</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="42"/>
         <source>Login name / E-mail:</source>
-        <translation type="unfinished">Brukernavn / E-post:</translation>
+        <translation>Brukernavn / E-post:</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="65"/>
         <source>Password:</source>
-        <translation type="unfinished">Passord:</translation>
+        <translation>Passord:</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="91"/>
         <source>Remember password</source>
-        <translation type="unfinished">Husk passord</translation>
+        <translation>Husk passord</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="113"/>
         <source>Login</source>
-        <translation type="unfinished">Logg inn</translation>
+        <translation>Logg inn</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="166"/>
         <source>Logging in...</source>
-        <translation type="unfinished">Logger inn...</translation>
+        <translation>Logger inn...</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="201"/>
         <source>Cancel</source>
-        <translation type="unfinished">Avbryt</translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="../loginwidget.ui" line="260"/>
         <source>Logout</source>
-        <translation type="unfinished">Logg ut</translation>
+        <translation>Logg ut</translation>
     </message>
 </context>
 <context>
@@ -285,7 +285,7 @@ Fikk feilmeldinger fra server:
         <location filename="../optionsdialog.cpp" line="147"/>
         <source>LANGUAGE_NAME</source>
         <translatorcomment>IMPORTANT: Change this to language name you are translating to</translatorcomment>
-        <translation type="unfinished">Norsk</translation>
+        <translation>Norsk</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="51"/>
@@ -295,47 +295,47 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../mainwindow.cpp" line="119"/>
         <source>Warning</source>
-        <translation type="unfinished">Advarsel</translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="120"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
-        <translation type="unfinished">Flash filer kan ikke bli lastet opp uten å logge inn. Vil du prøve likevel?</translation>
+        <translation>Flash filer kan ikke bli lastet opp uten at du logger inn. Vil du prøve likevel?</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
         <source>File</source>
-        <translation type="unfinished">Fil</translation>
+        <translation>Fil</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="154"/>
         <source>Help</source>
-        <translation type="unfinished">Hjelp</translation>
+        <translation>Hjelp</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="165"/>
         <source>About</source>
-        <translation type="unfinished">Om</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="173"/>
         <source>Support</source>
-        <translation type="unfinished">Støtte</translation>
+        <translation>Støtte</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="181"/>
         <source>Options</source>
-        <translation type="unfinished">Valg</translation>
+        <translation>Valg</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="189"/>
         <source>Check for updates</source>
-        <translation type="unfinished">Se etter oppdateringer</translation>
+        <translation>Se etter oppdateringer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="197"/>
         <source>Exit</source>
-        <translation type="unfinished">Ut/Lukk</translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -386,13 +386,13 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../medialistmodel.cpp" line="165"/>
         <source>Files not added</source>
-        <translation type="unfinished">Ingen filer er lagt til</translation>
+        <translation>Ingen filer er lagt til</translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistmodel.cpp" line="166"/>
         <source>This files are already in list, they were not added again:
 </source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Denne filen er allerede i listen, den ble ikke lagt til på nytt:
 </numerusform>
             <numerusform>Disse filene er allerede i listen, de ble ikke lagt til på nytt:
@@ -405,17 +405,17 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../medialistwidget.cpp" line="96"/>
         <source>Select one or more files to open</source>
-        <translation type="unfinished">Velg en eller flere filer du vil åpne</translation>
+        <translation>Velg en eller flere filer du vil legge til</translation>
     </message>
     <message>
         <location filename="../medialistwidget.cpp" line="99"/>
         <source>Supported formats (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</source>
-        <translation type="unfinished">Støttede formater (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
+        <translation>Støttede formater (*.jpeg *.jpg *.png *.gif *.tiff *.tif *bmp *.avi *.mp4 *.wmv *.3gp *.mkv *.m4v *.mov *.flv *.swf *.pdf)</translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="145"/>
         <source>Could not add %n file(s), as they seems to be in a format we do not currently support:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Kunne ikke legge til %n fil, fordi den er i et format vi foreløpig ikke støtter:</numerusform>
             <numerusform>Kunne ikke legge til %n filer, fordi de er i et format vi foreløpig ikke støtter:</numerusform>
         </translation>
@@ -423,15 +423,15 @@ Fikk feilmeldinger fra server:
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="152"/>
         <source>%n file(s) are too large for upload:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n filen er for stor til å bli lastet opp:</numerusform>
-            <numerusform>%n filer er for stor til å bli lastet opp:</numerusform>
+            <numerusform>%n filene er for store til å bli lastet opp:</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="155"/>
         <source>Maximum file size for logged in users is %n MB</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Maks fil størrelse for innloggede brukere er %n MB</numerusform>
             <numerusform>Maks fil størrelse for innloggede brukere er %n MB</numerusform>
         </translation>
@@ -439,7 +439,7 @@ Fikk feilmeldinger fra server:
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="157"/>
         <source>Maximum file size for anonymous users is %n MB</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Maks fil-størrelse for anonyme brukere er %n MB</numerusform>
             <numerusform>Maks fil-størrelse for anonyme brukere er %n MB</numerusform>
         </translation>
@@ -447,12 +447,12 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../medialistwidget.cpp" line="161"/>
         <source>Warning</source>
-        <translation type="unfinished">Advarsel</translation>
+        <translation>Advarsel</translation>
     </message>
     <message numerus="yes">
         <location filename="../medialistwidget.cpp" line="251"/>
         <source>%n files</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n fil</numerusform>
             <numerusform>%n filer</numerusform>
         </translation>
@@ -460,17 +460,17 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../medialistwidget.ui" line="111"/>
         <source>Add</source>
-        <translation type="unfinished">Legg til</translation>
+        <translation>Legg til</translation>
     </message>
     <message>
         <location filename="../medialistwidget.ui" line="125"/>
         <source>Remove</source>
-        <translation type="unfinished">Fjern</translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../medialistwidget.ui" line="139"/>
         <source>Clear</source>
-        <translation type="unfinished">Rens opp</translation>
+        <translation>Tøm liste</translation>
     </message>
 </context>
 <context>
@@ -478,7 +478,7 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../mediawidget.ui" line="14"/>
         <source>Preview</source>
-        <translation type="unfinished">Forhåndsvisning</translation>
+        <translation>Forhåndsvisning</translation>
     </message>
 </context>
 <context>
@@ -486,32 +486,32 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../optionsdialog.ui" line="20"/>
         <source>Options</source>
-        <translation type="unfinished">Valg</translation>
+        <translation>Valg</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="30"/>
         <source>Check for updates automatically</source>
-        <translation type="unfinished">Se etter oppdateringer automatisk</translation>
+        <translation>Se etter oppdateringer automatisk</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="51"/>
         <source>Language:</source>
-        <translation type="unfinished">Språk:</translation>
+        <translation>Språk:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="95"/>
         <source>Use proxy server</source>
-        <translation type="unfinished">Bruk proxy server</translation>
+        <translation>Bruk proxy server</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="105"/>
         <source>Proxy settings</source>
-        <translation type="unfinished">Proxy innstillinger</translation>
+        <translation>Proxy innstillinger</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="113"/>
         <source>Host:</source>
-        <translation type="unfinished">Vert:</translation>
+        <translation>Vert:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="130"/>
@@ -536,17 +536,17 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../optionsdialog.ui" line="211"/>
         <source>Authentication</source>
-        <translation type="unfinished">Autentisering</translation>
+        <translation>Autentisering</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="233"/>
         <source>Username:</source>
-        <translation type="unfinished">Brukernavn:</translation>
+        <translation>Brukernavn:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="243"/>
         <source>Password:</source>
-        <translation type="unfinished">Passord:</translation>
+        <translation>Passord:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="290"/>
@@ -557,7 +557,7 @@ Fikk feilmeldinger fra server:
         <location filename="../optionsdialog.cpp" line="42"/>
         <location filename="../optionsdialog.cpp" line="119"/>
         <source>Can&apos;t see your language in this list?&lt;br&gt;You can help to translate program to your language.&lt;br&gt;Click &lt;a href=&quot;%1&quot;&gt;HERE&lt;/a&gt; for more information.</source>
-        <translation type="unfinished">Kan du ikke se språket ditt i listen?&lt;br&gt;Du kan hjelpe til med å oversette programmet til ditt språk.&lt;br&gt;Trykk &lt;a href=&quot;%1&quot;&gt;HER&lt;/a&gt; for mer informasjon.</translation>
+        <translation>Kan du ikke se språket ditt i listen?&lt;br&gt;Du kan hjelpe til med å oversette programmet til ditt språk.&lt;br&gt;Trykk &lt;a href=&quot;%1&quot;&gt;HER&lt;/a&gt; for mer informasjon.</translation>
     </message>
 </context>
 <context>
@@ -565,17 +565,17 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../pausedialog.ui" line="14"/>
         <source>Warning</source>
-        <translation type="unfinished">Advarsel</translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <location filename="../pausedialog.ui" line="20"/>
         <source>The current file will resume from it&apos;s beginning. Continue pausing?</source>
-        <translation type="unfinished">Den valgte filen vil fortsette fra starten. Fremdeles pause?</translation>
+        <translation>Den valgte filen vil fortsette fra starten.Vil du fremdeles pause?</translation>
     </message>
     <message>
         <location filename="../pausedialog.ui" line="30"/>
         <source>Hide this warning for future uploads</source>
-        <translation type="unfinished">Gjem denne advarselen for fremtidige opplastninger</translation>
+        <translation>Gjem denne advarselen for fremtidige opplastinger</translation>
     </message>
 </context>
 <context>
@@ -584,7 +584,7 @@ Fikk feilmeldinger fra server:
         <location filename="../progresswidget.ui" line="73"/>
         <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
-        <translation type="unfinished">Opplastning</translation>
+        <translation>Last opp</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="137"/>
@@ -594,12 +594,12 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../progresswidget.cpp" line="158"/>
         <source>Time left: estimating...</source>
-        <translation type="unfinished">Tid som gjennstår: beregner...</translation>
+        <translation>Tid som gjennstår: beregner...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="99"/>
         <source>Waiting for links...</source>
-        <translation type="unfinished">Venter på linker...</translation>
+        <translation>Venter på linker...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="91"/>
@@ -613,28 +613,28 @@ Fikk feilmeldinger fra server:
         <location filename="../progresswidget.cpp" line="103"/>
         <location filename="../progresswidget.ui" line="165"/>
         <source>Current: %p%</source>
-        <translation type="unfinished">Nåværende: %p%</translation>
+        <translation>Nåværende: %p%</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="115"/>
         <source>Loading files: %1 of %2</source>
-        <translation type="unfinished">Laster filer: %1 of %2</translation>
+        <translation>Laster filer: %1 of %2</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="130"/>
         <location filename="../progresswidget.cpp" line="138"/>
         <source>Time left:</source>
-        <translation type="unfinished">Tid som gjennstår:</translation>
+        <translation>Tid som gjennstår:</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="130"/>
         <source>paused...</source>
-        <translation type="unfinished">pauset...</translation>
+        <translation>Satt på pause...</translation>
     </message>
     <message numerus="yes">
         <location filename="../progresswidget.cpp" line="142"/>
         <source> %n hrs.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform> %n time.</numerusform>
             <numerusform> %n timer.</numerusform>
         </translation>
@@ -650,22 +650,22 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../progresswidget.cpp" line="145"/>
         <source> less than 1 min.</source>
-        <translation type="unfinished">mindre enn 1 min.</translation>
+        <translation>mindre enn 1 min.</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="146"/>
         <source> almost done...</source>
-        <translation type="unfinished">nesten ferdig...</translation>
+        <translation>nesten ferdig...</translation>
     </message>
     <message>
         <location filename="../progresswidget.cpp" line="175"/>
         <source>Resume</source>
-        <translation type="unfinished">Fortsett</translation>
+        <translation>Fortsett</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="230"/>
         <source>Cancel</source>
-        <translation type="unfinished">Avbryt</translation>
+        <translation>Avbryt</translation>
     </message>
 </context>
 <context>
@@ -673,134 +673,134 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../resultswindow.cpp" line="118"/>
         <source>Direct links</source>
-        <translation type="unfinished">Direkte linker</translation>
+        <translation>Direkte linker</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="119"/>
         <source>Short links</source>
-        <translation type="unfinished">Korte linker</translation>
+        <translation>Korte linker</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="120"/>
         <source>Hotlinks for web</source>
-        <translation type="unfinished">Hurtig-linker for internett</translation>
+        <translation>Hurtig-linker for internett</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="121"/>
         <source>Thumbnails for web</source>
-        <translation type="unfinished">Forhåndsvisning for nettet</translation>
+        <translation>Forhåndsvisning for nettet</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="122"/>
         <source>Thumbnails for forums 1</source>
-        <translation type="unfinished">Forhåndsvisninger for forum 1</translation>
+        <translation>Forhåndsvisninger for forum 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="123"/>
         <source>Thumbnails for forums 2</source>
-        <translation type="unfinished">Forhåndsvisninger for forum 2</translation>
+        <translation>Forhåndsvisninger for forum 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="124"/>
         <source>Hotlinks for forums 1</source>
-        <translation type="unfinished">Hurtig-linker for forum 1</translation>
+        <translation>Hurtig-linker for forum 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="125"/>
         <source>Hotlinks for forums 2</source>
-        <translation type="unfinished">Hurtig-linker for forum 2</translation>
+        <translation>Hurtig-linker for forum 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="134"/>
         <source>Direct link</source>
-        <translation type="unfinished">Direkte link</translation>
+        <translation>Direkte link</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="135"/>
         <source>Short link</source>
-        <translation type="unfinished">Hurtig-link</translation>
+        <translation>Hurtig-link</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="136"/>
         <source>Hotlink for web</source>
-        <translation type="unfinished">Hurtig-link for internett</translation>
+        <translation>Hurtig-link for internett</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="137"/>
         <source>Thumbnail for web</source>
-        <translation type="unfinished">Forhåndsvisning for internett</translation>
+        <translation>Forhåndsvisning for internett</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="138"/>
         <source>Thumbnail for forums 1</source>
-        <translation type="unfinished">Forhåndsvisning for forum 1</translation>
+        <translation>Forhåndsvisning for forum 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="139"/>
         <source>Thumbnail for forums 2</source>
-        <translation type="unfinished">Forhåndsvisning for forum 2</translation>
+        <translation>Forhåndsvisning for forum 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="140"/>
         <source>Hotlink for forums 1</source>
-        <translation type="unfinished">Hurtig-link for forum 1</translation>
+        <translation>Hurtig-link for forum 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="141"/>
         <source>Hotlink for forums 2</source>
-        <translation type="unfinished">Hurtig-link for forum 2</translation>
+        <translation>Hurtig-link for forum 2</translation>
     </message>
     <message>
         <location filename="../resultswindow.cpp" line="146"/>
         <source>File %1 of %2</source>
-        <translation type="unfinished">Fil %1 av %2</translation>
+        <translation>Fil %1 av %2</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="20"/>
         <source>Uploaded files</source>
-        <translation type="unfinished">Opplastede filer</translation>
+        <translation>Opplastede filer</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="30"/>
         <source>One by one</source>
-        <translation type="unfinished">En og en</translation>
+        <translation>En og en</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="115"/>
         <source>Thumbnail</source>
-        <translation type="unfinished">Forhåndsvisning</translation>
+        <translation>Forhåndsvisning</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="57"/>
         <location filename="../resultswindow.ui" line="60"/>
         <location filename="../resultswindow.ui" line="392"/>
         <source>Tweet this</source>
-        <translation type="unfinished">Tweet denne</translation>
+        <translation>Legg til på Twitter</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="149"/>
         <source>File 1 of 1</source>
-        <translation type="unfinished">Fil 1 av 1</translation>
+        <translation>Fil 1 av 1</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="336"/>
         <source>All images and video files</source>
-        <translation type="unfinished">Alle bilder og video-filer</translation>
+        <translation>Alle bilder og video-filer</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="366"/>
         <source>Gallery:</source>
-        <translation type="unfinished">Galleri:</translation>
+        <translation>Galleri:</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="389"/>
         <source>Create gallery and post to twitter</source>
-        <translation type="unfinished">Lag galleri og post det på Twitter</translation>
+        <translation>Lag galleri og post det på Twitter</translation>
     </message>
     <message>
         <location filename="../resultswindow.ui" line="461"/>
         <source>Close</source>
-        <translation type="unfinished">Lukk</translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -808,33 +808,33 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../tagwidget.ui" line="41"/>
         <source>&lt;b&gt;Privacy:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Fortrolighet:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Privatliv:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="56"/>
         <source>Public</source>
-        <translation type="unfinished">Offentlig</translation>
+        <translation>Offentlig</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="72"/>
         <source>Private</source>
-        <translation type="unfinished">Privat</translation>
+        <translation>Privat</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="97"/>
         <source>&lt;b&gt;Tags:&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Merknader:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Merknader:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../tagwidget.ui" line="29"/>
         <source>Batch privacy &amp;&amp; tags</source>
-        <translation type="unfinished">Samlet fortrolighet &amp;&amp; merknader</translation>
+        <translation>Grupper privatliv &amp;&amp; merknader</translation>
     </message>
     <message>
         <location filename="../tagwidget.cpp" line="40"/>
         <location filename="../tagwidget.cpp" line="98"/>
         <source>Log in to use this features</source>
-        <translation type="unfinished">Logg inn for å bruke denne muligheten</translation>
+        <translation>Logg inn for å bruke denne muligheten</translation>
     </message>
 </context>
 <context>
@@ -842,7 +842,7 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../talkingtreeview.cpp" line="51"/>
         <source>Drag and drop one or more image\n or video files here</source>
-        <translation type="unfinished">Dra og slipp ett eller flere bilde\n eller video filer her</translation>
+        <translation>Dra og slipp ett eller flere bilde\n eller video filer her</translation>
     </message>
 </context>
 <context>
@@ -850,17 +850,17 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../trayicon.cpp" line="20"/>
         <source>Show/Hide Uploader</source>
-        <translation type="unfinished">Vis/Gjem programmet</translation>
+        <translation>Vis/Gjem programmet</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="23"/>
         <source>Add file from clipboard</source>
-        <translation type="unfinished">Legg til fil fra utklippstavle</translation>
+        <translation>Legg til fil fra utklippstavle</translation>
     </message>
     <message>
         <location filename="../trayicon.cpp" line="24"/>
         <source>Quit</source>
-        <translation type="unfinished">Avslutt</translation>
+        <translation>Avslutt</translation>
     </message>
 </context>
 <context>
@@ -869,7 +869,7 @@ Fikk feilmeldinger fra server:
         <location filename="../twitterclient.cpp" line="53"/>
         <location filename="../twitterclient.cpp" line="66"/>
         <source>Posting to twitter...</source>
-        <translation type="unfinished">Poster hos Twitter...</translation>
+        <translation>Poster hos Twitter...</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="101"/>
@@ -879,29 +879,29 @@ Fikk feilmeldinger fra server:
         <location filename="../twitterclient.cpp" line="148"/>
         <location filename="../twitterclient.cpp" line="155"/>
         <source>Error</source>
-        <translation type="unfinished">Feil</translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="115"/>
         <location filename="../twitterclient.cpp" line="156"/>
         <source>Could not post to twitter. Wrong server response.</source>
-        <translation type="unfinished">Kunne ikke poste hos twitter. Feil svar fra server.</translation>
+        <translation>Kunne ikke poste hos twitter. Feil svar fra server.</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="136"/>
         <source>Could not post to twitter. Wrong credentials.</source>
-        <translation type="unfinished">Kunne ikke poste hos twitter. Feil informasjon.</translation>
+        <translation>Kunne ikke poste hos twitter. Feil informasjon.</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="102"/>
         <location filename="../twitterclient.cpp" line="143"/>
         <source>Failed to update twitter status.</source>
-        <translation type="unfinished">Kunne ikke oppdatere twitter status.</translation>
+        <translation>Kunne ikke oppdatere Twitter status.</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="149"/>
         <source>Could not post to twitter. Internal error.</source>
-        <translation type="unfinished">Kunne ikke poste hos twitter. Intern feil.</translation>
+        <translation>Kunne ikke poste hos Twitter. Intern feil.</translation>
     </message>
 </context>
 <context>
@@ -909,47 +909,47 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../twitterwindow.cpp" line="68"/>
         <source>Posting to twitter...</source>
-        <translation type="unfinished">Poster hos Twitter...</translation>
+        <translation>Poster hos Twitter...</translation>
     </message>
     <message>
         <location filename="../twitterwindow.cpp" line="78"/>
         <source>Symbols left: %1</source>
-        <translation type="unfinished">Symboler igjen: %1</translation>
+        <translation>Tegn igjen: %1</translation>
     </message>
     <message>
         <location filename="../twitterwindow.cpp" line="107"/>
         <source>Error</source>
-        <translation type="unfinished">Feil</translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../twitterwindow.cpp" line="108"/>
         <source>You have not entered username or password</source>
-        <translation type="unfinished">Du har ikke skrevet inn brukernavn eller passord</translation>
+        <translation>Du har ikke skrevet inn brukernavn eller passord</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="20"/>
         <source>Comment text:</source>
-        <translation type="unfinished">Kommentar tekst:</translation>
+        <translation>Kommentar tekst:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="14"/>
         <source>Tweet this</source>
-        <translation type="unfinished">Tweet denne</translation>
+        <translation>Legg til på Twitter</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="43"/>
         <source>Twitter username:</source>
-        <translation type="unfinished">Twitter brukernavn:</translation>
+        <translation>Twitter brukernavn:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="50"/>
         <source>Twitter password:</source>
-        <translation type="unfinished">Twitter passord:</translation>
+        <translation>Twitter passord:</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="82"/>
         <source>Remember me</source>
-        <translation type="unfinished">Husk meg</translation>
+        <translation>Husk meg</translation>
     </message>
     <message>
         <location filename="../twitterwindow.ui" line="110"/>
@@ -959,7 +959,7 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../twitterwindow.ui" line="123"/>
         <source>Cancel</source>
-        <translation type="unfinished">Avbryt</translation>
+        <translation>Avbryt</translation>
     </message>
 </context>
 <context>
@@ -969,69 +969,69 @@ Fikk feilmeldinger fra server:
         <location filename="../updatechecker.cpp" line="101"/>
         <location filename="../updatechecker.cpp" line="114"/>
         <source>Error</source>
-        <translation type="unfinished">Feil</translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="59"/>
         <source>Please wait...</source>
-        <translation type="unfinished">Vennligst vent...</translation>
+        <translation>Vennligst vent...</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="60"/>
         <source>Update checkup is currently in progress.</source>
-        <translation type="unfinished">Programmet ser etter oppdateringer</translation>
+        <translation>Programmet ser etter oppdateringer</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="102"/>
         <source>Could not check for updates. Wrong server response.</source>
-        <translation type="unfinished">Kunne ikke se etter oppdateringer. Feil svar fra server.</translation>
+        <translation>Kunne ikke se etter oppdateringer. Feil svar fra server.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="115"/>
         <source>Could not check for updates. No versions found.</source>
-        <translation type="unfinished">Kunne ikke se etter oppdateringer. Ingen versjoner funnet.</translation>
+        <translation>Kunne ikke se etter oppdateringer. Ingen versjoner funnet.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="156"/>
         <source>Yes</source>
-        <translation type="unfinished">Ja</translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="157"/>
         <source>No</source>
-        <translation type="unfinished">Nei</translation>
+        <translation>Nei</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="159"/>
         <source>Update available</source>
-        <translation type="unfinished">Oppdatering tilgjengelig</translation>
+        <translation>Oppdatering tilgjengelig</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="147"/>
         <location filename="../updatechecker.cpp" line="171"/>
         <source>You have the latest version of this application.</source>
-        <translation type="unfinished">Du har den siste versjonen av dette programmet.</translation>
+        <translation>Du har den siste versjonen av dette programmet.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="158"/>
         <source>Lastest version is %1. Do you want to update?</source>
-        <translation type="unfinished">Siste versjon er %1. Vil du oppdatere?</translation>
+        <translation>Siste versjon er %1. Vil du oppdatere?</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="85"/>
         <source>Could not check for updates. Please try again later.</source>
-        <translation type="unfinished">Kunne ikke se etter oppdateringer. Vennligst prøv igjen senere.</translation>
+        <translation>Kunne ikke se etter oppdateringer. Vennligst prøv igjen senere.</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="86"/>
         <source>Error message is:</source>
-        <translation type="unfinished">Feilmeldingen er:</translation>
+        <translation>Feilmeldingen er:</translation>
     </message>
     <message>
         <location filename="../updatechecker.cpp" line="146"/>
         <location filename="../updatechecker.cpp" line="170"/>
         <source>No updates available</source>
-        <translation type="unfinished">Ingen oppdatering tilgjengelig</translation>
+        <translation>Ingen oppdatering tilgjengelig</translation>
     </message>
 </context>
 <context>
@@ -1039,7 +1039,7 @@ Fikk feilmeldinger fra server:
     <message>
         <location filename="../windowsexplorerintegrator.cpp" line="56"/>
         <source>Open with ImageShack Uploader</source>
-        <translation type="unfinished">Åpne med ImageShack Uploader</translation>
+        <translation>Åpne med ImageShack Uploader</translation>
     </message>
 </context>
 </TS>
