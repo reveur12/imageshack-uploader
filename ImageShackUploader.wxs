@@ -54,6 +54,7 @@
                             <File Id="fr" Name="fr_FR.qm" DiskId="1" Source="translations/fr_FR.qm" />
                             <File Id="hu" Name="hu_HU.qm" DiskId="1" Source="translations/hu_HU.qm" />
                             <File Id="it" Name="it_IT.qm" DiskId="1" Source="translations/it_IT.qm" />
+                            <File Id="kr" Name="kr_KR.qm" DiskId="1" Source="translations/kr_KR.qm" />
                             <File Id="lv" Name="lv_LV.qm" DiskId="1" Source="translations/lv_LV.qm" />
                             <File Id="lt" Name="lt_LT.qm" DiskId="1" Source="translations/lt_LT.qm" />
                             <File Id="nl" Name="nl_NL.qm" DiskId="1" Source="translations/nl_NL.qm" />
