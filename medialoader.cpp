@@ -27,6 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 #include "medialoader.h"
+#include <QSettings>
 #include <QDebug>
 
 MediaLoader::MediaLoader(QStringList files)
@@ -36,6 +37,17 @@ MediaLoader::MediaLoader(QStringList files)
 
 void MediaLoader::run()
 {
+    QSettings settings;
+    for (int index = 0; index < 5; ++index)
+    {
+        if (settings.contains("loggedin"))
+        {
+            break;
+        }
+
+        QThread::yieldCurrentThread();
+    }
+
     QVector<QSharedPointer<Media> > res;
     QStringList toolarge;
     QStringList failed;
