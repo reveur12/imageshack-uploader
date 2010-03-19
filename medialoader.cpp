@@ -37,9 +37,9 @@ MediaLoader::MediaLoader(QStringList files)
 
 void MediaLoader::run()
 {
-    QSettings settings;
     for (int index = 0; index < 5; ++index)
     {
+        QSettings settings;
         if (settings.contains("loggedin"))
         {
             break;
