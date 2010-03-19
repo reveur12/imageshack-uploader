@@ -55,13 +55,12 @@ void FileUploader::begin()
     failcount = 0;
     skip = 0;
     totalsize = medias->totalSize();
-    time = 0;
-    seconds.start(1000);
     process();
 }
 
 void FileUploader::process()
 {
+    uploadedCurrent = 0;
     medias->skipped = this->skip;
     if (failed) { failed = true; emit status(2); return;}
     if (medias->rowCount() && (skip < medias->rowCount()))
@@ -80,6 +79,8 @@ void FileUploader::process()
         request.data()->connectProgress(this, SLOT(progressReceiver(int)));
         request.data()->connectError(this, SLOT(uploadErrorReceiver(QString)));
         request.data()->connectResult(this, SLOT(resultReceiver(QString)));
+
+        seconds.start(1000);
         request.data()->uploadFile(current, cookie);
     }
     else
@@ -242,23 +243,23 @@ void FileUploader::fail(QString message)
 
 void FileUploader::updateETA()
 {
-    time++;
-    qint64 uploaded = uploadedTotal + request.data()->uploaded;// - request.data()->doneSize;
-    if (!time) return;
-    qint64 speed = (uploaded) / time;
-    if (!speed) return;
-    if (totalsize < uploaded) return;
-    int left = (totalsize - (uploaded))/speed;
+    qint64 uploadedPrevious = uploadedCurrent;
+    uploadedCurrent = request.data()->uploaded;
+    qint64 speed = uploadedCurrent - uploadedPrevious;
+    qint64 totalUploadedSize = uploadedTotal + uploadedCurrent;
 
-    qDebug() << "time:" << time;
+    if (totalsize < totalUploadedSize) return;
+    if (speed <= 0) return;
+    int timeLeft = (totalsize - totalUploadedSize)/speed;
+
     qDebug() << "uploadedTotal:" << uploadedTotal;
     qDebug() << "request.data()->uploaded:" << request.data()->uploaded;
     qDebug() << "request.data()->doneSize:" << request.data()->doneSize;
-    qDebug() << "uploaded:" <<uploaded;
+    qDebug() << "uploaded:" << totalUploadedSize;
     qDebug() << "totalsize:" << totalsize;
     qDebug() << "speed:" << speed;
-    qDebug() << "left" << left;
-    emit ETA(left);
+    qDebug() << "left" << timeLeft;
+    emit ETA(timeLeft);
 }
 
 void FileUploader::pause(bool st)
@@ -271,7 +272,6 @@ void FileUploader::pause(bool st)
 
         emit ETA(-100);
         uploadedTotal = 0;
-        time = 0;
         if (current.data()->getClass() != "video")
         {
             emit ETA(-100);
@@ -282,6 +282,5 @@ void FileUploader::pause(bool st)
     else
     {
         process();
-        seconds.start(1000);
     }
 }
