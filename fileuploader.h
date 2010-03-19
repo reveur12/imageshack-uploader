@@ -64,10 +64,9 @@ private:
     void fail(QString reason = NULL);
     QStringList errors;
 
-    qint64 totalsize;
     QTimer seconds;
 
-    int time;
+    qint64 totalsize;
     qint64 uploadedCurrent;
     qint64 uploadedTotal;
 
