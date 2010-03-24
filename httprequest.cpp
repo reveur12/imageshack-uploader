@@ -426,6 +426,10 @@ void HTTPRequest::postFileReceiver()
 
 void HTTPRequest::stop()
 {
+    inProgress = false;
+    failed = false;
+    aborted = true;
+
     if (this->reply != NULL)
         pause();
 }
