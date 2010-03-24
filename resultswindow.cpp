@@ -182,7 +182,10 @@ void ResultsWindow::tweet()
 
 void ResultsWindow::tweetGallery()
 {
-    twitter.post(results, galleryLink);
+    if (!galleryLink.isNull() && !galleryLink.isEmpty() && !results.isNull() && !results->isEmpty())
+    {
+        twitter.post(results, galleryLink);
+    }
 }
 
 void ResultsWindow::createGallery()
