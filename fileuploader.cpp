@@ -211,7 +211,16 @@ void FileUploader::setCookie(QString value)
 
 void FileUploader::cancel()
 {
-    request.data()->stop();
+    if (NULL != request.data())
+    {
+        request->blockSignals(true);
+        request->stop();
+
+        int index = tmp.indexOf(request);
+        tmp.remove(index);
+        request.clear();
+    }
+
     seconds.stop();
     emit status(3);
     progress->setCurrentIndex(0);
@@ -266,7 +275,16 @@ void FileUploader::pause(bool st)
 {
     if (st)
     {
-        request.data()->stop();
+        if (NULL != request.data())
+        {
+            request->blockSignals(true);
+            request->stop();
+
+            int index = tmp.indexOf(request);
+            tmp.remove(index);
+            request.clear();
+        }
+
         seconds.stop();
         int total = (int)((100.0/filecount)*donecount);
 
@@ -276,7 +294,6 @@ void FileUploader::pause(bool st)
         {
             emit ETA(-100);
             progress->setProgress(total, 0);
-            request.data()->uploaded = 0;
         }
     }
     else
