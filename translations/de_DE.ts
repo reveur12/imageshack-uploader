@@ -393,7 +393,7 @@ Got error messages from server:
         <source>This files are already in list, they were not added again:
 </source>
         <translation>
-            <numerusform>Diese Datei war bereits in der Liste. Sie wurde nicht nocheinmal hinzugefügt:
+            <numerusform>Diese Datei war bereits in der Liste. Sie wurde nicht noch einmal hinzugefügt:
 </numerusform>
             <numerusform>Diese Dateien waren bereits in der Liste Sie wurden nicht noch einmal hinzugefügt:
 </numerusform>
@@ -842,7 +842,7 @@ Got error messages from server:
     <message>
         <location filename="../talkingtreeview.cpp" line="51"/>
         <source>Drag and drop one or more image\n or video files here</source>
-        <translation>Eine oder mehrere Bild- und Videodateien per Drag und drop hier ablegen</translation>
+        <translation>Eine oder mehrere Bild- oder\nVideodatei(en) per drag &amp; drop hier ablegen</translation>
     </message>
 </context>
 <context>

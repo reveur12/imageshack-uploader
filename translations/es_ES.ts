@@ -206,7 +206,7 @@ Se obtuvieron mensajes de error desde el servidor:
     <message>
         <location filename="../loginwidget.cpp" line="139"/>
         <source>You are logged in as %1</source>
-        <translation>Estás logueado como %1</translation>
+        <translation>Has iniciado sesión como %1</translation>
     </message>
     <message>
         <location filename="../loginwidget.cpp" line="159"/>
@@ -279,7 +279,7 @@ Se obtuvieron mensajes de error desde el servidor:
     <message>
         <location filename="../mainwindow.cpp" line="119"/>
         <source>Flash files can not be uploaded without logging in. Do you want to try anyway?</source>
-        <translation>Archivos Flash no pueden ser subidos sin iniciar sesión. ¿Quieres intentar de todos modos?</translation>
+        <translation>Los archivos Flash no pueden ser subidos sin iniciar sesión. ¿Quieres intentar de todos modos?</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="147"/>
@@ -372,9 +372,9 @@ Se obtuvieron mensajes de error desde el servidor:
         <source>This files are already in list, they were not added again:
 </source>
         <translation>
-            <numerusform>Este archivo ya se encuentra en la lista y no será añadido otra vez:
+            <numerusform>Este archivo ya se encuentra en la lista, no será añadido otra vez:
 </numerusform>
-            <numerusform>Estos archivos ya se encuentran en la lista y no serán añadidos otra vez: 
+            <numerusform>Estos archivos ya se encuentran en la lista, no serán añadidos otra vez: 
 </numerusform>
         </translation>
     </message>
@@ -475,7 +475,7 @@ Se obtuvieron mensajes de error desde el servidor:
     <message>
         <location filename="../optionsdialog.ui" line="51"/>
         <source>Language:</source>
-        <translation>Lenguaje:</translation>
+        <translation>Idioma:</translation>
     </message>
     <message>
         <location filename="../optionsdialog.ui" line="123"/>
@@ -511,7 +511,7 @@ Se obtuvieron mensajes de error desde el servidor:
     <message>
         <location filename="../progresswidget.ui" line="354"/>
         <source>Upload</source>
-        <translation>Cargar/Subir</translation>
+        <translation>Subir</translation>
     </message>
     <message>
         <location filename="../progresswidget.ui" line="137"/>
@@ -756,7 +756,7 @@ Se obtuvieron mensajes de error desde el servidor:
     <message>
         <location filename="../talkingtreeview.cpp" line="51"/>
         <source>Drag and drop one or more image\n or video files here</source>
-        <translation>Arrastrar y soltar uno o más archivos de imagen o video aquí</translation>
+        <translation>Arrastrar y soltar uno o más archivos\n de imagen o video aquí</translation>
     </message>
 </context>
 <context>
@@ -792,12 +792,12 @@ Se obtuvieron mensajes de error desde el servidor:
     <message>
         <location filename="../twitterclient.cpp" line="95"/>
         <source>First set twitter username and password in options</source>
-        <translation>Primero configura tu nombre de usuario y sontraseña en las opciones</translation>
+        <translation>Primero configura tu nombre de usuario y contraseña en las opciones</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="129"/>
         <source>Could not send url to Twitter</source>
-        <translation>No se pudo enviar la url a Twitter</translation>
+        <translation>No se pudo enviar la URL a Twitter</translation>
     </message>
     <message>
         <location filename="../twitterclient.cpp" line="182"/>
