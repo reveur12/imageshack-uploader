@@ -175,6 +175,7 @@ void HTTPRequest::putFile(QSharedPointer<Media> media, QString cookie, QString u
     }
     QNetworkRequest req("http://" + QString(CHUNKED_VIDEO_UPLOAD_HOSTNAME) + CHUNKED_VIDEO_UPLOAD_PATH + "/start");
     qDebug() << formStartPostData(media, cookie, username, password);
+    this->prepareNetworkRequest(req);
     reply = qnam.post(req, formStartPostData(media, cookie, username, password));
     //connectReply(SLOT(putFile2()));
     connect(reply, SIGNAL(finished()), this, SLOT(putFile2()));
@@ -214,6 +215,7 @@ void HTTPRequest::putFile2(QString uploadUrl, QString lenUrl)
     qDebug() << "resuming upload...";
 
     QNetworkRequest req(getlenurl);
+    this->prepareNetworkRequest(req);
     reply = qnam.get(req);
     connect(reply, SIGNAL(finished()), this, SLOT(putFile3()));
     connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
@@ -238,6 +240,7 @@ void HTTPRequest::putFile3()
     req.setRawHeader(QByteArray("Content-Range"), header);
     req.setRawHeader(QByteArray("Content-Length"), QByteArray().append(QString::number(fs->size() - doneSize)));
     req.setRawHeader(QByteArray("Content-Type"), QByteArray("application/octet-stream"));
+    this->prepareNetworkRequest(req);
     reply = qnam.put(req, fs);
     connectReply(SLOT(putFile4()));
     connect(reply, SIGNAL(uploadProgress(qint64, qint64)), this,
@@ -331,6 +334,7 @@ void HTTPRequest::get(QString url, QVector<QPair<QString, QString> > params)
         url += QUrl::toPercentEncoding(key) + '=' + QUrl::toPercentEncoding(arg);
     }
     QNetworkRequest req(url);
+    this->prepareNetworkRequest(req);
     reply = qnam.get(req);
     connectReply(SLOT(getReceiver()));
 }
@@ -358,6 +362,7 @@ void HTTPRequest::post(QString url, QVector<QPair<QString, QString> > fields)
         data.append(key + '=' + value);
     }
     QNetworkRequest req(url);
+    this->prepareNetworkRequest(req);
     reply = qnam.post(req, data);
     connectReply(SLOT(postReceiver()));
 }
@@ -403,11 +408,10 @@ void HTTPRequest::postFile(QSharedPointer<Media> media, QString cookie, QString 
     data.data()->open(QIODevice::ReadOnly);
 
     QNetworkRequest req(QUrl("http://" + QString(host) + path));
-    req.setHeader(QNetworkRequest::ContentTypeHeader,
-                  "multipart/form-data, boundary=" + boundary);
-
+    req.setHeader(QNetworkRequest::ContentTypeHeader, "multipart/form-data; boundary=" + boundary);
+    req.setHeader(QNetworkRequest::ContentLengthHeader, QString::number(data->size()));
     req.setRawHeader("User-Agent", userAgent());
-
+    this->prepareNetworkRequest(req);
     reply = qnam.post(req, data.data());
 
     connectReply(SLOT(postFileReceiver()));
@@ -466,4 +470,17 @@ QString HTTPRequest::errorString()
 {
     if (reply == NULL) return QString("No error");
     return reply->errorString();
+}
+
+void HTTPRequest::prepareNetworkRequest(QNetworkRequest &inRequest)
+{
+    QSettings sets;
+    if (sets.value("proxy/auth", QVariant(false)).toBool() && 0 == sets.value("proxy/type", QVariant(0)).toInt())
+    {
+        QString userName = sets.value("proxy/user", QVariant("")).toString();
+        QString userPassword = sets.value("proxy/pass", QVariant("")).toString();
+
+        QString authCredentials = QString("%1:%2").arg(userName).arg(userPassword);
+        inRequest.setRawHeader("Proxy-Authorization", "Basic " + QByteArray(authCredentials.toAscii()).toBase64());
+    }
 }
