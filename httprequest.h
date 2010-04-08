@@ -55,6 +55,7 @@ private:
     QVector<QPair<QString, QString> > formDataFields(QSharedPointer<Media> media, QString cookie = "", QString username = "", QString password = "");
     QByteArray formStartPostData(QSharedPointer<Media> media, QString cookie, QString username, QString password);
     QPair<QString, QString> getUploadHost(QSharedPointer<Media> media);
+    void prepareNetworkRequest(QNetworkRequest &inRequest);
     QSharedPointer<FileSource> data;
     void setProxy();
     QNetworkProxy proxy;
