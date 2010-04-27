@@ -68,6 +68,8 @@
                             <File Id="zh" Name="zh_CN.qm" DiskId="1" Source="translations/zh_CN.qm" />
                             <File Id="sv" Name="sv_SE.qm" DiskId="1" Source="translations/sv_SE.qm" />
                             <File Id="ro" Name="ro_RO.qm" DiskId="1" Source="translations/ro_RO.qm" />
+                            <File Id="ro" Name="bg_BG.qm" DiskId="1" Source="translations/bg_BG.qm" />
+                            <File Id="ro" Name="sk_SK.qm" DiskId="1" Source="translations/sk_SK.qm" />
                             <File Id="example" Name="en_US.ts" DiskId="1" Source="translations/en_US.ts" />
                         </Component>
                     </Directory>
